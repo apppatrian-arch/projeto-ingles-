@@ -217,7 +217,7 @@ with st.sidebar:
             st.success(f"Adicionada em {categoria_deck}! 🇧🇷 {pt_deck}  ·  🇺🇸 {en_deck}")
 
 
-def sortear_frase():
+def sortear_frase(limpar_resposta=False):
     pool = st.session_state.baralho
     if st.session_state.foco_frases:
         pool = [
@@ -243,7 +243,8 @@ def sortear_frase():
     st.session_state.traducao_referencia = ""
     st.session_state.registrado = False
     st.session_state.pontuacao = 0.0
-    st.session_state["_limpar_resposta"] = True
+    if limpar_resposta:
+        st.session_state["_limpar_resposta"] = True
 
 
 if pagina == "📖 Praticar":
@@ -313,7 +314,7 @@ if pagina == "📖 Praticar":
             st.progress(min(int(pontuacao), 100))
 
         if proxima:
-            sortear_frase()
+            sortear_frase(limpar_resposta=True)
             st.rerun()
 
     else:
