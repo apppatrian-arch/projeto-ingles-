@@ -108,6 +108,8 @@ if "_forcar_pagina" in st.session_state:
     st.session_state["pagina"] = st.session_state.pop("_forcar_pagina")
 if st.session_state.pop("_limpar_resposta", False):
     st.session_state["resposta_usuario"] = ""
+    st.session_state["resposta_ouvir"] = ""
+    st.session_state["leitura_texto"] = ""
 
 st.markdown(
     """
@@ -149,6 +151,12 @@ with st.sidebar:
             index=2,
         )
         fonte = st.radio("Fonte da frase", ["Baralho embutido", "Digitar minha frase"])
+        if fonte == "Baralho embutido":
+            modo_exercicio = st.radio(
+                "Modo de exercício",
+                ["✍️ Traduzir", "🎧 Ouvir e traduzir", "🗣️ Ler e falar"],
+                key="modo_exercicio",
+            )
         categorias_selecionadas = st.multiselect("Categorias do baralho", CATEGORIAS, default=CATEGORIAS)
         if st.session_state.foco_frases:
             st.caption(f"🎯 Modo foco: {len(st.session_state.foco_frases)} frase(s) selecionada(s)")
@@ -252,70 +260,192 @@ if pagina == "📖 Praticar":
         if st.session_state.frase_atual is None:
             sortear_frase()
 
+        if st.session_state.get("_modo_anterior") != modo_exercicio:
+            st.session_state["_modo_anterior"] = modo_exercicio
+            st.session_state.revelado = False
+            st.session_state.traducao_referencia = ""
+            st.session_state.registrado = False
+            st.session_state.pontuacao = 0.0
+            st.session_state["resposta_usuario"] = ""
+            st.session_state["resposta_ouvir"] = ""
+            st.session_state["leitura_texto"] = ""
+
         origem_label = "Português" if st.session_state.direcao_atual == "pt->en" else "Inglês"
         destino_label = "Inglês" if st.session_state.direcao_atual == "pt->en" else "Português"
         origem_cod, destino_cod = st.session_state.direcao_atual.split("->")
 
-        falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase original")
+        if modo_exercicio == "✍️ Traduzir":
+            falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase original")
 
-        texto_falado = speech_to_text(
-            language=IDIOMA_VOZ[destino_cod],
-            start_prompt="🎤 Falar minha tradução",
-            stop_prompt="⏹️ Parar gravação",
-            just_once=True,
-            use_container_width=True,
-            key="stt_baralho",
-        )
-        if texto_falado:
-            st.session_state["resposta_usuario"] = texto_falado
+            texto_falado = speech_to_text(
+                language=IDIOMA_VOZ[destino_cod],
+                start_prompt="🎤 Falar minha tradução",
+                stop_prompt="⏹️ Parar gravação",
+                just_once=True,
+                use_container_width=True,
+                key="stt_baralho",
+            )
+            if texto_falado:
+                st.session_state["resposta_usuario"] = texto_falado
 
-        st.subheader("Traduza a frase abaixo:")
-        st.info(f"**{origem_label} → {destino_label}**\n\n> {st.session_state.frase_atual}")
+            st.subheader("Traduza a frase abaixo:")
+            st.info(f"**{origem_label} → {destino_label}**\n\n> {st.session_state.frase_atual}")
 
-        resposta_usuario = st.text_area("Sua tradução:", key="resposta_usuario")
+            resposta_usuario = st.text_area("Sua tradução:", key="resposta_usuario")
 
-        with st.container(key="linha-botoes"):
-            col1, col2 = st.columns(2)
-            with col1:
-                verificar = st.button("Verificar", use_container_width=True)
-            with col2:
-                proxima = st.button("Próxima frase", use_container_width=True)
+            with st.container(key="linha-botoes"):
+                col1, col2 = st.columns(2)
+                with col1:
+                    verificar = st.button("Verificar", use_container_width=True, key="verificar_traduzir")
+                with col2:
+                    proxima = st.button("Próxima frase", use_container_width=True, key="proxima_traduzir")
 
-        if verificar and st.session_state.frase_atual:
-            origem, destino = st.session_state.direcao_atual.split("->")
-            st.session_state.traducao_referencia = traduzir(st.session_state.frase_atual, origem, destino)
-            st.session_state.revelado = True
-            if not st.session_state.registrado:
-                st.session_state.pontuacao = calcular_similaridade(resposta_usuario, st.session_state.traducao_referencia)
-                st.session_state.progresso.append({
-                    "data": datetime.now().isoformat(timespec="seconds"),
-                    "direcao": st.session_state.direcao_atual,
-                    "frase_original": st.session_state.frase_atual,
-                    "resposta_usuario": resposta_usuario,
-                    "traducao_referencia": st.session_state.traducao_referencia,
-                    "similaridade": st.session_state.pontuacao,
-                })
-                salvar_progresso(st.session_state.progresso)
-                st.session_state.registrado = True
+            if verificar and st.session_state.frase_atual:
+                origem, destino = st.session_state.direcao_atual.split("->")
+                st.session_state.traducao_referencia = traduzir(st.session_state.frase_atual, origem, destino)
+                st.session_state.revelado = True
+                if not st.session_state.registrado:
+                    st.session_state.pontuacao = calcular_similaridade(resposta_usuario, st.session_state.traducao_referencia)
+                    st.session_state.progresso.append({
+                        "data": datetime.now().isoformat(timespec="seconds"),
+                        "modo": "✍️ Traduzir",
+                        "direcao": st.session_state.direcao_atual,
+                        "frase_original": st.session_state.frase_atual,
+                        "resposta_usuario": resposta_usuario,
+                        "traducao_referencia": st.session_state.traducao_referencia,
+                        "similaridade": st.session_state.pontuacao,
+                    })
+                    salvar_progresso(st.session_state.progresso)
+                    st.session_state.registrado = True
+                    st.rerun()
+
+            if st.session_state.revelado and st.session_state.traducao_referencia:
+                st.success(f"**Tradução de referência:** {st.session_state.traducao_referencia}")
+                falar(st.session_state.traducao_referencia, IDIOMA_VOZ[destino_cod], "🔊 Ouvir tradução")
+
+                pontuacao = st.session_state.pontuacao
+                emoji_score = "🟢" if pontuacao >= 80 else "🟡" if pontuacao >= 50 else "🔴"
+                st.metric(f"{emoji_score} Similaridade com a tradução de referência", f"{pontuacao:.0f}%")
+                st.progress(min(int(pontuacao), 100))
+
+            if proxima:
+                sortear_frase(limpar_resposta=True)
                 st.rerun()
 
-        if st.session_state.revelado and st.session_state.traducao_referencia:
-            st.success(f"**Tradução de referência:** {st.session_state.traducao_referencia}")
-            falar(st.session_state.traducao_referencia, IDIOMA_VOZ[destino_cod], "🔊 Ouvir tradução")
+        elif modo_exercicio == "🎧 Ouvir e traduzir":
+            st.subheader("Ouça o áudio e escreva a tradução:")
+            st.caption(f"{origem_label} → {destino_label} · a frase fica escondida até você verificar")
+            falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase (pode repetir)")
 
-            pontuacao = st.session_state.pontuacao
-            if pontuacao >= 80:
-                emoji_score = "🟢"
-            elif pontuacao >= 50:
-                emoji_score = "🟡"
-            else:
-                emoji_score = "🔴"
-            st.metric(f"{emoji_score} Similaridade com a tradução de referência", f"{pontuacao:.0f}%")
-            st.progress(min(int(pontuacao), 100))
+            texto_falado_ouvir = speech_to_text(
+                language=IDIOMA_VOZ[destino_cod],
+                start_prompt="🎤 Falar minha tradução",
+                stop_prompt="⏹️ Parar gravação",
+                just_once=True,
+                use_container_width=True,
+                key="stt_ouvir",
+            )
+            if texto_falado_ouvir:
+                st.session_state["resposta_ouvir"] = texto_falado_ouvir
 
-        if proxima:
-            sortear_frase(limpar_resposta=True)
-            st.rerun()
+            resposta_ouvir = st.text_area("Sua tradução (pelo que você ouviu):", key="resposta_ouvir")
+
+            with st.container(key="linha-botoes"):
+                col1, col2 = st.columns(2)
+                with col1:
+                    verificar = st.button("Verificar", use_container_width=True, key="verificar_ouvir")
+                with col2:
+                    proxima = st.button("Próxima frase", use_container_width=True, key="proxima_ouvir")
+
+            if verificar and st.session_state.frase_atual:
+                origem, destino = st.session_state.direcao_atual.split("->")
+                st.session_state.traducao_referencia = traduzir(st.session_state.frase_atual, origem, destino)
+                st.session_state.revelado = True
+                if not st.session_state.registrado:
+                    st.session_state.pontuacao = calcular_similaridade(resposta_ouvir, st.session_state.traducao_referencia)
+                    st.session_state.progresso.append({
+                        "data": datetime.now().isoformat(timespec="seconds"),
+                        "modo": "🎧 Ouvir e traduzir",
+                        "direcao": st.session_state.direcao_atual,
+                        "frase_original": st.session_state.frase_atual,
+                        "resposta_usuario": resposta_ouvir,
+                        "traducao_referencia": st.session_state.traducao_referencia,
+                        "similaridade": st.session_state.pontuacao,
+                    })
+                    salvar_progresso(st.session_state.progresso)
+                    st.session_state.registrado = True
+                    st.rerun()
+
+            if st.session_state.revelado and st.session_state.traducao_referencia:
+                st.info(f"**Frase original ({origem_label}):** {st.session_state.frase_atual}")
+                st.success(f"**Tradução de referência:** {st.session_state.traducao_referencia}")
+                falar(st.session_state.traducao_referencia, IDIOMA_VOZ[destino_cod], "🔊 Ouvir tradução")
+
+                pontuacao = st.session_state.pontuacao
+                emoji_score = "🟢" if pontuacao >= 80 else "🟡" if pontuacao >= 50 else "🔴"
+                st.metric(f"{emoji_score} Similaridade com a tradução de referência", f"{pontuacao:.0f}%")
+                st.progress(min(int(pontuacao), 100))
+
+            if proxima:
+                sortear_frase(limpar_resposta=True)
+                st.rerun()
+
+        else:
+            st.subheader("Leia a frase abaixo em voz alta:")
+            st.info(f"**{origem_label}**\n\n> {st.session_state.frase_atual}")
+            falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir pronúncia correta")
+
+            texto_falado_leitura = speech_to_text(
+                language=IDIOMA_VOZ[origem_cod],
+                start_prompt="🎤 Falar a frase",
+                stop_prompt="⏹️ Parar gravação",
+                just_once=True,
+                use_container_width=True,
+                key="stt_leitura",
+            )
+            if texto_falado_leitura:
+                st.session_state["leitura_texto"] = texto_falado_leitura
+
+            leitura_texto = st.session_state.get("leitura_texto", "")
+            if leitura_texto:
+                st.caption(f'🎙️ O que foi reconhecido da sua fala: "{leitura_texto}"')
+
+            with st.container(key="linha-botoes"):
+                col1, col2 = st.columns(2)
+                with col1:
+                    verificar = st.button("Verificar leitura", use_container_width=True, key="verificar_leitura")
+                with col2:
+                    proxima = st.button("Próxima frase", use_container_width=True, key="proxima_leitura")
+
+            if verificar and st.session_state.frase_atual:
+                if not leitura_texto:
+                    st.warning("Fale a frase primeiro usando o botão 🎤 Falar a frase antes de verificar.")
+                else:
+                    st.session_state.revelado = True
+                    if not st.session_state.registrado:
+                        st.session_state.pontuacao = calcular_similaridade(leitura_texto, st.session_state.frase_atual)
+                        st.session_state.progresso.append({
+                            "data": datetime.now().isoformat(timespec="seconds"),
+                            "modo": "🗣️ Ler e falar",
+                            "direcao": st.session_state.direcao_atual,
+                            "frase_original": st.session_state.frase_atual,
+                            "resposta_usuario": leitura_texto,
+                            "traducao_referencia": st.session_state.frase_atual,
+                            "similaridade": st.session_state.pontuacao,
+                        })
+                        salvar_progresso(st.session_state.progresso)
+                        st.session_state.registrado = True
+                        st.rerun()
+
+            if st.session_state.revelado:
+                pontuacao = st.session_state.pontuacao
+                emoji_score = "🟢" if pontuacao >= 80 else "🟡" if pontuacao >= 50 else "🔴"
+                st.metric(f"{emoji_score} Precisão da leitura", f"{pontuacao:.0f}%")
+                st.progress(min(int(pontuacao), 100))
+
+            if proxima:
+                sortear_frase(limpar_resposta=True)
+                st.rerun()
 
     else:
         st.subheader("Digite sua frase")
@@ -348,38 +478,44 @@ if pagina == "📖 Praticar":
             for registro in reversed(st.session_state.progresso[-10:]):
                 pct = registro.get("similaridade", 0)
                 emoji = "🟢" if pct >= 80 else "🟡" if pct >= 50 else "🔴"
-                st.write(f"{emoji} {pct:.0f}% · **{registro['frase_original']}** → {registro['traducao_referencia']}")
+                modo_r = registro.get("modo", "✍️ Traduzir")
+                st.write(f"{emoji} {pct:.0f}% · `{modo_r}` · **{registro['frase_original']}** → {registro['traducao_referencia']}")
 
 elif pagina == "📊 Revisão de erros":
     if not st.session_state.progresso:
         st.info("Ainda não há histórico de prática. Pratique algumas frases primeiro.")
     else:
         df = pd.DataFrame(st.session_state.progresso)
+        if "modo" not in df.columns:
+            df["modo"] = "✍️ Traduzir"
+        else:
+            df["modo"] = df["modo"].fillna("✍️ Traduzir")
+
         resumo = (
-            df.groupby("frase_original")["similaridade"]
+            df.groupby(["frase_original", "modo"])["similaridade"]
             .agg(tentativas="count", media="mean", pior="min")
             .reset_index()
             .sort_values("media")
         )
-        ultima_traducao = (
-            df.drop_duplicates("frase_original", keep="last")
-            .set_index("frase_original")["traducao_referencia"]
-        )
-        resumo["traducao"] = resumo["frase_original"].map(ultima_traducao)
+        ultima_traducao = df.drop_duplicates(["frase_original", "modo"], keep="last")[
+            ["frase_original", "modo", "traducao_referencia"]
+        ]
+        resumo = resumo.merge(ultima_traducao, on=["frase_original", "modo"], how="left")
+        resumo = resumo.rename(columns={"traducao_referencia": "traducao"})
 
-        st.caption(f"{len(resumo)} frases distintas praticadas · {len(df)} tentativas no total")
+        st.caption(f"{len(resumo)} combinações de frase+modo praticadas · {len(df)} tentativas no total")
 
-        tabela = resumo[["frase_original", "traducao", "tentativas", "media", "pior"]].copy()
+        tabela = resumo[["frase_original", "modo", "traducao", "tentativas", "media", "pior"]].copy()
         tabela["media"] = tabela["media"].round(0).astype(int)
         tabela["pior"] = tabela["pior"].round(0).astype(int)
-        tabela.columns = ["Frase", "Tradução", "Tentativas", "Média (%)", "Pior (%)"]
+        tabela.columns = ["Frase", "Modo", "Tradução", "Tentativas", "Média (%)", "Pior (%)"]
         st.dataframe(tabela, use_container_width=True, hide_index=True)
 
         piores = resumo[resumo["media"] < 60]
         if not piores.empty:
             st.subheader("🎯 Foco sugerido (média abaixo de 60%)")
             for _, row in piores.iterrows():
-                st.write(f"- **{row['frase_original']}** → {row['traducao']} ({row['media']:.0f}%, {int(row['tentativas'])} tentativa(s))")
+                st.write(f"- `{row['modo']}` **{row['frase_original']}** → {row['traducao']} ({row['media']:.0f}%, {int(row['tentativas'])} tentativa(s))")
             if st.button("🔁 Praticar essas frases agora"):
                 st.session_state.foco_frases = set(piores["frase_original"]) | set(piores["traducao"])
                 st.session_state["_forcar_pagina"] = "📖 Praticar"
