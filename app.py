@@ -93,6 +93,28 @@ if "registrado" not in st.session_state:
 if "pontuacao" not in st.session_state:
     st.session_state.pontuacao = 0.0
 
+st.markdown(
+    """
+    <style>
+    .block-container { padding-top: 4.5rem; padding-bottom: 2rem; }
+    h1 { font-size: 1.4rem !important; margin-bottom: 0.3rem !important; }
+    h2, h3 { font-size: 1.05rem !important; margin-top: 0.2rem !important; margin-bottom: 0.3rem !important; }
+    div[data-testid="stVerticalBlock"] { gap: 0.5rem !important; }
+    hr { margin: 0.6rem 0 !important; }
+    .stButton > button { padding: 0.3rem 0.6rem; }
+    .st-key-linha-botoes div[data-testid="stHorizontalBlock"] {
+        flex-wrap: nowrap !important;
+        gap: 0.5rem !important;
+    }
+    .st-key-linha-botoes div[data-testid="stColumn"] {
+        min-width: 0 !important;
+        width: 100% !important;
+        flex: 1 1 0 !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 st.title("📘 Estudo de Inglês")
 
 with st.sidebar:
@@ -204,13 +226,12 @@ if fonte == "Baralho embutido":
 
     resposta_usuario = st.text_area("Sua tradução:", key="resposta_usuario")
 
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        verificar = st.button("Verificar")
-    with col2:
-        proxima = st.button("Próxima frase")
-    with col3:
-        pass
+    with st.container(key="linha-botoes"):
+        col1, col2 = st.columns(2)
+        with col1:
+            verificar = st.button("Verificar", use_container_width=True)
+        with col2:
+            proxima = st.button("Próxima frase", use_container_width=True)
 
     if verificar and st.session_state.frase_atual:
         origem, destino = st.session_state.direcao_atual.split("->")
