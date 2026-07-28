@@ -184,6 +184,7 @@ with st.sidebar:
         st.session_state["texto_trad"] = texto_falado_trad
 
     texto_trad = st.text_input("Sua palavra ou frase", key="texto_trad")
+    st.button("Traduzir", key="btn_traduzir_trad", use_container_width=True)
 
     if texto_trad.strip():
         traducao_trad = traduzir(texto_trad.strip(), idioma_cod_trad, idioma_alvo_trad)
