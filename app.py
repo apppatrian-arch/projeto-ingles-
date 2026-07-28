@@ -5,6 +5,7 @@ import re
 from datetime import datetime
 from pathlib import Path
 
+import pandas as pd
 import streamlit as st
 import streamlit.components.v1 as components
 from deep_translator import GoogleTranslator
@@ -15,6 +16,7 @@ BARALHO_PATH = BASE_DIR / "baralho.json"
 PROGRESSO_PATH = BASE_DIR / "progresso.json"
 IDIOMA_VOZ = {"pt": "pt-BR", "en": "en-US"}
 CATEGORIAS = ["Geral", "Cotidiano", "Viagem", "Negócios"]
+DIAS_SEMANA = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
 
 st.set_page_config(page_title="Estudo de Inglês", page_icon="📘", layout="centered")
 
@@ -93,6 +95,10 @@ if "registrado" not in st.session_state:
     st.session_state.registrado = False
 if "pontuacao" not in st.session_state:
     st.session_state.pontuacao = 0.0
+if "foco_frases" not in st.session_state:
+    st.session_state.foco_frases = set()
+if "_forcar_pagina" in st.session_state:
+    st.session_state["pagina"] = st.session_state.pop("_forcar_pagina")
 
 st.markdown(
     """
@@ -119,14 +125,28 @@ st.markdown(
 st.title("📘 Estudo de Inglês")
 
 with st.sidebar:
-    st.header("Configurações")
-    direcao_escolhida = st.radio(
-        "Direção da tradução",
-        ["Português → Inglês", "Inglês → Português", "Aleatório"],
-        index=2,
+    pagina = st.radio(
+        "Página",
+        ["📖 Praticar", "📊 Revisão de erros", "🗓️ Meu tempo de uso"],
+        key="pagina",
     )
-    fonte = st.radio("Fonte da frase", ["Baralho embutido", "Digitar minha frase"])
-    categorias_selecionadas = st.multiselect("Categorias do baralho", CATEGORIAS, default=CATEGORIAS)
+
+    st.divider()
+    st.header("Configurações")
+    if pagina == "📖 Praticar":
+        direcao_escolhida = st.radio(
+            "Direção da tradução",
+            ["Português → Inglês", "Inglês → Português", "Aleatório"],
+            index=2,
+        )
+        fonte = st.radio("Fonte da frase", ["Baralho embutido", "Digitar minha frase"])
+        categorias_selecionadas = st.multiselect("Categorias do baralho", CATEGORIAS, default=CATEGORIAS)
+        if st.session_state.foco_frases:
+            st.caption(f"🎯 Modo foco: {len(st.session_state.foco_frases)} frase(s) selecionada(s)")
+            if st.button("Sair do modo foco"):
+                st.session_state.foco_frases = set()
+                st.session_state.frase_atual = None
+                st.rerun()
 
     st.divider()
     st.subheader("Progresso")
@@ -188,10 +208,16 @@ with st.sidebar:
 
 
 def sortear_frase():
+    pool = st.session_state.baralho
+    if st.session_state.foco_frases:
+        pool = [
+            item for item in pool
+            if item["pt"] in st.session_state.foco_frases or item["en"] in st.session_state.foco_frases
+        ] or pool
     candidatos = [
-        item for item in st.session_state.baralho
+        item for item in pool
         if item.get("categoria", "Geral") in categorias_selecionadas
-    ] or st.session_state.baralho
+    ] or pool
     item = random.choice(candidatos)
     if direcao_escolhida == "Português → Inglês":
         direcao = "pt->en"
@@ -209,102 +235,179 @@ def sortear_frase():
     st.session_state.pontuacao = 0.0
 
 
-if fonte == "Baralho embutido":
-    if st.session_state.frase_atual is None:
-        sortear_frase()
+if pagina == "📖 Praticar":
+    if fonte == "Baralho embutido":
+        if st.session_state.frase_atual is None:
+            sortear_frase()
 
-    st.subheader("Traduza a frase abaixo:")
-    origem_label = "Português" if st.session_state.direcao_atual == "pt->en" else "Inglês"
-    destino_label = "Inglês" if st.session_state.direcao_atual == "pt->en" else "Português"
-    origem_cod, destino_cod = st.session_state.direcao_atual.split("->")
-    st.info(f"**{origem_label} → {destino_label}**\n\n> {st.session_state.frase_atual}")
-    falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase original")
+        st.subheader("Traduza a frase abaixo:")
+        origem_label = "Português" if st.session_state.direcao_atual == "pt->en" else "Inglês"
+        destino_label = "Inglês" if st.session_state.direcao_atual == "pt->en" else "Português"
+        origem_cod, destino_cod = st.session_state.direcao_atual.split("->")
+        st.info(f"**{origem_label} → {destino_label}**\n\n> {st.session_state.frase_atual}")
+        falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase original")
 
-    texto_falado = speech_to_text(
-        language=IDIOMA_VOZ[destino_cod],
-        start_prompt="🎤 Falar minha tradução",
-        stop_prompt="⏹️ Parar gravação",
-        just_once=True,
-        use_container_width=True,
-        key="stt_baralho",
-    )
-    if texto_falado:
-        st.session_state["resposta_usuario"] = texto_falado
+        texto_falado = speech_to_text(
+            language=IDIOMA_VOZ[destino_cod],
+            start_prompt="🎤 Falar minha tradução",
+            stop_prompt="⏹️ Parar gravação",
+            just_once=True,
+            use_container_width=True,
+            key="stt_baralho",
+        )
+        if texto_falado:
+            st.session_state["resposta_usuario"] = texto_falado
 
-    resposta_usuario = st.text_area("Sua tradução:", key="resposta_usuario")
+        resposta_usuario = st.text_area("Sua tradução:", key="resposta_usuario")
 
-    with st.container(key="linha-botoes"):
-        col1, col2 = st.columns(2)
-        with col1:
-            verificar = st.button("Verificar", use_container_width=True)
-        with col2:
-            proxima = st.button("Próxima frase", use_container_width=True)
+        with st.container(key="linha-botoes"):
+            col1, col2 = st.columns(2)
+            with col1:
+                verificar = st.button("Verificar", use_container_width=True)
+            with col2:
+                proxima = st.button("Próxima frase", use_container_width=True)
 
-    if verificar and st.session_state.frase_atual:
-        origem, destino = st.session_state.direcao_atual.split("->")
-        st.session_state.traducao_referencia = traduzir(st.session_state.frase_atual, origem, destino)
-        st.session_state.revelado = True
-        if not st.session_state.registrado:
-            st.session_state.pontuacao = calcular_similaridade(resposta_usuario, st.session_state.traducao_referencia)
-            st.session_state.progresso.append({
-                "data": datetime.now().isoformat(timespec="seconds"),
-                "direcao": st.session_state.direcao_atual,
-                "frase_original": st.session_state.frase_atual,
-                "resposta_usuario": resposta_usuario,
-                "traducao_referencia": st.session_state.traducao_referencia,
-                "similaridade": st.session_state.pontuacao,
-            })
-            salvar_progresso(st.session_state.progresso)
-            st.session_state.registrado = True
+        if verificar and st.session_state.frase_atual:
+            origem, destino = st.session_state.direcao_atual.split("->")
+            st.session_state.traducao_referencia = traduzir(st.session_state.frase_atual, origem, destino)
+            st.session_state.revelado = True
+            if not st.session_state.registrado:
+                st.session_state.pontuacao = calcular_similaridade(resposta_usuario, st.session_state.traducao_referencia)
+                st.session_state.progresso.append({
+                    "data": datetime.now().isoformat(timespec="seconds"),
+                    "direcao": st.session_state.direcao_atual,
+                    "frase_original": st.session_state.frase_atual,
+                    "resposta_usuario": resposta_usuario,
+                    "traducao_referencia": st.session_state.traducao_referencia,
+                    "similaridade": st.session_state.pontuacao,
+                })
+                salvar_progresso(st.session_state.progresso)
+                st.session_state.registrado = True
+                st.rerun()
+
+        if st.session_state.revelado and st.session_state.traducao_referencia:
+            st.success(f"**Tradução de referência:** {st.session_state.traducao_referencia}")
+            falar(st.session_state.traducao_referencia, IDIOMA_VOZ[destino_cod], "🔊 Ouvir tradução")
+
+            pontuacao = st.session_state.pontuacao
+            if pontuacao >= 80:
+                emoji_score = "🟢"
+            elif pontuacao >= 50:
+                emoji_score = "🟡"
+            else:
+                emoji_score = "🔴"
+            st.metric(f"{emoji_score} Similaridade com a tradução de referência", f"{pontuacao:.0f}%")
+            st.progress(min(int(pontuacao), 100))
+
+        if proxima:
+            sortear_frase()
             st.rerun()
 
-    if st.session_state.revelado and st.session_state.traducao_referencia:
-        st.success(f"**Tradução de referência:** {st.session_state.traducao_referencia}")
-        falar(st.session_state.traducao_referencia, IDIOMA_VOZ[destino_cod], "🔊 Ouvir tradução")
+    else:
+        st.subheader("Digite sua frase")
+        direcao_manual = st.radio("Traduzir de:", ["Português → Inglês", "Inglês → Português"], horizontal=True)
+        origem_manual = "pt" if direcao_manual == "Português → Inglês" else "en"
+        destino_manual = "en" if direcao_manual == "Português → Inglês" else "pt"
 
-        pontuacao = st.session_state.pontuacao
-        if pontuacao >= 80:
-            emoji_score = "🟢"
-        elif pontuacao >= 50:
-            emoji_score = "🟡"
+        texto_falado_livre = speech_to_text(
+            language=IDIOMA_VOZ[origem_manual],
+            start_prompt="🎤 Falar frase",
+            stop_prompt="⏹️ Parar gravação",
+            just_once=True,
+            use_container_width=True,
+            key="stt_livre",
+        )
+        if texto_falado_livre:
+            st.session_state["texto_livre"] = texto_falado_livre
+
+        texto_livre = st.text_area("Frase (em português ou inglês):", key="texto_livre")
+
+        if st.button("Traduzir"):
+            if texto_livre.strip():
+                resultado = traduzir(texto_livre, origem_manual, destino_manual)
+                st.success(resultado)
+                falar(resultado, IDIOMA_VOZ[destino_manual], "🔊 Ouvir tradução")
+
+    if st.session_state.progresso:
+        st.divider()
+        with st.expander("Histórico recente"):
+            for registro in reversed(st.session_state.progresso[-10:]):
+                pct = registro.get("similaridade", 0)
+                emoji = "🟢" if pct >= 80 else "🟡" if pct >= 50 else "🔴"
+                st.write(f"{emoji} {pct:.0f}% · **{registro['frase_original']}** → {registro['traducao_referencia']}")
+
+elif pagina == "📊 Revisão de erros":
+    if not st.session_state.progresso:
+        st.info("Ainda não há histórico de prática. Pratique algumas frases primeiro.")
+    else:
+        df = pd.DataFrame(st.session_state.progresso)
+        resumo = (
+            df.groupby("frase_original")["similaridade"]
+            .agg(tentativas="count", media="mean", pior="min")
+            .reset_index()
+            .sort_values("media")
+        )
+        ultima_traducao = (
+            df.drop_duplicates("frase_original", keep="last")
+            .set_index("frase_original")["traducao_referencia"]
+        )
+        resumo["traducao"] = resumo["frase_original"].map(ultima_traducao)
+
+        st.caption(f"{len(resumo)} frases distintas praticadas · {len(df)} tentativas no total")
+
+        tabela = resumo[["frase_original", "traducao", "tentativas", "media", "pior"]].copy()
+        tabela["media"] = tabela["media"].round(0).astype(int)
+        tabela["pior"] = tabela["pior"].round(0).astype(int)
+        tabela.columns = ["Frase", "Tradução", "Tentativas", "Média (%)", "Pior (%)"]
+        st.dataframe(tabela, use_container_width=True, hide_index=True)
+
+        piores = resumo[resumo["media"] < 60]
+        if not piores.empty:
+            st.subheader("🎯 Foco sugerido (média abaixo de 60%)")
+            for _, row in piores.iterrows():
+                st.write(f"- **{row['frase_original']}** → {row['traducao']} ({row['media']:.0f}%, {int(row['tentativas'])} tentativa(s))")
+            if st.button("🔁 Praticar essas frases agora"):
+                st.session_state.foco_frases = set(piores["frase_original"]) | set(piores["traducao"])
+                st.session_state["_forcar_pagina"] = "📖 Praticar"
+                st.session_state.frase_atual = None
+                st.rerun()
         else:
-            emoji_score = "🔴"
-        st.metric(f"{emoji_score} Similaridade com a tradução de referência", f"{pontuacao:.0f}%")
-        st.progress(min(int(pontuacao), 100))
-
-    if proxima:
-        sortear_frase()
-        st.rerun()
+            st.success("Nenhuma frase com média abaixo de 60% — bom trabalho!")
 
 else:
-    st.subheader("Digite sua frase")
-    direcao_manual = st.radio("Traduzir de:", ["Português → Inglês", "Inglês → Português"], horizontal=True)
-    origem_manual = "pt" if direcao_manual == "Português → Inglês" else "en"
-    destino_manual = "en" if direcao_manual == "Português → Inglês" else "pt"
+    if not st.session_state.progresso:
+        st.info("Ainda não há histórico de prática. Pratique algumas frases primeiro.")
+    else:
+        df = pd.DataFrame(st.session_state.progresso)
+        df["data_hora"] = pd.to_datetime(df["data"])
+        df["dia"] = df["data_hora"].dt.date
+        df["dia_semana"] = df["data_hora"].dt.dayofweek.map(lambda i: DIAS_SEMANA[i])
+        df["mes"] = df["data_hora"].dt.to_period("M").astype(str)
+        df["ano"] = df["data_hora"].dt.year
 
-    texto_falado_livre = speech_to_text(
-        language=IDIOMA_VOZ[origem_manual],
-        start_prompt="🎤 Falar frase",
-        stop_prompt="⏹️ Parar gravação",
-        just_once=True,
-        use_container_width=True,
-        key="stt_livre",
-    )
-    if texto_falado_livre:
-        st.session_state["texto_livre"] = texto_falado_livre
+        dias_unicos = sorted(df["dia"].unique())
+        melhor_streak = streak = 1
+        for i in range(1, len(dias_unicos)):
+            if (dias_unicos[i] - dias_unicos[i - 1]).days == 1:
+                streak += 1
+            else:
+                streak = 1
+            melhor_streak = max(melhor_streak, streak)
 
-    texto_livre = st.text_area("Frase (em português ou inglês):", key="texto_livre")
+        col1, col2, col3 = st.columns(3)
+        col1.metric("Dias praticados", len(dias_unicos))
+        col2.metric("Tentativas totais", len(df))
+        col3.metric("Sequência mais longa", f"{melhor_streak} dia(s)")
 
-    if st.button("Traduzir"):
-        if texto_livre.strip():
-            resultado = traduzir(texto_livre, origem_manual, destino_manual)
-            st.success(resultado)
-            falar(resultado, IDIOMA_VOZ[destino_manual], "🔊 Ouvir tradução")
+        st.subheader("Atividade por dia da semana")
+        por_dia_semana = df.groupby("dia_semana").size().reindex(DIAS_SEMANA, fill_value=0)
+        st.bar_chart(por_dia_semana)
 
-if st.session_state.progresso:
-    st.divider()
-    with st.expander("Histórico recente"):
-        for registro in reversed(st.session_state.progresso[-10:]):
-            pct = registro.get("similaridade", 0)
-            emoji = "🟢" if pct >= 80 else "🟡" if pct >= 50 else "🔴"
-            st.write(f"{emoji} {pct:.0f}% · **{registro['frase_original']}** → {registro['traducao_referencia']}")
+        st.subheader("Atividade por mês")
+        st.bar_chart(df.groupby("mes").size())
+
+        st.subheader("Atividade por ano")
+        st.bar_chart(df.groupby("ano").size())
+
+        st.subheader("Linha do tempo (por dia)")
+        st.line_chart(df.groupby("dia").size())
