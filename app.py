@@ -79,6 +79,13 @@ def calcular_similaridade(resposta, referencia):
     return difflib.SequenceMatcher(None, a, b).ratio() * 100
 
 
+def formatar_minutos(minutos):
+    minutos = int(round(minutos))
+    if minutos < 60:
+        return f"{minutos} min"
+    return f"{minutos // 60}h {minutos % 60:02d}min"
+
+
 if "baralho" not in st.session_state:
     st.session_state.baralho = carregar_baralho()
 if "progresso" not in st.session_state:
@@ -378,12 +385,18 @@ else:
     if not st.session_state.progresso:
         st.info("Ainda não há histórico de prática. Pratique algumas frases primeiro.")
     else:
+        LIMITE_MINUTOS = 10  # intervalos maiores que isso viram pausa, não contam como uso contínuo
+
         df = pd.DataFrame(st.session_state.progresso)
         df["data_hora"] = pd.to_datetime(df["data"])
+        df = df.sort_values("data_hora").reset_index(drop=True)
         df["dia"] = df["data_hora"].dt.date
         df["dia_semana"] = df["data_hora"].dt.dayofweek.map(lambda i: DIAS_SEMANA[i])
         df["mes"] = df["data_hora"].dt.to_period("M").astype(str)
         df["ano"] = df["data_hora"].dt.year
+
+        intervalo_min = df["data_hora"].diff().dt.total_seconds().div(60)
+        df["minutos_ativos"] = intervalo_min.clip(upper=LIMITE_MINUTOS).fillna(0)
 
         dias_unicos = sorted(df["dia"].unique())
         melhor_streak = streak = 1
@@ -394,20 +407,35 @@ else:
                 streak = 1
             melhor_streak = max(melhor_streak, streak)
 
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3, col4 = st.columns(4)
         col1.metric("Dias praticados", len(dias_unicos))
         col2.metric("Tentativas totais", len(df))
         col3.metric("Sequência mais longa", f"{melhor_streak} dia(s)")
+        col4.metric("⏱️ Tempo ativo estimado", formatar_minutos(df["minutos_ativos"].sum()))
+        st.caption(
+            f"Estimativa: soma dos intervalos entre tentativas, limitando cada intervalo a "
+            f"{LIMITE_MINUTOS} min para não contar pausas longas como uso."
+        )
 
         st.subheader("Atividade por dia da semana")
         por_dia_semana = df.groupby("dia_semana").size().reindex(DIAS_SEMANA, fill_value=0)
         st.bar_chart(por_dia_semana)
 
+        st.subheader("Minutos ativos por dia da semana")
+        min_dia_semana = df.groupby("dia_semana")["minutos_ativos"].sum().reindex(DIAS_SEMANA, fill_value=0)
+        st.bar_chart(min_dia_semana)
+
         st.subheader("Atividade por mês")
         st.bar_chart(df.groupby("mes").size())
 
+        st.subheader("Minutos ativos por mês")
+        st.bar_chart(df.groupby("mes")["minutos_ativos"].sum())
+
         st.subheader("Atividade por ano")
         st.bar_chart(df.groupby("ano").size())
+
+        st.subheader("Minutos ativos por ano")
+        st.bar_chart(df.groupby("ano")["minutos_ativos"].sum())
 
         st.subheader("Linha do tempo (por dia)")
         st.line_chart(df.groupby("dia").size())
