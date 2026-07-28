@@ -531,6 +531,10 @@ else:
         LIMITE_MINUTOS = 10  # intervalos maiores que isso viram pausa, não contam como uso contínuo
 
         df = pd.DataFrame(st.session_state.progresso)
+        if "modo" not in df.columns:
+            df["modo"] = "✍️ Traduzir"
+        else:
+            df["modo"] = df["modo"].fillna("✍️ Traduzir")
         df["data_hora"] = pd.to_datetime(df["data"])
         df = df.sort_values("data_hora").reset_index(drop=True)
         df["dia"] = df["data_hora"].dt.date
@@ -559,6 +563,13 @@ else:
             f"Estimativa: soma dos intervalos entre tentativas, limitando cada intervalo a "
             f"{LIMITE_MINUTOS} min para não contar pausas longas como uso."
         )
+
+        st.subheader("Tentativas por modo de exercício")
+        st.caption("Inclui tradução escrita, escuta (Ouvir e traduzir) e fala (Ler e falar).")
+        st.bar_chart(df.groupby("modo").size())
+
+        st.subheader("Minutos ativos por modo de exercício")
+        st.bar_chart(df.groupby("modo")["minutos_ativos"].sum())
 
         st.subheader("Atividade por dia da semana")
         por_dia_semana = df.groupby("dia_semana").size().reindex(DIAS_SEMANA, fill_value=0)
