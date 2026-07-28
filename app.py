@@ -106,6 +106,8 @@ if "foco_frases" not in st.session_state:
     st.session_state.foco_frases = set()
 if "_forcar_pagina" in st.session_state:
     st.session_state["pagina"] = st.session_state.pop("_forcar_pagina")
+if st.session_state.pop("_limpar_resposta", False):
+    st.session_state["resposta_usuario"] = ""
 
 st.markdown(
     """
@@ -241,6 +243,7 @@ def sortear_frase():
     st.session_state.traducao_referencia = ""
     st.session_state.registrado = False
     st.session_state.pontuacao = 0.0
+    st.session_state["_limpar_resposta"] = True
 
 
 if pagina == "📖 Praticar":
