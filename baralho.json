@@ -1,130 +1,377 @@
 [
   {
     "pt": "Bom dia, como você está?",
-    "en": "Good morning, how are you?"
+    "en": "Good morning, how are you?",
+    "categoria": "Geral"
   },
   {
     "pt": "Eu preciso terminar este relatório hoje.",
-    "en": "I need to finish this report today."
+    "en": "I need to finish this report today.",
+    "categoria": "Geral"
   },
   {
     "pt": "Você pode me ajudar com isso?",
-    "en": "Can you help me with this?"
+    "en": "Can you help me with this?",
+    "categoria": "Geral"
   },
   {
     "pt": "Qual é o horário da reunião?",
-    "en": "What time is the meeting?"
+    "en": "What time is the meeting?",
+    "categoria": "Geral"
   },
   {
     "pt": "Estou aprendendo inglês todos os dias.",
-    "en": "I am learning English every day."
+    "en": "I am learning English every day.",
+    "categoria": "Geral"
   },
   {
     "pt": "Onde fica o banheiro mais próximo?",
-    "en": "Where is the nearest bathroom?"
+    "en": "Where is the nearest bathroom?",
+    "categoria": "Geral"
   },
   {
     "pt": "Eu gostaria de fazer um pedido.",
-    "en": "I would like to place an order."
+    "en": "I would like to place an order.",
+    "categoria": "Geral"
   },
   {
     "pt": "Ela trabalha em uma empresa de tecnologia.",
-    "en": "She works at a technology company."
+    "en": "She works at a technology company.",
+    "categoria": "Geral"
   },
   {
     "pt": "Vamos almoçar juntos amanhã?",
-    "en": "Shall we have lunch together tomorrow?"
+    "en": "Shall we have lunch together tomorrow?",
+    "categoria": "Geral"
   },
   {
     "pt": "Isso não faz sentido para mim.",
-    "en": "This doesn't make sense to me."
+    "en": "This doesn't make sense to me.",
+    "categoria": "Geral"
   },
   {
     "pt": "Quanto custa esse produto?",
-    "en": "How much does this product cost?"
+    "en": "How much does this product cost?",
+    "categoria": "Geral"
   },
   {
     "pt": "Preciso enviar esse e-mail até o fim do dia.",
-    "en": "I need to send this email by the end of the day."
+    "en": "I need to send this email by the end of the day.",
+    "categoria": "Geral"
   },
   {
     "pt": "Você já viu esse filme?",
-    "en": "Have you seen this movie?"
+    "en": "Have you seen this movie?",
+    "categoria": "Geral"
   },
   {
     "pt": "Estamos com atraso na entrega.",
-    "en": "We are behind on the delivery."
+    "en": "We are behind on the delivery.",
+    "categoria": "Geral"
   },
   {
     "pt": "Qual é a sua opinião sobre isso?",
-    "en": "What is your opinion about this?"
+    "en": "What is your opinion about this?",
+    "categoria": "Geral"
   },
   {
     "pt": "Eu acordo cedo todos os dias.",
-    "en": "I wake up early every day."
+    "en": "I wake up early every day.",
+    "categoria": "Geral"
   },
   {
     "pt": "Podemos remarcar a reunião para sexta-feira?",
-    "en": "Can we reschedule the meeting for Friday?"
+    "en": "Can we reschedule the meeting for Friday?",
+    "categoria": "Geral"
   },
   {
     "pt": "Ele está viajando a trabalho essa semana.",
-    "en": "He is traveling for work this week."
+    "en": "He is traveling for work this week.",
+    "categoria": "Geral"
   },
   {
     "pt": "Essa é a melhor opção disponível.",
-    "en": "This is the best option available."
+    "en": "This is the best option available.",
+    "categoria": "Geral"
   },
   {
     "pt": "Obrigado por sua ajuda ontem.",
-    "en": "Thank you for your help yesterday."
+    "en": "Thank you for your help yesterday.",
+    "categoria": "Geral"
   },
   {
     "pt": "Estou orgulhoso de você",
-    "en": "I am proud of you"
-  },
-  {
-    "pt": "tudo bem com voce?",
-    "en": "how are you?"
+    "en": "I am proud of you",
+    "categoria": "Geral"
   },
   {
     "pt": "tudo bem com você?",
-    "en": "how are you?"
+    "en": "how are you?",
+    "categoria": "Geral"
   },
   {
     "pt": "como vai você?",
-    "en": "how are you doing?"
+    "en": "how are you doing?",
+    "categoria": "Geral"
   },
   {
     "pt": "me mandaram aqui",
-    "en": "they sent me here"
+    "en": "they sent me here",
+    "categoria": "Geral"
   },
   {
     "pt": "manha",
-    "en": "morning"
+    "en": "morning",
+    "categoria": "Geral"
   },
   {
     "pt": "levantar",
-    "en": "lift"
+    "en": "lift",
+    "categoria": "Geral"
   },
   {
     "pt": "levantar cedo",
-    "en": "get up early"
-  },
-  {
-    "pt": "me mandaram aqui",
-    "en": "they sent me here"
+    "en": "get up early",
+    "categoria": "Geral"
   },
   {
     "pt": "ontem",
-    "en": "yesterday"
+    "en": "yesterday",
+    "categoria": "Geral"
   },
   {
     "pt": "terminar",
-    "en": "finish"
+    "en": "finish",
+    "categoria": "Geral"
   },
   {
     "pt": "qual",
-    "en": "which"
+    "en": "which",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Que horas são?",
+    "en": "What time is it?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou com fome.",
+    "en": "I'm hungry.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou cansado hoje.",
+    "en": "I'm tired today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode repetir, por favor?",
+    "en": "Can you repeat that, please?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Não entendi.",
+    "en": "I didn't understand.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Com licença.",
+    "en": "Excuse me.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Desculpe o atraso.",
+    "en": "Sorry for being late.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Vejo você mais tarde.",
+    "en": "See you later.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Tenha um bom dia.",
+    "en": "Have a good day.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Preciso ir ao mercado.",
+    "en": "I need to go to the grocery store.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Está chovendo lá fora.",
+    "en": "It's raining outside.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Qual é o seu nome?",
+    "en": "What is your name?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Prazer em conhecê-lo.",
+    "en": "Nice to meet you.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou ocupado agora.",
+    "en": "I'm busy right now.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Pode me dar uma carona?",
+    "en": "Can you give me a ride?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica o aeroporto?",
+    "en": "Where is the airport?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Quanto custa a passagem?",
+    "en": "How much is the ticket?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu perdi minha mala.",
+    "en": "I lost my luggage.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Qual é o portão de embarque?",
+    "en": "What is the boarding gate?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você pode me indicar um bom hotel?",
+    "en": "Can you recommend a good hotel?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu gostaria de reservar um quarto.",
+    "en": "I would like to book a room.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "O check-in é a que horas?",
+    "en": "What time is check-in?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Como chego ao centro da cidade?",
+    "en": "How do I get to downtown?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Preciso trocar dinheiro.",
+    "en": "I need to exchange money.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Existe Wi-Fi grátis aqui?",
+    "en": "Is there free Wi-Fi here?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Qual é a senha do Wi-Fi?",
+    "en": "What is the Wi-Fi password?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu queria alugar um carro.",
+    "en": "I would like to rent a car.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Meu voo foi cancelado.",
+    "en": "My flight was cancelled.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde posso pegar um táxi?",
+    "en": "Where can I catch a taxi?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você fala português?",
+    "en": "Do you speak Portuguese?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Podemos agendar uma reunião?",
+    "en": "Can we schedule a meeting?",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vou enviar o contrato por e-mail.",
+    "en": "I will send the contract by email.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos revisar o orçamento.",
+    "en": "We need to review the budget.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Qual é o prazo de entrega?",
+    "en": "What is the delivery deadline?",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "A proposta foi aprovada.",
+    "en": "The proposal was approved.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos fechar negócio.",
+    "en": "Let's close the deal.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos aumentar as vendas este trimestre.",
+    "en": "We need to increase sales this quarter.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Qual é o seu cargo na empresa?",
+    "en": "What is your position at the company?",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "A reunião foi produtiva.",
+    "en": "The meeting was productive.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vou apresentar os resultados amanhã.",
+    "en": "I will present the results tomorrow.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos negociar o preço.",
+    "en": "We need to negotiate the price.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "O cliente está satisfeito com o serviço.",
+    "en": "The client is satisfied with the service.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Qual é a sua disponibilidade essa semana?",
+    "en": "What is your availability this week?",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos assinar o contrato amanhã.",
+    "en": "We will sign the contract tomorrow.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos cortar custos.",
+    "en": "We need to cut costs.",
+    "categoria": "Negócios"
   }
 ]

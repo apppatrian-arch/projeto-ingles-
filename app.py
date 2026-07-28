@@ -14,6 +14,7 @@ BASE_DIR = Path(__file__).parent
 BARALHO_PATH = BASE_DIR / "baralho.json"
 PROGRESSO_PATH = BASE_DIR / "progresso.json"
 IDIOMA_VOZ = {"pt": "pt-BR", "en": "en-US"}
+CATEGORIAS = ["Geral", "Cotidiano", "Viagem", "Negócios"]
 
 st.set_page_config(page_title="Estudo de Inglês", page_icon="📘", layout="centered")
 
@@ -125,6 +126,7 @@ with st.sidebar:
         index=2,
     )
     fonte = st.radio("Fonte da frase", ["Baralho embutido", "Digitar minha frase"])
+    categorias_selecionadas = st.multiselect("Categorias do baralho", CATEGORIAS, default=CATEGORIAS)
 
     st.divider()
     st.subheader("Progresso")
@@ -171,6 +173,7 @@ with st.sidebar:
     idioma_cod_deck = "pt" if idioma_deck == "Português" else "en"
     idioma_alvo_deck = "en" if idioma_cod_deck == "pt" else "pt"
     frase_deck = st.text_input("Sua palavra ou frase", key="frase_deck")
+    categoria_deck = st.selectbox("Categoria", CATEGORIAS, key="categoria_deck")
 
     if st.button("Adicionar"):
         if frase_deck.strip():
@@ -179,13 +182,17 @@ with st.sidebar:
                 pt_deck, en_deck = frase_deck.strip(), traducao_deck
             else:
                 en_deck, pt_deck = frase_deck.strip(), traducao_deck
-            st.session_state.baralho.append({"pt": pt_deck, "en": en_deck})
+            st.session_state.baralho.append({"pt": pt_deck, "en": en_deck, "categoria": categoria_deck})
             salvar_baralho(st.session_state.baralho)
-            st.success(f"Adicionada! 🇧🇷 {pt_deck}  ·  🇺🇸 {en_deck}")
+            st.success(f"Adicionada em {categoria_deck}! 🇧🇷 {pt_deck}  ·  🇺🇸 {en_deck}")
 
 
 def sortear_frase():
-    item = random.choice(st.session_state.baralho)
+    candidatos = [
+        item for item in st.session_state.baralho
+        if item.get("categoria", "Geral") in categorias_selecionadas
+    ] or st.session_state.baralho
+    item = random.choice(candidatos)
     if direcao_escolhida == "Português → Inglês":
         direcao = "pt->en"
     elif direcao_escolhida == "Inglês → Português":
