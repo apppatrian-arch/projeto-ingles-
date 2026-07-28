@@ -247,11 +247,10 @@ if pagina == "📖 Praticar":
         if st.session_state.frase_atual is None:
             sortear_frase()
 
-        st.subheader("Traduza a frase abaixo:")
         origem_label = "Português" if st.session_state.direcao_atual == "pt->en" else "Inglês"
         destino_label = "Inglês" if st.session_state.direcao_atual == "pt->en" else "Português"
         origem_cod, destino_cod = st.session_state.direcao_atual.split("->")
-        st.info(f"**{origem_label} → {destino_label}**\n\n> {st.session_state.frase_atual}")
+
         falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase original")
 
         texto_falado = speech_to_text(
@@ -264,6 +263,9 @@ if pagina == "📖 Praticar":
         )
         if texto_falado:
             st.session_state["resposta_usuario"] = texto_falado
+
+        st.subheader("Traduza a frase abaixo:")
+        st.info(f"**{origem_label} → {destino_label}**\n\n> {st.session_state.frase_atual}")
 
         resposta_usuario = st.text_area("Sua tradução:", key="resposta_usuario")
 
