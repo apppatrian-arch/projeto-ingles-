@@ -15,7 +15,7 @@ BASE_DIR = Path(__file__).parent
 BARALHO_PATH = BASE_DIR / "baralho.json"
 PROGRESSO_PATH = BASE_DIR / "progresso.json"
 IDIOMA_VOZ = {"pt": "pt-BR", "en": "en-US"}
-CATEGORIAS = ["Geral", "Cotidiano", "Viagem", "Negócios"]
+CATEGORIAS = ["Geral", "Cotidiano", "Viagem", "Negócios", "🎵 Música"]
 DIAS_SEMANA = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
 
 st.set_page_config(page_title="Estudo de Inglês", page_icon="📘", layout="centered")
@@ -138,7 +138,7 @@ st.title("📘 Estudo de Inglês")
 with st.sidebar:
     pagina = st.radio(
         "Página",
-        ["📖 Praticar", "📊 Revisão de erros", "🗓️ Meu tempo de uso"],
+        ["📖 Praticar", "🎵 Música", "📊 Revisão de erros", "🗓️ Meu tempo de uso"],
         key="pagina",
     )
 
@@ -480,6 +480,64 @@ if pagina == "📖 Praticar":
                 emoji = "🟢" if pct >= 80 else "🟡" if pct >= 50 else "🔴"
                 modo_r = registro.get("modo", "✍️ Traduzir")
                 st.write(f"{emoji} {pct:.0f}% · `{modo_r}` · **{registro['frase_original']}** → {registro['traducao_referencia']}")
+
+elif pagina == "🎵 Música":
+    st.subheader("🎵 Pratique com uma música")
+    st.caption(
+        "Cole o link de um vídeo do YouTube para tocar aqui (player oficial, sem baixar nada). "
+        "Pause quando quiser, digite a linha que você ouviu e treine a tradução. "
+        "Não busco nem armazeno letras automaticamente — direitos autorais."
+    )
+    link_youtube = st.text_input("Link do YouTube", key="link_youtube")
+    if link_youtube.strip():
+        try:
+            st.video(link_youtube.strip())
+        except Exception:
+            st.error("Não consegui carregar esse link. Confira se é uma URL válida do YouTube.")
+
+    st.divider()
+    st.subheader("Traduza uma linha que você ouviu")
+    linha_musica = st.text_area("Digite a linha (no idioma original):", key="linha_musica")
+    idioma_musica = st.radio("Essa linha está em:", ["Inglês", "Português"], horizontal=True, key="idioma_musica")
+    idioma_cod_musica = "en" if idioma_musica == "Inglês" else "pt"
+    idioma_alvo_musica = "pt" if idioma_cod_musica == "en" else "en"
+
+    resposta_musica = st.text_area("Sua tradução:", key="resposta_musica")
+
+    if st.button("Verificar tradução", key="verificar_musica"):
+        if linha_musica.strip() and resposta_musica.strip():
+            referencia_musica = traduzir(linha_musica.strip(), idioma_cod_musica, idioma_alvo_musica)
+            pontuacao_musica = calcular_similaridade(resposta_musica, referencia_musica)
+            st.session_state["_musica_referencia"] = referencia_musica
+            st.session_state["_musica_pontuacao"] = pontuacao_musica
+            st.session_state.progresso.append({
+                "data": datetime.now().isoformat(timespec="seconds"),
+                "modo": "🎵 Música",
+                "direcao": f"{idioma_cod_musica}->{idioma_alvo_musica}",
+                "frase_original": linha_musica.strip(),
+                "resposta_usuario": resposta_musica,
+                "traducao_referencia": referencia_musica,
+                "similaridade": pontuacao_musica,
+            })
+            salvar_progresso(st.session_state.progresso)
+        else:
+            st.warning("Digite a linha original e sua tradução antes de verificar.")
+
+    if st.session_state.get("_musica_referencia"):
+        st.success(f"**Tradução de referência:** {st.session_state['_musica_referencia']}")
+        pontuacao_musica = st.session_state.get("_musica_pontuacao", 0)
+        emoji_score = "🟢" if pontuacao_musica >= 80 else "🟡" if pontuacao_musica >= 50 else "🔴"
+        st.metric(f"{emoji_score} Similaridade com a tradução de referência", f"{pontuacao_musica:.0f}%")
+        st.progress(min(int(pontuacao_musica), 100))
+
+        if st.button("➕ Salvar esta linha no baralho (categoria Música)"):
+            if idioma_cod_musica == "pt":
+                pt_m, en_m = linha_musica.strip(), st.session_state["_musica_referencia"]
+            else:
+                en_m, pt_m = linha_musica.strip(), st.session_state["_musica_referencia"]
+            st.session_state.baralho.append({"pt": pt_m, "en": en_m, "categoria": "🎵 Música"})
+            salvar_baralho(st.session_state.baralho)
+            st.success("Linha salva no baralho! Ela aparece no sorteio quando a categoria 'Música' estiver marcada.")
 
 elif pagina == "📊 Revisão de erros":
     if not st.session_state.progresso:
