@@ -79,6 +79,33 @@ def calcular_similaridade(resposta, referencia):
     return difflib.SequenceMatcher(None, a, b).ratio() * 100
 
 
+YOUTUBE_ID_RE = re.compile(
+    r"(?:youtube(?:-nocookie)?\.com/(?:watch\?v=|embed/|v/|shorts/)|youtu\.be/)([\w-]{11})"
+)
+
+
+def extrair_id_youtube(url):
+    m = YOUTUBE_ID_RE.search(url)
+    return m.group(1) if m else None
+
+
+def embutir_youtube(url, altura=360):
+    video_id = extrair_id_youtube(url)
+    if not video_id:
+        st.error("Não consegui identificar esse link como um vídeo do YouTube.")
+        return
+    embed_url = f"https://www.youtube.com/embed/{video_id}?cc_load_policy=1&cc_lang_pref=en&hl=pt&rel=0"
+    components.html(
+        f"""
+        <iframe width="100%" height="{altura}" src="{embed_url}"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen style="border-radius:8px;"></iframe>
+        """,
+        height=altura + 10,
+    )
+
+
 def formatar_minutos(minutos):
     minutos = int(round(minutos))
     if minutos < 60:
@@ -490,10 +517,12 @@ elif pagina == "🎵 Música":
     )
     link_youtube = st.text_input("Link do YouTube", key="link_youtube")
     if link_youtube.strip():
-        try:
-            st.video(link_youtube.strip())
-        except Exception:
-            st.error("Não consegui carregar esse link. Confira se é uma URL válida do YouTube.")
+        embutir_youtube(link_youtube.strip())
+        st.caption(
+            "Ativei a legenda (CC) por padrão, se o vídeo tiver uma disponível. Se o botão CC "
+            "aparecer apagado, esse vídeo específico não tem legenda cadastrada no YouTube — "
+            "isso é uma limitação do próprio vídeo, não do app."
+        )
 
     video_atual = link_youtube.strip()
     historico_video = [
