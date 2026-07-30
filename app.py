@@ -578,6 +578,7 @@ elif pagina == "🎵 Música":
                 "data": datetime.now().isoformat(timespec="seconds"),
             })
             salvar_musicas(st.session_state.musicas)
+            st.toast("✅ Música salva no histórico!")
 
     video_atual = link_youtube.strip()
     historico_video = [
