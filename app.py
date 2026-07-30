@@ -6,6 +6,7 @@ from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
+import requests
 import streamlit as st
 import streamlit.components.v1 as components
 from deep_translator import GoogleTranslator
@@ -14,6 +15,7 @@ from streamlit_mic_recorder import speech_to_text
 BASE_DIR = Path(__file__).parent
 BARALHO_PATH = BASE_DIR / "baralho.json"
 PROGRESSO_PATH = BASE_DIR / "progresso.json"
+MUSICAS_PATH = BASE_DIR / "musicas.json"
 IDIOMA_VOZ = {"pt": "pt-BR", "en": "en-US"}
 CATEGORIAS = ["Geral", "Cotidiano", "Viagem", "Negócios", "🎵 Música"]
 DIAS_SEMANA = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
@@ -59,6 +61,33 @@ def carregar_progresso():
 def salvar_progresso(registros):
     with open(PROGRESSO_PATH, "w", encoding="utf-8") as f:
         json.dump(registros, f, ensure_ascii=False, indent=2)
+
+
+def carregar_musicas():
+    if MUSICAS_PATH.exists():
+        with open(MUSICAS_PATH, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return []
+
+
+def salvar_musicas(musicas):
+    with open(MUSICAS_PATH, "w", encoding="utf-8") as f:
+        json.dump(musicas, f, ensure_ascii=False, indent=2)
+
+
+@st.cache_data(show_spinner=False, ttl=86400)
+def obter_titulo_youtube(url):
+    try:
+        resp = requests.get(
+            "https://www.youtube.com/oembed",
+            params={"url": url, "format": "json"},
+            timeout=5,
+        )
+        if resp.ok:
+            return resp.json().get("title")
+    except requests.RequestException:
+        pass
+    return None
 
 
 def traduzir(texto, origem, destino):
@@ -131,6 +160,8 @@ if "pontuacao" not in st.session_state:
     st.session_state.pontuacao = 0.0
 if "foco_frases" not in st.session_state:
     st.session_state.foco_frases = set()
+if "musicas" not in st.session_state:
+    st.session_state.musicas = carregar_musicas()
 if "_forcar_pagina" in st.session_state:
     st.session_state["pagina"] = st.session_state.pop("_forcar_pagina")
 if st.session_state.pop("_limpar_resposta", False):
@@ -156,6 +187,7 @@ st.markdown(
         width: 100% !important;
         flex: 1 1 0 !important;
     }
+    .st-key-par-musica div[data-testid="stVerticalBlock"] { gap: 0.2rem !important; }
     </style>
     """,
     unsafe_allow_html=True,
@@ -515,6 +547,22 @@ elif pagina == "🎵 Música":
         "próprio vídeo, digite a linha que ouviu e treine a tradução. Não busco nem armazeno "
         "letras automaticamente — direitos autorais."
     )
+    if st.session_state.musicas:
+        opcoes = ["— nova música —"] + [m["url"] for m in reversed(st.session_state.musicas)]
+        rotulos = {"— nova música —": "— nova música —"}
+        for m in st.session_state.musicas:
+            titulo = obter_titulo_youtube(m["url"])
+            rotulos[m["url"]] = titulo if titulo else m["url"]
+
+        escolha = st.selectbox(
+            "🕘 Músicas recentes",
+            opcoes,
+            format_func=lambda u: rotulos.get(u, u),
+            key="escolha_musica",
+        )
+        if escolha != "— nova música —" and escolha != st.session_state.get("link_youtube", ""):
+            st.session_state["link_youtube"] = escolha
+
     link_youtube = st.text_input("Link do YouTube", key="link_youtube")
     if link_youtube.strip():
         embutir_youtube(link_youtube.strip())
@@ -523,6 +571,13 @@ elif pagina == "🎵 Música":
             "aparecer apagado, esse vídeo específico não tem legenda cadastrada no YouTube — "
             "isso é uma limitação do próprio vídeo, não do app."
         )
+        urls_salvas = [m["url"] for m in st.session_state.musicas]
+        if link_youtube.strip() not in urls_salvas:
+            st.session_state.musicas.append({
+                "url": link_youtube.strip(),
+                "data": datetime.now().isoformat(timespec="seconds"),
+            })
+            salvar_musicas(st.session_state.musicas)
 
     video_atual = link_youtube.strip()
     historico_video = [
@@ -535,23 +590,22 @@ elif pagina == "🎵 Música":
     if st.session_state.get("_pausei_musica"):
         st.caption("🎯 Beleza! Digite abaixo a linha que você acabou de ouvir.")
 
-    colm1, colm2 = st.columns([3, 1])
-    with colm1:
-        linha_musica = st.text_input("Linha que você ouviu (idioma original):", key="linha_musica")
-    with colm2:
-        idioma_musica = st.radio("Idioma", ["Inglês", "Português"], key="idioma_musica")
+    idioma_musica = st.radio("Essa linha está em:", ["Inglês", "Português"], horizontal=True, key="idioma_musica")
     idioma_cod_musica = "en" if idioma_musica == "Inglês" else "pt"
     idioma_alvo_musica = "pt" if idioma_cod_musica == "en" else "en"
 
-    if linha_musica.strip() and historico_video:
-        repetida = next(
-            (r for r in historico_video if r["frase_original"].strip().lower() == linha_musica.strip().lower()),
-            None,
-        )
-        if repetida:
-            st.caption(f"↩️ Você já traduziu essa linha antes: {repetida['similaridade']:.0f}%")
+    with st.container(key="par-musica"):
+        linha_musica = st.text_input("Linha que você ouviu (idioma original):", key="linha_musica")
 
-    resposta_musica = st.text_input("Sua tradução:", key="resposta_musica")
+        if linha_musica.strip() and historico_video:
+            repetida = next(
+                (r for r in historico_video if r["frase_original"].strip().lower() == linha_musica.strip().lower()),
+                None,
+            )
+            if repetida:
+                st.caption(f"↩️ Você já traduziu essa linha antes: {repetida['similaridade']:.0f}%")
+
+        resposta_musica = st.text_input("Sua tradução:", key="resposta_musica")
 
     if st.button("Verificar tradução", key="verificar_musica", use_container_width=True):
         if linha_musica.strip() and resposta_musica.strip():
