@@ -484,9 +484,9 @@ if pagina == "📖 Praticar":
 elif pagina == "🎵 Música":
     st.subheader("🎵 Pratique com uma música")
     st.caption(
-        "Cole o link de um vídeo do YouTube para tocar aqui (player oficial, sem baixar nada). "
-        "Pause quando quiser, digite a linha que você ouviu e treine a tradução. "
-        "Não busco nem armazeno letras automaticamente — direitos autorais."
+        "Cole o link do YouTube (player oficial, sem baixar nada). Pause com os controles do "
+        "próprio vídeo, digite a linha que ouviu e treine a tradução. Não busco nem armazeno "
+        "letras automaticamente — direitos autorais."
     )
     link_youtube = st.text_input("Link do YouTube", key="link_youtube")
     if link_youtube.strip():
@@ -495,24 +495,46 @@ elif pagina == "🎵 Música":
         except Exception:
             st.error("Não consegui carregar esse link. Confira se é uma URL válida do YouTube.")
 
-    st.divider()
-    st.subheader("Traduza uma linha que você ouviu")
-    linha_musica = st.text_area("Digite a linha (no idioma original):", key="linha_musica")
-    idioma_musica = st.radio("Essa linha está em:", ["Inglês", "Português"], horizontal=True, key="idioma_musica")
+    video_atual = link_youtube.strip()
+    historico_video = [
+        r for r in st.session_state.progresso
+        if r.get("modo") == "🎵 Música" and r.get("video_url") == video_atual
+    ] if video_atual else []
+
+    if st.button("⏸️ Pausei — hora de traduzir", use_container_width=True, disabled=not video_atual):
+        st.session_state["_pausei_musica"] = True
+    if st.session_state.get("_pausei_musica"):
+        st.caption("🎯 Beleza! Digite abaixo a linha que você acabou de ouvir.")
+
+    colm1, colm2 = st.columns([3, 1])
+    with colm1:
+        linha_musica = st.text_input("Linha que você ouviu (idioma original):", key="linha_musica")
+    with colm2:
+        idioma_musica = st.radio("Idioma", ["Inglês", "Português"], key="idioma_musica")
     idioma_cod_musica = "en" if idioma_musica == "Inglês" else "pt"
     idioma_alvo_musica = "pt" if idioma_cod_musica == "en" else "en"
 
-    resposta_musica = st.text_area("Sua tradução:", key="resposta_musica")
+    if linha_musica.strip() and historico_video:
+        repetida = next(
+            (r for r in historico_video if r["frase_original"].strip().lower() == linha_musica.strip().lower()),
+            None,
+        )
+        if repetida:
+            st.caption(f"↩️ Você já traduziu essa linha antes: {repetida['similaridade']:.0f}%")
 
-    if st.button("Verificar tradução", key="verificar_musica"):
+    resposta_musica = st.text_input("Sua tradução:", key="resposta_musica")
+
+    if st.button("Verificar tradução", key="verificar_musica", use_container_width=True):
         if linha_musica.strip() and resposta_musica.strip():
             referencia_musica = traduzir(linha_musica.strip(), idioma_cod_musica, idioma_alvo_musica)
             pontuacao_musica = calcular_similaridade(resposta_musica, referencia_musica)
             st.session_state["_musica_referencia"] = referencia_musica
             st.session_state["_musica_pontuacao"] = pontuacao_musica
+            st.session_state["_pausei_musica"] = False
             st.session_state.progresso.append({
                 "data": datetime.now().isoformat(timespec="seconds"),
                 "modo": "🎵 Música",
+                "video_url": video_atual,
                 "direcao": f"{idioma_cod_musica}->{idioma_alvo_musica}",
                 "frase_original": linha_musica.strip(),
                 "resposta_usuario": resposta_musica,
@@ -520,6 +542,7 @@ elif pagina == "🎵 Música":
                 "similaridade": pontuacao_musica,
             })
             salvar_progresso(st.session_state.progresso)
+            st.rerun()
         else:
             st.warning("Digite a linha original e sua tradução antes de verificar.")
 
@@ -538,6 +561,13 @@ elif pagina == "🎵 Música":
             st.session_state.baralho.append({"pt": pt_m, "en": en_m, "categoria": "🎵 Música"})
             salvar_baralho(st.session_state.baralho)
             st.success("Linha salva no baralho! Ela aparece no sorteio quando a categoria 'Música' estiver marcada.")
+
+    if historico_video:
+        with st.expander(f"📜 Histórico desta música ({len(historico_video)} linha(s))"):
+            for r in reversed(historico_video):
+                pct = r.get("similaridade", 0)
+                emoji = "🟢" if pct >= 80 else "🟡" if pct >= 50 else "🔴"
+                st.write(f"{emoji} {pct:.0f}% · **{r['frase_original']}** → {r['traducao_referencia']}")
 
 elif pagina == "📊 Revisão de erros":
     if not st.session_state.progresso:
