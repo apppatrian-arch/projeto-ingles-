@@ -211,6 +211,25 @@ st.markdown(
         width: 100% !important;
         flex: 1 1 0 !important;
     }
+
+    /* Cards da barra lateral com cores distintas por finalidade */
+    .st-key-card-traduzir {
+        background: rgba(28,176,246,0.08);
+        border: 2px solid rgba(28,176,246,0.3);
+        border-radius: 16px;
+        padding: 0.8rem 0.8rem 0.2rem;
+    }
+    .st-key-card-traduzir [data-testid="stBaseButton-primary"] {
+        background: #1CB0F6 !important;
+        border-color: #0C8FCC !important;
+        box-shadow: 0 4px 0 #0C8FCC;
+    }
+    .st-key-card-adicionar {
+        background: rgba(88,204,2,0.08);
+        border: 2px solid rgba(88,204,2,0.3);
+        border-radius: 16px;
+        padding: 0.8rem 0.8rem 0.2rem;
+    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -258,53 +277,56 @@ with st.sidebar:
         st.caption("Nenhuma frase praticada ainda.")
 
     st.divider()
-    st.subheader("Traduzir e ouvir")
-    st.caption("Ferramenta livre: escreva ou fale uma palavra/frase e ouça nos dois idiomas. Não salva nada.")
-    idioma_trad = st.radio("Vou escrever em:", ["Português", "Inglês"], horizontal=True, key="idioma_trad")
-    idioma_cod_trad = "pt" if idioma_trad == "Português" else "en"
-    idioma_alvo_trad = "en" if idioma_cod_trad == "pt" else "pt"
+    with st.container(key="card-traduzir"):
+        st.subheader("🔊 Traduzir e ouvir")
+        st.caption("Ferramenta livre: escreva ou fale uma palavra/frase e ouça nos dois idiomas. Não salva nada.")
+        idioma_trad = st.radio("Vou escrever em:", ["Português", "Inglês"], horizontal=True, key="idioma_trad")
+        idioma_cod_trad = "pt" if idioma_trad == "Português" else "en"
+        idioma_alvo_trad = "en" if idioma_cod_trad == "pt" else "pt"
 
-    texto_falado_trad = speech_to_text(
-        language=IDIOMA_VOZ[idioma_cod_trad],
-        start_prompt="🎤 Falar palavra/frase",
-        stop_prompt="⏹️ Parar gravação",
-        just_once=True,
-        use_container_width=True,
-        key="stt_trad",
-    )
-    if texto_falado_trad:
-        st.session_state["texto_trad"] = texto_falado_trad
+        texto_falado_trad = speech_to_text(
+            language=IDIOMA_VOZ[idioma_cod_trad],
+            start_prompt="🎤 Falar palavra/frase",
+            stop_prompt="⏹️ Parar gravação",
+            just_once=True,
+            use_container_width=True,
+            key="stt_trad",
+        )
+        if texto_falado_trad:
+            st.session_state["texto_trad"] = texto_falado_trad
 
-    texto_trad = st.text_input("Sua palavra ou frase", key="texto_trad")
-    st.button("Traduzir", key="btn_traduzir_trad", use_container_width=True, type="primary")
+        texto_trad = st.text_input("Sua palavra ou frase", key="texto_trad")
+        st.button("Traduzir", key="btn_traduzir_trad", use_container_width=True, type="primary")
 
-    if texto_trad.strip():
-        traducao_trad = traduzir(texto_trad.strip(), idioma_cod_trad, idioma_alvo_trad)
-        st.caption(f"Tradução: {traducao_trad}")
-        colo1, colo2 = st.columns(2)
-        with colo1:
-            falar(texto_trad.strip(), IDIOMA_VOZ[idioma_cod_trad], "🔊 Original")
-        with colo2:
-            falar(traducao_trad, IDIOMA_VOZ[idioma_alvo_trad], "🔊 Tradução")
+        if texto_trad.strip():
+            traducao_trad = traduzir(texto_trad.strip(), idioma_cod_trad, idioma_alvo_trad)
+            st.caption(f"Tradução: {traducao_trad}")
+            colo1, colo2 = st.columns(2)
+            with colo1:
+                falar(texto_trad.strip(), IDIOMA_VOZ[idioma_cod_trad], "🔊 Original")
+            with colo2:
+                falar(traducao_trad, IDIOMA_VOZ[idioma_alvo_trad], "🔊 Tradução")
 
     st.divider()
-    st.subheader("Adicionar frase ao baralho")
-    idioma_deck = st.radio("Vou escrever em:", ["Português", "Inglês"], horizontal=True, key="idioma_deck")
-    idioma_cod_deck = "pt" if idioma_deck == "Português" else "en"
-    idioma_alvo_deck = "en" if idioma_cod_deck == "pt" else "pt"
-    frase_deck = st.text_input("Sua palavra ou frase", key="frase_deck")
-    categoria_deck = st.selectbox("Categoria", CATEGORIAS, key="categoria_deck")
+    with st.container(key="card-adicionar"):
+        st.subheader("📥 Adicionar frase ao baralho")
+        st.caption("Cadastra a frase de vez no baralho, pra ela entrar no sorteio das próximas práticas.")
+        idioma_deck = st.radio("Vou escrever em:", ["Português", "Inglês"], horizontal=True, key="idioma_deck")
+        idioma_cod_deck = "pt" if idioma_deck == "Português" else "en"
+        idioma_alvo_deck = "en" if idioma_cod_deck == "pt" else "pt"
+        frase_deck = st.text_input("Sua palavra ou frase", key="frase_deck")
+        categoria_deck = st.selectbox("Categoria", CATEGORIAS, key="categoria_deck")
 
-    if st.button("Adicionar", type="primary", use_container_width=True):
-        if frase_deck.strip():
-            traducao_deck = traduzir(frase_deck.strip(), idioma_cod_deck, idioma_alvo_deck)
-            if idioma_cod_deck == "pt":
-                pt_deck, en_deck = frase_deck.strip(), traducao_deck
-            else:
-                en_deck, pt_deck = frase_deck.strip(), traducao_deck
-            st.session_state.baralho.append({"pt": pt_deck, "en": en_deck, "categoria": categoria_deck})
-            salvar_baralho(st.session_state.baralho)
-            st.success(f"Adicionada em {categoria_deck}! 🇧🇷 {pt_deck}  ·  🇺🇸 {en_deck}")
+        if st.button("Adicionar", type="primary", use_container_width=True):
+            if frase_deck.strip():
+                traducao_deck = traduzir(frase_deck.strip(), idioma_cod_deck, idioma_alvo_deck)
+                if idioma_cod_deck == "pt":
+                    pt_deck, en_deck = frase_deck.strip(), traducao_deck
+                else:
+                    en_deck, pt_deck = frase_deck.strip(), traducao_deck
+                st.session_state.baralho.append({"pt": pt_deck, "en": en_deck, "categoria": categoria_deck})
+                salvar_baralho(st.session_state.baralho)
+                st.success(f"Adicionada em {categoria_deck}! 🇧🇷 {pt_deck}  ·  🇺🇸 {en_deck}")
 
 
 def sortear_frase(limpar_resposta=False):
