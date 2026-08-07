@@ -172,12 +172,94 @@ if st.session_state.pop("_limpar_resposta", False):
 st.markdown(
     """
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap');
+
+    html, body, [class*="css"], .stMarkdown, .stButton, .stTextInput, .stTextArea {
+        font-family: 'Nunito', sans-serif !important;
+    }
+
     .block-container { padding-top: 4.5rem; padding-bottom: 2rem; }
-    h1 { font-size: 1.4rem !important; margin-bottom: 0.3rem !important; }
-    h2, h3 { font-size: 1.05rem !important; margin-top: 0.2rem !important; margin-bottom: 0.3rem !important; }
+    h1 { font-size: 1.5rem !important; font-weight: 900 !important; margin-bottom: 0.3rem !important; }
+    h2, h3 {
+        font-size: 1.05rem !important; font-weight: 800 !important;
+        margin-top: 0.2rem !important; margin-bottom: 0.3rem !important;
+    }
     div[data-testid="stVerticalBlock"] { gap: 0.5rem !important; }
-    hr { margin: 0.6rem 0 !important; }
-    .stButton > button { padding: 0.3rem 0.6rem; }
+    hr { margin: 0.6rem 0 !important; border-color: rgba(255,255,255,0.08) !important; }
+
+    /* Botões estilo "chunky" do Duolingo */
+    .stButton > button, [data-testid="stBaseButton-secondary"], [data-testid="stBaseButton-primary"] {
+        padding: 0.55rem 0.8rem !important;
+        border-radius: 16px !important;
+        font-weight: 800 !important;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        font-size: 0.85rem !important;
+        border-width: 2px !important;
+        transition: transform 0.05s ease, filter 0.15s ease;
+    }
+    .stButton > button:active { transform: translateY(2px); }
+
+    [data-testid="stBaseButton-primary"] {
+        background: #58CC02 !important;
+        border-color: #46A302 !important;
+        color: #fff !important;
+        box-shadow: 0 4px 0 #3f9102;
+    }
+    [data-testid="stBaseButton-primary"]:hover { filter: brightness(1.08); }
+    [data-testid="stBaseButton-primary"]:active { box-shadow: 0 1px 0 #3f9102; }
+
+    [data-testid="stBaseButton-secondary"] {
+        box-shadow: 0 3px 0 rgba(255,255,255,0.08);
+    }
+    [data-testid="stBaseButton-secondary"]:active { box-shadow: 0 1px 0 rgba(255,255,255,0.08); }
+
+    /* Campos de texto arredondados, estilo balão */
+    [data-testid="stTextInputRootElement"], [data-testid="stTextAreaRootElement"] {
+        border-radius: 16px !important;
+        border-width: 2px !important;
+    }
+    [data-testid="stTextInputRootElement"]:focus-within,
+    [data-testid="stTextAreaRootElement"]:focus-within {
+        border-color: #1CB0F6 !important;
+        box-shadow: 0 0 0 3px rgba(28,176,246,0.25) !important;
+    }
+
+    /* Cards de alerta (frase / resultado) viram balão de fala arredondado */
+    [data-testid="stAlert"] {
+        border-radius: 18px !important;
+        border-width: 2px !important;
+        padding: 0.2rem 0.4rem !important;
+    }
+
+    /* Métricas viram mini "stat cards" */
+    [data-testid="stMetric"] {
+        background: rgba(255,255,255,0.04);
+        border-radius: 16px;
+        padding: 0.7rem 0.9rem;
+        border: 2px solid rgba(255,255,255,0.06);
+    }
+
+    /* Rótulos de métrica não devem truncar em colunas estreitas */
+    [data-testid="stMetricLabel"] p {
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: unset !important;
+        font-size: 0.8rem !important;
+        line-height: 1.1rem !important;
+    }
+    [data-testid="stMetricValue"] { font-size: 1.5rem !important; }
+
+    /* Expanders arredondados */
+    [data-testid="stExpander"] { border-radius: 16px !important; overflow: hidden; }
+
+    /* Progress bar estilo pill verde */
+    [data-testid="stProgress"] > div > div { border-radius: 999px !important; }
+    [data-testid="stProgress"] > div > div > div { border-radius: 999px !important; background: #58CC02 !important; }
+
+    /* Chips de multiselect mais arredondados */
+    [data-baseweb="tag"] { border-radius: 999px !important; }
+
     .st-key-linha-botoes div[data-testid="stHorizontalBlock"] {
         flex-wrap: nowrap !important;
         gap: 0.5rem !important;
@@ -253,7 +335,7 @@ with st.sidebar:
         st.session_state["texto_trad"] = texto_falado_trad
 
     texto_trad = st.text_input("Sua palavra ou frase", key="texto_trad")
-    st.button("Traduzir", key="btn_traduzir_trad", use_container_width=True)
+    st.button("Traduzir", key="btn_traduzir_trad", use_container_width=True, type="primary")
 
     if texto_trad.strip():
         traducao_trad = traduzir(texto_trad.strip(), idioma_cod_trad, idioma_alvo_trad)
@@ -272,7 +354,7 @@ with st.sidebar:
     frase_deck = st.text_input("Sua palavra ou frase", key="frase_deck")
     categoria_deck = st.selectbox("Categoria", CATEGORIAS, key="categoria_deck")
 
-    if st.button("Adicionar"):
+    if st.button("Adicionar", type="primary", use_container_width=True):
         if frase_deck.strip():
             traducao_deck = traduzir(frase_deck.strip(), idioma_cod_deck, idioma_alvo_deck)
             if idioma_cod_deck == "pt":
@@ -355,7 +437,7 @@ if pagina == "📖 Praticar":
             with st.container(key="linha-botoes"):
                 col1, col2 = st.columns(2)
                 with col1:
-                    verificar = st.button("Verificar", use_container_width=True, key="verificar_traduzir")
+                    verificar = st.button("Verificar", use_container_width=True, key="verificar_traduzir", type="primary")
                 with col2:
                     proxima = st.button("Próxima frase", use_container_width=True, key="proxima_traduzir")
 
@@ -412,7 +494,7 @@ if pagina == "📖 Praticar":
             with st.container(key="linha-botoes"):
                 col1, col2 = st.columns(2)
                 with col1:
-                    verificar = st.button("Verificar", use_container_width=True, key="verificar_ouvir")
+                    verificar = st.button("Verificar", use_container_width=True, key="verificar_ouvir", type="primary")
                 with col2:
                     proxima = st.button("Próxima frase", use_container_width=True, key="proxima_ouvir")
 
@@ -472,7 +554,7 @@ if pagina == "📖 Praticar":
             with st.container(key="linha-botoes"):
                 col1, col2 = st.columns(2)
                 with col1:
-                    verificar = st.button("Verificar leitura", use_container_width=True, key="verificar_leitura")
+                    verificar = st.button("Verificar leitura", use_container_width=True, key="verificar_leitura", type="primary")
                 with col2:
                     proxima = st.button("Próxima frase", use_container_width=True, key="proxima_leitura")
 
@@ -525,7 +607,7 @@ if pagina == "📖 Praticar":
 
         texto_livre = st.text_area("Frase (em português ou inglês):", key="texto_livre")
 
-        if st.button("Traduzir"):
+        if st.button("Traduzir", type="primary", use_container_width=True):
             if texto_livre.strip():
                 resultado = traduzir(texto_livre, origem_manual, destino_manual)
                 st.success(resultado)
@@ -608,7 +690,7 @@ elif pagina == "🎵 Música":
 
         resposta_musica = st.text_input("Sua tradução:", key="resposta_musica")
 
-    if st.button("Verificar tradução", key="verificar_musica", use_container_width=True):
+    if st.button("Verificar tradução", key="verificar_musica", use_container_width=True, type="primary"):
         if linha_musica.strip() and resposta_musica.strip():
             referencia_musica = traduzir(linha_musica.strip(), idioma_cod_musica, idioma_alvo_musica)
             pontuacao_musica = calcular_similaridade(resposta_musica, referencia_musica)
