@@ -2,4 +2,3 @@ streamlit
 deep-translator
 streamlit-mic-recorder
 pandas
-requests

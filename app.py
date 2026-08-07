@@ -6,7 +6,6 @@ from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
-import requests
 import streamlit as st
 import streamlit.components.v1 as components
 from deep_translator import GoogleTranslator
@@ -15,7 +14,6 @@ from streamlit_mic_recorder import speech_to_text
 BASE_DIR = Path(__file__).parent
 BARALHO_PATH = BASE_DIR / "baralho.json"
 PROGRESSO_PATH = BASE_DIR / "progresso.json"
-MUSICAS_PATH = BASE_DIR / "musicas.json"
 IDIOMA_VOZ = {"pt": "pt-BR", "en": "en-US"}
 CATEGORIAS = ["Geral", "Cotidiano", "Viagem", "Negócios", "🎵 Música"]
 DIAS_SEMANA = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
@@ -63,33 +61,6 @@ def salvar_progresso(registros):
         json.dump(registros, f, ensure_ascii=False, indent=2)
 
 
-def carregar_musicas():
-    if MUSICAS_PATH.exists():
-        with open(MUSICAS_PATH, "r", encoding="utf-8") as f:
-            return json.load(f)
-    return []
-
-
-def salvar_musicas(musicas):
-    with open(MUSICAS_PATH, "w", encoding="utf-8") as f:
-        json.dump(musicas, f, ensure_ascii=False, indent=2)
-
-
-@st.cache_data(show_spinner=False, ttl=86400)
-def obter_titulo_youtube(url):
-    try:
-        resp = requests.get(
-            "https://www.youtube.com/oembed",
-            params={"url": url, "format": "json"},
-            timeout=5,
-        )
-        if resp.ok:
-            return resp.json().get("title")
-    except requests.RequestException:
-        pass
-    return None
-
-
 def traduzir(texto, origem, destino):
     return GoogleTranslator(source=origem, target=destino).translate(texto)
 
@@ -106,33 +77,6 @@ def calcular_similaridade(resposta, referencia):
     if not a:
         return 0.0
     return difflib.SequenceMatcher(None, a, b).ratio() * 100
-
-
-YOUTUBE_ID_RE = re.compile(
-    r"(?:youtube(?:-nocookie)?\.com/(?:watch\?v=|embed/|v/|shorts/)|youtu\.be/)([\w-]{11})"
-)
-
-
-def extrair_id_youtube(url):
-    m = YOUTUBE_ID_RE.search(url)
-    return m.group(1) if m else None
-
-
-def embutir_youtube(url, altura=360):
-    video_id = extrair_id_youtube(url)
-    if not video_id:
-        st.error("Não consegui identificar esse link como um vídeo do YouTube.")
-        return
-    embed_url = f"https://www.youtube.com/embed/{video_id}?cc_load_policy=1&cc_lang_pref=en&hl=pt&rel=0"
-    components.html(
-        f"""
-        <iframe width="100%" height="{altura}" src="{embed_url}"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen style="border-radius:8px;"></iframe>
-        """,
-        height=altura + 10,
-    )
 
 
 def formatar_minutos(minutos):
@@ -160,8 +104,6 @@ if "pontuacao" not in st.session_state:
     st.session_state.pontuacao = 0.0
 if "foco_frases" not in st.session_state:
     st.session_state.foco_frases = set()
-if "musicas" not in st.session_state:
-    st.session_state.musicas = carregar_musicas()
 if "_forcar_pagina" in st.session_state:
     st.session_state["pagina"] = st.session_state.pop("_forcar_pagina")
 if st.session_state.pop("_limpar_resposta", False):
@@ -269,7 +211,6 @@ st.markdown(
         width: 100% !important;
         flex: 1 1 0 !important;
     }
-    .st-key-par-musica div[data-testid="stVerticalBlock"] { gap: 0.2rem !important; }
     </style>
     """,
     unsafe_allow_html=True,
@@ -279,7 +220,7 @@ st.title("📘 Duo Cido")
 with st.sidebar:
     pagina = st.radio(
         "Página",
-        ["📖 Praticar", "🎵 Música", "📊 Revisão de erros", "🗓️ Meu tempo de uso"],
+        ["📖 Praticar", "📊 Revisão de erros", "🗓️ Meu tempo de uso"],
         key="pagina",
     )
 
@@ -621,119 +562,6 @@ if pagina == "📖 Praticar":
                 emoji = "🟢" if pct >= 80 else "🟡" if pct >= 50 else "🔴"
                 modo_r = registro.get("modo", "✍️ Traduzir")
                 st.write(f"{emoji} {pct:.0f}% · `{modo_r}` · **{registro['frase_original']}** → {registro['traducao_referencia']}")
-
-elif pagina == "🎵 Música":
-    st.subheader("🎵 Pratique com uma música")
-    st.caption(
-        "Cole o link do YouTube (player oficial, sem baixar nada). Pause com os controles do "
-        "próprio vídeo, digite a linha que ouviu e treine a tradução. Não busco nem armazeno "
-        "letras automaticamente — direitos autorais."
-    )
-    if st.session_state.musicas:
-        opcoes = ["— nova música —"] + [m["url"] for m in reversed(st.session_state.musicas)]
-        rotulos = {"— nova música —": "— nova música —"}
-        for m in st.session_state.musicas:
-            titulo = obter_titulo_youtube(m["url"])
-            rotulos[m["url"]] = titulo if titulo else m["url"]
-
-        escolha = st.selectbox(
-            "🕘 Músicas recentes",
-            opcoes,
-            format_func=lambda u: rotulos.get(u, u),
-            key="escolha_musica",
-        )
-        if escolha != "— nova música —" and escolha != st.session_state.get("link_youtube", ""):
-            st.session_state["link_youtube"] = escolha
-
-    link_youtube = st.text_input("Link do YouTube", key="link_youtube")
-    if link_youtube.strip():
-        embutir_youtube(link_youtube.strip())
-        st.caption(
-            "Ativei a legenda (CC) por padrão, se o vídeo tiver uma disponível. Se o botão CC "
-            "aparecer apagado, esse vídeo específico não tem legenda cadastrada no YouTube — "
-            "isso é uma limitação do próprio vídeo, não do app."
-        )
-        urls_salvas = [m["url"] for m in st.session_state.musicas]
-        if link_youtube.strip() not in urls_salvas:
-            st.session_state.musicas.append({
-                "url": link_youtube.strip(),
-                "data": datetime.now().isoformat(timespec="seconds"),
-            })
-            salvar_musicas(st.session_state.musicas)
-            st.toast("✅ Música salva no histórico!")
-
-    video_atual = link_youtube.strip()
-    historico_video = [
-        r for r in st.session_state.progresso
-        if r.get("modo") == "🎵 Música" and r.get("video_url") == video_atual
-    ] if video_atual else []
-
-    if st.button("⏸️ Pausei — hora de traduzir", use_container_width=True, disabled=not video_atual):
-        st.session_state["_pausei_musica"] = True
-    if st.session_state.get("_pausei_musica"):
-        st.caption("🎯 Beleza! Digite abaixo a linha que você acabou de ouvir.")
-
-    idioma_musica = st.radio("Essa linha está em:", ["Inglês", "Português"], horizontal=True, key="idioma_musica")
-    idioma_cod_musica = "en" if idioma_musica == "Inglês" else "pt"
-    idioma_alvo_musica = "pt" if idioma_cod_musica == "en" else "en"
-
-    with st.container(key="par-musica"):
-        linha_musica = st.text_input("Linha que você ouviu (idioma original):", key="linha_musica")
-
-        if linha_musica.strip() and historico_video:
-            repetida = next(
-                (r for r in historico_video if r["frase_original"].strip().lower() == linha_musica.strip().lower()),
-                None,
-            )
-            if repetida:
-                st.caption(f"↩️ Você já traduziu essa linha antes: {repetida['similaridade']:.0f}%")
-
-        resposta_musica = st.text_input("Sua tradução:", key="resposta_musica")
-
-    if st.button("Verificar tradução", key="verificar_musica", use_container_width=True, type="primary"):
-        if linha_musica.strip() and resposta_musica.strip():
-            referencia_musica = traduzir(linha_musica.strip(), idioma_cod_musica, idioma_alvo_musica)
-            pontuacao_musica = calcular_similaridade(resposta_musica, referencia_musica)
-            st.session_state["_musica_referencia"] = referencia_musica
-            st.session_state["_musica_pontuacao"] = pontuacao_musica
-            st.session_state["_pausei_musica"] = False
-            st.session_state.progresso.append({
-                "data": datetime.now().isoformat(timespec="seconds"),
-                "modo": "🎵 Música",
-                "video_url": video_atual,
-                "direcao": f"{idioma_cod_musica}->{idioma_alvo_musica}",
-                "frase_original": linha_musica.strip(),
-                "resposta_usuario": resposta_musica,
-                "traducao_referencia": referencia_musica,
-                "similaridade": pontuacao_musica,
-            })
-            salvar_progresso(st.session_state.progresso)
-            st.rerun()
-        else:
-            st.warning("Digite a linha original e sua tradução antes de verificar.")
-
-    if st.session_state.get("_musica_referencia"):
-        st.success(f"**Tradução de referência:** {st.session_state['_musica_referencia']}")
-        pontuacao_musica = st.session_state.get("_musica_pontuacao", 0)
-        emoji_score = "🟢" if pontuacao_musica >= 80 else "🟡" if pontuacao_musica >= 50 else "🔴"
-        st.metric(f"{emoji_score} Similaridade com a tradução de referência", f"{pontuacao_musica:.0f}%")
-        st.progress(min(int(pontuacao_musica), 100))
-
-        if st.button("➕ Salvar esta linha no baralho (categoria Música)"):
-            if idioma_cod_musica == "pt":
-                pt_m, en_m = linha_musica.strip(), st.session_state["_musica_referencia"]
-            else:
-                en_m, pt_m = linha_musica.strip(), st.session_state["_musica_referencia"]
-            st.session_state.baralho.append({"pt": pt_m, "en": en_m, "categoria": "🎵 Música"})
-            salvar_baralho(st.session_state.baralho)
-            st.success("Linha salva no baralho! Ela aparece no sorteio quando a categoria 'Música' estiver marcada.")
-
-    if historico_video:
-        with st.expander(f"📜 Histórico desta música ({len(historico_video)} linha(s))"):
-            for r in reversed(historico_video):
-                pct = r.get("similaridade", 0)
-                emoji = "🟢" if pct >= 80 else "🟡" if pct >= 50 else "🔴"
-                st.write(f"{emoji} {pct:.0f}% · **{r['frase_original']}** → {r['traducao_referencia']}")
 
 elif pagina == "📊 Revisão de erros":
     if not st.session_state.progresso:
