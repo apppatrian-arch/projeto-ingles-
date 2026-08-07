@@ -20,7 +20,7 @@ IDIOMA_VOZ = {"pt": "pt-BR", "en": "en-US"}
 CATEGORIAS = ["Geral", "Cotidiano", "Viagem", "Negócios", "🎵 Música"]
 DIAS_SEMANA = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
 
-st.set_page_config(page_title="Estudo de Inglês", page_icon="📘", layout="centered")
+st.set_page_config(page_title="Duo Cido", page_icon="📘", layout="centered")
 
 
 def falar(texto, idioma, label="🔊 Ouvir"):
@@ -274,7 +274,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-st.title("📘 Estudo de Inglês")
+st.title("📘 Duo Cido")
 
 with st.sidebar:
     pagina = st.radio(
