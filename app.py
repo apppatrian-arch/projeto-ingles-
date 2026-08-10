@@ -14,6 +14,7 @@ from streamlit_mic_recorder import speech_to_text
 BASE_DIR = Path(__file__).parent
 BARALHO_PATH = BASE_DIR / "baralho.json"
 PROGRESSO_PATH = BASE_DIR / "progresso.json"
+AVATAR_PATH = BASE_DIR / "avatar.jpg"
 IDIOMA_VOZ = {"pt": "pt-BR", "en": "en-US"}
 CATEGORIAS = ["Geral", "Cotidiano", "Viagem", "Negócios", "🎵 Música"]
 DIAS_SEMANA = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
@@ -637,8 +638,16 @@ elif pagina == "🗺️ Modo História":
         st.caption(f"Cena {st.session_state.historia_indice + 1} de {len(SCENAS_HISTORIA)}")
 
         with st.container(key="cena-historia"):
-            st.markdown(f"## {cena['emoji']} {cena['nome']}")
-            st.write(cena["narrativa"])
+            if AVATAR_PATH.exists():
+                colav, coltxt = st.columns([1, 3])
+                with colav:
+                    st.image(str(AVATAR_PATH), width=100)
+                with coltxt:
+                    st.markdown(f"## {cena['emoji']} {cena['nome']}")
+                    st.write(cena["narrativa"])
+            else:
+                st.markdown(f"## {cena['emoji']} {cena['nome']}")
+                st.write(cena["narrativa"])
 
         if st.session_state.historia_frase is None:
             pool = [
