@@ -199,7 +199,22 @@ st.markdown(
     [data-testid="stAlert"] {
         border-radius: 18px !important;
         border-width: 2px !important;
-        padding: 0.2rem 0.4rem !important;
+        padding: 0.6rem 0.8rem !important;
+    }
+    [data-testid="stAlert"] p {
+        font-size: 1.15rem !important;
+        line-height: 1.5rem !important;
+    }
+    [data-testid="stAlert"] blockquote p {
+        font-size: 1.3rem !important;
+        font-weight: 800 !important;
+        line-height: 1.6rem !important;
+    }
+
+    /* Campo de tradução com fonte maior, mais fácil de ler ao digitar */
+    [data-testid="stTextInputRootElement"] input,
+    [data-testid="stTextAreaRootElement"] textarea {
+        font-size: 1.15rem !important;
     }
 
     /* Métricas viram mini "stat cards" */
