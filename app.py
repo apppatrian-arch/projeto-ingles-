@@ -18,6 +18,27 @@ IDIOMA_VOZ = {"pt": "pt-BR", "en": "en-US"}
 CATEGORIAS = ["Geral", "Cotidiano", "Viagem", "Negócios", "🎵 Música"]
 DIAS_SEMANA = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
 
+SCENAS_HISTORIA = [
+    {
+        "nome": "Aeroporto",
+        "emoji": "✈️",
+        "categoria": "Viagem",
+        "narrativa": "Você acabou de desembarcar e precisa passar pelo guichê do aeroporto.",
+    },
+    {
+        "nome": "Escritório",
+        "emoji": "💼",
+        "categoria": "Negócios",
+        "narrativa": "Agora você está numa reunião de negócios importante.",
+    },
+    {
+        "nome": "Loja",
+        "emoji": "🛍️",
+        "categoria": "Cotidiano",
+        "narrativa": "Você entra numa loja para resolver uma pendência do dia a dia.",
+    },
+]
+
 st.set_page_config(page_title="Duo Cido", page_icon="📘", layout="centered")
 
 
@@ -104,6 +125,12 @@ if "pontuacao" not in st.session_state:
     st.session_state.pontuacao = 0.0
 if "foco_frases" not in st.session_state:
     st.session_state.foco_frases = set()
+if "historia_indice" not in st.session_state:
+    st.session_state.historia_indice = 0
+if "historia_frase" not in st.session_state:
+    st.session_state.historia_frase = None
+if "historia_revelado" not in st.session_state:
+    st.session_state.historia_revelado = False
 if "_forcar_pagina" in st.session_state:
     st.session_state["pagina"] = st.session_state.pop("_forcar_pagina")
 if st.session_state.pop("_limpar_resposta", False):
@@ -230,6 +257,16 @@ st.markdown(
         border-radius: 16px;
         padding: 0.8rem 0.8rem 0.2rem;
     }
+
+    /* Card de cena do Modo História */
+    .st-key-cena-historia {
+        background: linear-gradient(135deg, rgba(28,176,246,0.18), rgba(88,204,2,0.18));
+        border: 2px solid rgba(255,255,255,0.15);
+        border-radius: 20px;
+        padding: 1.2rem 1rem;
+        text-align: center;
+    }
+    .st-key-cena-historia h2 { font-size: 1.6rem !important; margin: 0 !important; }
     </style>
     """,
     unsafe_allow_html=True,
@@ -239,7 +276,7 @@ st.title("📘 Duo Cido")
 with st.sidebar:
     pagina = st.radio(
         "Página",
-        ["📖 Praticar", "📊 Revisão de erros", "🗓️ Meu tempo de uso"],
+        ["📖 Praticar", "🗺️ Modo História", "📊 Revisão de erros", "🗓️ Meu tempo de uso"],
         key="pagina",
     )
 
@@ -584,6 +621,83 @@ if pagina == "📖 Praticar":
                 emoji = "🟢" if pct >= 80 else "🟡" if pct >= 50 else "🔴"
                 modo_r = registro.get("modo", "✍️ Traduzir")
                 st.write(f"{emoji} {pct:.0f}% · `{modo_r}` · **{registro['frase_original']}** → {registro['traducao_referencia']}")
+
+elif pagina == "🗺️ Modo História":
+    if st.session_state.historia_indice >= len(SCENAS_HISTORIA):
+        st.balloons()
+        st.success("🎉 Você completou a jornada de hoje! Volte amanhã para praticar mais um pouco.")
+        if st.button("🔁 Recomeçar jornada", type="primary", use_container_width=True):
+            st.session_state.historia_indice = 0
+            st.session_state.historia_frase = None
+            st.session_state.historia_revelado = False
+            st.rerun()
+    else:
+        cena = SCENAS_HISTORIA[st.session_state.historia_indice]
+        st.progress(st.session_state.historia_indice / len(SCENAS_HISTORIA))
+        st.caption(f"Cena {st.session_state.historia_indice + 1} de {len(SCENAS_HISTORIA)}")
+
+        with st.container(key="cena-historia"):
+            st.markdown(f"## {cena['emoji']} {cena['nome']}")
+            st.write(cena["narrativa"])
+
+        if st.session_state.historia_frase is None:
+            pool = [
+                item for item in st.session_state.baralho
+                if item.get("categoria", "Geral") == cena["categoria"]
+            ] or st.session_state.baralho
+            item = random.choice(pool)
+            direcao = random.choice(["pt->en", "en->pt"])
+            st.session_state.historia_frase = item["pt"] if direcao == "pt->en" else item["en"]
+            st.session_state.historia_direcao = direcao
+            st.session_state.historia_revelado = False
+
+        origem_cod, destino_cod = st.session_state.historia_direcao.split("->")
+        origem_label = "Português" if origem_cod == "pt" else "Inglês"
+        destino_label = "Inglês" if destino_cod == "en" else "Português"
+
+        falar(st.session_state.historia_frase, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase")
+        st.info(f"**{origem_label} → {destino_label}**\n\n> {st.session_state.historia_frase}")
+
+        resposta_historia = st.text_input(
+            "Sua tradução:", key=f"resposta_historia_{st.session_state.historia_indice}"
+        )
+
+        if not st.session_state.historia_revelado:
+            if st.button("Verificar", type="primary", use_container_width=True):
+                referencia = traduzir(st.session_state.historia_frase, origem_cod, destino_cod)
+                pontuacao = calcular_similaridade(resposta_historia, referencia)
+                st.session_state.historia_referencia = referencia
+                st.session_state.historia_pontuacao = pontuacao
+                st.session_state.historia_revelado = True
+                st.session_state.progresso.append({
+                    "data": datetime.now().isoformat(timespec="seconds"),
+                    "modo": "🗺️ Modo História",
+                    "cena": cena["nome"],
+                    "direcao": st.session_state.historia_direcao,
+                    "frase_original": st.session_state.historia_frase,
+                    "resposta_usuario": resposta_historia,
+                    "traducao_referencia": referencia,
+                    "similaridade": pontuacao,
+                })
+                salvar_progresso(st.session_state.progresso)
+                st.rerun()
+        else:
+            st.success(f"**Tradução de referência:** {st.session_state.historia_referencia}")
+            pontuacao = st.session_state.historia_pontuacao
+            emoji_score = "🟢" if pontuacao >= 80 else "🟡" if pontuacao >= 50 else "🔴"
+            st.metric(f"{emoji_score} Precisão", f"{pontuacao:.0f}%")
+            st.progress(min(int(pontuacao), 100))
+
+            proximo_rotulo = (
+                "➡️ Avançar para a próxima cena"
+                if st.session_state.historia_indice < len(SCENAS_HISTORIA) - 1
+                else "🏁 Concluir jornada"
+            )
+            if st.button(proximo_rotulo, type="primary", use_container_width=True):
+                st.session_state.historia_indice += 1
+                st.session_state.historia_frase = None
+                st.session_state.historia_revelado = False
+                st.rerun()
 
 elif pagina == "📊 Revisão de erros":
     if not st.session_state.progresso:
