@@ -61,6 +61,36 @@ def falar(texto, idioma, label="🔊 Ouvir"):
     components.html(html, height=42)
 
 
+def cronometro_estudo(segundos_iniciais):
+    html = f"""
+    <div id="cronometro-caixa" style="display:flex;align-items:center;justify-content:center;
+        gap:0.4rem;background:rgba(255,255,255,0.05);border:2px solid rgba(255,255,255,0.1);
+        border-radius:14px;padding:0.5rem;font-weight:800;font-size:1.05rem;color:inherit;
+        font-family:'Nunito',sans-serif;">
+        ⏱️ Tempo de estudo: <span id="cronometro-tempo">00:00</span>
+    </div>
+    <script>
+    (function() {{
+        let s = {segundos_iniciais};
+        const el = document.getElementById('cronometro-tempo');
+        function formatar(t) {{
+            const h = Math.floor(t / 3600);
+            const m = Math.floor((t % 3600) / 60);
+            const sec = t % 60;
+            const pad = n => String(n).padStart(2, '0');
+            return h > 0 ? (pad(h) + ':' + pad(m) + ':' + pad(sec)) : (pad(m) + ':' + pad(sec));
+        }}
+        el.textContent = formatar(s);
+        setInterval(function() {{
+            s += 1;
+            el.textContent = formatar(s);
+        }}, 1000);
+    }})();
+    </script>
+    """
+    components.html(html, height=55)
+
+
 def carregar_baralho():
     with open(BARALHO_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
@@ -132,6 +162,8 @@ if "historia_frase" not in st.session_state:
     st.session_state.historia_frase = None
 if "historia_revelado" not in st.session_state:
     st.session_state.historia_revelado = False
+if "sessao_inicio" not in st.session_state:
+    st.session_state.sessao_inicio = datetime.now()
 if "_forcar_pagina" in st.session_state:
     st.session_state["pagina"] = st.session_state.pop("_forcar_pagina")
 if st.session_state.pop("_limpar_resposta", False):
@@ -413,6 +445,7 @@ def sortear_frase(limpar_resposta=False):
 
 
 if pagina == "📖 Praticar":
+    cronometro_estudo(int((datetime.now() - st.session_state.sessao_inicio).total_seconds()))
     if fonte == "Baralho embutido":
         if st.session_state.frase_atual is None:
             sortear_frase()
@@ -639,6 +672,7 @@ if pagina == "📖 Praticar":
                 st.write(f"{emoji} {pct:.0f}% · `{modo_r}` · **{registro['frase_original']}** → {registro['traducao_referencia']}")
 
 elif pagina == "🗺️ Modo História":
+    cronometro_estudo(int((datetime.now() - st.session_state.sessao_inicio).total_seconds()))
     if st.session_state.historia_indice >= len(SCENAS_HISTORIA):
         st.balloons()
         st.success("🎉 Você completou a jornada de hoje! Volte amanhã para praticar mais um pouco.")
