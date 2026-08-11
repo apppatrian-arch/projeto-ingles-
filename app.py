@@ -2,6 +2,7 @@ import difflib
 import json
 import random
 import re
+import time
 from datetime import datetime
 from pathlib import Path
 
@@ -114,7 +115,23 @@ def salvar_progresso(registros):
 
 
 def traduzir(texto, origem, destino):
-    return GoogleTranslator(source=origem, target=destino).translate(texto)
+    texto = (texto or "").strip()
+    if not texto:
+        return ""
+    for tentativa in range(3):
+        try:
+            resultado = GoogleTranslator(source=origem, target=destino).translate(texto)
+            if resultado:
+                return resultado
+        except Exception:
+            pass
+        if tentativa < 2:
+            time.sleep(1)
+    st.error(
+        "⚠️ Não consegui traduzir agora — o serviço do Google Translate parece instável "
+        "no momento. Tente novamente em alguns segundos."
+    )
+    st.stop()
 
 
 def normalizar(texto):
