@@ -65,7 +65,7 @@ def falar(texto, idioma, label="🔊 Ouvir"):
 def cronometro_estudo(segundos_iniciais):
     html = f"""
     <div id="cronometro-caixa" style="display:flex;align-items:center;justify-content:center;
-        gap:0.4rem;background:rgba(255,255,255,0.05);border:2px solid rgba(255,255,255,0.1);
+        gap:0.4rem;background:rgba(255,255,255,0.18);border:2px solid rgba(255,255,255,0.3);
         border-radius:14px;padding:0.5rem;font-weight:800;font-size:1.05rem;color:inherit;
         font-family:'Nunito',sans-serif;">
         ⏱️ Tempo de estudo: <span id="cronometro-tempo">00:00</span>
