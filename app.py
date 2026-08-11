@@ -179,6 +179,16 @@ if "historia_frase" not in st.session_state:
     st.session_state.historia_frase = None
 if "historia_revelado" not in st.session_state:
     st.session_state.historia_revelado = False
+if "audio_frase" not in st.session_state:
+    st.session_state.audio_frase = None
+if "audio_revelado" not in st.session_state:
+    st.session_state.audio_revelado = False
+if "audio_registrado" not in st.session_state:
+    st.session_state.audio_registrado = False
+if "audio_pontuacao" not in st.session_state:
+    st.session_state.audio_pontuacao = 0.0
+if "audio_referencia" not in st.session_state:
+    st.session_state.audio_referencia = ""
 if "sessao_inicio" not in st.session_state:
     st.session_state.sessao_inicio = datetime.now()
 if "_forcar_pagina" in st.session_state:
@@ -187,6 +197,8 @@ if st.session_state.pop("_limpar_resposta", False):
     st.session_state["resposta_usuario"] = ""
     st.session_state["resposta_ouvir"] = ""
     st.session_state["leitura_texto"] = ""
+if st.session_state.pop("_limpar_audio", False):
+    st.session_state["resposta_audio"] = ""
 
 st.markdown(
     """
@@ -341,7 +353,7 @@ st.title("📘 Duo Cido")
 with st.sidebar:
     pagina = st.radio(
         "Página",
-        ["📖 Praticar", "🗺️ Modo História", "📊 Revisão de erros", "🗓️ Meu tempo de uso"],
+        ["📖 Praticar", "🎧 Só áudio", "🗺️ Modo História", "📊 Revisão de erros", "🗓️ Meu tempo de uso"],
         key="pagina",
     )
 
@@ -367,6 +379,10 @@ with st.sidebar:
                 st.session_state.foco_frases = set()
                 st.session_state.frase_atual = None
                 st.rerun()
+    elif pagina == "🎧 Só áudio":
+        categorias_audio = st.multiselect(
+            "Categorias do baralho", CATEGORIAS, default=CATEGORIAS, key="cat_audio"
+        )
 
     st.divider()
     st.subheader("Progresso")
@@ -459,6 +475,21 @@ def sortear_frase(limpar_resposta=False):
     st.session_state.pontuacao = 0.0
     if limpar_resposta:
         st.session_state["_limpar_resposta"] = True
+
+
+def sortear_frase_audio(limpar_resposta=False):
+    pool = [
+        item for item in st.session_state.baralho
+        if item.get("categoria", "Geral") in categorias_audio
+    ] or st.session_state.baralho
+    item = random.choice(pool)
+    st.session_state.audio_frase = item["en"]
+    st.session_state.audio_revelado = False
+    st.session_state.audio_registrado = False
+    st.session_state.audio_pontuacao = 0.0
+    st.session_state.audio_referencia = ""
+    if limpar_resposta:
+        st.session_state["_limpar_audio"] = True
 
 
 if pagina == "📖 Praticar":
@@ -687,6 +718,73 @@ if pagina == "📖 Praticar":
                 emoji = "🟢" if pct >= 80 else "🟡" if pct >= 50 else "🔴"
                 modo_r = registro.get("modo", "✍️ Traduzir")
                 st.write(f"{emoji} {pct:.0f}% · `{modo_r}` · **{registro['frase_original']}** → {registro['traducao_referencia']}")
+
+elif pagina == "🎧 Só áudio":
+    cronometro_estudo(int((datetime.now() - st.session_state.sessao_inicio).total_seconds()))
+    st.subheader("🎧 Só áudio: ouça e traduza para o português")
+    st.caption("A frase fica escondida — clique em ouvir, escreva ou fale sua tradução em português.")
+
+    if st.session_state.audio_frase is None:
+        sortear_frase_audio()
+
+    falar(st.session_state.audio_frase, IDIOMA_VOZ["en"], "🔊 Ouvir frase (pode repetir)")
+
+    texto_falado_audio = speech_to_text(
+        language=IDIOMA_VOZ["pt"],
+        start_prompt="🎤 Falar minha tradução",
+        stop_prompt="⏹️ Parar gravação",
+        just_once=True,
+        use_container_width=True,
+        key="stt_audio",
+    )
+    if texto_falado_audio:
+        st.session_state["resposta_audio"] = texto_falado_audio
+
+    resposta_audio = st.text_area("Sua tradução (em português):", key="resposta_audio")
+
+    with st.container(key="linha-botoes"):
+        col1, col2 = st.columns(2)
+        with col1:
+            verificar_audio = st.button(
+                "Verificar", type="primary", use_container_width=True, key="verificar_audio"
+            )
+        with col2:
+            proxima_audio = st.button(
+                "Próxima frase", use_container_width=True, key="proxima_audio"
+            )
+
+    if verificar_audio and st.session_state.audio_frase:
+        referencia = traduzir(st.session_state.audio_frase, "en", "pt")
+        st.session_state.audio_referencia = referencia
+        st.session_state.audio_revelado = True
+        if not st.session_state.audio_registrado:
+            st.session_state.audio_pontuacao = calcular_similaridade(resposta_audio, referencia)
+            st.session_state.progresso.append({
+                "data": datetime.now().isoformat(timespec="seconds"),
+                "modo": "🎧 Só áudio",
+                "direcao": "en->pt",
+                "frase_original": st.session_state.audio_frase,
+                "resposta_usuario": resposta_audio,
+                "traducao_referencia": referencia,
+                "similaridade": st.session_state.audio_pontuacao,
+            })
+            salvar_progresso(st.session_state.progresso)
+            st.session_state.audio_registrado = True
+            st.rerun()
+
+    if st.session_state.audio_revelado:
+        st.info(f"**Frase original (Inglês):** {st.session_state.audio_frase}")
+        st.success(f"**Tradução de referência:** {st.session_state.audio_referencia}")
+        falar(st.session_state.audio_referencia, IDIOMA_VOZ["pt"], "🔊 Ouvir tradução")
+
+        pontuacao = st.session_state.audio_pontuacao
+        emoji_score = "🟢" if pontuacao >= 80 else "🟡" if pontuacao >= 50 else "🔴"
+        st.metric(f"{emoji_score} Similaridade com a tradução de referência", f"{pontuacao:.0f}%")
+        st.progress(min(int(pontuacao), 100))
+
+    if proxima_audio:
+        sortear_frase_audio(limpar_resposta=True)
+        st.rerun()
 
 elif pagina == "🗺️ Modo História":
     cronometro_estudo(int((datetime.now() - st.session_state.sessao_inicio).total_seconds()))
