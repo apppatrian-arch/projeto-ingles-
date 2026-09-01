@@ -311,13 +311,13 @@ def frase_clicavel(frase, origem_cod, destino_cod, cabecalho):
 
     html = f"""
     <div style="background:rgba(99,102,241,0.08); border:1.5px solid rgba(99,102,241,0.25);
-        border-radius:16px; padding:1rem 1.2rem; font-family:'Inter',-apple-system,sans-serif;">
-        <div style="font-weight:700; color:#C7D2FE; font-size:0.9rem; margin-bottom:0.6rem;">{cabecalho_html}</div>
-        <div style="font-size:1.2rem; font-weight:700; color:#F1F5F9; line-height:1.9;">{frase_html}</div>
-        <div id="popup-traducao" style="display:none; margin-top:0.7rem; padding:0.5rem 0.8rem;
-            background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.4); border-radius:10px;
-            font-size:0.95rem; color:#6EE7B7; font-weight:600;"></div>
-        <div style="font-size:0.75rem; color:#64748B; margin-top:0.5rem;">👆 toque em uma palavra para ver o significado</div>
+        border-radius:14px; padding:0.7rem 0.9rem; font-family:'Inter',-apple-system,sans-serif;">
+        <div style="font-weight:700; color:#C7D2FE; font-size:0.8rem; margin-bottom:0.35rem;">{cabecalho_html}</div>
+        <div style="font-size:1.1rem; font-weight:700; color:#F1F5F9; line-height:1.6;">{frase_html}</div>
+        <div id="popup-traducao" style="display:none; margin-top:0.4rem; padding:0.35rem 0.6rem;
+            background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.4); border-radius:8px;
+            font-size:0.85rem; color:#6EE7B7; font-weight:600;"></div>
+        <div style="font-size:0.68rem; color:#64748B; margin-top:0.3rem;">👆 toque em uma palavra para ver o significado</div>
     </div>
     <style>
         .palavra-clicavel {{
@@ -337,7 +337,7 @@ def frase_clicavel(frase, origem_cod, destino_cod, cabecalho):
         }});
     </script>
     """
-    components.html(html, height=185, scrolling=True)
+    components.html(html, height=145, scrolling=True)
 
 
 def normalizar(texto):
@@ -939,6 +939,23 @@ st.markdown(
         border-top-color: #6366F1 !important;
         border-right-color: rgba(99,102,241,0.3) !important;
     }
+
+    /* ===== TELA PEQUENA: menos espaço pra caber mais conteudo sem rolar ===== */
+    @media (max-width: 600px) {
+        .block-container {
+            padding-top: 1.2rem !important;
+            padding-bottom: 1.5rem !important;
+        }
+        .app-header { margin-bottom: 0.5rem !important; }
+        .app-header .app-header-emoji { font-size: 1.5rem !important; margin-bottom: 0 !important; }
+        .app-header h1 { font-size: 1.15rem !important; }
+        .app-header p { display: none !important; }
+        div[data-testid="stVerticalBlock"] { gap: 0.35rem !important; }
+        hr { margin: 0.5rem 0 !important; }
+        [data-testid="stAlert"] { padding: 0.6rem 0.8rem !important; }
+        h2, h3 { margin-top: 0.15rem !important; margin-bottom: 0.25rem !important; font-size: 1rem !important; }
+        [data-testid="stTextAreaRootElement"] textarea { min-height: 70px !important; }
+    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -947,8 +964,8 @@ st.markdown(
 # ===== HEADER MODERNO =====
 st.markdown(
     """
-    <div style="text-align:center; margin-bottom:1.5rem; animation: fadeInDown 0.6s ease;">
-        <div style="font-size:2.5rem; margin-bottom:0.3rem;">📘</div>
+    <div class="app-header" style="text-align:center; margin-bottom:1.5rem; animation: fadeInDown 0.6s ease;">
+        <div class="app-header-emoji" style="font-size:2.5rem; margin-bottom:0.3rem;">📘</div>
         <h1 style="margin:0; font-size:1.8rem;">Duo Cido</h1>
         <p style="color:#64748B; font-size:0.9rem; margin-top:0.3rem;">
             Aprenda inglês de forma interativa e divertida
@@ -1121,10 +1138,14 @@ if pagina == "📖 Praticar":
         origem_cod, destino_cod = st.session_state.direcao_atual.split("->")
 
         if modo_exercicio == "✍️ Traduzir":
-            falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase original")
-
             if st.session_state.revelado and st.session_state.traducao_referencia:
-                falar(st.session_state.traducao_referencia, IDIOMA_VOZ[destino_cod], "🔊 Ouvir tradução")
+                col_ouvir_orig, col_ouvir_trad = st.columns(2)
+                with col_ouvir_orig:
+                    falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Frase original")
+                with col_ouvir_trad:
+                    falar(st.session_state.traducao_referencia, IDIOMA_VOZ[destino_cod], "🔊 Tradução")
+            else:
+                falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase original")
 
             texto_falado = speech_to_text(
                 language=IDIOMA_VOZ[destino_cod],
