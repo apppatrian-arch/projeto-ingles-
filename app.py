@@ -9,7 +9,7 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 import streamlit.components.v1 as components
-from deep_translator import GoogleTranslator
+from deep_translator import GoogleTranslator, MyMemoryTranslator
 from streamlit_mic_recorder import speech_to_text
 
 BASE_DIR = Path(__file__).parent
@@ -118,17 +118,22 @@ def traduzir(texto, origem, destino):
     texto = (texto or "").strip()
     if not texto:
         return ""
-    for tentativa in range(3):
-        try:
-            resultado = GoogleTranslator(source=origem, target=destino).translate(texto)
-            if resultado:
-                return resultado
-        except Exception:
-            pass
-        if tentativa < 2:
+    provedores = [
+        lambda: GoogleTranslator(source=origem, target=destino).translate(texto),
+        lambda: MyMemoryTranslator(source=origem, target=destino).translate(texto),
+    ]
+    for rodada in range(2):
+        for provedor in provedores:
+            try:
+                resultado = provedor()
+                if resultado:
+                    return resultado
+            except Exception:
+                pass
+        if rodada == 0:
             time.sleep(1)
     st.error(
-        "⚠️ Não consegui traduzir agora — o serviço do Google Translate parece instável "
+        "⚠️ Não consegui traduzir agora — os serviços de tradução parecem instáveis "
         "no momento. Tente novamente em alguns segundos."
     )
     st.stop()
@@ -203,152 +208,532 @@ if st.session_state.pop("_limpar_audio", False):
 st.markdown(
     """
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
     html, body, [class*="css"], .stMarkdown, .stButton, .stTextInput, .stTextArea {
-        font-family: 'Nunito', sans-serif !important;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
     }
 
-    .block-container { padding-top: 4.5rem; padding-bottom: 2rem; }
-    h1 { font-size: 1.5rem !important; font-weight: 900 !important; margin-bottom: 0.3rem !important; }
+    /* ===== BACKGROUND E LAYOUT ===== */
+    .stApp {
+        background: radial-gradient(ellipse at 20% 0%, rgba(99,102,241,0.08) 0%, transparent 50%),
+                    radial-gradient(ellipse at 80% 100%, rgba(16,185,129,0.06) 0%, transparent 50%),
+                    #0B0E14 !important;
+    }
+
+    .block-container {
+        padding-top: 4rem !important;
+        padding-bottom: 3rem !important;
+        max-width: 720px !important;
+    }
+
+    /* ===== TIPOGRAFIA ===== */
+    h1 {
+        font-size: 1.75rem !important;
+        font-weight: 900 !important;
+        margin-bottom: 0.5rem !important;
+        background: linear-gradient(135deg, #F1F5F9 0%, #94A3B8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -0.02em;
+    }
+
     h2, h3 {
-        font-size: 1.05rem !important; font-weight: 800 !important;
-        margin-top: 0.2rem !important; margin-bottom: 0.3rem !important;
-    }
-    div[data-testid="stVerticalBlock"] { gap: 0.5rem !important; }
-    hr { margin: 0.6rem 0 !important; border-color: rgba(255,255,255,0.08) !important; }
-
-    /* Botões estilo "chunky" do Duolingo */
-    .stButton > button, [data-testid="stBaseButton-secondary"], [data-testid="stBaseButton-primary"] {
-        padding: 0.55rem 0.8rem !important;
-        border-radius: 16px !important;
+        font-size: 1.15rem !important;
         font-weight: 800 !important;
-        text-transform: uppercase;
-        letter-spacing: 0.02em;
+        margin-top: 0.4rem !important;
+        margin-bottom: 0.5rem !important;
+        color: #E2E8F0 !important;
+        letter-spacing: -0.01em;
+    }
+
+    p, li, .stMarkdown {
+        color: #CBD5E1 !important;
+        line-height: 1.65 !important;
+    }
+
+    div[data-testid="stVerticalBlock"] { gap: 0.6rem !important; }
+
+    hr {
+        margin: 1rem 0 !important;
+        border: none !important;
+        height: 1px !important;
+        background: rgba(148,163,184,0.12) !important;
+    }
+
+    /* ===== BOTÕES MODERNOS ===== */
+    .stButton > button, [data-testid="stBaseButton-secondary"], [data-testid="stBaseButton-primary"] {
+        padding: 0.6rem 1.2rem !important;
+        border-radius: 14px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.01em;
         font-size: 0.85rem !important;
-        border-width: 2px !important;
-        transition: transform 0.05s ease, filter 0.15s ease;
+        border-width: 1.5px !important;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        font-family: 'Inter', sans-serif !important;
+        position: relative;
+        overflow: hidden;
     }
-    .stButton > button:active { transform: translateY(2px); }
 
+    .stButton > button::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(255,255,255,0);
+        transition: background 0.2s ease;
+    }
+
+    .stButton > button:hover::before {
+        background: rgba(255,255,255,0.08);
+    }
+
+    .stButton > button:active {
+        transform: translateY(1px) scale(0.98) !important;
+    }
+
+    /* Primary button - gradient indigo */
     [data-testid="stBaseButton-primary"] {
-        background: #58CC02 !important;
-        border-color: #46A302 !important;
+        background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%) !important;
+        border-color: rgba(99,102,241,0.5) !important;
         color: #fff !important;
-        box-shadow: 0 4px 0 #3f9102;
+        box-shadow: 0 4px 14px rgba(99,102,241,0.35), 0 0 0 1px rgba(99,102,241,0.2) inset !important;
     }
-    [data-testid="stBaseButton-primary"]:hover { filter: brightness(1.08); }
-    [data-testid="stBaseButton-primary"]:active { box-shadow: 0 1px 0 #3f9102; }
 
+    [data-testid="stBaseButton-primary"]:hover {
+        box-shadow: 0 6px 24px rgba(99,102,241,0.45), 0 0 0 1px rgba(99,102,241,0.3) inset !important;
+        transform: translateY(-1px) !important;
+    }
+
+    [data-testid="stBaseButton-primary"]:active {
+        box-shadow: 0 2px 8px rgba(99,102,241,0.25) !important;
+    }
+
+    /* Secondary button - glassmorphism */
     [data-testid="stBaseButton-secondary"] {
-        box-shadow: 0 3px 0 rgba(255,255,255,0.08);
+        background: rgba(255,255,255,0.04) !important;
+        border-color: rgba(255,255,255,0.1) !important;
+        color: #CBD5E1 !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
     }
-    [data-testid="stBaseButton-secondary"]:active { box-shadow: 0 1px 0 rgba(255,255,255,0.08); }
 
-    /* Campos de texto arredondados, estilo balão */
-    [data-testid="stTextInputRootElement"], [data-testid="stTextAreaRootElement"] {
-        border-radius: 16px !important;
-        border-width: 2px !important;
+    [data-testid="stBaseButton-secondary"]:hover {
+        background: rgba(255,255,255,0.08) !important;
+        border-color: rgba(255,255,255,0.18) !important;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.2) !important;
+        transform: translateY(-1px) !important;
     }
+
+    /* ===== CAMPOS DE TEXTO ===== */
+    [data-testid="stTextInputRootElement"], [data-testid="stTextAreaRootElement"] {
+        border-radius: 14px !important;
+        border-width: 1.5px !important;
+        border-color: rgba(148,163,184,0.2) !important;
+        background: rgba(15,23,42,0.6) !important;
+        transition: all 0.25s ease !important;
+    }
+
     [data-testid="stTextInputRootElement"]:focus-within,
     [data-testid="stTextAreaRootElement"]:focus-within {
-        border-color: #1CB0F6 !important;
-        box-shadow: 0 0 0 3px rgba(28,176,246,0.25) !important;
+        border-color: rgba(99,102,241,0.6) !important;
+        box-shadow: 0 0 0 3px rgba(99,102,241,0.12), 0 4px 20px rgba(99,102,241,0.08) !important;
+        background: rgba(15,23,42,0.8) !important;
     }
 
-    /* Cards de alerta (frase / resultado) viram balão de fala arredondado */
+    [data-testid="stTextInputRootElement"] input,
+    [data-testid="stTextAreaRootElement"] textarea {
+        font-size: 1.05rem !important;
+        font-family: 'Inter', sans-serif !important;
+        color: #F1F5F9 !important;
+    }
+
+    [data-testid="stTextInputRootElement"] input::placeholder,
+    [data-testid="stTextAreaRootElement"] textarea::placeholder {
+        color: rgba(148,163,184,0.5) !important;
+    }
+
+    /* ===== ALERTAS MODERNOS ===== */
     [data-testid="stAlert"] {
-        border-radius: 18px !important;
-        border-width: 2px !important;
-        padding: 0.6rem 0.8rem !important;
+        border-radius: 16px !important;
+        border-width: 1.5px !important;
+        padding: 1rem 1.2rem !important;
+        backdrop-filter: blur(12px) !important;
+        animation: fadeInUp 0.4s ease !important;
     }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
     [data-testid="stAlert"] p {
-        font-size: 1.15rem !important;
-        line-height: 1.5rem !important;
-    }
-    [data-testid="stAlert"] blockquote p {
-        font-size: 1.3rem !important;
-        font-weight: 800 !important;
+        font-size: 1.05rem !important;
         line-height: 1.6rem !important;
     }
 
-    /* Campo de tradução com fonte maior, mais fácil de ler ao digitar */
-    [data-testid="stTextInputRootElement"] input,
-    [data-testid="stTextAreaRootElement"] textarea {
-        font-size: 1.15rem !important;
+    [data-testid="stAlert"] blockquote p {
+        font-size: 1.25rem !important;
+        font-weight: 700 !important;
+        line-height: 1.7rem !important;
+        color: #F1F5F9 !important;
     }
 
-    /* Métricas viram mini "stat cards" */
+    /* Info alert - glassmorphism indigo */
+    [data-testid="stAlert-container-info"] {
+        background: rgba(99,102,241,0.08) !important;
+        border-color: rgba(99,102,241,0.25) !important;
+    }
+
+    /* Success alert - glassmorphism emerald */
+    [data-testid="stAlert-container-success"] {
+        background: rgba(16,185,129,0.08) !important;
+        border-color: rgba(16,185,129,0.25) !important;
+    }
+
+    /* Warning alert - glassmorphism amber */
+    [data-testid="stAlert-container-warning"] {
+        background: rgba(245,158,11,0.08) !important;
+        border-color: rgba(245,158,11,0.25) !important;
+    }
+
+    /* Error alert - glassmorphism rose */
+    [data-testid="stAlert-container-error"] {
+        background: rgba(244,63,94,0.08) !important;
+        border-color: rgba(244,63,94,0.25) !important;
+    }
+
+    /* ===== MÉTRICAS MODERNAS ===== */
     [data-testid="stMetric"] {
-        background: rgba(255,255,255,0.04);
+        background: rgba(255,255,255,0.03);
         border-radius: 16px;
-        padding: 0.7rem 0.9rem;
-        border: 2px solid rgba(255,255,255,0.06);
+        padding: 1rem 1.1rem;
+        border: 1.5px solid rgba(255,255,255,0.06);
+        backdrop-filter: blur(8px);
+        transition: all 0.25s ease;
     }
 
-    /* Rótulos de métrica não devem truncar em colunas estreitas */
+    [data-testid="stMetric"]:hover {
+        border-color: rgba(99,102,241,0.2);
+        background: rgba(255,255,255,0.05);
+    }
+
     [data-testid="stMetricLabel"] p {
         white-space: normal !important;
         overflow: visible !important;
         text-overflow: unset !important;
-        font-size: 0.8rem !important;
+        font-size: 0.75rem !important;
         line-height: 1.1rem !important;
+        color: #94A3B8 !important;
+        font-weight: 500 !important;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
     }
-    [data-testid="stMetricValue"] { font-size: 1.5rem !important; }
 
-    /* Expanders arredondados */
-    [data-testid="stExpander"] { border-radius: 16px !important; overflow: hidden; }
+    [data-testid="stMetricValue"] {
+        font-size: 1.6rem !important;
+        font-weight: 800 !important;
+        background: linear-gradient(135deg, #F1F5F9 0%, #CBD5E1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
 
-    /* Progress bar estilo pill verde */
-    [data-testid="stProgress"] > div > div { border-radius: 999px !important; }
-    [data-testid="stProgress"] > div > div > div { border-radius: 999px !important; background: #58CC02 !important; }
+    /* ===== EXPANDERS ===== */
+    [data-testid="stExpander"] {
+        border-radius: 16px !important;
+        overflow: hidden;
+        border: 1.5px solid rgba(148,163,184,0.1) !important;
+        background: rgba(255,255,255,0.02) !important;
+        backdrop-filter: blur(8px);
+    }
 
-    /* Chips de multiselect mais arredondados */
-    [data-baseweb="tag"] { border-radius: 999px !important; }
+    [data-testid="stExpanderToggleIcon"] {
+        color: #94A3B8 !important;
+    }
 
+    /* ===== PROGRESS BAR ===== */
+    [data-testid="stProgress"] > div > div {
+        border-radius: 999px !important;
+        background: rgba(255,255,255,0.06) !important;
+        height: 8px !important;
+    }
+
+    [data-testid="stProgress"] > div > div > div {
+        border-radius: 999px !important;
+        background: linear-gradient(90deg, #6366F1 0%, #10B981 100%) !important;
+        box-shadow: 0 0 12px rgba(99,102,241,0.4) !important;
+        transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    /* ===== MULTISELECT CHIPS ===== */
+    [data-baseweb="tag"] {
+        border-radius: 999px !important;
+        background: rgba(99,102,241,0.15) !important;
+        border: 1px solid rgba(99,102,241,0.3) !important;
+        color: #C7D2FE !important;
+        font-weight: 500 !important;
+        font-size: 0.8rem !important;
+        transition: all 0.2s ease;
+    }
+
+    [data-baseweb="tag"]:hover {
+        background: rgba(99,102,241,0.25) !important;
+        transform: scale(1.02);
+    }
+
+    /* ===== SIDEBAR MODERNA ===== */
+    [data-testid="stSidebar"] {
+        background: rgba(11,14,20,0.85) !important;
+        backdrop-filter: blur(20px) !important;
+        border-right: 1px solid rgba(148,163,184,0.08) !important;
+    }
+
+    [data-testid="stSidebar"] .stRadio > div {
+        background: transparent !important;
+        gap: 4px !important;
+    }
+
+    [data-testid="stSidebar"] .stRadio label {
+        padding: 8px 12px !important;
+        border-radius: 10px !important;
+        transition: all 0.2s ease !important;
+        font-weight: 500 !important;
+        font-size: 0.85rem !important;
+        color: #94A3B8 !important;
+    }
+
+    [data-testid="stSidebar"] .stRadio label:hover {
+        background: rgba(99,102,241,0.08) !important;
+        color: #C7D2FE !important;
+    }
+
+    [data-testid="stSidebar"] .stRadio label[data-baseweb="radio"] input:checked + div {
+        background: rgba(99,102,241,0.15) !important;
+        color: #818CF8 !important;
+        font-weight: 700 !important;
+        border-left: 3px solid #6366F1;
+    }
+
+    /* ===== RADIO BUTTONS HORIZONTAIS ===== */
+    .stRadio > div[role="radiogroup"] {
+        gap: 6px !important;
+    }
+
+    .stRadio > div[role="radiogroup"] label {
+        border-radius: 10px !important;
+        padding: 6px 12px !important;
+        font-size: 0.82rem !important;
+        transition: all 0.2s ease !important;
+    }
+
+    /* ===== SELECT BOX ===== */
+    .stSelectbox > div > div {
+        border-radius: 12px !important;
+        border-color: rgba(148,163,184,0.15) !important;
+        background: rgba(15,23,42,0.5) !important;
+    }
+
+    .stSelectbox > div > div:hover {
+        border-color: rgba(99,102,241,0.4) !important;
+    }
+
+    /* ===== DATAFRAME ===== */
+    [data-testid="stDataFrame"] {
+        border-radius: 16px !important;
+        overflow: hidden;
+        border: 1.5px solid rgba(148,163,184,0.1) !important;
+    }
+
+    [data-testid="stDataFrame"] th {
+        background: rgba(99,102,241,0.08) !important;
+        color: #C7D2FE !important;
+        font-weight: 600 !important;
+        font-size: 0.8rem !important;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+
+    [data-testid="stDataFrame"] td {
+        color: #CBD5E1 !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* ===== CAPTIONS E TEXTOS PEQUENOS ===== */
+    .stCaption {
+        color: #64748B !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* ===== BALLOONS ===== */
+    [data-testid="stBalloons"] {
+        z-index: 9999 !important;
+    }
+
+    /* ===== LINHA DE BOTÕES ===== */
     .st-key-linha-botoes div[data-testid="stHorizontalBlock"] {
         flex-wrap: nowrap !important;
-        gap: 0.5rem !important;
+        gap: 0.6rem !important;
     }
+
     .st-key-linha-botoes div[data-testid="stColumn"] {
         min-width: 0 !important;
         width: 100% !important;
         flex: 1 1 0 !important;
     }
 
-    /* Cards da barra lateral com cores distintas por finalidade */
+    /* ===== CARDS CUSTOMIZADOS ===== */
     .st-key-card-traduzir {
-        background: rgba(28,176,246,0.08);
-        border: 2px solid rgba(28,176,246,0.3);
+        background: rgba(99,102,241,0.06);
+        border: 1.5px solid rgba(99,102,241,0.18);
         border-radius: 16px;
-        padding: 0.8rem 0.8rem 0.2rem;
-    }
-    .st-key-card-traduzir [data-testid="stBaseButton-primary"] {
-        background: #1CB0F6 !important;
-        border-color: #0C8FCC !important;
-        box-shadow: 0 4px 0 #0C8FCC;
-    }
-    .st-key-card-adicionar {
-        background: rgba(88,204,2,0.08);
-        border: 2px solid rgba(88,204,2,0.3);
-        border-radius: 16px;
-        padding: 0.8rem 0.8rem 0.2rem;
+        padding: 1rem 1rem 0.3rem;
+        backdrop-filter: blur(8px);
+        transition: all 0.25s ease;
     }
 
-    /* Card de cena do Modo História */
-    .st-key-cena-historia {
-        background: linear-gradient(135deg, rgba(28,176,246,0.18), rgba(88,204,2,0.18));
-        border: 2px solid rgba(255,255,255,0.15);
-        border-radius: 20px;
-        padding: 1.2rem 1rem;
-        text-align: center;
+    .st-key-card-traduzir:hover {
+        border-color: rgba(99,102,241,0.3);
+        background: rgba(99,102,241,0.09);
     }
-    .st-key-cena-historia h2 { font-size: 1.6rem !important; margin: 0 !important; }
+
+    .st-key-card-traduzir [data-testid="stBaseButton-primary"] {
+        background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%) !important;
+        border-color: rgba(99,102,241,0.5) !important;
+        box-shadow: 0 4px 14px rgba(99,102,241,0.35) !important;
+    }
+
+    .st-key-card-adicionar {
+        background: rgba(16,185,129,0.06);
+        border: 1.5px solid rgba(16,185,129,0.18);
+        border-radius: 16px;
+        padding: 1rem 1rem 0.3rem;
+        backdrop-filter: blur(8px);
+        transition: all 0.25s ease;
+    }
+
+    .st-key-card-adicionar:hover {
+        border-color: rgba(16,185,129,0.3);
+        background: rgba(16,185,129,0.09);
+    }
+
+    .st-key-card-adicionar [data-testid="stBaseButton-primary"] {
+        background: linear-gradient(135deg, #10B981 0%, #34D399 100%) !important;
+        border-color: rgba(16,185,129,0.5) !important;
+        box-shadow: 0 4px 14px rgba(16,185,129,0.35) !important;
+    }
+
+    /* ===== CARD CENA HISTÓRIA ===== */
+    .st-key-cena-historia {
+        background: rgba(99,102,241,0.06);
+        border: 1.5px solid rgba(99,102,241,0.18);
+        border-radius: 20px;
+        padding: 1.4rem 1.2rem;
+        text-align: center;
+        backdrop-filter: blur(12px);
+        animation: fadeInUp 0.5s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .st-key-cena-historia::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #6366F1, #10B981);
+    }
+
+    .st-key-cena-historia h2 {
+        font-size: 1.5rem !important;
+        margin: 0 !important;
+        background: linear-gradient(135deg, #F1F5F9 0%, #818CF8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* ===== SCORE BADGES ===== */
+    .score-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.85rem;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .score-badge-green {
+        background: rgba(16,185,129,0.12);
+        border: 1px solid rgba(16,185,129,0.3);
+        color: #34D399;
+    }
+
+    .score-badge-yellow {
+        background: rgba(245,158,11,0.12);
+        border: 1px solid rgba(245,158,11,0.3);
+        color: #FBBF24;
+    }
+
+    .score-badge-red {
+        background: rgba(244,63,94,0.12);
+        border: 1px solid rgba(244,63,94,0.3);
+        color: #FB7185;
+    }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(148,163,184,0.2);
+        border-radius: 999px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(148,163,184,0.35);
+    }
+
+    /* ===== DIVIDER NO SIDEBAR ===== */
+    [data-testid="stSidebar"] hr {
+        background: rgba(148,163,184,0.08) !important;
+    }
+
+    /* ===== SLIDER (se houver) ===== */
+    [data-testid="stSlider"] > div > div > div {
+        background: linear-gradient(90deg, #6366F1, #818CF8) !important;
+    }
+
+    /* ===== LOADING SPINNER ===== */
+    [data-testid="stSpinner"] > div {
+        border-top-color: #6366F1 !important;
+        border-right-color: rgba(99,102,241,0.3) !important;
+    }
     </style>
     """,
     unsafe_allow_html=True,
 )
-st.title("📘 Duo Cido")
+
+# ===== HEADER MODERNO =====
+st.markdown(
+    """
+    <div style="text-align:center; margin-bottom:1.5rem; animation: fadeInDown 0.6s ease;">
+        <div style="font-size:2.5rem; margin-bottom:0.3rem;">📘</div>
+        <h1 style="margin:0; font-size:1.8rem;">Duo Cido</h1>
+        <p style="color:#64748B; font-size:0.9rem; margin-top:0.3rem;">
+            Aprenda inglês de forma interativa e divertida
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 with st.sidebar:
     pagina = st.radio(
