@@ -1,3 +1,4 @@
+import concurrent.futures
 import difflib
 import json
 import random
@@ -189,6 +190,12 @@ def salvar_progresso(registros):
         json.dump(registros, f, ensure_ascii=False, indent=2)
 
 
+def _chamar_com_limite(func, tempo_limite=6):
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+        future = executor.submit(func)
+        return future.result(timeout=tempo_limite)
+
+
 def traduzir(texto, origem, destino):
     texto = (texto or "").strip()
     if not texto:
@@ -197,16 +204,13 @@ def traduzir(texto, origem, destino):
         lambda: GoogleTranslator(source=origem, target=destino).translate(texto),
         lambda: MyMemoryTranslator(source=origem, target=destino).translate(texto),
     ]
-    for rodada in range(2):
-        for provedor in provedores:
-            try:
-                resultado = provedor()
-                if resultado:
-                    return resultado
-            except Exception:
-                pass
-        if rodada == 0:
-            time.sleep(1)
+    for provedor in provedores:
+        try:
+            resultado = _chamar_com_limite(provedor, tempo_limite=6)
+            if resultado:
+                return resultado
+        except Exception:
+            pass
     st.error(
         "⚠️ Não consegui traduzir agora — os serviços de tradução parecem instáveis "
         "no momento. Tente novamente em alguns segundos."
