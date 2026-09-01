@@ -20,6 +20,81 @@ IDIOMA_VOZ = {"pt": "pt-BR", "en": "en-US"}
 CATEGORIAS = ["Geral", "Cotidiano", "Viagem", "Negócios", "🎵 Música"]
 DIAS_SEMANA = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"]
 
+PALAVRAS_EMOJI = [
+    (["aeroporto", "airport"], "✈️"),
+    (["voo", "voos", "flight", "flights"], "🛫"),
+    (["mala", "malas", "luggage", "bagagem"], "🧳"),
+    (["passagem", "passagens", "ticket", "tickets"], "🎫"),
+    (["passaporte", "passport"], "🛂"),
+    (["hotel", "hoteis", "hotéis"], "🏨"),
+    (["quarto", "room"], "🛏️"),
+    (["carro", "car", "carona", "ride"], "🚗"),
+    (["táxi", "taxi"], "🚕"),
+    (["trem", "train"], "🚆"),
+    (["dinheiro", "money"], "💰"),
+    (["wi-fi", "wifi"], "📶"),
+    (["reunião", "reunioes", "reuniões", "meeting"], "💼"),
+    (["contrato", "contract"], "📄"),
+    (["orçamento", "orcamento", "budget"], "📊"),
+    (["vendas", "sales"], "📈"),
+    (["cliente", "clientes", "client", "customer"], "🤝"),
+    (["empresa", "company"], "🏢"),
+    (["email", "e-mail"], "📧"),
+    (["relatório", "relatorio", "report"], "📋"),
+    (["prazo", "deadline"], "⏳"),
+    (["funcionários", "funcionarios", "employees"], "👥"),
+    (["restaurante", "restaurant"], "🍽️"),
+    (["café", "cafe", "coffee"], "☕"),
+    (["mercado", "grocery"], "🛒"),
+    (["leite", "milk"], "🥛"),
+    (["chuva", "chovendo", "rain", "raining"], "🌧️"),
+    (["filme", "filmes", "movie", "movies"], "🎬"),
+    (["chave", "chaves", "keys"], "🔑"),
+    (["praia", "beach"], "🏖️"),
+    (["viagem", "viajar", "trip", "travel"], "🧳"),
+    (["cidade", "city", "downtown"], "🏙️"),
+    (["casa", "home", "house"], "🏠"),
+    (["trabalho", "emprego", "job"], "💼"),
+    (["banheiro", "bathroom"], "🚻"),
+    (["ajuda", "ajudar", "help"], "🆘"),
+    (["amigo", "amigos", "friend", "friends"], "👬"),
+    (["família", "familia", "family"], "👨‍👩‍👧"),
+    (["faculdade", "college"], "🎓"),
+    (["exame", "exam"], "📝"),
+    (["férias", "ferias", "vacation"], "🏖️"),
+    (["manhã", "manha", "morning"], "🌅"),
+    (["noite", "night"], "🌙"),
+    (["cedo", "early"], "⏰"),
+    (["hoje", "today"], "📅"),
+    (["amanhã", "amanha", "tomorrow"], "📆"),
+    (["ontem", "yesterday"], "🗓️"),
+    (["preço", "preco", "desconto", "price", "discount"], "🏷️"),
+    (["equipe", "team"], "🧑‍🤝‍🧑"),
+    (["sistema", "system"], "💻"),
+    (["marketing"], "📢"),
+    (["telefone", "phone"], "📱"),
+    (["janela", "window"], "🪟"),
+    (["trânsito", "transito", "traffic"], "🚦"),
+    (["vizinho", "neighbor"], "🏘️"),
+    (["barulho", "noise"], "🔊"),
+    (["paciência", "paciencia", "patience"], "🧘"),
+    (["cozinhar", "cook", "cooking"], "🍳"),
+    (["dormir", "sleep"], "😴"),
+    (["acordar", "wake"], "⏰"),
+    (["estudar", "study", "studied", "estudado"], "📚"),
+    (["aprender", "learn", "learning"], "🧠"),
+    (["economizar", "save"], "💵"),
+    (["fome", "hungry"], "🍔"),
+    (["cansado", "tired"], "😴"),
+    (["produto", "product"], "📦"),
+    (["pedido", "order"], "🧾"),
+    (["nome", "name"], "🪪"),
+    (["chorando", "chorar", "crying", "cry"], "😢"),
+    (["feliz", "happy"], "😄"),
+    (["proposta", "proposal"], "📑"),
+    (["negociar", "negotiate", "negócio", "negocio", "deal"], "🤝"),
+]
+
 SCENAS_HISTORIA = [
     {
         "nome": "Aeroporto",
@@ -144,6 +219,28 @@ def normalizar(texto):
     texto = re.sub(r"[^\w\s]", "", texto)
     texto = re.sub(r"\s+", " ", texto)
     return texto
+
+
+def emojis_da_frase(frase, maximo=2):
+    tokens = set(normalizar(frase or "").split())
+    encontrados = []
+    for palavras, emoji in PALAVRAS_EMOJI:
+        if emoji in encontrados:
+            continue
+        if tokens & set(palavras):
+            encontrados.append(emoji)
+        if len(encontrados) >= maximo:
+            break
+    return encontrados
+
+
+def mostrar_emojis_frase(frase):
+    emojis = emojis_da_frase(frase)
+    if emojis:
+        st.markdown(
+            f"<div style='font-size:2.2rem; text-align:center; margin:0.2rem 0;'>{' '.join(emojis)}</div>",
+            unsafe_allow_html=True,
+        )
 
 
 def calcular_similaridade(resposta, referencia):
@@ -915,6 +1012,7 @@ if pagina == "📖 Praticar":
                 st.session_state["resposta_usuario"] = texto_falado
 
             st.subheader("Traduza a frase abaixo:")
+            mostrar_emojis_frase(st.session_state.frase_atual)
             st.info(f"**{origem_label} → {destino_label}**\n\n> {st.session_state.frase_atual}")
 
             resposta_usuario = st.text_area("Sua tradução:", key="resposta_usuario")
@@ -1002,6 +1100,7 @@ if pagina == "📖 Praticar":
                     st.rerun()
 
             if st.session_state.revelado and st.session_state.traducao_referencia:
+                mostrar_emojis_frase(st.session_state.frase_atual)
                 st.info(f"**Frase original ({origem_label}):** {st.session_state.frase_atual}")
                 st.success(f"**Tradução de referência:** {st.session_state.traducao_referencia}")
                 falar(st.session_state.traducao_referencia, IDIOMA_VOZ[destino_cod], "🔊 Ouvir tradução")
@@ -1017,6 +1116,7 @@ if pagina == "📖 Praticar":
 
         else:
             st.subheader("Leia a frase abaixo em voz alta:")
+            mostrar_emojis_frase(st.session_state.frase_atual)
             st.info(f"**{origem_label}**\n\n> {st.session_state.frase_atual}")
             falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir pronúncia correta")
 
@@ -1160,6 +1260,7 @@ elif pagina == "🎧 Só áudio":
             st.rerun()
 
     if st.session_state.audio_revelado:
+        mostrar_emojis_frase(st.session_state.audio_frase)
         st.info(f"**Frase original (Inglês):** {st.session_state.audio_frase}")
         st.success(f"**Tradução de referência:** {st.session_state.audio_referencia}")
         falar(st.session_state.audio_referencia, IDIOMA_VOZ["pt"], "🔊 Ouvir tradução")
@@ -1216,6 +1317,7 @@ elif pagina == "🗺️ Modo História":
         destino_label = "Inglês" if destino_cod == "en" else "Português"
 
         falar(st.session_state.historia_frase, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase")
+        mostrar_emojis_frase(st.session_state.historia_frase)
         st.info(f"**{origem_label} → {destino_label}**\n\n> {st.session_state.historia_frase}")
 
         resposta_historia = st.text_input(
