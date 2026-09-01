@@ -900,6 +900,9 @@ if pagina == "📖 Praticar":
         if modo_exercicio == "✍️ Traduzir":
             falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase original")
 
+            if st.session_state.revelado and st.session_state.traducao_referencia:
+                falar(st.session_state.traducao_referencia, IDIOMA_VOZ[destino_cod], "🔊 Ouvir tradução")
+
             texto_falado = speech_to_text(
                 language=IDIOMA_VOZ[destino_cod],
                 start_prompt="🎤 Falar minha tradução",
@@ -944,7 +947,6 @@ if pagina == "📖 Praticar":
 
             if st.session_state.revelado and st.session_state.traducao_referencia:
                 st.success(f"**Tradução de referência:** {st.session_state.traducao_referencia}")
-                falar(st.session_state.traducao_referencia, IDIOMA_VOZ[destino_cod], "🔊 Ouvir tradução")
 
                 pontuacao = st.session_state.pontuacao
                 emoji_score = "🟢" if pontuacao >= 80 else "🟡" if pontuacao >= 50 else "🔴"
