@@ -96,6 +96,42 @@ PALAVRAS_EMOJI = [
     (["negociar", "negotiate", "negócio", "negocio", "deal"], "🤝"),
 ]
 
+DICIONARIO_RAPIDO_EN_PT = {
+    "the": "o/a", "a": "um/uma", "an": "um/uma", "is": "é/está", "are": "são/estão",
+    "am": "sou/estou", "was": "era/estava", "were": "eram/estavam", "be": "ser/estar",
+    "to": "para", "of": "de", "in": "em", "on": "em/sobre", "at": "em/às",
+    "for": "para", "this": "isso/esse", "that": "aquilo/aquele", "these": "estes",
+    "you": "você", "i": "eu", "we": "nós", "he": "ele", "she": "ela", "it": "isso/ele/ela",
+    "they": "eles/elas", "do": "fazer", "does": "faz", "did": "fez", "done": "feito",
+    "not": "não", "and": "e", "or": "ou", "but": "mas", "with": "com", "without": "sem",
+    "from": "de", "have": "ter/tenho", "has": "tem", "had": "tinha", "having": "tendo",
+    "will": "vai/irá", "would": "iria", "can": "pode", "could": "poderia", "should": "deveria",
+    "my": "meu/minha", "your": "seu/sua", "his": "dele", "her": "dela",
+    "our": "nosso/nossa", "their": "deles/delas", "what": "o que/qual",
+    "where": "onde", "when": "quando", "why": "por que", "how": "como",
+    "who": "quem", "please": "por favor", "yes": "sim", "no": "não",
+    "there": "lá/ali", "here": "aqui", "very": "muito", "so": "então/tão",
+    "now": "agora", "just": "só/apenas", "also": "também", "again": "de novo",
+    "before": "antes", "after": "depois", "because": "porque", "if": "se",
+    "need": "preciso", "want": "quero", "like": "gosto/como", "get": "conseguir/pegar",
+}
+DICIONARIO_RAPIDO_PT_EN = {
+    "o": "the", "a": "the/a", "os": "the", "as": "the", "um": "a/an", "uma": "a/an",
+    "é": "is", "são": "are", "está": "is", "estão": "are", "de": "of/from",
+    "para": "to/for", "em": "in/on", "com": "with", "sem": "without", "que": "that/what",
+    "eu": "i", "você": "you", "ele": "he", "ela": "she", "nós": "we",
+    "eles": "they", "elas": "they", "não": "not/no", "sim": "yes", "e": "and",
+    "ou": "or", "mas": "but", "meu": "my", "minha": "my", "seu": "your",
+    "sua": "your", "nosso": "our", "nossa": "our", "onde": "where",
+    "quando": "when", "como": "how", "quem": "who",
+    "qual": "which/what", "isso": "this/that", "esse": "this", "aquilo": "that",
+    "aqui": "here", "lá": "there", "muito": "very", "agora": "now",
+    "também": "also", "antes": "before", "depois": "after", "porque": "because",
+    "se": "if", "preciso": "need", "quero": "want", "gosto": "like",
+    "vamos": "let's/we go", "tenho": "i have", "tem": "has/there is",
+}
+
+
 SCENAS_HISTORIA = [
     {
         "nome": "Aeroporto",
@@ -202,7 +238,9 @@ def traduzir(texto, origem, destino):
         return ""
     provedores = [
         lambda: GoogleTranslator(source=origem, target=destino).translate(texto),
-        lambda: MyMemoryTranslator(source=origem, target=destino).translate(texto),
+        lambda: MyMemoryTranslator(
+            source=IDIOMA_VOZ.get(origem, origem), target=IDIOMA_VOZ.get(destino, destino)
+        ).translate(texto),
     ]
     for provedor in provedores:
         try:
@@ -216,6 +254,90 @@ def traduzir(texto, origem, destino):
         "no momento. Tente novamente em alguns segundos."
     )
     st.stop()
+
+
+@st.cache_data(show_spinner=False)
+def traduzir_palavra_cache(palavra, origem, destino):
+    palavra = (palavra or "").strip()
+    if not palavra:
+        return None
+    dicionario = DICIONARIO_RAPIDO_EN_PT if origem == "en" else DICIONARIO_RAPIDO_PT_EN
+    if palavra.lower() in dicionario:
+        return dicionario[palavra.lower()]
+    provedores = [
+        lambda: GoogleTranslator(source=origem, target=destino).translate(palavra),
+        lambda: MyMemoryTranslator(
+            source=IDIOMA_VOZ.get(origem, origem), target=IDIOMA_VOZ.get(destino, destino)
+        ).translate(palavra),
+    ]
+    for provedor in provedores:
+        try:
+            resultado = _chamar_com_limite(provedor, tempo_limite=6)
+            if resultado:
+                return resultado
+        except Exception:
+            pass
+    return None
+
+
+def _escapar_html(texto):
+    return (
+        (texto or "")
+        .replace("&", "&amp;")
+        .replace('"', "&quot;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+    )
+
+
+def frase_clicavel(frase, origem_cod, destino_cod, cabecalho):
+    frase = frase or ""
+    tokens = re.findall(r"\w+(?:'\w+)?|\s+|[^\w\s]", frase, flags=re.UNICODE)
+    partes_html = []
+    cache_local = {}
+    for token in tokens:
+        if re.fullmatch(r"\w+(?:'\w+)?", token, flags=re.UNICODE):
+            chave = token.lower()
+            if chave not in cache_local:
+                cache_local[chave] = traduzir_palavra_cache(chave, origem_cod, destino_cod) or "?"
+            partes_html.append(
+                f'<span class="palavra-clicavel" data-palavra="{_escapar_html(token)}" '
+                f'data-trad="{_escapar_html(cache_local[chave])}">{_escapar_html(token)}</span>'
+            )
+        else:
+            partes_html.append(_escapar_html(token))
+    frase_html = "".join(partes_html)
+    cabecalho_html = _escapar_html(cabecalho)
+
+    html = f"""
+    <div style="background:rgba(99,102,241,0.08); border:1.5px solid rgba(99,102,241,0.25);
+        border-radius:16px; padding:1rem 1.2rem; font-family:'Inter',-apple-system,sans-serif;">
+        <div style="font-weight:700; color:#C7D2FE; font-size:0.9rem; margin-bottom:0.6rem;">{cabecalho_html}</div>
+        <div style="font-size:1.2rem; font-weight:700; color:#F1F5F9; line-height:1.9;">{frase_html}</div>
+        <div id="popup-traducao" style="display:none; margin-top:0.7rem; padding:0.5rem 0.8rem;
+            background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.4); border-radius:10px;
+            font-size:0.95rem; color:#6EE7B7; font-weight:600;"></div>
+        <div style="font-size:0.75rem; color:#64748B; margin-top:0.5rem;">👆 toque em uma palavra para ver o significado</div>
+    </div>
+    <style>
+        .palavra-clicavel {{
+            cursor:pointer;
+            border-bottom:2px dotted rgba(99,102,241,0.6);
+            padding-bottom:1px;
+        }}
+        .palavra-clicavel:active {{ color:#818CF8; }}
+    </style>
+    <script>
+        document.querySelectorAll('.palavra-clicavel').forEach(function(el) {{
+            el.addEventListener('click', function() {{
+                var popup = document.getElementById('popup-traducao');
+                popup.textContent = el.dataset.palavra + ' → ' + el.dataset.trad;
+                popup.style.display = 'block';
+            }});
+        }});
+    </script>
+    """
+    components.html(html, height=185, scrolling=True)
 
 
 def normalizar(texto):
@@ -1017,7 +1139,7 @@ if pagina == "📖 Praticar":
 
             st.subheader("Traduza a frase abaixo:")
             mostrar_emojis_frase(st.session_state.frase_atual)
-            st.info(f"**{origem_label} → {destino_label}**\n\n> {st.session_state.frase_atual}")
+            frase_clicavel(st.session_state.frase_atual, origem_cod, destino_cod, f"{origem_label} → {destino_label}")
 
             resposta_usuario = st.text_area("Sua tradução:", key="resposta_usuario")
 
@@ -1121,7 +1243,7 @@ if pagina == "📖 Praticar":
         else:
             st.subheader("Leia a frase abaixo em voz alta:")
             mostrar_emojis_frase(st.session_state.frase_atual)
-            st.info(f"**{origem_label}**\n\n> {st.session_state.frase_atual}")
+            frase_clicavel(st.session_state.frase_atual, origem_cod, destino_cod, origem_label)
             falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir pronúncia correta")
 
             texto_falado_leitura = speech_to_text(
@@ -1322,7 +1444,7 @@ elif pagina == "🗺️ Modo História":
 
         falar(st.session_state.historia_frase, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase")
         mostrar_emojis_frase(st.session_state.historia_frase)
-        st.info(f"**{origem_label} → {destino_label}**\n\n> {st.session_state.historia_frase}")
+        frase_clicavel(st.session_state.historia_frase, origem_cod, destino_cod, f"{origem_label} → {destino_label}")
 
         resposta_historia = st.text_input(
             "Sua tradução:", key=f"resposta_historia_{st.session_state.historia_indice}"
