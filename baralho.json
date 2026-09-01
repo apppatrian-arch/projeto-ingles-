@@ -373,5 +373,295 @@
     "pt": "Precisamos cortar custos.",
     "en": "We need to cut costs.",
     "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu queria muito ter mais tempo livre para viajar e conhecer lugares novos.",
+    "en": "I really wish I had more free time to travel and see new places.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Se eu tivesse estudado mais, eu teria passado no exame com facilidade.",
+    "en": "If I had studied more, I would have passed the exam easily.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ela decidiu mudar de emprego porque não estava feliz com o salário.",
+    "en": "She decided to change jobs because she wasn't happy with the salary.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Depois que terminarmos o projeto, vamos tirar alguns dias de férias.",
+    "en": "After we finish the project, we're going to take a few days off.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Embora estivesse chovendo muito, decidimos sair para caminhar mesmo assim.",
+    "en": "Even though it was raining a lot, we decided to go for a walk anyway.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu acho que devemos conversar sobre isso com calma antes de decidir algo.",
+    "en": "I think we should talk about this calmly before deciding anything.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele trabalha duro todos os dias para sustentar a família.",
+    "en": "He works hard every day to support his family.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Nós ainda não sabemos se vamos conseguir chegar a tempo para a reunião.",
+    "en": "We still don't know if we'll be able to arrive in time for the meeting.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Quanto mais eu pratico inglês, mais confiante eu me sinto para conversar.",
+    "en": "The more I practice English, the more confident I feel about speaking.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eles se conheceram na faculdade e continuam amigos até hoje.",
+    "en": "They met in college and are still friends to this day.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "É importante economizar dinheiro todos os meses para imprevistos.",
+    "en": "It's important to save money every month for emergencies.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu não tinha percebido que já era tão tarde.",
+    "en": "I hadn't realized it was already so late.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Vamos precisar de mais informações antes de tomar essa decisão.",
+    "en": "We are going to need more information before making this decision.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ela sempre me ajuda quando eu preciso, não importa o que aconteça.",
+    "en": "She always helps me when I need it, no matter what happens.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu prefiro resolver os problemas assim que eles aparecem.",
+    "en": "I prefer to solve problems as soon as they appear.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Nunca é tarde demais para aprender algo novo.",
+    "en": "It's never too late to learn something new.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu esqueci completamente de comprar leite quando fui ao mercado.",
+    "en": "I completely forgot to buy milk when I went to the grocery store.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você poderia me avisar assim que chegar em casa?",
+    "en": "Could you let me know as soon as you get home?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou tentando criar o hábito de acordar mais cedo todos os dias.",
+    "en": "I'm trying to build the habit of waking up earlier every day.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Meu vizinho está sempre fazendo barulho durante a noite.",
+    "en": "My neighbor is always making noise during the night.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu queria ter mais paciência com as pequenas coisas do dia a dia.",
+    "en": "I wish I had more patience with the small things in everyday life.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Ela limpa a casa toda toda semana, mesmo estando muito ocupada.",
+    "en": "She cleans the whole house every week, even though she's very busy.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Assim que eu terminar de cozinhar, podemos jantar juntos.",
+    "en": "As soon as I finish cooking, we can have dinner together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu sempre tomo um café antes de sair de casa pela manhã.",
+    "en": "I always have a coffee before leaving home in the morning.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você sabe onde eu deixei minhas chaves? Não consigo encontrá-las.",
+    "en": "Do you know where I left my keys? I can't find them.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou tentando economizar dinheiro comprando menos coisas desnecessárias.",
+    "en": "I'm trying to save money by buying fewer unnecessary things.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Meus pais sempre me ensinaram a ser honesto com as pessoas.",
+    "en": "My parents always taught me to be honest with people.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Ele deixou o carro na oficina porque estava fazendo um barulho estranho.",
+    "en": "He left the car at the shop because it was making a strange noise.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu adoraria aprender a cozinhar pratos mais elaborados algum dia.",
+    "en": "I would love to learn how to cook more elaborate dishes someday.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós costumamos assistir filmes juntos todo fim de semana.",
+    "en": "We usually watch movies together every weekend.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estamos planejando uma viagem para a praia no próximo mês.",
+    "en": "We are planning a trip to the beach next month.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu esqueci meu passaporte em casa e quase perdi o voo.",
+    "en": "I forgot my passport at home and almost missed the flight.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você poderia me indicar um restaurante bom perto do hotel?",
+    "en": "Could you recommend a good restaurant near the hotel?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Nosso voo teve uma escala inesperada em outra cidade.",
+    "en": "Our flight had an unexpected layover in another city.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu adoraria visitar aquele país algum dia, parece incrível.",
+    "en": "I would love to visit that country someday, it looks amazing.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Precisamos chegar ao aeroporto com pelo menos duas horas de antecedência.",
+    "en": "We need to get to the airport at least two hours early.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "A vista do quarto do hotel era simplesmente maravilhosa.",
+    "en": "The view from the hotel room was simply wonderful.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu perdi a conexão porque o primeiro voo atrasou muito.",
+    "en": "I missed the connection because the first flight was delayed a lot.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Vocês já decidiram para onde vão viajar nas férias?",
+    "en": "Have you already decided where you're going to travel on vacation?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "O guia turístico nos mostrou os lugares mais interessantes da cidade.",
+    "en": "The tour guide showed us the most interesting places in the city.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu gostaria de trocar meu assento para um mais próximo da janela.",
+    "en": "I would like to change my seat to one closer to the window.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Nós ficamos presos no trânsito e quase perdemos o trem.",
+    "en": "We got stuck in traffic and almost missed the train.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Assim que pousarmos, vamos direto para o hotel descansar.",
+    "en": "As soon as we land, we're going straight to the hotel to rest.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Essa foi a viagem mais longa que já fizemos até hoje.",
+    "en": "That was the longest trip we've ever taken so far.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Precisamos apresentar os resultados do trimestre para a diretoria na sexta-feira.",
+    "en": "We need to present the quarterly results to the board on Friday.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "A empresa está contratando novos funcionários para o time de vendas.",
+    "en": "The company is hiring new employees for the sales team.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos precisar revisar todo o contrato antes de assiná-lo.",
+    "en": "We are going to need to review the entire contract before signing it.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "O cliente pediu um desconto maior para fechar o pedido.",
+    "en": "The client asked for a bigger discount to close the order.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nossa equipe conseguiu entregar o projeto antes do prazo combinado.",
+    "en": "Our team managed to deliver the project before the agreed deadline.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos alinhar as expectativas com o cliente antes de começar o trabalho.",
+    "en": "We need to align expectations with the client before starting the work.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "A reunião foi cancelada porque o diretor teve um imprevisto.",
+    "en": "The meeting was cancelled because the director had an unexpected issue.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Estamos analisando algumas propostas de fornecedores diferentes.",
+    "en": "We are analyzing a few proposals from different suppliers.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "O relatório mostra que as vendas cresceram significativamente esse ano.",
+    "en": "The report shows that sales grew significantly this year.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos treinar a equipe antes de lançar o novo sistema.",
+    "en": "We need to train the team before launching the new system.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "A empresa decidiu investir mais em marketing digital este ano.",
+    "en": "The company decided to invest more in digital marketing this year.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos precisar de mais recursos para concluir esse projeto a tempo.",
+    "en": "We are going to need more resources to finish this project on time.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "O feedback dos clientes tem sido muito positivo ultimamente.",
+    "en": "Customer feedback has been very positive lately.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos definir metas mais claras para o próximo trimestre.",
+    "en": "We need to set clearer goals for next quarter.",
+    "categoria": "Negócios"
   }
 ]
