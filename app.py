@@ -369,6 +369,120 @@ def mostrar_emojis_frase(frase):
         )
 
 
+def montar_dados_biblioteca(categorias, ordem):
+    itens = [
+        item for item in st.session_state.baralho
+        if item.get("categoria", "Geral") in categorias
+    ] or st.session_state.baralho
+    itens = list(itens)
+    if ordem == "Aleatório":
+        random.shuffle(itens)
+    dados = []
+    for item in itens:
+        emojis = emojis_da_frase(f"{item['en']} {item['pt']}")
+        dados.append({"en": item["en"], "pt": item["pt"], "emoji": " ".join(emojis)})
+    return dados
+
+
+def reprodutor_biblioteca(dados):
+    dados_json = json.dumps(dados, ensure_ascii=False)
+    total = len(dados)
+    estilo_botao = (
+        "flex:1; padding:0.6rem 0.5rem; border-radius:12px; border:1.5px solid rgba(99,102,241,0.4);"
+        "background:rgba(99,102,241,0.12); color:#F1F5F9; font-size:1.1rem; cursor:pointer;"
+        "font-family:'Inter',-apple-system,sans-serif;"
+    )
+    html = f"""
+    <div style="background:rgba(99,102,241,0.08); border:1.5px solid rgba(99,102,241,0.25);
+        border-radius:16px; padding:1rem 1.2rem; font-family:'Inter',-apple-system,sans-serif; text-align:center;">
+        <div id="rb-progresso" style="font-size:0.8rem; color:#94A3B8; margin-bottom:0.5rem;">Frase 1 de {total}</div>
+        <div id="rb-emoji" style="font-size:2rem; margin-bottom:0.4rem; min-height:2.4rem;"></div>
+        <div id="rb-en" style="font-size:1.15rem; font-weight:700; color:#F1F5F9; margin-bottom:0.3rem;"></div>
+        <div id="rb-pt" style="font-size:1.05rem; font-weight:600; color:#6EE7B7; min-height:1.4rem;"></div>
+        <div style="display:flex; gap:0.5rem; justify-content:center; margin-top:1rem;">
+            <button id="rb-anterior" style="{estilo_botao}">⏮️</button>
+            <button id="rb-playpause" style="{estilo_botao}">▶️</button>
+            <button id="rb-proximo" style="{estilo_botao}">⏭️</button>
+        </div>
+    </div>
+    <script>
+    (function() {{
+        const dados = {dados_json};
+        let pos = 0;
+        let tocando = false;
+        let tokenAtual = 0;
+
+        function atualizarTela() {{
+            const item = dados[pos];
+            document.getElementById('rb-progresso').textContent = 'Frase ' + (pos + 1) + ' de ' + dados.length;
+            document.getElementById('rb-emoji').textContent = item.emoji || '';
+            document.getElementById('rb-en').textContent = item.en;
+            document.getElementById('rb-pt').textContent = item.pt;
+        }}
+
+        function falarSequencia(meuToken) {{
+            const item = dados[pos];
+            window.speechSynthesis.cancel();
+            const uEn = new SpeechSynthesisUtterance(item.en);
+            uEn.lang = 'en-US';
+            uEn.onend = function() {{
+                if (meuToken !== tokenAtual) return;
+                const uPt = new SpeechSynthesisUtterance(item.pt);
+                uPt.lang = 'pt-BR';
+                uPt.onend = function() {{
+                    if (meuToken !== tokenAtual) return;
+                    if (tocando) {{
+                        setTimeout(function() {{
+                            if (meuToken !== tokenAtual) return;
+                            avancar();
+                        }}, 1000);
+                    }}
+                }};
+                window.speechSynthesis.speak(uPt);
+            }};
+            window.speechSynthesis.speak(uEn);
+        }}
+
+        function tocarAtual() {{
+            atualizarTela();
+            tokenAtual++;
+            falarSequencia(tokenAtual);
+        }}
+
+        function avancar() {{
+            pos = (pos + 1) % dados.length;
+            tocarAtual();
+        }}
+
+        function voltar() {{
+            pos = (pos - 1 + dados.length) % dados.length;
+            tocarAtual();
+        }}
+
+        document.getElementById('rb-playpause').addEventListener('click', function() {{
+            tocando = !tocando;
+            this.textContent = tocando ? '⏸️' : '▶️';
+            if (tocando) {{
+                tocarAtual();
+            }} else {{
+                tokenAtual++;
+                window.speechSynthesis.cancel();
+            }}
+        }});
+        document.getElementById('rb-proximo').addEventListener('click', function() {{
+            avancar();
+        }});
+        document.getElementById('rb-anterior').addEventListener('click', function() {{
+            voltar();
+        }});
+
+        atualizarTela();
+    }})();
+    </script>
+    """
+    components.html(html, height=260)
+
+
 def calcular_similaridade(resposta, referencia):
     a, b = normalizar(resposta), normalizar(referencia)
     if not a:
@@ -1008,6 +1122,9 @@ with st.sidebar:
         categorias_audio = st.multiselect(
             "Categorias do baralho", CATEGORIAS, default=CATEGORIAS, key="cat_audio"
         )
+        ordem_biblioteca = st.radio(
+            "Ordem da biblioteca de áudio", ["Sequencial", "Aleatório"], horizontal=True, key="ordem_biblioteca"
+        )
 
     st.divider()
     st.subheader("Progresso")
@@ -1420,6 +1537,15 @@ elif pagina == "🎧 Só áudio":
     if proxima_audio:
         sortear_frase_audio(limpar_resposta=True)
         st.rerun()
+
+    st.divider()
+    st.subheader("🎼 Ouvir toda a biblioteca")
+    st.caption(
+        "Escuta passiva: cada frase toca primeiro em inglês, depois em português, "
+        "avançando sozinha para a próxima — sem precisar acertar nada."
+    )
+    dados_biblioteca = montar_dados_biblioteca(categorias_audio, ordem_biblioteca)
+    reprodutor_biblioteca(dados_biblioteca)
 
 elif pagina == "🗺️ Modo História":
     cronometro_estudo(int((datetime.now() - st.session_state.sessao_inicio).total_seconds()))
