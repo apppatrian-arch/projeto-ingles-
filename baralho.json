@@ -663,5 +663,5155 @@
     "pt": "Precisamos definir metas mais claras para o próximo trimestre.",
     "en": "We need to set clearer goals for next quarter.",
     "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu preciso ir para o mercado.",
+    "en": "I need to go to the market.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para o banco.",
+    "en": "I need to go to the bank.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para a farmácia.",
+    "en": "I need to go to the pharmacy.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para a escola.",
+    "en": "I need to go to the school.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para a academia.",
+    "en": "I need to go to the gym.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para o parque.",
+    "en": "I need to go to the park.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para o supermercado.",
+    "en": "I need to go to the supermarket.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para a padaria.",
+    "en": "I need to go to the bakery.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para o hospital.",
+    "en": "I need to go to the hospital.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para os correios.",
+    "en": "I need to go to the post office.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para a barbearia.",
+    "en": "I need to go to the barber shop.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para a igreja.",
+    "en": "I need to go to the church.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para a biblioteca.",
+    "en": "I need to go to the library.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para o shopping.",
+    "en": "I need to go to the mall.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para o cinema.",
+    "en": "I need to go to the cinema.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para o escritório.",
+    "en": "I need to go to the office.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para a universidade.",
+    "en": "I need to go to the university.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para a delegacia.",
+    "en": "I need to go to the police station.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para o dentista.",
+    "en": "I need to go to the dentist.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para o veterinário.",
+    "en": "I need to go to the vet.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para a lavanderia.",
+    "en": "I need to go to the laundromat.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para o estacionamento.",
+    "en": "I need to go to the parking lot.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para o ponto de ônibus.",
+    "en": "I need to go to the bus stop.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para o bairro.",
+    "en": "I need to go to the neighborhood.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para a garagem.",
+    "en": "I need to go to the garage.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica o mercado?",
+    "en": "Where is the market?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica o banco?",
+    "en": "Where is the bank?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica a farmácia?",
+    "en": "Where is the pharmacy?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica a escola?",
+    "en": "Where is the school?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica a academia?",
+    "en": "Where is the gym?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica o parque?",
+    "en": "Where is the park?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica o supermercado?",
+    "en": "Where is the supermarket?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica a padaria?",
+    "en": "Where is the bakery?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica o hospital?",
+    "en": "Where is the hospital?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica os correios?",
+    "en": "Where is the post office?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica a barbearia?",
+    "en": "Where is the barber shop?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica a igreja?",
+    "en": "Where is the church?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica a biblioteca?",
+    "en": "Where is the library?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica o shopping?",
+    "en": "Where is the mall?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica o cinema?",
+    "en": "Where is the cinema?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica o escritório?",
+    "en": "Where is the office?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica a universidade?",
+    "en": "Where is the university?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica a delegacia?",
+    "en": "Where is the police station?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica o dentista?",
+    "en": "Where is the dentist?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica o veterinário?",
+    "en": "Where is the vet?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica a lavanderia?",
+    "en": "Where is the laundromat?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica o estacionamento?",
+    "en": "Where is the parking lot?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica o ponto de ônibus?",
+    "en": "Where is the bus stop?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica o bairro?",
+    "en": "Where is the neighborhood?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde fica a garagem?",
+    "en": "Where is the garage?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para o mercado amanhã.",
+    "en": "I'm going to the market tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para o banco amanhã.",
+    "en": "I'm going to the bank tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para a farmácia amanhã.",
+    "en": "I'm going to the pharmacy tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para a escola amanhã.",
+    "en": "I'm going to the school tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para a academia amanhã.",
+    "en": "I'm going to the gym tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para o parque amanhã.",
+    "en": "I'm going to the park tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para o supermercado amanhã.",
+    "en": "I'm going to the supermarket tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para a padaria amanhã.",
+    "en": "I'm going to the bakery tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para o hospital amanhã.",
+    "en": "I'm going to the hospital tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para os correios amanhã.",
+    "en": "I'm going to the post office tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para a barbearia amanhã.",
+    "en": "I'm going to the barber shop tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para a igreja amanhã.",
+    "en": "I'm going to the church tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para a biblioteca amanhã.",
+    "en": "I'm going to the library tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para o shopping amanhã.",
+    "en": "I'm going to the mall tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para o cinema amanhã.",
+    "en": "I'm going to the cinema tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para o escritório amanhã.",
+    "en": "I'm going to the office tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para a universidade amanhã.",
+    "en": "I'm going to the university tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para a delegacia amanhã.",
+    "en": "I'm going to the police station tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para o dentista amanhã.",
+    "en": "I'm going to the dentist tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para o veterinário amanhã.",
+    "en": "I'm going to the vet tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para a lavanderia amanhã.",
+    "en": "I'm going to the laundromat tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para o estacionamento amanhã.",
+    "en": "I'm going to the parking lot tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para o ponto de ônibus amanhã.",
+    "en": "I'm going to the bus stop tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para o bairro amanhã.",
+    "en": "I'm going to the neighborhood tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu vou para a garagem amanhã.",
+    "en": "I'm going to the garage tomorrow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso ir para o aeroporto.",
+    "en": "I need to go to the airport.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para o hotel.",
+    "en": "I need to go to the hotel.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para a praia.",
+    "en": "I need to go to the beach.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para a estação de trem.",
+    "en": "I need to go to the train station.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para a rodoviária.",
+    "en": "I need to go to the bus station.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para o centro da cidade.",
+    "en": "I need to go to downtown.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para o porto.",
+    "en": "I need to go to the harbor.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para a fronteira.",
+    "en": "I need to go to the border.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para a embaixada.",
+    "en": "I need to go to the embassy.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para a alfândega.",
+    "en": "I need to go to the customs office.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para o museu.",
+    "en": "I need to go to the museum.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para o interior.",
+    "en": "I need to go to the countryside.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para as montanhas.",
+    "en": "I need to go to the mountains.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para o lago.",
+    "en": "I need to go to the lake.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para o acampamento.",
+    "en": "I need to go to the campsite.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para o terminal de balsas.",
+    "en": "I need to go to the ferry terminal.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para o resort.",
+    "en": "I need to go to the resort.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para o posto de turismo.",
+    "en": "I need to go to the tourist office.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para o centro histórico.",
+    "en": "I need to go to the old town.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para o mirante.",
+    "en": "I need to go to the viewpoint.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para a cachoeira.",
+    "en": "I need to go to the waterfall.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para o parque nacional.",
+    "en": "I need to go to the national park.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para a estação de esqui.",
+    "en": "I need to go to the ski resort.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para o terminal de cruzeiros.",
+    "en": "I need to go to the cruise terminal.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu preciso ir para a locadora de carros.",
+    "en": "I need to go to the car rental.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica o hotel?",
+    "en": "Where is the hotel?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica a praia?",
+    "en": "Where is the beach?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica a estação de trem?",
+    "en": "Where is the train station?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica a rodoviária?",
+    "en": "Where is the bus station?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica o centro da cidade?",
+    "en": "Where is downtown?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica o porto?",
+    "en": "Where is the harbor?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica a fronteira?",
+    "en": "Where is the border?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica a embaixada?",
+    "en": "Where is the embassy?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica a alfândega?",
+    "en": "Where is the customs office?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica o museu?",
+    "en": "Where is the museum?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica o interior?",
+    "en": "Where is the countryside?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica as montanhas?",
+    "en": "Where is the mountains?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica o lago?",
+    "en": "Where is the lake?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica o acampamento?",
+    "en": "Where is the campsite?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica o terminal de balsas?",
+    "en": "Where is the ferry terminal?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica o resort?",
+    "en": "Where is the resort?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica o posto de turismo?",
+    "en": "Where is the tourist office?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica o centro histórico?",
+    "en": "Where is the old town?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica o mirante?",
+    "en": "Where is the viewpoint?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica a cachoeira?",
+    "en": "Where is the waterfall?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica o parque nacional?",
+    "en": "Where is the national park?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica a estação de esqui?",
+    "en": "Where is the ski resort?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica o terminal de cruzeiros?",
+    "en": "Where is the cruise terminal?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde fica a locadora de carros?",
+    "en": "Where is the car rental?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para o aeroporto amanhã.",
+    "en": "I'm going to the airport tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para o hotel amanhã.",
+    "en": "I'm going to the hotel tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para a praia amanhã.",
+    "en": "I'm going to the beach tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para a estação de trem amanhã.",
+    "en": "I'm going to the train station tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para a rodoviária amanhã.",
+    "en": "I'm going to the bus station tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para o centro da cidade amanhã.",
+    "en": "I'm going to downtown tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para o porto amanhã.",
+    "en": "I'm going to the harbor tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para a fronteira amanhã.",
+    "en": "I'm going to the border tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para a embaixada amanhã.",
+    "en": "I'm going to the embassy tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para a alfândega amanhã.",
+    "en": "I'm going to the customs office tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para o museu amanhã.",
+    "en": "I'm going to the museum tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para o interior amanhã.",
+    "en": "I'm going to the countryside tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para as montanhas amanhã.",
+    "en": "I'm going to the mountains tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para o lago amanhã.",
+    "en": "I'm going to the lake tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para o acampamento amanhã.",
+    "en": "I'm going to the campsite tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para o terminal de balsas amanhã.",
+    "en": "I'm going to the ferry terminal tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para o resort amanhã.",
+    "en": "I'm going to the resort tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para o posto de turismo amanhã.",
+    "en": "I'm going to the tourist office tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para o centro histórico amanhã.",
+    "en": "I'm going to the old town tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para o mirante amanhã.",
+    "en": "I'm going to the viewpoint tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para a cachoeira amanhã.",
+    "en": "I'm going to the waterfall tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para o parque nacional amanhã.",
+    "en": "I'm going to the national park tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para a estação de esqui amanhã.",
+    "en": "I'm going to the ski resort tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para o terminal de cruzeiros amanhã.",
+    "en": "I'm going to the cruise terminal tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Eu vou para a locadora de carros amanhã.",
+    "en": "I'm going to the car rental tomorrow.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você pode me passar as chaves?",
+    "en": "Can you pass me the keys?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o celular?",
+    "en": "Can you pass me the phone?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a carteira?",
+    "en": "Can you pass me the wallet?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o notebook?",
+    "en": "Can you pass me the laptop?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o carregador?",
+    "en": "Can you pass me the charger?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o guarda-chuva?",
+    "en": "Can you pass me the umbrella?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar os óculos?",
+    "en": "Can you pass me the glasses?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a mochila?",
+    "en": "Can you pass me the backpack?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a mala?",
+    "en": "Can you pass me the suitcase?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o controle remoto?",
+    "en": "Can you pass me the remote control?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar os fones de ouvido?",
+    "en": "Can you pass me the headphones?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o caderno?",
+    "en": "Can you pass me the notebook?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a caneta?",
+    "en": "Can you pass me the pen?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a calculadora?",
+    "en": "Can you pass me the calculator?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a câmera?",
+    "en": "Can you pass me the camera?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o relógio?",
+    "en": "Can you pass me the watch?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a corrente da carteira?",
+    "en": "Can you pass me the wallet chain?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a caixa de ferramentas?",
+    "en": "Can you pass me the toolbox?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a lanterna?",
+    "en": "Can you pass me the flashlight?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a extensão?",
+    "en": "Can you pass me the extension cord?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a impressora?",
+    "en": "Can you pass me the printer?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o roteador?",
+    "en": "Can you pass me the router?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o mouse?",
+    "en": "Can you pass me the mouse?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o teclado?",
+    "en": "Can you pass me the keyboard?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a nota fiscal?",
+    "en": "Can you pass me the invoice?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o recibo?",
+    "en": "Can you pass me the receipt?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a pasta?",
+    "en": "Can you pass me the folder?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o grampeador?",
+    "en": "Can you pass me the stapler?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a tesoura?",
+    "en": "Can you pass me the scissors?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a fita adesiva?",
+    "en": "Can you pass me the tape?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o cobertor?",
+    "en": "Can you pass me the blanket?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o travesseiro?",
+    "en": "Can you pass me the pillow?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a toalha?",
+    "en": "Can you pass me the towel?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a vassoura?",
+    "en": "Can you pass me the broom?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a escada?",
+    "en": "Can you pass me the ladder?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar a chave da caixa de ferramentas?",
+    "en": "Can you pass me the toolbox key?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o estepe?",
+    "en": "Can you pass me the spare tire?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o kit de primeiros socorros?",
+    "en": "Can you pass me the first aid kit?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o extintor?",
+    "en": "Can you pass me the fire extinguisher?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o manual?",
+    "en": "Can you pass me the manual?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me passar o cartão de garantia?",
+    "en": "Can you pass me the warranty card?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi as chaves.",
+    "en": "I lost the keys.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o celular.",
+    "en": "I lost the phone.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a carteira.",
+    "en": "I lost the wallet.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o notebook.",
+    "en": "I lost the laptop.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o carregador.",
+    "en": "I lost the charger.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o guarda-chuva.",
+    "en": "I lost the umbrella.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi os óculos.",
+    "en": "I lost the glasses.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a mochila.",
+    "en": "I lost the backpack.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a mala.",
+    "en": "I lost the suitcase.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o controle remoto.",
+    "en": "I lost the remote control.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi os fones de ouvido.",
+    "en": "I lost the headphones.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o caderno.",
+    "en": "I lost the notebook.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a caneta.",
+    "en": "I lost the pen.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a calculadora.",
+    "en": "I lost the calculator.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a câmera.",
+    "en": "I lost the camera.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o relógio.",
+    "en": "I lost the watch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a corrente da carteira.",
+    "en": "I lost the wallet chain.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a caixa de ferramentas.",
+    "en": "I lost the toolbox.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a lanterna.",
+    "en": "I lost the flashlight.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a extensão.",
+    "en": "I lost the extension cord.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a impressora.",
+    "en": "I lost the printer.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o roteador.",
+    "en": "I lost the router.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o mouse.",
+    "en": "I lost the mouse.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o teclado.",
+    "en": "I lost the keyboard.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a nota fiscal.",
+    "en": "I lost the invoice.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o recibo.",
+    "en": "I lost the receipt.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a pasta.",
+    "en": "I lost the folder.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o grampeador.",
+    "en": "I lost the stapler.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a tesoura.",
+    "en": "I lost the scissors.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a fita adesiva.",
+    "en": "I lost the tape.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o cobertor.",
+    "en": "I lost the blanket.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o travesseiro.",
+    "en": "I lost the pillow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a toalha.",
+    "en": "I lost the towel.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a vassoura.",
+    "en": "I lost the broom.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a escada.",
+    "en": "I lost the ladder.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi a chave da caixa de ferramentas.",
+    "en": "I lost the toolbox key.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o estepe.",
+    "en": "I lost the spare tire.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o kit de primeiros socorros.",
+    "en": "I lost the first aid kit.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o extintor.",
+    "en": "I lost the fire extinguisher.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o manual.",
+    "en": "I lost the manual.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu perdi o cartão de garantia.",
+    "en": "I lost the warranty card.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou as chaves?",
+    "en": "Where did you put the keys?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o celular?",
+    "en": "Where did you put the phone?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a carteira?",
+    "en": "Where did you put the wallet?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o notebook?",
+    "en": "Where did you put the laptop?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o carregador?",
+    "en": "Where did you put the charger?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o guarda-chuva?",
+    "en": "Where did you put the umbrella?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou os óculos?",
+    "en": "Where did you put the glasses?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a mochila?",
+    "en": "Where did you put the backpack?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a mala?",
+    "en": "Where did you put the suitcase?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o controle remoto?",
+    "en": "Where did you put the remote control?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou os fones de ouvido?",
+    "en": "Where did you put the headphones?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o caderno?",
+    "en": "Where did you put the notebook?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a caneta?",
+    "en": "Where did you put the pen?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a calculadora?",
+    "en": "Where did you put the calculator?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a câmera?",
+    "en": "Where did you put the camera?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o relógio?",
+    "en": "Where did you put the watch?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a corrente da carteira?",
+    "en": "Where did you put the wallet chain?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a caixa de ferramentas?",
+    "en": "Where did you put the toolbox?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a lanterna?",
+    "en": "Where did you put the flashlight?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a extensão?",
+    "en": "Where did you put the extension cord?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a impressora?",
+    "en": "Where did you put the printer?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o roteador?",
+    "en": "Where did you put the router?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o mouse?",
+    "en": "Where did you put the mouse?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o teclado?",
+    "en": "Where did you put the keyboard?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a nota fiscal?",
+    "en": "Where did you put the invoice?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o recibo?",
+    "en": "Where did you put the receipt?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a pasta?",
+    "en": "Where did you put the folder?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o grampeador?",
+    "en": "Where did you put the stapler?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a tesoura?",
+    "en": "Where did you put the scissors?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a fita adesiva?",
+    "en": "Where did you put the tape?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o cobertor?",
+    "en": "Where did you put the blanket?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o travesseiro?",
+    "en": "Where did you put the pillow?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a toalha?",
+    "en": "Where did you put the towel?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a vassoura?",
+    "en": "Where did you put the broom?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a escada?",
+    "en": "Where did you put the ladder?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou a chave da caixa de ferramentas?",
+    "en": "Where did you put the toolbox key?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o estepe?",
+    "en": "Where did you put the spare tire?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o kit de primeiros socorros?",
+    "en": "Where did you put the first aid kit?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o extintor?",
+    "en": "Where did you put the fire extinguisher?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o manual?",
+    "en": "Where did you put the manual?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Onde você colocou o cartão de garantia?",
+    "en": "Where did you put the warranty card?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar as chaves.",
+    "en": "I need to buy the keys.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar o celular.",
+    "en": "I need to buy the phone.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a carteira.",
+    "en": "I need to buy the wallet.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar o notebook.",
+    "en": "I need to buy the laptop.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar o carregador.",
+    "en": "I need to buy the charger.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar o guarda-chuva.",
+    "en": "I need to buy the umbrella.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar os óculos.",
+    "en": "I need to buy the glasses.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a mochila.",
+    "en": "I need to buy the backpack.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a mala.",
+    "en": "I need to buy the suitcase.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar o controle remoto.",
+    "en": "I need to buy the remote control.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar os fones de ouvido.",
+    "en": "I need to buy the headphones.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar o caderno.",
+    "en": "I need to buy the notebook.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a caneta.",
+    "en": "I need to buy the pen.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a calculadora.",
+    "en": "I need to buy the calculator.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a câmera.",
+    "en": "I need to buy the camera.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar o relógio.",
+    "en": "I need to buy the watch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a corrente da carteira.",
+    "en": "I need to buy the wallet chain.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a caixa de ferramentas.",
+    "en": "I need to buy the toolbox.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a lanterna.",
+    "en": "I need to buy the flashlight.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a extensão.",
+    "en": "I need to buy the extension cord.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a impressora.",
+    "en": "I need to buy the printer.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar o roteador.",
+    "en": "I need to buy the router.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar o mouse.",
+    "en": "I need to buy the mouse.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar o teclado.",
+    "en": "I need to buy the keyboard.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a pasta.",
+    "en": "I need to buy the folder.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar o grampeador.",
+    "en": "I need to buy the stapler.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a tesoura.",
+    "en": "I need to buy the scissors.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a fita adesiva.",
+    "en": "I need to buy the tape.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar o cobertor.",
+    "en": "I need to buy the blanket.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar o travesseiro.",
+    "en": "I need to buy the pillow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a toalha.",
+    "en": "I need to buy the towel.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a vassoura.",
+    "en": "I need to buy the broom.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a escada.",
+    "en": "I need to buy the ladder.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar a chave da caixa de ferramentas.",
+    "en": "I need to buy the toolbox key.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar o estepe.",
+    "en": "I need to buy the spare tire.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar o kit de primeiros socorros.",
+    "en": "I need to buy the first aid kit.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu preciso comprar o extintor.",
+    "en": "I need to buy the fire extinguisher.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer pizza.",
+    "en": "I would like to eat pizza.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer sushi.",
+    "en": "I would like to eat sushi.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer um sanduíche.",
+    "en": "I would like to eat a sandwich.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer sopa.",
+    "en": "I would like to eat soup.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer salada.",
+    "en": "I would like to eat salad.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer arroz com feijão.",
+    "en": "I would like to eat rice and beans.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer frango grelhado.",
+    "en": "I would like to eat grilled chicken.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer bife.",
+    "en": "I would like to eat steak.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer macarrão.",
+    "en": "I would like to eat pasta.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer sorvete.",
+    "en": "I would like to eat ice cream.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer bolo de chocolate.",
+    "en": "I would like to eat chocolate cake.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer peixe frito.",
+    "en": "I would like to eat fried fish.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer churrasco.",
+    "en": "I would like to eat barbecue.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer um hambúrguer.",
+    "en": "I would like to eat a hamburger.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer batata frita.",
+    "en": "I would like to eat french fries.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer pipoca.",
+    "en": "I would like to eat popcorn.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer salada de frutas.",
+    "en": "I would like to eat fruit salad.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer ovos mexidos.",
+    "en": "I would like to eat scrambled eggs.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer panquecas.",
+    "en": "I would like to eat pancakes.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer pão de queijo.",
+    "en": "I would like to eat cheese bread.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer feijão preto.",
+    "en": "I would like to eat black beans.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer queijo quente.",
+    "en": "I would like to eat grilled cheese.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer camarão.",
+    "en": "I would like to eat shrimp.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer um taco.",
+    "en": "I would like to eat a taco.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer macarrão instantâneo.",
+    "en": "I would like to eat noodles.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer um burrito.",
+    "en": "I would like to eat a burrito.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer torta de maçã.",
+    "en": "I would like to eat apple pie.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer uma vitamina.",
+    "en": "I would like to eat a smoothie.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer água de coco.",
+    "en": "I would like to eat coconut water.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer um milk-shake.",
+    "en": "I would like to eat a milkshake.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer legumes grelhados.",
+    "en": "I would like to eat grilled vegetables.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer um hambúrguer vegetariano.",
+    "en": "I would like to eat a veggie burger.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer arroz integral.",
+    "en": "I would like to eat brown rice.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer purê de batata.",
+    "en": "I would like to eat mashed potatoes.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer canja de galinha.",
+    "en": "I would like to eat chicken soup.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer um sanduíche de queijo.",
+    "en": "I would like to eat a cheese sandwich.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer frango assado.",
+    "en": "I would like to eat roasted chicken.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer peixe assado.",
+    "en": "I would like to eat baked fish.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer uma vitamina de frutas.",
+    "en": "I would like to eat a fruit smoothie.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de comer iogurte.",
+    "en": "I would like to eat yogurt.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de pizza?",
+    "en": "Do you like pizza?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de sushi?",
+    "en": "Do you like sushi?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de um sanduíche?",
+    "en": "Do you like a sandwich?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de sopa?",
+    "en": "Do you like soup?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de salada?",
+    "en": "Do you like salad?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de arroz com feijão?",
+    "en": "Do you like rice and beans?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de frango grelhado?",
+    "en": "Do you like grilled chicken?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de bife?",
+    "en": "Do you like steak?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de macarrão?",
+    "en": "Do you like pasta?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de sorvete?",
+    "en": "Do you like ice cream?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de bolo de chocolate?",
+    "en": "Do you like chocolate cake?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de peixe frito?",
+    "en": "Do you like fried fish?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de churrasco?",
+    "en": "Do you like barbecue?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de um hambúrguer?",
+    "en": "Do you like a hamburger?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de batata frita?",
+    "en": "Do you like french fries?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de pipoca?",
+    "en": "Do you like popcorn?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de salada de frutas?",
+    "en": "Do you like fruit salad?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de ovos mexidos?",
+    "en": "Do you like scrambled eggs?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de panquecas?",
+    "en": "Do you like pancakes?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de pão de queijo?",
+    "en": "Do you like cheese bread?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de feijão preto?",
+    "en": "Do you like black beans?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de queijo quente?",
+    "en": "Do you like grilled cheese?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de camarão?",
+    "en": "Do you like shrimp?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de um taco?",
+    "en": "Do you like a taco?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de macarrão instantâneo?",
+    "en": "Do you like noodles?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de um burrito?",
+    "en": "Do you like a burrito?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de torta de maçã?",
+    "en": "Do you like apple pie?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de uma vitamina?",
+    "en": "Do you like a smoothie?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de água de coco?",
+    "en": "Do you like coconut water?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de um milk-shake?",
+    "en": "Do you like a milkshake?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de legumes grelhados?",
+    "en": "Do you like grilled vegetables?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de um hambúrguer vegetariano?",
+    "en": "Do you like a veggie burger?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de arroz integral?",
+    "en": "Do you like brown rice?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de purê de batata?",
+    "en": "Do you like mashed potatoes?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de canja de galinha?",
+    "en": "Do you like chicken soup?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de um sanduíche de queijo?",
+    "en": "Do you like a cheese sandwich?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de frango assado?",
+    "en": "Do you like roasted chicken?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de peixe assado?",
+    "en": "Do you like baked fish?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de uma vitamina de frutas?",
+    "en": "Do you like a fruit smoothie?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você gosta de iogurte?",
+    "en": "Do you like yogurt?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos pizza no almoço.",
+    "en": "We had pizza for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos sushi no almoço.",
+    "en": "We had sushi for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos um sanduíche no almoço.",
+    "en": "We had a sandwich for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos sopa no almoço.",
+    "en": "We had soup for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos salada no almoço.",
+    "en": "We had salad for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos arroz com feijão no almoço.",
+    "en": "We had rice and beans for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos frango grelhado no almoço.",
+    "en": "We had grilled chicken for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos bife no almoço.",
+    "en": "We had steak for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos macarrão no almoço.",
+    "en": "We had pasta for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos sorvete no almoço.",
+    "en": "We had ice cream for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos bolo de chocolate no almoço.",
+    "en": "We had chocolate cake for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos peixe frito no almoço.",
+    "en": "We had fried fish for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos churrasco no almoço.",
+    "en": "We had barbecue for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos um hambúrguer no almoço.",
+    "en": "We had a hamburger for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos batata frita no almoço.",
+    "en": "We had french fries for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos pipoca no almoço.",
+    "en": "We had popcorn for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos salada de frutas no almoço.",
+    "en": "We had fruit salad for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos ovos mexidos no almoço.",
+    "en": "We had scrambled eggs for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos panquecas no almoço.",
+    "en": "We had pancakes for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos pão de queijo no almoço.",
+    "en": "We had cheese bread for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos feijão preto no almoço.",
+    "en": "We had black beans for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos queijo quente no almoço.",
+    "en": "We had grilled cheese for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos camarão no almoço.",
+    "en": "We had shrimp for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos um taco no almoço.",
+    "en": "We had a taco for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos macarrão instantâneo no almoço.",
+    "en": "We had noodles for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos um burrito no almoço.",
+    "en": "We had a burrito for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos torta de maçã no almoço.",
+    "en": "We had apple pie for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos uma vitamina no almoço.",
+    "en": "We had a smoothie for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos água de coco no almoço.",
+    "en": "We had coconut water for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos um milk-shake no almoço.",
+    "en": "We had a milkshake for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos legumes grelhados no almoço.",
+    "en": "We had grilled vegetables for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos um hambúrguer vegetariano no almoço.",
+    "en": "We had a veggie burger for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos arroz integral no almoço.",
+    "en": "We had brown rice for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos purê de batata no almoço.",
+    "en": "We had mashed potatoes for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos canja de galinha no almoço.",
+    "en": "We had chicken soup for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos um sanduíche de queijo no almoço.",
+    "en": "We had a cheese sandwich for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos frango assado no almoço.",
+    "en": "We had roasted chicken for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos peixe assado no almoço.",
+    "en": "We had baked fish for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos uma vitamina de frutas no almoço.",
+    "en": "We had a fruit smoothie for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós comemos iogurte no almoço.",
+    "en": "We had yogurt for lunch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu me sinto cansado hoje.",
+    "en": "I feel tired today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto feliz hoje.",
+    "en": "I feel happy today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto preocupado hoje.",
+    "en": "I feel worried today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto animado hoje.",
+    "en": "I feel excited today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto nervoso hoje.",
+    "en": "I feel nervous today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto confiante hoje.",
+    "en": "I feel confident today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto confuso hoje.",
+    "en": "I feel confused today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto tranquilo hoje.",
+    "en": "I feel relaxed today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto ocupado hoje.",
+    "en": "I feel busy today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto entediado hoje.",
+    "en": "I feel bored today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto surpreso hoje.",
+    "en": "I feel surprised today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto frustrado hoje.",
+    "en": "I feel frustrated today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto motivado hoje.",
+    "en": "I feel motivated today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto exausto hoje.",
+    "en": "I feel exhausted today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto orgulhoso hoje.",
+    "en": "I feel proud today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto grato hoje.",
+    "en": "I feel grateful today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto curioso hoje.",
+    "en": "I feel curious today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto otimista hoje.",
+    "en": "I feel optimistic today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto estressado hoje.",
+    "en": "I feel stressed today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto calmo hoje.",
+    "en": "I feel calm today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto determinado hoje.",
+    "en": "I feel determined today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto esperançoso hoje.",
+    "en": "I feel hopeful today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto decepcionado hoje.",
+    "en": "I feel disappointed today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto envergonhado hoje.",
+    "en": "I feel embarrassed today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto satisfeito hoje.",
+    "en": "I feel satisfied today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto irritado hoje.",
+    "en": "I feel annoyed today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto distraído hoje.",
+    "en": "I feel distracted today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto focado hoje.",
+    "en": "I feel focused today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto sobrecarregado hoje.",
+    "en": "I feel overwhelmed today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu me sinto cheio de energia hoje.",
+    "en": "I feel energetic today.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito cansado.",
+    "en": "He seems very tired.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito feliz.",
+    "en": "He seems very happy.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito preocupado.",
+    "en": "He seems very worried.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito animado.",
+    "en": "He seems very excited.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito nervoso.",
+    "en": "He seems very nervous.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito confiante.",
+    "en": "He seems very confident.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito confuso.",
+    "en": "He seems very confused.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito tranquilo.",
+    "en": "He seems very relaxed.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito ocupado.",
+    "en": "He seems very busy.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito entediado.",
+    "en": "He seems very bored.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito surpreso.",
+    "en": "He seems very surprised.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito frustrado.",
+    "en": "He seems very frustrated.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito motivado.",
+    "en": "He seems very motivated.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito exausto.",
+    "en": "He seems very exhausted.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito orgulhoso.",
+    "en": "He seems very proud.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito grato.",
+    "en": "He seems very grateful.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito curioso.",
+    "en": "He seems very curious.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito otimista.",
+    "en": "He seems very optimistic.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito estressado.",
+    "en": "He seems very stressed.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito calmo.",
+    "en": "He seems very calm.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito determinado.",
+    "en": "He seems very determined.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito esperançoso.",
+    "en": "He seems very hopeful.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito decepcionado.",
+    "en": "He seems very disappointed.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito envergonhado.",
+    "en": "He seems very embarrassed.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito satisfeito.",
+    "en": "He seems very satisfied.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito irritado.",
+    "en": "He seems very annoyed.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito distraído.",
+    "en": "He seems very distracted.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito focado.",
+    "en": "He seems very focused.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito sobrecarregado.",
+    "en": "He seems very overwhelmed.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele parece muito cheio de energia.",
+    "en": "He seems very energetic.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está cansado agora.",
+    "en": "He is tired right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está feliz agora.",
+    "en": "He is happy right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está preocupado agora.",
+    "en": "He is worried right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está animado agora.",
+    "en": "He is excited right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está nervoso agora.",
+    "en": "He is nervous right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está confiante agora.",
+    "en": "He is confident right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está confuso agora.",
+    "en": "He is confused right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está tranquilo agora.",
+    "en": "He is relaxed right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está ocupado agora.",
+    "en": "He is busy right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está entediado agora.",
+    "en": "He is bored right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está surpreso agora.",
+    "en": "He is surprised right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está frustrado agora.",
+    "en": "He is frustrated right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está motivado agora.",
+    "en": "He is motivated right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está exausto agora.",
+    "en": "He is exhausted right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está orgulhoso agora.",
+    "en": "He is proud right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está grato agora.",
+    "en": "He is grateful right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está curioso agora.",
+    "en": "He is curious right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está otimista agora.",
+    "en": "He is optimistic right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está estressado agora.",
+    "en": "He is stressed right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está calmo agora.",
+    "en": "He is calm right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está determinado agora.",
+    "en": "He is determined right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está esperançoso agora.",
+    "en": "He is hopeful right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está decepcionado agora.",
+    "en": "He is disappointed right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está envergonhado agora.",
+    "en": "He is embarrassed right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está satisfeito agora.",
+    "en": "He is satisfied right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está irritado agora.",
+    "en": "He is annoyed right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está distraído agora.",
+    "en": "He is distracted right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está focado agora.",
+    "en": "He is focused right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está sobrecarregado agora.",
+    "en": "He is overwhelmed right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Ele está cheio de energia agora.",
+    "en": "He is energetic right now.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu costumo assistir filmes nos fins de semana.",
+    "en": "I usually watch movies on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo ler livros nos fins de semana.",
+    "en": "I usually read books on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo jogar videogame nos fins de semana.",
+    "en": "I usually play video games on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo correr nos fins de semana.",
+    "en": "I usually go for a run on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo cozinhar o jantar nos fins de semana.",
+    "en": "I usually cook dinner on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo limpar a casa nos fins de semana.",
+    "en": "I usually clean the house on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo fazer compras nos fins de semana.",
+    "en": "I usually go shopping on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo ouvir música nos fins de semana.",
+    "en": "I usually listen to music on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo nadar nos fins de semana.",
+    "en": "I usually go swimming on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo andar de bicicleta nos fins de semana.",
+    "en": "I usually ride a bike on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo jogar futebol nos fins de semana.",
+    "en": "I usually play soccer on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo fazer trilha nos fins de semana.",
+    "en": "I usually go hiking on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo visitar a família nos fins de semana.",
+    "en": "I usually visit family on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo estudar inglês nos fins de semana.",
+    "en": "I usually study English on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo malhar nos fins de semana.",
+    "en": "I usually work out on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo tirar uma soneca nos fins de semana.",
+    "en": "I usually take a nap on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo ir ao cinema nos fins de semana.",
+    "en": "I usually go to the movies on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo assar biscoitos nos fins de semana.",
+    "en": "I usually bake cookies on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo pintar nos fins de semana.",
+    "en": "I usually paint on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo tocar violão nos fins de semana.",
+    "en": "I usually play the guitar on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo escrever no diário nos fins de semana.",
+    "en": "I usually write in a journal on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo fazer ioga nos fins de semana.",
+    "en": "I usually do yoga on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo acampar nos fins de semana.",
+    "en": "I usually go camping on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo jogar xadrez nos fins de semana.",
+    "en": "I usually play chess on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo pescar nos fins de semana.",
+    "en": "I usually go fishing on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo cuidar do jardim nos fins de semana.",
+    "en": "I usually garden on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo meditar nos fins de semana.",
+    "en": "I usually meditate on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo fazer trabalho voluntário nos fins de semana.",
+    "en": "I usually volunteer on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo dançar nos fins de semana.",
+    "en": "I usually go dancing on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo tirar fotos nos fins de semana.",
+    "en": "I usually take photos on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo caminhar nos fins de semana.",
+    "en": "I usually go for a walk on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo jogar cartas nos fins de semana.",
+    "en": "I usually play cards on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo ver o pôr do sol nos fins de semana.",
+    "en": "I usually watch the sunset on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo aprender uma nova habilidade nos fins de semana.",
+    "en": "I usually learn a new skill on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo organizar o armário nos fins de semana.",
+    "en": "I usually organize the closet on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo lavar o carro nos fins de semana.",
+    "en": "I usually wash the car on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo planejar uma viagem nos fins de semana.",
+    "en": "I usually plan a trip on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo assar pão nos fins de semana.",
+    "en": "I usually bake bread on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo praticar piano nos fins de semana.",
+    "en": "I usually practice the piano on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu costumo observar pássaros nos fins de semana.",
+    "en": "I usually go bird watching on weekends.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de assistir filmes juntos.",
+    "en": "We like to watch movies together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de ler livros juntos.",
+    "en": "We like to read books together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de jogar videogame juntos.",
+    "en": "We like to play video games together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de correr juntos.",
+    "en": "We like to go for a run together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de cozinhar o jantar juntos.",
+    "en": "We like to cook dinner together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de limpar a casa juntos.",
+    "en": "We like to clean the house together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de fazer compras juntos.",
+    "en": "We like to go shopping together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de ouvir música juntos.",
+    "en": "We like to listen to music together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de nadar juntos.",
+    "en": "We like to go swimming together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de andar de bicicleta juntos.",
+    "en": "We like to ride a bike together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de jogar futebol juntos.",
+    "en": "We like to play soccer together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de fazer trilha juntos.",
+    "en": "We like to go hiking together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de visitar a família juntos.",
+    "en": "We like to visit family together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de estudar inglês juntos.",
+    "en": "We like to study English together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de malhar juntos.",
+    "en": "We like to work out together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de tirar uma soneca juntos.",
+    "en": "We like to take a nap together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de ir ao cinema juntos.",
+    "en": "We like to go to the movies together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de assar biscoitos juntos.",
+    "en": "We like to bake cookies together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de pintar juntos.",
+    "en": "We like to paint together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de tocar violão juntos.",
+    "en": "We like to play the guitar together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de escrever no diário juntos.",
+    "en": "We like to write in a journal together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de fazer ioga juntos.",
+    "en": "We like to do yoga together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de acampar juntos.",
+    "en": "We like to go camping together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de jogar xadrez juntos.",
+    "en": "We like to play chess together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de pescar juntos.",
+    "en": "We like to go fishing together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de cuidar do jardim juntos.",
+    "en": "We like to garden together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de meditar juntos.",
+    "en": "We like to meditate together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de fazer trabalho voluntário juntos.",
+    "en": "We like to volunteer together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de dançar juntos.",
+    "en": "We like to go dancing together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de tirar fotos juntos.",
+    "en": "We like to take photos together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de caminhar juntos.",
+    "en": "We like to go for a walk together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de jogar cartas juntos.",
+    "en": "We like to play cards together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de ver o pôr do sol juntos.",
+    "en": "We like to watch the sunset together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de aprender uma nova habilidade juntos.",
+    "en": "We like to learn a new skill together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de organizar o armário juntos.",
+    "en": "We like to organize the closet together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de lavar o carro juntos.",
+    "en": "We like to wash the car together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de planejar uma viagem juntos.",
+    "en": "We like to plan a trip together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de assar pão juntos.",
+    "en": "We like to bake bread together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de praticar piano juntos.",
+    "en": "We like to practice the piano together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Nós gostamos de observar pássaros juntos.",
+    "en": "We like to go bird watching together.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer assistir filmes mais tarde?",
+    "en": "Do you want to watch movies later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer ler livros mais tarde?",
+    "en": "Do you want to read books later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer jogar videogame mais tarde?",
+    "en": "Do you want to play video games later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer correr mais tarde?",
+    "en": "Do you want to go for a run later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer cozinhar o jantar mais tarde?",
+    "en": "Do you want to cook dinner later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer limpar a casa mais tarde?",
+    "en": "Do you want to clean the house later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer fazer compras mais tarde?",
+    "en": "Do you want to go shopping later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer ouvir música mais tarde?",
+    "en": "Do you want to listen to music later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer nadar mais tarde?",
+    "en": "Do you want to go swimming later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer andar de bicicleta mais tarde?",
+    "en": "Do you want to ride a bike later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer jogar futebol mais tarde?",
+    "en": "Do you want to play soccer later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer fazer trilha mais tarde?",
+    "en": "Do you want to go hiking later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer visitar a família mais tarde?",
+    "en": "Do you want to visit family later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer estudar inglês mais tarde?",
+    "en": "Do you want to study English later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer malhar mais tarde?",
+    "en": "Do you want to work out later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer tirar uma soneca mais tarde?",
+    "en": "Do you want to take a nap later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer ir ao cinema mais tarde?",
+    "en": "Do you want to go to the movies later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer assar biscoitos mais tarde?",
+    "en": "Do you want to bake cookies later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer pintar mais tarde?",
+    "en": "Do you want to paint later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer tocar violão mais tarde?",
+    "en": "Do you want to play the guitar later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer escrever no diário mais tarde?",
+    "en": "Do you want to write in a journal later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer fazer ioga mais tarde?",
+    "en": "Do you want to do yoga later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer acampar mais tarde?",
+    "en": "Do you want to go camping later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer jogar xadrez mais tarde?",
+    "en": "Do you want to play chess later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer pescar mais tarde?",
+    "en": "Do you want to go fishing later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer cuidar do jardim mais tarde?",
+    "en": "Do you want to garden later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer meditar mais tarde?",
+    "en": "Do you want to meditate later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer fazer trabalho voluntário mais tarde?",
+    "en": "Do you want to volunteer later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer dançar mais tarde?",
+    "en": "Do you want to go dancing later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer tirar fotos mais tarde?",
+    "en": "Do you want to take photos later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer caminhar mais tarde?",
+    "en": "Do you want to go for a walk later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer jogar cartas mais tarde?",
+    "en": "Do you want to play cards later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer ver o pôr do sol mais tarde?",
+    "en": "Do you want to watch the sunset later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer aprender uma nova habilidade mais tarde?",
+    "en": "Do you want to learn a new skill later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer organizar o armário mais tarde?",
+    "en": "Do you want to organize the closet later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer lavar o carro mais tarde?",
+    "en": "Do you want to wash the car later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer planejar uma viagem mais tarde?",
+    "en": "Do you want to plan a trip later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer assar pão mais tarde?",
+    "en": "Do you want to bake bread later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer praticar piano mais tarde?",
+    "en": "Do you want to practice the piano later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você quer observar pássaros mais tarde?",
+    "en": "Do you want to go bird watching later?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Meu irmão trabalha como professor.",
+    "en": "My brother works as a teacher.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como médico.",
+    "en": "My brother works as a doctor.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como advogado.",
+    "en": "My brother works as a lawyer.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como engenheiro.",
+    "en": "My brother works as an engineer.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como enfermeiro.",
+    "en": "My brother works as a nurse.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como arquiteto.",
+    "en": "My brother works as an architect.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como gerente.",
+    "en": "My brother works as a manager.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como designer.",
+    "en": "My brother works as a designer.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como desenvolvedor.",
+    "en": "My brother works as a developer.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como analista.",
+    "en": "My brother works as an analyst.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como consultor.",
+    "en": "My brother works as a consultant.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como contador.",
+    "en": "My brother works as an accountant.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como vendedor.",
+    "en": "My brother works as a salesperson.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como chef de cozinha.",
+    "en": "My brother works as a chef.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como motorista.",
+    "en": "My brother works as a driver.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como piloto.",
+    "en": "My brother works as a pilot.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como fotógrafo.",
+    "en": "My brother works as a photographer.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como jornalista.",
+    "en": "My brother works as a journalist.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como cientista.",
+    "en": "My brother works as a scientist.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Meu irmão trabalha como eletricista.",
+    "en": "My brother works as an electrician.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar professor.",
+    "en": "I want to become a teacher.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar médico.",
+    "en": "I want to become a doctor.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar advogado.",
+    "en": "I want to become a lawyer.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar engenheiro.",
+    "en": "I want to become an engineer.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar enfermeiro.",
+    "en": "I want to become a nurse.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar arquiteto.",
+    "en": "I want to become an architect.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar gerente.",
+    "en": "I want to become a manager.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar designer.",
+    "en": "I want to become a designer.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar desenvolvedor.",
+    "en": "I want to become a developer.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar analista.",
+    "en": "I want to become an analyst.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar consultor.",
+    "en": "I want to become a consultant.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar contador.",
+    "en": "I want to become an accountant.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar vendedor.",
+    "en": "I want to become a salesperson.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar chef de cozinha.",
+    "en": "I want to become a chef.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar motorista.",
+    "en": "I want to become a driver.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar piloto.",
+    "en": "I want to become a pilot.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar fotógrafo.",
+    "en": "I want to become a photographer.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar jornalista.",
+    "en": "I want to become a journalist.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar cientista.",
+    "en": "I want to become a scientist.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu quero me tornar eletricista.",
+    "en": "I want to become an electrician.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar este relatório hoje.",
+    "en": "We need to finish this report today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a apresentação hoje.",
+    "en": "We need to finish the presentation today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar o orçamento hoje.",
+    "en": "We need to finish the budget today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar o projeto hoje.",
+    "en": "We need to finish the project today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a proposta hoje.",
+    "en": "We need to finish the proposal today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar este e-mail hoje.",
+    "en": "We need to finish this email today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a nota fiscal hoje.",
+    "en": "We need to finish the invoice today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar o contrato hoje.",
+    "en": "We need to finish the contract today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a planilha hoje.",
+    "en": "We need to finish the spreadsheet today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar o treinamento hoje.",
+    "en": "We need to finish the training today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a análise hoje.",
+    "en": "We need to finish the analysis today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a ata da reunião hoje.",
+    "en": "We need to finish the meeting notes today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar o plano de marketing hoje.",
+    "en": "We need to finish the marketing plan today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar o site hoje.",
+    "en": "We need to finish the website today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar o aplicativo hoje.",
+    "en": "We need to finish the app today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar o design hoje.",
+    "en": "We need to finish the design today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a pesquisa hoje.",
+    "en": "We need to finish the survey today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar o cronograma hoje.",
+    "en": "We need to finish the schedule today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar o estoque hoje.",
+    "en": "We need to finish the inventory today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a papelada hoje.",
+    "en": "We need to finish the paperwork today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a integração hoje.",
+    "en": "We need to finish the onboarding today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a auditoria hoje.",
+    "en": "We need to finish the audit today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a previsão hoje.",
+    "en": "We need to finish the forecast today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a campanha hoje.",
+    "en": "We need to finish the campaign today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a negociação hoje.",
+    "en": "We need to finish the negotiation today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a entrevista hoje.",
+    "en": "We need to finish the interview today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a remessa hoje.",
+    "en": "We need to finish the shipment today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a reforma hoje.",
+    "en": "We need to finish the renovation today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a instalação hoje.",
+    "en": "We need to finish the installation today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Precisamos terminar a atualização hoje.",
+    "en": "We need to finish the update today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei este relatório.",
+    "en": "I already sent this report.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a apresentação.",
+    "en": "I already sent the presentation.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei o orçamento.",
+    "en": "I already sent the budget.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei o projeto.",
+    "en": "I already sent the project.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a proposta.",
+    "en": "I already sent the proposal.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei este e-mail.",
+    "en": "I already sent this email.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a nota fiscal.",
+    "en": "I already sent the invoice.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei o contrato.",
+    "en": "I already sent the contract.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a planilha.",
+    "en": "I already sent the spreadsheet.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei o treinamento.",
+    "en": "I already sent the training.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a análise.",
+    "en": "I already sent the analysis.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a ata da reunião.",
+    "en": "I already sent the meeting notes.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei o plano de marketing.",
+    "en": "I already sent the marketing plan.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei o site.",
+    "en": "I already sent the website.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei o aplicativo.",
+    "en": "I already sent the app.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei o design.",
+    "en": "I already sent the design.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a pesquisa.",
+    "en": "I already sent the survey.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei o cronograma.",
+    "en": "I already sent the schedule.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei o estoque.",
+    "en": "I already sent the inventory.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a papelada.",
+    "en": "I already sent the paperwork.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a integração.",
+    "en": "I already sent the onboarding.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a auditoria.",
+    "en": "I already sent the audit.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a previsão.",
+    "en": "I already sent the forecast.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a campanha.",
+    "en": "I already sent the campaign.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a negociação.",
+    "en": "I already sent the negotiation.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a entrevista.",
+    "en": "I already sent the interview.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a remessa.",
+    "en": "I already sent the shipment.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a reforma.",
+    "en": "I already sent the renovation.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a instalação.",
+    "en": "I already sent the installation.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu já enviei a atualização.",
+    "en": "I already sent the update.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião nesta sexta-feira.",
+    "en": "We have a meeting this Friday.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião na próxima semana.",
+    "en": "We have a meeting next week.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião toda manhã.",
+    "en": "We have a meeting every morning.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião amanhã de manhã.",
+    "en": "We have a meeting tomorrow morning.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião neste fim de semana.",
+    "en": "We have a meeting this weekend.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião no próximo mês.",
+    "en": "We have a meeting next month.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião mais tarde hoje.",
+    "en": "We have a meeting later today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião logo depois do almoço.",
+    "en": "We have a meeting right after lunch.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião no fim do dia.",
+    "en": "We have a meeting at the end of the day.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião logo cedo.",
+    "en": "We have a meeting first thing in the morning.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião dia sim, dia não.",
+    "en": "We have a meeting every other day.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião uma vez por semana.",
+    "en": "We have a meeting once a week.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião duas vezes por mês.",
+    "en": "We have a meeting twice a month.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião antes do prazo.",
+    "en": "We have a meeting before the deadline.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião depois das férias.",
+    "en": "We have a meeting after the holidays.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião durante a reunião.",
+    "en": "We have a meeting during the meeting.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião o mais rápido possível.",
+    "en": "We have a meeting as soon as possible.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião até a próxima segunda-feira.",
+    "en": "We have a meeting by next Monday.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião durante o fim de semana.",
+    "en": "We have a meeting over the weekend.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião no início do próximo ano.",
+    "en": "We have a meeting early next year.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião em alguns minutos.",
+    "en": "We have a meeting in a few minutes.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião mais tarde à tarde.",
+    "en": "We have a meeting later this afternoon.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião amanhã bem cedo.",
+    "en": "We have a meeting first thing tomorrow.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião em algum momento hoje.",
+    "en": "We have a meeting at some point today.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião antes que seja tarde demais.",
+    "en": "We have a meeting before it's too late.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião agora mesmo.",
+    "en": "We have a meeting right now.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião nos próximos dias.",
+    "en": "We have a meeting in the next few days.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião em algum momento desta semana.",
+    "en": "We have a meeting sometime this week.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião até o fim do mês.",
+    "en": "We have a meeting by the end of the month.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Nós temos uma reunião como de costume.",
+    "en": "We have a meeting as usual.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu vou te ligar em dez minutos.",
+    "en": "I'll call you in ten minutes.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar depois do trabalho.",
+    "en": "I'll call you after work.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar hoje à noite.",
+    "en": "I'll call you tonight.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar amanhã à tarde.",
+    "en": "I'll call you tomorrow afternoon.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar na próxima terça-feira.",
+    "en": "I'll call you next Tuesday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar assim que eu pousar.",
+    "en": "I'll call you as soon as I land.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar quando eu chegar em casa.",
+    "en": "I'll call you when I get home.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar antes da viagem.",
+    "en": "I'll call you before the trip.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar pouco antes da reunião.",
+    "en": "I'll call you right before the meeting.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar mais tarde à noite.",
+    "en": "I'll call you later tonight.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar logo na segunda-feira.",
+    "en": "I'll call you first thing Monday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar durante o intervalo.",
+    "en": "I'll call you during the break.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar depois da ligação.",
+    "en": "I'll call you after the call.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar assim que eu terminar.",
+    "en": "I'll call you once I'm done.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar antes do jantar.",
+    "en": "I'll call you before dinner.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar assim que possível.",
+    "en": "I'll call you as soon as possible.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar ainda esta semana.",
+    "en": "I'll call you later this week.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar da próxima vez.",
+    "en": "I'll call you next time.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar daqui a algumas horas.",
+    "en": "I'll call you in a couple of hours.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar logo na próxima semana.",
+    "en": "I'll call you first thing next week.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar antes de escurecer.",
+    "en": "I'll call you before it gets dark.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar assim que eu puder.",
+    "en": "I'll call you as soon as I can.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar logo depois do café da manhã.",
+    "en": "I'll call you right after breakfast.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar antes de a loja fechar.",
+    "en": "I'll call you before the store closes.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar assim que a chuva parar.",
+    "en": "I'll call you once the rain stops.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar durante meu horário de almoço.",
+    "en": "I'll call you during my lunch break.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar mais adiante.",
+    "en": "I'll call you later on.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar antes do voo.",
+    "en": "I'll call you before the flight.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar conforme as coisas se acalmarem.",
+    "en": "I'll call you as things settle down.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu vou te ligar no tempo certo.",
+    "en": "I'll call you in due time.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Você já foi para o mercado antes?",
+    "en": "Have you been to the market before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para o banco antes?",
+    "en": "Have you been to the bank before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para a farmácia antes?",
+    "en": "Have you been to the pharmacy before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para a escola antes?",
+    "en": "Have you been to the school before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para a academia antes?",
+    "en": "Have you been to the gym before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para o parque antes?",
+    "en": "Have you been to the park before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para o supermercado antes?",
+    "en": "Have you been to the supermarket before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para a padaria antes?",
+    "en": "Have you been to the bakery before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para o hospital antes?",
+    "en": "Have you been to the hospital before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para os correios antes?",
+    "en": "Have you been to the post office before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para a barbearia antes?",
+    "en": "Have you been to the barber shop before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para a igreja antes?",
+    "en": "Have you been to the church before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para a biblioteca antes?",
+    "en": "Have you been to the library before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para o shopping antes?",
+    "en": "Have you been to the mall before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para o cinema antes?",
+    "en": "Have you been to the cinema before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para o escritório antes?",
+    "en": "Have you been to the office before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para a universidade antes?",
+    "en": "Have you been to the university before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para a delegacia antes?",
+    "en": "Have you been to the police station before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para o dentista antes?",
+    "en": "Have you been to the dentist before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para o veterinário antes?",
+    "en": "Have you been to the vet before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para a lavanderia antes?",
+    "en": "Have you been to the laundromat before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para o estacionamento antes?",
+    "en": "Have you been to the parking lot before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para o ponto de ônibus antes?",
+    "en": "Have you been to the bus stop before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para o bairro antes?",
+    "en": "Have you been to the neighborhood before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para a garagem antes?",
+    "en": "Have you been to the garage before?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você já foi para o aeroporto antes?",
+    "en": "Have you been to the airport before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para o hotel antes?",
+    "en": "Have you been to the hotel before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para a praia antes?",
+    "en": "Have you been to the beach before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para a estação de trem antes?",
+    "en": "Have you been to the train station before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para a rodoviária antes?",
+    "en": "Have you been to the bus station before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para o centro da cidade antes?",
+    "en": "Have you been to downtown before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para o porto antes?",
+    "en": "Have you been to the harbor before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para a fronteira antes?",
+    "en": "Have you been to the border before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para a embaixada antes?",
+    "en": "Have you been to the embassy before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para a alfândega antes?",
+    "en": "Have you been to the customs office before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para o museu antes?",
+    "en": "Have you been to the museum before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para o interior antes?",
+    "en": "Have you been to the countryside before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para as montanhas antes?",
+    "en": "Have you been to the mountains before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para o lago antes?",
+    "en": "Have you been to the lake before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para o acampamento antes?",
+    "en": "Have you been to the campsite before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para o terminal de balsas antes?",
+    "en": "Have you been to the ferry terminal before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para o resort antes?",
+    "en": "Have you been to the resort before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para o posto de turismo antes?",
+    "en": "Have you been to the tourist office before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para o centro histórico antes?",
+    "en": "Have you been to the old town before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para o mirante antes?",
+    "en": "Have you been to the viewpoint before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para a cachoeira antes?",
+    "en": "Have you been to the waterfall before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para o parque nacional antes?",
+    "en": "Have you been to the national park before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para a estação de esqui antes?",
+    "en": "Have you been to the ski resort before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para o terminal de cruzeiros antes?",
+    "en": "Have you been to the cruise terminal before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você já foi para a locadora de carros antes?",
+    "en": "Have you been to the car rental before?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Por favor, não esqueça as chaves.",
+    "en": "Please don't forget the keys.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o celular.",
+    "en": "Please don't forget the phone.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a carteira.",
+    "en": "Please don't forget the wallet.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o notebook.",
+    "en": "Please don't forget the laptop.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o carregador.",
+    "en": "Please don't forget the charger.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o guarda-chuva.",
+    "en": "Please don't forget the umbrella.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça os óculos.",
+    "en": "Please don't forget the glasses.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a mochila.",
+    "en": "Please don't forget the backpack.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a mala.",
+    "en": "Please don't forget the suitcase.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o controle remoto.",
+    "en": "Please don't forget the remote control.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça os fones de ouvido.",
+    "en": "Please don't forget the headphones.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o caderno.",
+    "en": "Please don't forget the notebook.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a caneta.",
+    "en": "Please don't forget the pen.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a calculadora.",
+    "en": "Please don't forget the calculator.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a câmera.",
+    "en": "Please don't forget the camera.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o relógio.",
+    "en": "Please don't forget the watch.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a corrente da carteira.",
+    "en": "Please don't forget the wallet chain.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a caixa de ferramentas.",
+    "en": "Please don't forget the toolbox.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a lanterna.",
+    "en": "Please don't forget the flashlight.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a extensão.",
+    "en": "Please don't forget the extension cord.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a impressora.",
+    "en": "Please don't forget the printer.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o roteador.",
+    "en": "Please don't forget the router.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o mouse.",
+    "en": "Please don't forget the mouse.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o teclado.",
+    "en": "Please don't forget the keyboard.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a nota fiscal.",
+    "en": "Please don't forget the invoice.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o recibo.",
+    "en": "Please don't forget the receipt.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a pasta.",
+    "en": "Please don't forget the folder.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o grampeador.",
+    "en": "Please don't forget the stapler.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a tesoura.",
+    "en": "Please don't forget the scissors.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a fita adesiva.",
+    "en": "Please don't forget the tape.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o cobertor.",
+    "en": "Please don't forget the blanket.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o travesseiro.",
+    "en": "Please don't forget the pillow.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a toalha.",
+    "en": "Please don't forget the towel.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a vassoura.",
+    "en": "Please don't forget the broom.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a escada.",
+    "en": "Please don't forget the ladder.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça a chave da caixa de ferramentas.",
+    "en": "Please don't forget the toolbox key.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o estepe.",
+    "en": "Please don't forget the spare tire.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o kit de primeiros socorros.",
+    "en": "Please don't forget the first aid kit.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o extintor.",
+    "en": "Please don't forget the fire extinguisher.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o manual.",
+    "en": "Please don't forget the manual.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Por favor, não esqueça o cartão de garantia.",
+    "en": "Please don't forget the warranty card.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Vamos revisar este relatório juntos.",
+    "en": "Let's review this report together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a apresentação juntos.",
+    "en": "Let's review the presentation together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar o orçamento juntos.",
+    "en": "Let's review the budget together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar o projeto juntos.",
+    "en": "Let's review the project together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a proposta juntos.",
+    "en": "Let's review the proposal together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar este e-mail juntos.",
+    "en": "Let's review this email together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a nota fiscal juntos.",
+    "en": "Let's review the invoice together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar o contrato juntos.",
+    "en": "Let's review the contract together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a planilha juntos.",
+    "en": "Let's review the spreadsheet together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar o treinamento juntos.",
+    "en": "Let's review the training together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a análise juntos.",
+    "en": "Let's review the analysis together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a ata da reunião juntos.",
+    "en": "Let's review the meeting notes together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar o plano de marketing juntos.",
+    "en": "Let's review the marketing plan together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar o site juntos.",
+    "en": "Let's review the website together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar o aplicativo juntos.",
+    "en": "Let's review the app together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar o design juntos.",
+    "en": "Let's review the design together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a pesquisa juntos.",
+    "en": "Let's review the survey together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar o cronograma juntos.",
+    "en": "Let's review the schedule together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar o estoque juntos.",
+    "en": "Let's review the inventory together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a papelada juntos.",
+    "en": "Let's review the paperwork together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a integração juntos.",
+    "en": "Let's review the onboarding together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a auditoria juntos.",
+    "en": "Let's review the audit together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a previsão juntos.",
+    "en": "Let's review the forecast together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a campanha juntos.",
+    "en": "Let's review the campaign together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a negociação juntos.",
+    "en": "Let's review the negotiation together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a entrevista juntos.",
+    "en": "Let's review the interview together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a remessa juntos.",
+    "en": "Let's review the shipment together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a reforma juntos.",
+    "en": "Let's review the renovation together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a instalação juntos.",
+    "en": "Let's review the installation together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos revisar a atualização juntos.",
+    "en": "Let's review the update together.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu estava cansado ontem.",
+    "en": "I was tired yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava feliz ontem.",
+    "en": "I was happy yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava preocupado ontem.",
+    "en": "I was worried yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava animado ontem.",
+    "en": "I was excited yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava nervoso ontem.",
+    "en": "I was nervous yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava confiante ontem.",
+    "en": "I was confident yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava confuso ontem.",
+    "en": "I was confused yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava tranquilo ontem.",
+    "en": "I was relaxed yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava ocupado ontem.",
+    "en": "I was busy yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava entediado ontem.",
+    "en": "I was bored yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava surpreso ontem.",
+    "en": "I was surprised yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava frustrado ontem.",
+    "en": "I was frustrated yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava motivado ontem.",
+    "en": "I was motivated yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava exausto ontem.",
+    "en": "I was exhausted yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava orgulhoso ontem.",
+    "en": "I was proud yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava grato ontem.",
+    "en": "I was grateful yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava curioso ontem.",
+    "en": "I was curious yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava otimista ontem.",
+    "en": "I was optimistic yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava estressado ontem.",
+    "en": "I was stressed yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava calmo ontem.",
+    "en": "I was calm yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava determinado ontem.",
+    "en": "I was determined yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava esperançoso ontem.",
+    "en": "I was hopeful yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava decepcionado ontem.",
+    "en": "I was disappointed yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava envergonhado ontem.",
+    "en": "I was embarrassed yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava satisfeito ontem.",
+    "en": "I was satisfied yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava irritado ontem.",
+    "en": "I was annoyed yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava distraído ontem.",
+    "en": "I was distracted yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava focado ontem.",
+    "en": "I was focused yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava sobrecarregado ontem.",
+    "en": "I was overwhelmed yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu estava cheio de energia ontem.",
+    "en": "I was energetic yesterday.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu não tenho tempo para assistir filmes hoje.",
+    "en": "I don't have time to watch movies today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para ler livros hoje.",
+    "en": "I don't have time to read books today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para jogar videogame hoje.",
+    "en": "I don't have time to play video games today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para correr hoje.",
+    "en": "I don't have time to go for a run today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para cozinhar o jantar hoje.",
+    "en": "I don't have time to cook dinner today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para limpar a casa hoje.",
+    "en": "I don't have time to clean the house today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para fazer compras hoje.",
+    "en": "I don't have time to go shopping today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para ouvir música hoje.",
+    "en": "I don't have time to listen to music today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para nadar hoje.",
+    "en": "I don't have time to go swimming today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para andar de bicicleta hoje.",
+    "en": "I don't have time to ride a bike today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para jogar futebol hoje.",
+    "en": "I don't have time to play soccer today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para fazer trilha hoje.",
+    "en": "I don't have time to go hiking today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para visitar a família hoje.",
+    "en": "I don't have time to visit family today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para estudar inglês hoje.",
+    "en": "I don't have time to study English today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para malhar hoje.",
+    "en": "I don't have time to work out today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para tirar uma soneca hoje.",
+    "en": "I don't have time to take a nap today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para ir ao cinema hoje.",
+    "en": "I don't have time to go to the movies today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para assar biscoitos hoje.",
+    "en": "I don't have time to bake cookies today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para pintar hoje.",
+    "en": "I don't have time to paint today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para tocar violão hoje.",
+    "en": "I don't have time to play the guitar today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para escrever no diário hoje.",
+    "en": "I don't have time to write in a journal today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para fazer ioga hoje.",
+    "en": "I don't have time to do yoga today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para acampar hoje.",
+    "en": "I don't have time to go camping today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para jogar xadrez hoje.",
+    "en": "I don't have time to play chess today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para pescar hoje.",
+    "en": "I don't have time to go fishing today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para cuidar do jardim hoje.",
+    "en": "I don't have time to garden today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para meditar hoje.",
+    "en": "I don't have time to meditate today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para fazer trabalho voluntário hoje.",
+    "en": "I don't have time to volunteer today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para dançar hoje.",
+    "en": "I don't have time to go dancing today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para tirar fotos hoje.",
+    "en": "I don't have time to take photos today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para caminhar hoje.",
+    "en": "I don't have time to go for a walk today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para jogar cartas hoje.",
+    "en": "I don't have time to play cards today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para ver o pôr do sol hoje.",
+    "en": "I don't have time to watch the sunset today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para aprender uma nova habilidade hoje.",
+    "en": "I don't have time to learn a new skill today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para organizar o armário hoje.",
+    "en": "I don't have time to organize the closet today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para lavar o carro hoje.",
+    "en": "I don't have time to wash the car today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para planejar uma viagem hoje.",
+    "en": "I don't have time to plan a trip today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para assar pão hoje.",
+    "en": "I don't have time to bake bread today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para praticar piano hoje.",
+    "en": "I don't have time to practice the piano today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu não tenho tempo para observar pássaros hoje.",
+    "en": "I don't have time to go bird watching today.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir pizza?",
+    "en": "Can I order pizza?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir sushi?",
+    "en": "Can I order sushi?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir um sanduíche?",
+    "en": "Can I order a sandwich?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir sopa?",
+    "en": "Can I order soup?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir salada?",
+    "en": "Can I order salad?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir arroz com feijão?",
+    "en": "Can I order rice and beans?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir frango grelhado?",
+    "en": "Can I order grilled chicken?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir bife?",
+    "en": "Can I order steak?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir macarrão?",
+    "en": "Can I order pasta?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir sorvete?",
+    "en": "Can I order ice cream?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir bolo de chocolate?",
+    "en": "Can I order chocolate cake?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir peixe frito?",
+    "en": "Can I order fried fish?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir churrasco?",
+    "en": "Can I order barbecue?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir um hambúrguer?",
+    "en": "Can I order a hamburger?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir batata frita?",
+    "en": "Can I order french fries?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir pipoca?",
+    "en": "Can I order popcorn?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir salada de frutas?",
+    "en": "Can I order fruit salad?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir ovos mexidos?",
+    "en": "Can I order scrambled eggs?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir panquecas?",
+    "en": "Can I order pancakes?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir pão de queijo?",
+    "en": "Can I order cheese bread?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir feijão preto?",
+    "en": "Can I order black beans?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir queijo quente?",
+    "en": "Can I order grilled cheese?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir camarão?",
+    "en": "Can I order shrimp?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir um taco?",
+    "en": "Can I order a taco?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir macarrão instantâneo?",
+    "en": "Can I order noodles?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir um burrito?",
+    "en": "Can I order a burrito?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir torta de maçã?",
+    "en": "Can I order apple pie?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir uma vitamina?",
+    "en": "Can I order a smoothie?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir água de coco?",
+    "en": "Can I order coconut water?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir um milk-shake?",
+    "en": "Can I order a milkshake?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir legumes grelhados?",
+    "en": "Can I order grilled vegetables?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir um hambúrguer vegetariano?",
+    "en": "Can I order a veggie burger?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir arroz integral?",
+    "en": "Can I order brown rice?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir purê de batata?",
+    "en": "Can I order mashed potatoes?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir canja de galinha?",
+    "en": "Can I order chicken soup?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir um sanduíche de queijo?",
+    "en": "Can I order a cheese sandwich?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir frango assado?",
+    "en": "Can I order roasted chicken?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir peixe assado?",
+    "en": "Can I order baked fish?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir uma vitamina de frutas?",
+    "en": "Can I order a fruit smoothie?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pedir iogurte?",
+    "en": "Can I order yogurt?",
+    "categoria": "Cotidiano"
   }
 ]

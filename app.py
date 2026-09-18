@@ -159,6 +159,7 @@ st.set_page_config(page_title="Duo Cido", page_icon="📘", layout="centered")
 def falar(texto, idioma, label="🔊 Ouvir"):
     texto_js = json.dumps(texto)
     idioma_js = json.dumps(idioma)
+    velocidade = 0.85 if idioma.startswith("en") else 1.0
     html = f"""
     <button style="display:flex;align-items:center;justify-content:center;gap:6px;
         width:100%;box-sizing:border-box;padding:0.5em 0.4em;border-radius:6px;
@@ -167,6 +168,7 @@ def falar(texto, idioma, label="🔊 Ouvir"):
         onclick='window.speechSynthesis.cancel();
                  var u=new SpeechSynthesisUtterance({texto_js});
                  u.lang={idioma_js};
+                 u.rate={velocidade};
                  window.speechSynthesis.speak(u);'>
         {label}
     </button>
@@ -425,6 +427,7 @@ def reprodutor_biblioteca(dados):
             window.speechSynthesis.cancel();
             const uEn = new SpeechSynthesisUtterance(item.en);
             uEn.lang = 'en-US';
+            uEn.rate = 0.85;
             uEn.onend = function() {{
                 if (meuToken !== tokenAtual) return;
                 const uPt = new SpeechSynthesisUtterance(item.pt);
