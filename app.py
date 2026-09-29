@@ -1790,16 +1790,8 @@ elif pagina == "🗺️ Modo História":
         st.caption(f"Cena {st.session_state.historia_indice + 1} de {len(SCENAS_HISTORIA)}")
 
         with st.container(key="cena-historia"):
-            if AVATAR_PATH.exists():
-                colav, coltxt = st.columns([1, 3])
-                with colav:
-                    st.image(str(AVATAR_PATH), width=100)
-                with coltxt:
-                    st.markdown(f"## {cena['emoji']} {cena['nome']}")
-                    st.write(cena["narrativa"])
-            else:
-                st.markdown(f"## {cena['emoji']} {cena['nome']}")
-                st.write(cena["narrativa"])
+            st.markdown(f"## {cena['emoji']} {cena['nome']}")
+            st.write(cena["narrativa"])
 
         if st.session_state.historia_frase is None:
             pool = [
