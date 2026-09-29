@@ -259,6 +259,25 @@ def traduzir(texto, origem, destino):
     st.stop()
 
 
+def focar_campo_automaticamente(aria_label, atraso_ms=150):
+    aria_label_js = json.dumps(aria_label)
+    components.html(
+        f"""
+        <script>
+        setTimeout(function() {{
+            try {{
+                var campo = window.parent.document.querySelector(
+                    'textarea[aria-label={aria_label_js}], input[aria-label={aria_label_js}]'
+                );
+                if (campo) {{ campo.focus({{ preventScroll: true }}); }}
+            }} catch (e) {{}}
+        }}, {atraso_ms});
+        </script>
+        """,
+        height=0,
+    )
+
+
 @st.cache_data(show_spinner=False)
 def traduzir_palavra_cache(palavra, origem, destino):
     palavra = (palavra or "").strip()
@@ -1213,6 +1232,8 @@ st.markdown(
         [data-testid="stAlert"] { padding: 0.6rem 0.8rem !important; }
         h2, h3 { margin-top: 0.15rem !important; margin-bottom: 0.25rem !important; font-size: 1rem !important; }
         [data-testid="stTextAreaRootElement"] textarea { min-height: 70px !important; }
+        .st-key-cena-historia { padding: 0.9rem 0.8rem !important; }
+        .st-key-cena-historia h2 { font-size: 1.15rem !important; }
     }
     </style>
     """,
@@ -1797,11 +1818,24 @@ elif pagina == "🗺️ Modo História":
 
         falar(st.session_state.historia_frase, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase")
         mostrar_emojis_frase(st.session_state.historia_frase)
-        frase_clicavel(st.session_state.historia_frase, origem_cod, destino_cod, f"{origem_label} → {destino_label}")
+
+        resultado_historia = None
+        if st.session_state.historia_revelado:
+            resultado_historia = {
+                "referencia": st.session_state.historia_referencia,
+                "pontuacao": st.session_state.historia_pontuacao,
+            }
+        frase_clicavel(
+            st.session_state.historia_frase, origem_cod, destino_cod,
+            f"{origem_label} → {destino_label}", resultado=resultado_historia,
+        )
 
         resposta_historia = st.text_input(
             "Sua tradução:", key=f"resposta_historia_{st.session_state.historia_indice}"
         )
+
+        if st.session_state.pop("_focar_traducao_historia", False):
+            focar_campo_automaticamente("Sua tradução:")
 
         if not st.session_state.historia_revelado:
             if st.button("Verificar", type="primary", use_container_width=True):
@@ -1823,12 +1857,6 @@ elif pagina == "🗺️ Modo História":
                 salvar_progresso(st.session_state.progresso)
                 st.rerun()
         else:
-            st.success(f"**Tradução de referência:** {st.session_state.historia_referencia}")
-            pontuacao = st.session_state.historia_pontuacao
-            emoji_score = "🟢" if pontuacao >= 80 else "🟡" if pontuacao >= 50 else "🔴"
-            st.metric(f"{emoji_score} Precisão", f"{pontuacao:.0f}%")
-            st.progress(min(int(pontuacao), 100))
-
             proximo_rotulo = (
                 "➡️ Avançar para a próxima cena"
                 if st.session_state.historia_indice < len(SCENAS_HISTORIA) - 1
@@ -1838,6 +1866,7 @@ elif pagina == "🗺️ Modo História":
                 st.session_state.historia_indice += 1
                 st.session_state.historia_frase = None
                 st.session_state.historia_revelado = False
+                st.session_state["_focar_traducao_historia"] = True
                 st.rerun()
 
 elif pagina == "📊 Revisão de erros":
