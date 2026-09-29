@@ -1016,6 +1016,23 @@ st.markdown(
         flex: 1 1 0 !important;
     }
 
+    /* ===== LINHA DE BOTÕES DE ÁUDIO (iframes de falar()) ===== */
+    .st-key-linha-ouvir div[data-testid="stHorizontalBlock"] {
+        flex-wrap: nowrap !important;
+        gap: 0.6rem !important;
+    }
+
+    .st-key-linha-ouvir div[data-testid="stColumn"] {
+        min-width: 0 !important;
+        width: 100% !important;
+        flex: 1 1 0 !important;
+    }
+
+    .st-key-linha-ouvir iframe {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
     /* ===== CARDS CUSTOMIZADOS ===== */
     .st-key-card-traduzir {
         background: rgba(99,102,241,0.06);
@@ -1415,11 +1432,12 @@ if pagina == "📖 Praticar":
 
         if modo_exercicio == "✍️ Traduzir":
             if st.session_state.revelado and st.session_state.traducao_referencia:
-                col_ouvir_orig, col_ouvir_trad = st.columns(2)
-                with col_ouvir_orig:
-                    falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Frase original")
-                with col_ouvir_trad:
-                    falar(st.session_state.traducao_referencia, IDIOMA_VOZ[destino_cod], "🔊 Tradução")
+                with st.container(key="linha-ouvir"):
+                    col_ouvir_orig, col_ouvir_trad = st.columns(2)
+                    with col_ouvir_orig:
+                        falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Frase original")
+                    with col_ouvir_trad:
+                        falar(st.session_state.traducao_referencia, IDIOMA_VOZ[destino_cod], "🔊 Tradução")
             else:
                 falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase original")
 
