@@ -5813,5 +5813,665 @@
     "pt": "Posso pedir iogurte?",
     "en": "Can I order yogurt?",
     "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Olá!",
+    "en": "Hello!",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Oi!",
+    "en": "Hi!",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Bom dia!",
+    "en": "Good morning!",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Boa tarde!",
+    "en": "Good afternoon!",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Boa noite!",
+    "en": "Good evening!",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Estou bem, obrigado.",
+    "en": "I'm fine, thanks.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Se cuida.",
+    "en": "Take care.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Quanto tempo!",
+    "en": "Long time no see.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Qual é o seu nome?",
+    "en": "What's your name?",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "De onde você é?",
+    "en": "Where are you from?",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu sou do Brasil.",
+    "en": "I'm from Brazil.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Quantos anos você tem?",
+    "en": "How old are you?",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu tenho 25 anos.",
+    "en": "I'm 25 years old.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Você fala inglês?",
+    "en": "Do you speak English?",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Só um pouco.",
+    "en": "Just a little.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Você pode me ajudar?",
+    "en": "Can you help me?",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Quanto custa isso?",
+    "en": "How much is this?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso ver o cardápio, por favor?",
+    "en": "Can I have the menu, please?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu gostaria de um café.",
+    "en": "I'd like a coffee.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Vocês aceitam cartão de crédito?",
+    "en": "Do you accept credit cards?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "A conta, por favor.",
+    "en": "Can I get the bill, please?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "O serviço está incluído?",
+    "en": "Is service included?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso pagar em dinheiro?",
+    "en": "Can I pay in cash?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou só olhando.",
+    "en": "I'm just looking.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Tem esse em outro tamanho?",
+    "en": "Do you have this in another size?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso experimentar?",
+    "en": "Can I try it on?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Não serve.",
+    "en": "It doesn't fit.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Tem em azul?",
+    "en": "Do you have it in blue?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Vou levar.",
+    "en": "I'll take it.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Pode fazer desconto?",
+    "en": "Can I get a discount?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Está muito caro.",
+    "en": "That's too expensive.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Tem uma opção mais barata?",
+    "en": "Is there a cheaper option?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Pode me trazer água, por favor?",
+    "en": "Can I have water, please?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "A comida está deliciosa.",
+    "en": "The food is delicious.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Sou alérgico a amendoim.",
+    "en": "I'm allergic to peanuts.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Pode me dar o recibo?",
+    "en": "Can I have the receipt?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Quanto tempo demora?",
+    "en": "How long does it take?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Preciso de um táxi.",
+    "en": "I need a taxi.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Você pode me mostrar no mapa?",
+    "en": "Can you show me on the map?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Este é o trem certo?",
+    "en": "Is this the right train?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Estou perdido.",
+    "en": "I'm lost.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Qual caminho devo seguir?",
+    "en": "Which way should I go?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "É longe?",
+    "en": "Is it far?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Vire à esquerda.",
+    "en": "Turn left.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Vire à direita.",
+    "en": "Turn right.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Vá em frente.",
+    "en": "Go straight ahead.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Pare aqui, por favor.",
+    "en": "Stop here, please.",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Como eu chego ao aeroporto?",
+    "en": "How do I get to the airport?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Tem ônibus para o centro?",
+    "en": "Is there a bus to downtown?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Que horas o trem sai?",
+    "en": "What time does the train leave?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Esse assento está ocupado?",
+    "en": "Is this seat taken?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Posso sentar aqui?",
+    "en": "Can I sit here?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Onde posso comprar a passagem?",
+    "en": "Where can I buy a ticket?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "É voo direto?",
+    "en": "Is it a direct flight?",
+    "categoria": "Viagem"
+  },
+  {
+    "pt": "Estou com sede.",
+    "en": "I'm thirsty.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou cansado.",
+    "en": "I'm tired.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Vamos!",
+    "en": "Let's go!",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Espere um minuto.",
+    "en": "Wait a minute.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou ocupado.",
+    "en": "I'm busy.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou livre.",
+    "en": "I'm free.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou em casa.",
+    "en": "I'm at home.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou no trabalho.",
+    "en": "I'm at work.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou na escola.",
+    "en": "I'm at school.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou pronto.",
+    "en": "I'm ready.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Não estou pronto.",
+    "en": "I'm not ready.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou atrasado.",
+    "en": "I'm late.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Cheguei cedo.",
+    "en": "I'm early.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Está chovendo.",
+    "en": "It's raining.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Está ensolarado.",
+    "en": "It's sunny.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Está frio.",
+    "en": "It's cold.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Está quente.",
+    "en": "It's hot.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Está ventando.",
+    "en": "It's windy.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "E aí?",
+    "en": "What's up?",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Que ótimo!",
+    "en": "That's great!",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Sem problema.",
+    "en": "No problem.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu não entendo.",
+    "en": "I don't understand.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Pode repetir, por favor?",
+    "en": "Can you repeat, please?",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Fale devagar, por favor.",
+    "en": "Speak slowly, please.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu concordo.",
+    "en": "I agree.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu discordo.",
+    "en": "I disagree.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Que engraçado.",
+    "en": "That's funny.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Sério?",
+    "en": "Really?",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Exatamente.",
+    "en": "Exactly.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Talvez.",
+    "en": "Maybe.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Acho que sim.",
+    "en": "I think so.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Acho que não.",
+    "en": "I don't think so.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Não tenho certeza.",
+    "en": "I'm not sure.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Depende.",
+    "en": "It depends.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu gosto disso.",
+    "en": "I like it.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Eu não gosto disso.",
+    "en": "I don't like it.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Isso é interessante.",
+    "en": "That's interesting.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Isso é chato.",
+    "en": "That's boring.",
+    "categoria": "Geral"
+  },
+  {
+    "pt": "Tenho uma reunião.",
+    "en": "I have a meeting.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos começar.",
+    "en": "Let's start.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vamos terminar.",
+    "en": "Let's finish.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Podemos remarcar?",
+    "en": "Can we reschedule?",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vou te enviar um e-mail.",
+    "en": "I'll send you an email.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Por favor, me ligue.",
+    "en": "Please call me.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Preciso de ajuda.",
+    "en": "I need help.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu farei isso.",
+    "en": "I'll do it.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vou tentar.",
+    "en": "I'll try.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Vou verificar.",
+    "en": "I'll check.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu te aviso.",
+    "en": "I'll let you know.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu estarei lá.",
+    "en": "I'll be there.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu volto logo.",
+    "en": "I'll be back soon.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Estou trabalhando nisso.",
+    "en": "I'm working on it.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "O prazo é amanhã.",
+    "en": "Deadline is tomorrow.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Isso é urgente.",
+    "en": "That's urgent.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Isso é importante.",
+    "en": "That's important.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Isso não é importante.",
+    "en": "That's not important.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu estou responsável.",
+    "en": "I'm in charge.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Eu sou responsável.",
+    "en": "I'm responsible.",
+    "categoria": "Negócios"
+  },
+  {
+    "pt": "Não estou me sentindo bem.",
+    "en": "I don't feel well.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou doente.",
+    "en": "I'm sick.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou com dor de cabeça.",
+    "en": "I have a headache.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou com dor de barriga.",
+    "en": "I have a stomachache.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou com febre.",
+    "en": "I have a fever.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Preciso de um médico.",
+    "en": "I need a doctor.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Chame uma ambulância!",
+    "en": "Call an ambulance!",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Está doendo.",
+    "en": "It hurts.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Sou alérgico.",
+    "en": "I'm allergic.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Preciso de remédio.",
+    "en": "I need medicine.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Você pode me ajudar, por favor?",
+    "en": "Can you help me, please?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou me sentindo melhor.",
+    "en": "I feel better.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou me sentindo pior.",
+    "en": "I feel worse.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Preciso descansar.",
+    "en": "I need rest.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Preciso de água.",
+    "en": "I need water.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou tonto.",
+    "en": "I'm dizzy.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Estou sangrando.",
+    "en": "I'm bleeding.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Eu desmaiei.",
+    "en": "I fainted.",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Posso usar seu telefone?",
+    "en": "Can I use your phone?",
+    "categoria": "Cotidiano"
+  },
+  {
+    "pt": "Qual é o seu número?",
+    "en": "What's your number?",
+    "categoria": "Cotidiano"
   }
 ]
