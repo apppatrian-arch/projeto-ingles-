@@ -331,11 +331,26 @@ def frase_clicavel(frase, origem_cod, destino_cod, cabecalho):
         .palavra-clicavel:active {{ color:#818CF8; }}
     </style>
     <script>
+        var campoAnterior = null;
+        function capturarFoco() {{
+            try {{
+                var ativo = window.parent.document.activeElement;
+                if (ativo && (ativo.tagName === 'TEXTAREA' || ativo.tagName === 'INPUT')) {{
+                    campoAnterior = ativo;
+                }}
+            }} catch (e) {{}}
+        }}
+        document.addEventListener('mousedown', capturarFoco, true);
+        document.addEventListener('touchstart', capturarFoco, true);
+
         document.querySelectorAll('.palavra-clicavel').forEach(function(el) {{
             el.addEventListener('click', function() {{
                 var popup = document.getElementById('popup-traducao');
                 popup.textContent = el.dataset.palavra + ' → ' + el.dataset.trad;
                 popup.style.display = 'block';
+                if (campoAnterior) {{
+                    try {{ campoAnterior.focus({{ preventScroll: true }}); }} catch (e) {{}}
+                }}
             }});
         }});
     </script>
