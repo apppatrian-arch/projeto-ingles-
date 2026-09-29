@@ -371,12 +371,19 @@ def mostrar_emojis_frase(frase):
         )
 
 
-def montar_dados_biblioteca(categorias, ordem):
+def pool_biblioteca(categorias):
     itens = [
         item for item in st.session_state.baralho
         if item.get("categoria", "Geral") in categorias
-    ] or st.session_state.baralho
-    itens = list(itens)
+    ]
+    return itens or list(st.session_state.baralho)
+
+
+def montar_dados_biblioteca(categorias, ordem, bloco=None, tamanho_bloco=100):
+    itens = list(pool_biblioteca(categorias))
+    if bloco is not None:
+        inicio = (bloco - 1) * tamanho_bloco
+        itens = itens[inicio:inicio + tamanho_bloco]
     if ordem == "Aleatório":
         random.shuffle(itens)
     dados = []
@@ -1128,6 +1135,19 @@ with st.sidebar:
         ordem_biblioteca = st.radio(
             "Ordem da biblioteca de áudio", ["Sequencial", "Aleatório"], horizontal=True, key="ordem_biblioteca"
         )
+        TAMANHO_BLOCO_AUDIO = 100
+        total_pool_audio = len(pool_biblioteca(categorias_audio))
+        num_blocos_audio = max(1, -(-total_pool_audio // TAMANHO_BLOCO_AUDIO))
+        opcoes_bloco_audio = ["Tudo"] + [
+            f"{(i * TAMANHO_BLOCO_AUDIO) + 1}–{min((i + 1) * TAMANHO_BLOCO_AUDIO, total_pool_audio)}"
+            for i in range(num_blocos_audio)
+        ]
+        bloco_biblioteca = st.selectbox(
+            "Bloco de estudo (biblioteca de áudio)",
+            opcoes_bloco_audio,
+            index=1 if len(opcoes_bloco_audio) > 1 else 0,
+            key="bloco_biblioteca",
+        )
 
     st.divider()
     st.subheader("Progresso")
@@ -1542,12 +1562,20 @@ elif pagina == "🎧 Só áudio":
         st.rerun()
 
     st.divider()
-    st.subheader("🎼 Ouvir toda a biblioteca")
+    if bloco_biblioteca == "Tudo":
+        st.subheader("🎼 Ouvir toda a biblioteca")
+        bloco_num_audio = None
+    else:
+        st.subheader(f"🎼 Ouvir bloco {bloco_biblioteca}")
+        bloco_num_audio = opcoes_bloco_audio.index(bloco_biblioteca)
     st.caption(
         "Escuta passiva: cada frase toca primeiro em inglês, depois em português, "
-        "avançando sozinha para a próxima — sem precisar acertar nada."
+        "avançando sozinha para a próxima — sem precisar acertar nada. "
+        "Escolha um bloco na barra lateral pra estudar por camadas, sem se perder na biblioteca inteira."
     )
-    dados_biblioteca = montar_dados_biblioteca(categorias_audio, ordem_biblioteca)
+    dados_biblioteca = montar_dados_biblioteca(
+        categorias_audio, ordem_biblioteca, bloco=bloco_num_audio, tamanho_bloco=TAMANHO_BLOCO_AUDIO
+    )
     reprodutor_biblioteca(dados_biblioteca)
 
 elif pagina == "🗺️ Modo História":
