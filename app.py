@@ -861,6 +861,51 @@ st.markdown(
         border-left: 3px solid #6366F1;
     }
 
+    /* ===== NAVEGACAO PRINCIPAL ESTILO APP DE IDIOMAS ===== */
+    .st-key-nav-principal [data-testid="stRadioGroup"] {
+        gap: 10px !important;
+    }
+
+    .st-key-nav-principal label[data-testid="stRadioOption"] {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        padding: 0.7rem 0.9rem !important;
+        border-radius: 14px !important;
+        border: 2px solid transparent !important;
+        background: rgba(255,255,255,0.03) !important;
+        cursor: pointer;
+        transition: all 0.2s ease !important;
+    }
+
+    .st-key-nav-principal label[data-testid="stRadioOption"] > div > div > div:first-child {
+        display: none !important;
+    }
+
+    .st-key-nav-principal label[data-testid="stRadioOption"] [data-testid="stMarkdownContainer"] p {
+        font-weight: 800 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.04em !important;
+        font-size: 0.8rem !important;
+        color: #94A3B8 !important;
+        margin: 0 !important;
+    }
+
+    .st-key-nav-principal label[data-testid="stRadioOption"]:hover {
+        background: rgba(99,102,241,0.08) !important;
+        border-color: rgba(99,102,241,0.25) !important;
+    }
+
+    .st-key-nav-principal label[data-testid="stRadioOption"][data-selected="true"] {
+        background: rgba(99,102,241,0.14) !important;
+        border-color: #6366F1 !important;
+        box-shadow: 0 0 0 1px rgba(99,102,241,0.15), 0 4px 14px rgba(99,102,241,0.2) !important;
+    }
+
+    .st-key-nav-principal label[data-testid="stRadioOption"][data-selected="true"] [data-testid="stMarkdownContainer"] p {
+        color: #F1F5F9 !important;
+    }
+
     /* ===== RADIO BUTTONS HORIZONTAIS ===== */
     .stRadio > div[role="radiogroup"] {
         gap: 6px !important;
@@ -1100,11 +1145,13 @@ st.markdown(
 )
 
 with st.sidebar:
-    pagina = st.radio(
-        "Página",
-        ["📖 Praticar", "🎧 Só áudio", "🗺️ Modo História", "📊 Revisão de erros", "🗓️ Meu tempo de uso"],
-        key="pagina",
-    )
+    with st.container(key="nav-principal"):
+        pagina = st.radio(
+            "Página",
+            ["📖 Praticar", "🎧 Só áudio", "🗺️ Modo História", "📊 Revisão de erros", "🗓️ Meu tempo de uso"],
+            key="pagina",
+            label_visibility="collapsed",
+        )
 
     st.divider()
     st.header("Configurações")
