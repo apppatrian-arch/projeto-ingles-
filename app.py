@@ -1205,9 +1205,8 @@ st.markdown(
             padding-bottom: 1.5rem !important;
         }
         .app-header { margin-bottom: 0.5rem !important; }
-        .app-header .app-header-emoji { font-size: 1.5rem !important; margin-bottom: 0 !important; }
-        .app-header .app-header-emoji img { width: 44px !important; height: 44px !important; }
-        .app-header h1 { font-size: 1.15rem !important; }
+        .app-header-desktop { display: none !important; }
+        .app-header-mobile { display: flex !important; }
         .app-header p { display: none !important; }
         div[data-testid="stVerticalBlock"] { gap: 0.35rem !important; }
         hr { margin: 0.5rem 0 !important; }
@@ -1236,14 +1235,27 @@ if _avatar_b64:
         'object-position:top center;border:3px solid rgba(99,102,241,0.5);'
         'box-shadow:0 4px 20px rgba(99,102,241,0.35);" />'
     )
+    _avatar_html_inline = (
+        f'<img src="data:image/jpeg;base64,{_avatar_b64}" '
+        'style="width:28px;height:28px;border-radius:50%;object-fit:cover;'
+        'object-position:top center;border:2px solid rgba(99,102,241,0.5);'
+        'vertical-align:middle;" />'
+    )
 else:
     _avatar_html = '<div style="font-size:2.5rem;">📘</div>'
+    _avatar_html_inline = '📘'
 
 st.markdown(
     f"""
     <div class="app-header" style="text-align:center; margin-bottom:1.5rem; animation: fadeInDown 0.6s ease;">
-        <div class="app-header-emoji" style="display:flex; justify-content:center; margin-bottom:0.5rem;">{_avatar_html}</div>
-        <h1 style="margin:0; font-size:1.8rem;">Duo Cido</h1>
+        <div class="app-header-desktop">
+            <div style="display:flex; justify-content:center; margin-bottom:0.5rem;">{_avatar_html}</div>
+            <h1 style="margin:0; font-size:1.8rem;">Duo Cido</h1>
+        </div>
+        <h1 class="app-header-mobile" style="display:none; margin:0; font-size:1.15rem;
+            align-items:center; justify-content:center; gap:0.4rem;">
+            Duo {_avatar_html_inline} Cido
+        </h1>
         <p style="color:#64748B; font-size:0.9rem; margin-top:0.3rem;">
             Aprenda inglês de forma interativa e divertida
         </p>
