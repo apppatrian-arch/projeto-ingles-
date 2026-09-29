@@ -293,7 +293,7 @@ def _escapar_html(texto):
     )
 
 
-def frase_clicavel(frase, origem_cod, destino_cod, cabecalho):
+def frase_clicavel(frase, origem_cod, destino_cod, cabecalho, resultado=None):
     frase = frase or ""
     tokens = re.findall(r"\w+(?:'\w+)?|\s+|[^\w\s]", frase, flags=re.UNICODE)
     partes_html = []
@@ -312,6 +312,32 @@ def frase_clicavel(frase, origem_cod, destino_cod, cabecalho):
     frase_html = "".join(partes_html)
     cabecalho_html = _escapar_html(cabecalho)
 
+    altura = 145
+    resultado_html = ""
+    if resultado:
+        pontuacao = resultado.get("pontuacao", 0)
+        referencia = resultado.get("referencia", "")
+        icone = resultado.get("icone", "✅")
+        if pontuacao >= 80:
+            cor, cor_fundo, emoji_score = "#34D399", "rgba(16,185,129,0.14)", "🟢"
+        elif pontuacao >= 50:
+            cor, cor_fundo, emoji_score = "#FBBF24", "rgba(245,158,11,0.14)", "🟡"
+        else:
+            cor, cor_fundo, emoji_score = "#FB7185", "rgba(244,63,94,0.14)", "🔴"
+        resultado_html = f"""
+        <div style="margin-top:0.6rem; padding-top:0.55rem; border-top:1px solid rgba(255,255,255,0.1);
+            display:flex; align-items:center; justify-content:space-between; gap:0.6rem;">
+            <div style="font-size:0.85rem; color:#6EE7B7; font-weight:600;">
+                {icone} {_escapar_html(referencia)}
+            </div>
+            <div style="background:{cor_fundo}; color:{cor}; font-weight:800; font-size:0.85rem;
+                padding:0.25rem 0.65rem; border-radius:999px; white-space:nowrap; flex-shrink:0;">
+                {emoji_score} {pontuacao:.0f}%
+            </div>
+        </div>
+        """
+        altura = 205
+
     html = f"""
     <div style="background:rgba(99,102,241,0.08); border:1.5px solid rgba(99,102,241,0.25);
         border-radius:14px; padding:0.7rem 0.9rem; font-family:'Inter',-apple-system,sans-serif;">
@@ -321,6 +347,7 @@ def frase_clicavel(frase, origem_cod, destino_cod, cabecalho):
             background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.4); border-radius:8px;
             font-size:0.85rem; color:#6EE7B7; font-weight:600;"></div>
         <div style="font-size:0.68rem; color:#64748B; margin-top:0.3rem;">👆 toque em uma palavra para ver o significado</div>
+        {resultado_html}
     </div>
     <style>
         .palavra-clicavel {{
@@ -355,7 +382,7 @@ def frase_clicavel(frase, origem_cod, destino_cod, cabecalho):
         }});
     </script>
     """
-    components.html(html, height=145, scrolling=True)
+    components.html(html, height=altura, scrolling=True)
 
 
 def normalizar(texto):
@@ -1409,7 +1436,16 @@ if pagina == "📖 Praticar":
 
             st.subheader("Traduza a frase abaixo:")
             mostrar_emojis_frase(st.session_state.frase_atual)
-            frase_clicavel(st.session_state.frase_atual, origem_cod, destino_cod, f"{origem_label} → {destino_label}")
+            resultado_traduzir = None
+            if st.session_state.revelado and st.session_state.traducao_referencia:
+                resultado_traduzir = {
+                    "referencia": st.session_state.traducao_referencia,
+                    "pontuacao": st.session_state.pontuacao,
+                }
+            frase_clicavel(
+                st.session_state.frase_atual, origem_cod, destino_cod,
+                f"{origem_label} → {destino_label}", resultado=resultado_traduzir,
+            )
 
             resposta_usuario = st.text_area("Sua tradução:", key="resposta_usuario")
 
@@ -1438,14 +1474,6 @@ if pagina == "📖 Praticar":
                     salvar_progresso(st.session_state.progresso)
                     st.session_state.registrado = True
                     st.rerun()
-
-            if st.session_state.revelado and st.session_state.traducao_referencia:
-                st.success(f"**Tradução de referência:** {st.session_state.traducao_referencia}")
-
-                pontuacao = st.session_state.pontuacao
-                emoji_score = "🟢" if pontuacao >= 80 else "🟡" if pontuacao >= 50 else "🔴"
-                st.metric(f"{emoji_score} Similaridade com a tradução de referência", f"{pontuacao:.0f}%")
-                st.progress(min(int(pontuacao), 100))
 
             if proxima:
                 sortear_frase(limpar_resposta=True)
@@ -1513,8 +1541,6 @@ if pagina == "📖 Praticar":
         else:
             st.subheader("Leia a frase abaixo em voz alta:")
             mostrar_emojis_frase(st.session_state.frase_atual)
-            frase_clicavel(st.session_state.frase_atual, origem_cod, destino_cod, origem_label)
-            falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir pronúncia correta")
 
             texto_falado_leitura = speech_to_text(
                 language=IDIOMA_VOZ[origem_cod],
@@ -1528,8 +1554,19 @@ if pagina == "📖 Praticar":
                 st.session_state["leitura_texto"] = texto_falado_leitura
 
             leitura_texto = st.session_state.get("leitura_texto", "")
-            if leitura_texto:
-                st.caption(f'🎙️ O que foi reconhecido da sua fala: "{leitura_texto}"')
+
+            resultado_leitura = None
+            if st.session_state.revelado:
+                resultado_leitura = {
+                    "referencia": leitura_texto,
+                    "pontuacao": st.session_state.pontuacao,
+                    "icone": "🎙️",
+                }
+            frase_clicavel(
+                st.session_state.frase_atual, origem_cod, destino_cod, origem_label,
+                resultado=resultado_leitura,
+            )
+            falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir pronúncia correta")
 
             with st.container(key="linha-botoes"):
                 col1, col2 = st.columns(2)
@@ -1557,12 +1594,6 @@ if pagina == "📖 Praticar":
                         salvar_progresso(st.session_state.progresso)
                         st.session_state.registrado = True
                         st.rerun()
-
-            if st.session_state.revelado:
-                pontuacao = st.session_state.pontuacao
-                emoji_score = "🟢" if pontuacao >= 80 else "🟡" if pontuacao >= 50 else "🔴"
-                st.metric(f"{emoji_score} Precisão da leitura", f"{pontuacao:.0f}%")
-                st.progress(min(int(pontuacao), 100))
 
             if proxima:
                 sortear_frase(limpar_resposta=True)
