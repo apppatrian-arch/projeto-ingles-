@@ -1,3 +1,4 @@
+import base64
 import concurrent.futures
 import difflib
 import json
@@ -1112,11 +1113,12 @@ st.markdown(
     /* ===== TELA PEQUENA: menos espaço pra caber mais conteudo sem rolar ===== */
     @media (max-width: 600px) {
         .block-container {
-            padding-top: 1.2rem !important;
+            padding-top: 2.6rem !important;
             padding-bottom: 1.5rem !important;
         }
         .app-header { margin-bottom: 0.5rem !important; }
         .app-header .app-header-emoji { font-size: 1.5rem !important; margin-bottom: 0 !important; }
+        .app-header .app-header-emoji img { width: 44px !important; height: 44px !important; }
         .app-header h1 { font-size: 1.15rem !important; }
         .app-header p { display: none !important; }
         div[data-testid="stVerticalBlock"] { gap: 0.35rem !important; }
@@ -1130,11 +1132,29 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+@st.cache_data(show_spinner=False)
+def avatar_base64():
+    if not AVATAR_PATH.exists():
+        return None
+    return base64.b64encode(AVATAR_PATH.read_bytes()).decode("utf-8")
+
+
 # ===== HEADER MODERNO =====
+_avatar_b64 = avatar_base64()
+if _avatar_b64:
+    _avatar_html = (
+        f'<img src="data:image/jpeg;base64,{_avatar_b64}" '
+        'style="width:84px;height:84px;border-radius:50%;object-fit:cover;'
+        'object-position:top center;border:3px solid rgba(99,102,241,0.5);'
+        'box-shadow:0 4px 20px rgba(99,102,241,0.35);" />'
+    )
+else:
+    _avatar_html = '<div style="font-size:2.5rem;">📘</div>'
+
 st.markdown(
-    """
+    f"""
     <div class="app-header" style="text-align:center; margin-bottom:1.5rem; animation: fadeInDown 0.6s ease;">
-        <div class="app-header-emoji" style="font-size:2.5rem; margin-bottom:0.3rem;">📘</div>
+        <div class="app-header-emoji" style="display:flex; justify-content:center; margin-bottom:0.5rem;">{_avatar_html}</div>
         <h1 style="margin:0; font-size:1.8rem;">Duo Cido</h1>
         <p style="color:#64748B; font-size:0.9rem; margin-top:0.3rem;">
             Aprenda inglês de forma interativa e divertida
