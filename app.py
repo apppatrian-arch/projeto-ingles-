@@ -312,7 +312,8 @@ def frase_clicavel(frase, origem_cod, destino_cod, cabecalho, resultado=None):
     frase_html = "".join(partes_html)
     cabecalho_html = _escapar_html(cabecalho)
 
-    altura = 145
+    linhas_frase = max(1, -(-len(frase) // 38))
+    altura = 78 + linhas_frase * 26
     resultado_html = ""
     if resultado:
         pontuacao = resultado.get("pontuacao", 0)
@@ -336,7 +337,8 @@ def frase_clicavel(frase, origem_cod, destino_cod, cabecalho, resultado=None):
             </div>
         </div>
         """
-        altura = 205
+        linhas_ref = max(1, -(-len(referencia) // 32))
+        altura += 22 + linhas_ref * 22
 
     html = f"""
     <div style="background:rgba(99,102,241,0.08); border:1.5px solid rgba(99,102,241,0.25);
