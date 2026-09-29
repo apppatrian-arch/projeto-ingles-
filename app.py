@@ -1015,6 +1015,33 @@ st.markdown(
         box-shadow: 0 4px 14px rgba(16,185,129,0.35) !important;
     }
 
+    /* ===== CARDS DE MODALIDADE (separa tipos de estudo na mesma tela) ===== */
+    .st-key-card-quiz-audio {
+        background: rgba(99,102,241,0.06);
+        border: 1.5px solid rgba(99,102,241,0.18);
+        border-radius: 16px;
+        padding: 1rem 1rem 0.5rem;
+        backdrop-filter: blur(8px);
+    }
+
+    .st-key-card-quiz-audio [data-testid="stBaseButton-primary"] {
+        background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%) !important;
+        border-color: rgba(99,102,241,0.5) !important;
+        box-shadow: 0 4px 14px rgba(99,102,241,0.35) !important;
+    }
+
+    .st-key-card-biblioteca-audio {
+        background: rgba(245,158,11,0.06);
+        border: 1.5px solid rgba(245,158,11,0.22);
+        border-radius: 16px;
+        padding: 1rem 1rem 1.1rem;
+        backdrop-filter: blur(8px);
+    }
+
+    .st-key-card-biblioteca-audio h3 {
+        color: #FBBF24 !important;
+    }
+
     /* ===== CARD CENA HISTÓRIA ===== */
     .st-key-cena-historia {
         background: rgba(99,102,241,0.06);
@@ -1562,37 +1589,50 @@ if pagina == "📖 Praticar":
 
 elif pagina == "🎧 Só áudio":
     cronometro_estudo(int((datetime.now() - st.session_state.sessao_inicio).total_seconds()))
-    st.subheader("🎧 Só áudio: ouça e traduza para o português")
-    st.caption("A frase fica escondida — clique em ouvir, escreva ou fale sua tradução em português.")
 
-    if st.session_state.audio_frase is None:
-        sortear_frase_audio()
+    with st.container(key="card-quiz-audio"):
+        st.subheader("🎧 Ouvir e traduzir")
+        st.caption("A frase fica escondida — clique em ouvir, escreva ou fale sua tradução em português.")
 
-    falar(st.session_state.audio_frase, IDIOMA_VOZ["en"], "🔊 Ouvir frase (pode repetir)")
+        if st.session_state.audio_frase is None:
+            sortear_frase_audio()
 
-    texto_falado_audio = speech_to_text(
-        language=IDIOMA_VOZ["pt"],
-        start_prompt="🎤 Falar minha tradução",
-        stop_prompt="⏹️ Parar gravação",
-        just_once=True,
-        use_container_width=True,
-        key="stt_audio",
-    )
-    if texto_falado_audio:
-        st.session_state["resposta_audio"] = texto_falado_audio
+        falar(st.session_state.audio_frase, IDIOMA_VOZ["en"], "🔊 Ouvir frase (pode repetir)")
 
-    resposta_audio = st.text_area("Sua tradução (em português):", key="resposta_audio")
+        texto_falado_audio = speech_to_text(
+            language=IDIOMA_VOZ["pt"],
+            start_prompt="🎤 Falar minha tradução",
+            stop_prompt="⏹️ Parar gravação",
+            just_once=True,
+            use_container_width=True,
+            key="stt_audio",
+        )
+        if texto_falado_audio:
+            st.session_state["resposta_audio"] = texto_falado_audio
 
-    with st.container(key="linha-botoes"):
-        col1, col2 = st.columns(2)
-        with col1:
-            verificar_audio = st.button(
-                "Verificar", type="primary", use_container_width=True, key="verificar_audio"
-            )
-        with col2:
-            proxima_audio = st.button(
-                "Próxima frase", use_container_width=True, key="proxima_audio"
-            )
+        resposta_audio = st.text_area("Sua tradução (em português):", key="resposta_audio")
+
+        with st.container(key="linha-botoes"):
+            col1, col2 = st.columns(2)
+            with col1:
+                verificar_audio = st.button(
+                    "Verificar", type="primary", use_container_width=True, key="verificar_audio"
+                )
+            with col2:
+                proxima_audio = st.button(
+                    "Próxima frase", use_container_width=True, key="proxima_audio"
+                )
+
+        if st.session_state.audio_revelado:
+            mostrar_emojis_frase(st.session_state.audio_frase)
+            st.info(f"**Frase original (Inglês):** {st.session_state.audio_frase}")
+            st.success(f"**Tradução de referência:** {st.session_state.audio_referencia}")
+            falar(st.session_state.audio_referencia, IDIOMA_VOZ["pt"], "🔊 Ouvir tradução")
+
+            pontuacao = st.session_state.audio_pontuacao
+            emoji_score = "🟢" if pontuacao >= 80 else "🟡" if pontuacao >= 50 else "🔴"
+            st.metric(f"{emoji_score} Similaridade com a tradução de referência", f"{pontuacao:.0f}%")
+            st.progress(min(int(pontuacao), 100))
 
     if verificar_audio and st.session_state.audio_frase:
         referencia = traduzir(st.session_state.audio_frase, "en", "pt")
@@ -1613,37 +1653,27 @@ elif pagina == "🎧 Só áudio":
             st.session_state.audio_registrado = True
             st.rerun()
 
-    if st.session_state.audio_revelado:
-        mostrar_emojis_frase(st.session_state.audio_frase)
-        st.info(f"**Frase original (Inglês):** {st.session_state.audio_frase}")
-        st.success(f"**Tradução de referência:** {st.session_state.audio_referencia}")
-        falar(st.session_state.audio_referencia, IDIOMA_VOZ["pt"], "🔊 Ouvir tradução")
-
-        pontuacao = st.session_state.audio_pontuacao
-        emoji_score = "🟢" if pontuacao >= 80 else "🟡" if pontuacao >= 50 else "🔴"
-        st.metric(f"{emoji_score} Similaridade com a tradução de referência", f"{pontuacao:.0f}%")
-        st.progress(min(int(pontuacao), 100))
-
     if proxima_audio:
         sortear_frase_audio(limpar_resposta=True)
         st.rerun()
 
     st.divider()
-    if bloco_biblioteca == "Tudo":
-        st.subheader("🎼 Ouvir toda a biblioteca")
-        bloco_num_audio = None
-    else:
-        st.subheader(f"🎼 Ouvir bloco {bloco_biblioteca}")
-        bloco_num_audio = opcoes_bloco_audio.index(bloco_biblioteca)
-    st.caption(
-        "Escuta passiva: cada frase toca primeiro em inglês, depois em português, "
-        "avançando sozinha para a próxima — sem precisar acertar nada. "
-        "Escolha um bloco na barra lateral pra estudar por camadas, sem se perder na biblioteca inteira."
-    )
-    dados_biblioteca = montar_dados_biblioteca(
-        categorias_audio, ordem_biblioteca, bloco=bloco_num_audio, tamanho_bloco=TAMANHO_BLOCO_AUDIO
-    )
-    reprodutor_biblioteca(dados_biblioteca)
+    with st.container(key="card-biblioteca-audio"):
+        if bloco_biblioteca == "Tudo":
+            st.subheader("🎼 Ouvir toda a biblioteca")
+            bloco_num_audio = None
+        else:
+            st.subheader(f"🎼 Ouvir bloco {bloco_biblioteca}")
+            bloco_num_audio = opcoes_bloco_audio.index(bloco_biblioteca)
+        st.caption(
+            "Escuta passiva: cada frase toca primeiro em inglês, depois em português, "
+            "avançando sozinha para a próxima — sem precisar acertar nada. "
+            "Escolha um bloco na barra lateral pra estudar por camadas, sem se perder na biblioteca inteira."
+        )
+        dados_biblioteca = montar_dados_biblioteca(
+            categorias_audio, ordem_biblioteca, bloco=bloco_num_audio, tamanho_bloco=TAMANHO_BLOCO_AUDIO
+        )
+        reprodutor_biblioteca(dados_biblioteca)
 
 elif pagina == "🗺️ Modo História":
     cronometro_estudo(int((datetime.now() - st.session_state.sessao_inicio).total_seconds()))
