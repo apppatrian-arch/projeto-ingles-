@@ -457,8 +457,9 @@ def montar_dados_biblioteca(categorias, ordem, bloco=None, tamanho_bloco=100):
     return dados
 
 
-def reprodutor_biblioteca(dados):
+def reprodutor_biblioteca(dados, repetir_2x=False):
     dados_json = json.dumps(dados, ensure_ascii=False)
+    repetir_2x_js = "true" if repetir_2x else "false"
     total = len(dados)
     estilo_botao = (
         "flex:1; padding:0.6rem 0.5rem; border-radius:12px; border:1.5px solid rgba(99,102,241,0.4);"
@@ -481,6 +482,7 @@ def reprodutor_biblioteca(dados):
     <script>
     (function() {{
         const dados = {dados_json};
+        const repetir2x = {repetir_2x_js};
         let pos = 0;
         let tocando = false;
         let tokenAtual = 0;
@@ -493,14 +495,23 @@ def reprodutor_biblioteca(dados):
             document.getElementById('rb-pt').textContent = item.pt;
         }}
 
+        function falarIngles(meuToken, devagar, aoTerminar) {{
+            const item = dados[pos];
+            const u = new SpeechSynthesisUtterance(item.en);
+            u.lang = 'en-US';
+            u.rate = devagar ? 0.6 : 0.85;
+            u.onend = function() {{
+                if (meuToken !== tokenAtual) return;
+                aoTerminar();
+            }};
+            window.speechSynthesis.speak(u);
+        }}
+
         function falarSequencia(meuToken) {{
             const item = dados[pos];
             window.speechSynthesis.cancel();
-            const uEn = new SpeechSynthesisUtterance(item.en);
-            uEn.lang = 'en-US';
-            uEn.rate = 0.85;
-            uEn.onend = function() {{
-                if (meuToken !== tokenAtual) return;
+
+            function falarPortugues() {{
                 const uPt = new SpeechSynthesisUtterance(item.pt);
                 uPt.lang = 'pt-BR';
                 uPt.onend = function() {{
@@ -513,8 +524,15 @@ def reprodutor_biblioteca(dados):
                     }}
                 }};
                 window.speechSynthesis.speak(uPt);
-            }};
-            window.speechSynthesis.speak(uEn);
+            }}
+
+            if (repetir2x) {{
+                falarIngles(meuToken, true, function() {{
+                    falarIngles(meuToken, false, falarPortugues);
+                }});
+            }} else {{
+                falarIngles(meuToken, false, falarPortugues);
+            }}
         }}
 
         function tocarAtual() {{
@@ -1323,6 +1341,9 @@ with st.sidebar:
         ordem_biblioteca = st.radio(
             "Ordem da biblioteca de áudio", ["Sequencial", "Aleatório"], horizontal=True, key="ordem_biblioteca"
         )
+        repetir_2x_audio = st.checkbox(
+            "🔁 2x — repetir o inglês devagar antes do normal", key="repetir_2x_audio"
+        )
         TAMANHO_BLOCO_AUDIO = 100
         total_pool_audio = len(pool_biblioteca(categorias_audio))
         num_blocos_audio = max(1, -(-total_pool_audio // TAMANHO_BLOCO_AUDIO))
@@ -1769,10 +1790,12 @@ elif pagina == "🎧 Só áudio":
             "avançando sozinha para a próxima — sem precisar acertar nada. "
             "Escolha um bloco na barra lateral pra estudar por camadas, sem se perder na biblioteca inteira."
         )
+        if repetir_2x_audio:
+            st.caption("🔁 2x ativado: o inglês toca devagar e depois no ritmo normal, antes do português.")
         dados_biblioteca = montar_dados_biblioteca(
             categorias_audio, ordem_biblioteca, bloco=bloco_num_audio, tamanho_bloco=TAMANHO_BLOCO_AUDIO
         )
-        reprodutor_biblioteca(dados_biblioteca)
+        reprodutor_biblioteca(dados_biblioteca, repetir_2x=repetir_2x_audio)
 
 elif pagina == "🗺️ Modo História":
     cronometro_estudo(int((datetime.now() - st.session_state.sessao_inicio).total_seconds()))
