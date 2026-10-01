@@ -526,13 +526,18 @@ def reprodutor_biblioteca(dados, repetir_2x=False):
                 window.speechSynthesis.speak(uPt);
             }}
 
-            if (repetir2x) {{
-                falarIngles(meuToken, true, function() {{
+            // Pequeno atraso depois do cancel(): em alguns navegadores (Chrome/Android),
+            // falar() logo apos cancel() ignora o "rate" da primeira fala da fila.
+            setTimeout(function() {{
+                if (meuToken !== tokenAtual) return;
+                if (repetir2x) {{
+                    falarIngles(meuToken, true, function() {{
+                        falarIngles(meuToken, false, falarPortugues);
+                    }});
+                }} else {{
                     falarIngles(meuToken, false, falarPortugues);
-                }});
-            }} else {{
-                falarIngles(meuToken, false, falarPortugues);
-            }}
+                }}
+            }}, 80);
         }}
 
         function tocarAtual() {{
