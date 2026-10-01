@@ -499,7 +499,7 @@ def reprodutor_biblioteca(dados, repetir_2x=False):
             const item = dados[pos];
             const u = new SpeechSynthesisUtterance(item.en);
             u.lang = 'en-US';
-            u.rate = devagar ? 0.6 : 0.85;
+            u.rate = devagar ? 0.45 : 0.85;
             u.onend = function() {{
                 if (meuToken !== tokenAtual) return;
                 aoTerminar();
