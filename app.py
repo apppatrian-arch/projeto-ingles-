@@ -162,11 +162,23 @@ def falar(texto, idioma, label="🔊 Ouvir"):
     idioma_js = json.dumps(idioma)
     velocidade = 0.85 if idioma.startswith("en") else 1.0
     html = f"""
-    <button style="display:flex;align-items:center;justify-content:center;gap:6px;
-        width:100%;box-sizing:border-box;padding:0.5em 0.4em;border-radius:6px;
-        border:1px solid #ccc;cursor:pointer;background:#f0f2f6;color:inherit;
-        font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"
-        onclick='window.speechSynthesis.cancel();
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+        html, body {{ margin:0; padding:0; background:transparent; }}
+        button {{
+            display:flex; align-items:center; justify-content:center; gap:6px;
+            width:100%; height:40px; box-sizing:border-box; padding:0 0.8rem;
+            border-radius:14px; border:1.5px solid rgba(99,102,241,0.5); cursor:pointer;
+            background:linear-gradient(135deg,#6366F1 0%,#818CF8 100%); color:#fff;
+            font-family:'Inter',-apple-system,sans-serif; font-weight:700; font-size:0.85rem;
+            letter-spacing:0.01em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+            box-shadow:0 2px 6px rgba(99,102,241,0.35);
+            transition:transform 0.1s ease, filter 0.15s ease;
+        }}
+        button:hover {{ filter:brightness(1.08); }}
+        button:active {{ transform:translateY(1px) scale(0.98); }}
+    </style>
+    <button onclick='window.speechSynthesis.cancel();
                  var u=new SpeechSynthesisUtterance({texto_js});
                  u.lang={idioma_js};
                  u.rate={velocidade};
@@ -174,7 +186,7 @@ def falar(texto, idioma, label="🔊 Ouvir"):
         {label}
     </button>
     """
-    components.html(html, height=42)
+    components.html(html, height=46)
 
 
 def cronometro_estudo(segundos_iniciais):
