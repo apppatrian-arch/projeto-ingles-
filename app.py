@@ -472,7 +472,7 @@ def banco_palavras(cards, rotulo_campo):
         let escolhidos = [];
 
         function campo() {{
-            try {{ return window.parent.document.querySelector('textarea[aria-label=' + JSON.stringify(rotuloCampo) + ']'); }}
+            try {{ const r = JSON.stringify(rotuloCampo); return window.parent.document.querySelector('textarea[aria-label=' + r + '], input[aria-label=' + r + ']'); }}
             catch (e) {{ return null; }}
         }}
 
@@ -480,7 +480,8 @@ def banco_palavras(cards, rotulo_campo):
             const ta = campo();
             if (!ta) return;
             const texto = escolhidos.map(i => palavras[i]).join(' ');
-            const setter = Object.getOwnPropertyDescriptor(window.parent.HTMLTextAreaElement.prototype, 'value').set;
+            const proto = ta.tagName === 'INPUT' ? window.parent.HTMLInputElement.prototype : window.parent.HTMLTextAreaElement.prototype;
+            const setter = Object.getOwnPropertyDescriptor(proto, 'value').set;
             setter.call(ta, texto);
             ta.dispatchEvent(new window.parent.Event('input', {{ bubbles: true }}));
             ta.dispatchEvent(new window.parent.FocusEvent('focusout', {{ bubbles: true }}));
@@ -515,6 +516,27 @@ def banco_palavras(cards, rotulo_campo):
     </script>
     """
     components.html(html, height=altura_inicial, scrolling=False)
+
+
+def seletor_resposta_cards(frase, origem_cod, destino_cod, rotulo_campo):
+    metodo = st.radio(
+        "Como responder", ["⌨️ Digitar", "🧩 Montar com cards"], horizontal=True, key="metodo_resposta"
+    )
+    usando_cards = metodo == "🧩 Montar com cards"
+    if usando_cards:
+        chave = (frase, origem_cod, destino_cod)
+        if st.session_state.get("_ref_cards", (None, None))[0] != chave:
+            st.session_state["_ref_cards"] = (
+                chave,
+                traducao_do_baralho(frase, origem_cod, destino_cod)
+                or traduzir_sem_parar(frase, origem_cod, destino_cod),
+            )
+        referencia = st.session_state["_ref_cards"][1]
+        if referencia:
+            banco_palavras(montar_cards_traducao(frase, referencia, destino_cod), rotulo_campo)
+        else:
+            st.caption("⚠️ Não consegui montar os cards agora. Digite a tradução ou tente a próxima frase.")
+    return usando_cards
 
 
 def normalizar(texto):
@@ -1647,25 +1669,7 @@ elif pagina == "📖 Praticar":
                 f"{origem_label} → {destino_label}", resultado=resultado_traduzir,
             )
 
-            metodo_resposta = st.radio(
-                "Como responder", ["⌨️ Digitar", "🧩 Montar com cards"], horizontal=True, key="metodo_resposta"
-            )
-            if metodo_resposta == "🧩 Montar com cards":
-                chave_cards = (st.session_state.frase_atual, origem_cod, destino_cod)
-                if st.session_state.get("_ref_cards", (None, None))[0] != chave_cards:
-                    st.session_state["_ref_cards"] = (
-                        chave_cards,
-                        traducao_do_baralho(st.session_state.frase_atual, origem_cod, destino_cod)
-                        or traduzir_sem_parar(st.session_state.frase_atual, origem_cod, destino_cod),
-                    )
-                referencia_cards = st.session_state["_ref_cards"][1]
-                if referencia_cards:
-                    banco_palavras(
-                        montar_cards_traducao(st.session_state.frase_atual, referencia_cards, destino_cod),
-                        "Sua tradução:",
-                    )
-                else:
-                    st.caption("⚠️ Não consegui montar os cards agora. Digite a tradução ou tente a próxima frase.")
+            seletor_resposta_cards(st.session_state.frase_atual, origem_cod, destino_cod, "Sua tradução:")
 
             resposta_usuario = st.text_area("Sua tradução:", key="resposta_usuario")
 
@@ -1715,6 +1719,9 @@ elif pagina == "📖 Praticar":
             if texto_falado_ouvir:
                 st.session_state["resposta_ouvir"] = texto_falado_ouvir
 
+            seletor_resposta_cards(
+                st.session_state.frase_atual, origem_cod, destino_cod, "Sua tradução (pelo que você ouviu):"
+            )
             resposta_ouvir = st.text_area("Sua tradução (pelo que você ouviu):", key="resposta_ouvir")
 
             with st.container(key="linha-botoes"):
@@ -1880,6 +1887,7 @@ elif pagina == "🎧 Só áudio":
         if texto_falado_audio:
             st.session_state["resposta_audio"] = texto_falado_audio
 
+        seletor_resposta_cards(st.session_state.audio_frase, "en", "pt", "Sua tradução (em português):")
         resposta_audio = st.text_area("Sua tradução (em português):", key="resposta_audio")
 
         with st.container(key="linha-botoes"):
@@ -2056,11 +2064,14 @@ elif pagina == "🗺️ Modo História":
             f"{origem_label} → {destino_label}", resultado=resultado_historia,
         )
 
+        usando_cards_historia = seletor_resposta_cards(
+            st.session_state.historia_frase, origem_cod, destino_cod, "Sua tradução:"
+        )
         resposta_historia = st.text_input(
             "Sua tradução:", key=f"resposta_historia_{st.session_state.historia_indice}"
         )
 
-        if st.session_state.pop("_focar_traducao_historia", False):
+        if st.session_state.pop("_focar_traducao_historia", False) and not usando_cards_historia:
             focar_campo_automaticamente("Sua tradução:")
 
         if not st.session_state.historia_revelado:
