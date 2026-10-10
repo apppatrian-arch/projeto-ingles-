@@ -350,9 +350,10 @@ def frase_clicavel(frase, origem_cod, destino_cod, cabecalho, resultado=None):
             partes_html.append(_escapar_html(token))
     frase_html = "".join(partes_html)
     cabecalho_html = _escapar_html(cabecalho)
+    emojis_card = " ".join(emojis_da_frase(frase))
 
     linhas_frase = max(1, -(-len(frase) // 38))
-    altura = 78 + linhas_frase * 26
+    altura = 78 + linhas_frase * 26 + (8 if emojis_card else 0)
     resultado_html = ""
     if resultado:
         pontuacao = resultado.get("pontuacao", 0)
@@ -382,7 +383,10 @@ def frase_clicavel(frase, origem_cod, destino_cod, cabecalho, resultado=None):
     html = f"""
     <div style="background:rgba(99,102,241,0.08); border:1.5px solid rgba(99,102,241,0.25);
         border-radius:14px; padding:0.7rem 0.9rem; font-family:'Inter',-apple-system,sans-serif;">
-        <div style="font-weight:700; color:#C7D2FE; font-size:0.8rem; margin-bottom:0.35rem;">{cabecalho_html}</div>
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.2rem;">
+            <span style="font-weight:700; color:#C7D2FE; font-size:0.8rem;">{cabecalho_html}</span>
+            <span style="font-size:1.5rem; line-height:1;">{emojis_card}</span>
+        </div>
         <div style="font-size:1.1rem; font-weight:700; color:#F1F5F9; line-height:1.6;">{frase_html}</div>
         <div id="popup-traducao" style="display:none; margin-top:0.4rem; padding:0.35rem 0.6rem;
             background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.4); border-radius:8px;
@@ -572,15 +576,6 @@ def emojis_da_frase(frase, maximo=2):
         if len(encontrados) >= maximo:
             break
     return encontrados
-
-
-def mostrar_emojis_frase(frase):
-    emojis = emojis_da_frase(frase)
-    if emojis:
-        st.markdown(
-            f"<div style='font-size:2.2rem; text-align:center; margin:0.2rem 0;'>{' '.join(emojis)}</div>",
-            unsafe_allow_html=True,
-        )
 
 
 def pool_biblioteca(categorias):
@@ -1701,7 +1696,6 @@ elif pagina == "📖 Praticar":
                 st.session_state["resposta_usuario"] = texto_falado
 
             st.subheader("Traduza a frase abaixo:")
-            mostrar_emojis_frase(st.session_state.frase_atual)
             resultado_traduzir = None
             if st.session_state.revelado and st.session_state.traducao_referencia:
                 resultado_traduzir = {
@@ -1796,8 +1790,8 @@ elif pagina == "📖 Praticar":
                     st.rerun()
 
             if st.session_state.revelado and st.session_state.traducao_referencia:
-                mostrar_emojis_frase(st.session_state.frase_atual)
-                st.info(f"**Frase original ({origem_label}):** {st.session_state.frase_atual}")
+                emojis_info = " ".join(emojis_da_frase(st.session_state.frase_atual))
+                st.info(f"{emojis_info} **Frase original ({origem_label}):** {st.session_state.frase_atual}")
                 st.success(f"**Tradução de referência:** {st.session_state.traducao_referencia}")
                 falar(st.session_state.traducao_referencia, IDIOMA_VOZ[destino_cod], "🔊 Ouvir tradução")
 
@@ -1812,7 +1806,6 @@ elif pagina == "📖 Praticar":
 
         else:
             st.subheader("Leia a frase abaixo em voz alta:")
-            mostrar_emojis_frase(st.session_state.frase_atual)
 
             texto_falado_leitura = speech_to_text(
                 language=IDIOMA_VOZ[origem_cod],
@@ -1947,8 +1940,8 @@ elif pagina == "🎧 Só áudio":
                 )
 
         if st.session_state.audio_revelado:
-            mostrar_emojis_frase(st.session_state.audio_frase)
-            st.info(f"**Frase original (Inglês):** {st.session_state.audio_frase}")
+            emojis_info = " ".join(emojis_da_frase(st.session_state.audio_frase))
+            st.info(f"{emojis_info} **Frase original (Inglês):** {st.session_state.audio_frase}")
             st.success(f"**Tradução de referência:** {st.session_state.audio_referencia}")
             falar(st.session_state.audio_referencia, IDIOMA_VOZ["pt"], "🔊 Ouvir tradução")
 
@@ -2095,8 +2088,6 @@ elif pagina == "🗺️ Modo História":
         destino_label = "Inglês" if destino_cod == "en" else "Português"
 
         falar(st.session_state.historia_frase, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase")
-        mostrar_emojis_frase(st.session_state.historia_frase)
-
         resultado_historia = None
         if st.session_state.historia_revelado:
             resultado_historia = {
