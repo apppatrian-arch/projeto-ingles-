@@ -1674,16 +1674,6 @@ elif pagina == "📖 Praticar":
         origem_cod, destino_cod = st.session_state.direcao_atual.split("->")
 
         if modo_exercicio == "✍️ Traduzir":
-            if st.session_state.revelado and st.session_state.traducao_referencia:
-                with st.container(key="linha-ouvir"):
-                    col_ouvir_orig, col_ouvir_trad = st.columns(2)
-                    with col_ouvir_orig:
-                        falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Frase original")
-                    with col_ouvir_trad:
-                        falar(st.session_state.traducao_referencia, IDIOMA_VOZ[destino_cod], "🔊 Tradução")
-            else:
-                falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase original")
-
             texto_falado = None if cards_ativo else speech_to_text(
                 language=IDIOMA_VOZ[destino_cod],
                 start_prompt="🎤 Falar minha tradução",
@@ -1710,6 +1700,16 @@ elif pagina == "📖 Praticar":
             usando_cards = seletor_resposta_cards(st.session_state.frase_atual, origem_cod, destino_cod, "Sua tradução:")
             with st.container(key="campo-oculto" if usando_cards else "campo-visivel"):
                 resposta_usuario = st.text_area("Sua tradução:", key="resposta_usuario")
+
+            if st.session_state.revelado and st.session_state.traducao_referencia:
+                with st.container(key="linha-ouvir"):
+                    col_ouvir_orig, col_ouvir_trad = st.columns(2)
+                    with col_ouvir_orig:
+                        falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Frase original")
+                    with col_ouvir_trad:
+                        falar(st.session_state.traducao_referencia, IDIOMA_VOZ[destino_cod], "🔊 Tradução")
+            else:
+                falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase original")
 
             with st.container(key="linha-botoes"):
                 col1, col2 = st.columns(2)
