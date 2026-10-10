@@ -570,6 +570,51 @@ def seletor_resposta_cards(frase, origem_cod, destino_cod, rotulo_campo):
     return usando_cards
 
 
+def injetar_estilo_microfone():
+    with st.container(key="injetor-estilo"):
+        components.html(
+            """
+            <script>
+            (function() {
+                const CSS = `
+                    .myButton {
+                        height: 40px !important; padding: 0 0.8rem !important; border-radius: 14px !important;
+                        border: 1.5px solid rgba(99,102,241,0.5) !important;
+                        background: linear-gradient(135deg,#6366F1 0%,#818CF8 100%) !important;
+                        color: #fff !important; font-family: 'Inter',-apple-system,sans-serif !important;
+                        font-weight: 700 !important; font-size: 0.85rem !important; letter-spacing: 0.01em;
+                        box-shadow: 0 2px 6px rgba(99,102,241,0.35) !important; cursor: pointer;
+                    }
+                    .myButton:active { transform: translateY(1px) scale(0.98); }
+                    body { margin: 0; }`;
+                function aplicar() {
+                    try {
+                        window.parent.document.querySelectorAll('iframe[title*="mic_recorder"]').forEach(function(f) {
+                            const d = f.contentDocument;
+                            if (d && d.head && !d.getElementById('duo-estilo-mic')) {
+                                const st = d.createElement('style'); st.id = 'duo-estilo-mic'; st.textContent = CSS;
+                                d.head.appendChild(st);
+                            }
+                            f.style.height = '46px';
+                            const alvo = f.closest('[data-testid="stElementContainer"]');
+                            let no = f.parentElement;
+                            while (no) {
+                                no.style.height = '46px'; no.style.flex = '0 0 46px';
+                                if (no === alvo) break;
+                                no = no.parentElement;
+                            }
+                        });
+                    } catch (e) {}
+                }
+                aplicar();
+                setInterval(aplicar, 500);
+            })();
+            </script>
+            """,
+            height=0,
+        )
+
+
 def normalizar(texto):
     texto = texto.lower().strip()
     texto = re.sub(r"[^\w\s]", "", texto)
@@ -617,9 +662,9 @@ def reprodutor_biblioteca(dados, repetir_2x=False):
     repetir_2x_js = "true" if repetir_2x else "false"
     total = len(dados)
     estilo_botao = (
-        "flex:1; padding:0.6rem 0.5rem; border-radius:12px; border:1.5px solid rgba(99,102,241,0.4);"
-        "background:rgba(99,102,241,0.12); color:#F1F5F9; font-size:1.1rem; cursor:pointer;"
-        "font-family:'Inter',-apple-system,sans-serif;"
+        "flex:1; height:40px; padding:0; border-radius:14px; border:1.5px solid rgba(99,102,241,0.5);"
+        "background:linear-gradient(135deg,#6366F1 0%,#818CF8 100%); color:#fff; font-size:1.1rem; cursor:pointer;"
+        "box-shadow:0 2px 6px rgba(99,102,241,0.35); font-family:'Inter',-apple-system,sans-serif;"
     )
     html = f"""
     <div style="background:rgba(99,102,241,0.08); border:1.5px solid rgba(99,102,241,0.25);
@@ -1239,6 +1284,14 @@ st.markdown(
         min-width: 0 !important;
     }
 
+    .st-key-injetor-estilo {
+        position: absolute !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+    }
+
     .st-key-campo-oculto {
         display: none !important;
     }
@@ -1543,6 +1596,8 @@ def sortear_frase_audio(limpar_resposta=False):
 
 
 PAGINAS_COM_TIMER = ("📖 Praticar", "🎧 Só áudio", "🗺️ Modo História")
+if pagina in ("📖 Praticar", "🎧 Só áudio", "🔊 Traduzir e ouvir"):
+    injetar_estilo_microfone()
 cards_ativo = st.session_state.get("metodo_resposta") == "🧩 Montar com cards"
 
 if pagina != "🏠 Início":
@@ -2063,6 +2118,7 @@ elif pagina == "🎧 Só áudio":
                     file_name=video_pronto["nome"],
                     mime="video/mp4",
                     key="baixar_video_bloco",
+                    type="primary",
                     use_container_width=True,
                 )
 
