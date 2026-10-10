@@ -1802,6 +1802,46 @@ elif pagina == "🎧 Só áudio":
         )
         reprodutor_biblioteca(dados_biblioteca, repetir_2x=repetir_2x_audio)
 
+        st.markdown("**🎬 Baixar este bloco em vídeo (MP4)**")
+        if bloco_num_audio is None:
+            st.caption("Escolha um bloco (ex.: 1–100) na barra lateral para gerar o vídeo.")
+        else:
+            st.caption(
+                "Gera um MP4 com as frases do bloco (inglês, depois português), na ordem e com o 2x que "
+                "estiverem marcados. Dá pra copiar pra um pendrive e assistir na TV ou no celular. "
+                "Leva alguns minutos — mantenha a tela ligada."
+            )
+            if st.button("🎬 Gerar vídeo do bloco", key="gerar_video_bloco", use_container_width=True):
+                barra_video = st.progress(0.0, text="Preparando...")
+                try:
+                    from gerar_video import gerar_video_bloco
+
+                    conteudo_video = gerar_video_bloco(
+                        dados_biblioteca,
+                        repetir_2x_audio,
+                        f"Duo Cido · bloco {bloco_biblioteca}",
+                        progresso=lambda f, m: barra_video.progress(f, text=m),
+                    )
+                    st.session_state["video_bloco"] = {
+                        "bytes": conteudo_video,
+                        "nome": f"duo_cido_bloco_{bloco_biblioteca.replace('–', '-')}.mp4",
+                    }
+                except Exception as erro_video:
+                    st.session_state.pop("video_bloco", None)
+                    st.error(f"Não consegui gerar o vídeo agora: {erro_video}")
+                barra_video.empty()
+            video_pronto = st.session_state.get("video_bloco")
+            if video_pronto:
+                st.success(f"Vídeo pronto ({len(video_pronto['bytes']) / 1_000_000:.1f} MB).")
+                st.download_button(
+                    "⬇️ Baixar MP4",
+                    data=video_pronto["bytes"],
+                    file_name=video_pronto["nome"],
+                    mime="video/mp4",
+                    key="baixar_video_bloco",
+                    use_container_width=True,
+                )
+
 elif pagina == "🗺️ Modo História":
     cronometro_estudo(int((datetime.now() - st.session_state.sessao_inicio).total_seconds()))
     if st.session_state.historia_indice >= len(SCENAS_HISTORIA):

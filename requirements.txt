@@ -2,3 +2,6 @@ streamlit
 deep-translator
 streamlit-mic-recorder
 pandas
+gTTS
+imageio-ffmpeg
+Pillow
