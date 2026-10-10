@@ -1190,6 +1190,29 @@ st.markdown(
         line-height: 1.35 !important;
     }
 
+    /* Garante o texto completo (sem reticencias) e titulo acima da descricao */
+    .st-key-home-grid [data-testid="stBaseButton-secondary"] *,
+    .st-key-home-grid [data-testid="stBaseButton-secondary"] p {
+        white-space: normal !important;
+        text-overflow: clip !important;
+        overflow: visible !important;
+        overflow-wrap: anywhere !important;
+        max-width: 100% !important;
+    }
+
+    .st-key-home-grid [data-testid="stBaseButton-secondary"] > div,
+    .st-key-home-grid [data-testid="stBaseButton-secondary"] > div > span,
+    .st-key-home-grid [data-testid="stMarkdownContainer"] {
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .st-key-home-grid [data-testid="stMarkdownContainer"] p {
+        display: block !important;
+        width: 100% !important;
+    }
+
     /* ===== RADIO BUTTONS HORIZONTAIS ===== */
     .stRadio > div[role="radiogroup"] {
         gap: 6px !important;
