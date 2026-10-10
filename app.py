@@ -181,10 +181,11 @@ def cronometro_estudo(segundos_iniciais):
     html = f"""
     <div id="cronometro-caixa" style="display:flex;align-items:center;justify-content:center;
         gap:0.4rem;background:rgba(255,255,255,0.18);border:2px solid rgba(255,255,255,0.3);
-        border-radius:14px;padding:0.5rem;font-weight:800;font-size:1.05rem;color:inherit;
+        border-radius:14px;padding:0.35rem;font-weight:800;font-size:1.05rem;color:inherit;
         font-family:'Nunito',sans-serif;">
-        ⏱️ Tempo de estudo: <span id="cronometro-tempo">00:00</span>
+        ⏱️ <span class="rotulo-cron">Tempo de estudo:</span> <span id="cronometro-tempo">00:00</span>
     </div>
+    <style>@media (max-width: 330px) {{ .rotulo-cron {{ display:none; }} }}</style>
     <script>
     (function() {{
         let s = {segundos_iniciais};
@@ -204,7 +205,7 @@ def cronometro_estudo(segundos_iniciais):
     }})();
     </script>
     """
-    components.html(html, height=55)
+    components.html(html, height=46)
 
 
 def carregar_baralho():
@@ -453,7 +454,7 @@ def banco_palavras(cards, rotulo_campo):
     html = f"""
     <div id="zona" style="min-height:58px; display:flex; flex-wrap:wrap; gap:8px; align-items:center;
         padding:8px 4px; border-top:2px solid rgba(148,163,184,0.18); border-bottom:2px solid rgba(148,163,184,0.18);"></div>
-    <div id="banco" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:16px;"></div>
+    <div id="banco" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:10px;"></div>
     <style>
         body {{ margin:0; font-family:'Inter',-apple-system,sans-serif; }}
         .card {{
@@ -488,7 +489,19 @@ def banco_palavras(cards, rotulo_campo):
         }}
 
         function ajustarAltura() {{
-            try {{ window.frameElement.style.height = (Math.ceil(document.getElementById('banco').getBoundingClientRect().bottom) + 10) + 'px'; }} catch (e) {{}}
+            try {{
+                const h = (Math.ceil(document.getElementById('banco').getBoundingClientRect().bottom) + 2) + 'px';
+                const iframe = window.frameElement;
+                iframe.style.height = h;
+                const alvo = iframe.closest('[data-testid="stElementContainer"]');
+                let no = iframe.parentElement;
+                while (no) {{
+                    no.style.height = h;
+                    no.style.flex = '0 0 ' + h;
+                    if (no === alvo) break;
+                    no = no.parentElement;
+                }}
+            }} catch (e) {{}}
         }}
 
         function desenhar() {{
@@ -513,6 +526,7 @@ def banco_palavras(cards, rotulo_campo):
             ajustarAltura();
         }}
         desenhar();
+        setInterval(ajustarAltura, 400);
     </script>
     """
     components.html(html, height=altura_inicial, scrolling=False)
@@ -520,7 +534,8 @@ def banco_palavras(cards, rotulo_campo):
 
 def seletor_resposta_cards(frase, origem_cod, destino_cod, rotulo_campo):
     metodo = st.radio(
-        "Como responder", ["⌨️ Digitar", "🧩 Montar com cards"], horizontal=True, key="metodo_resposta"
+        "Como responder", ["⌨️ Digitar", "🧩 Montar com cards"], horizontal=True, key="metodo_resposta",
+        label_visibility="collapsed",
     )
     usando_cards = metodo == "🧩 Montar com cards"
     if usando_cards:
@@ -1202,6 +1217,25 @@ st.markdown(
         flex: 1 1 0 !important;
     }
 
+    .st-key-linha-topo div[data-testid="stHorizontalBlock"] {
+        flex-wrap: nowrap !important;
+        gap: 0.4rem !important;
+    }
+
+    .st-key-linha-topo div[data-testid="stColumn"] {
+        min-width: 0 !important;
+        flex: 1 1 0 !important;
+    }
+
+    .st-key-linha-topo iframe {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .st-key-campo-oculto {
+        display: none !important;
+    }
+
     .st-key-linha-ouvir iframe {
         width: 100% !important;
         min-width: 0 !important;
@@ -1501,8 +1535,17 @@ def sortear_frase_audio(limpar_resposta=False):
         st.session_state["_limpar_audio"] = True
 
 
+PAGINAS_COM_TIMER = ("📖 Praticar", "🎧 Só áudio", "🗺️ Modo História")
+cards_ativo = st.session_state.get("metodo_resposta") == "🧩 Montar com cards"
+
 if pagina != "🏠 Início":
-    st.button("← Início", key="voltar_inicio", type="tertiary", on_click=ir_para, args=("🏠 Início",))
+    with st.container(key="linha-topo"):
+        col_voltar, col_timer = st.columns([1, 2.2], vertical_alignment="center")
+        with col_voltar:
+            st.button("← Início", key="voltar_inicio", type="tertiary", on_click=ir_para, args=("🏠 Início",))
+        with col_timer:
+            if pagina in PAGINAS_COM_TIMER:
+                cronometro_estudo(int((datetime.now() - st.session_state.sessao_inicio).total_seconds()))
 
 if pagina == "🏠 Início":
     _total_praticadas = len(st.session_state.progresso)
@@ -1592,7 +1635,6 @@ elif pagina == "📥 Adicionar frase":
                 st.success(f"Adicionada em {categoria_deck}! 🇧🇷 {pt_deck}  ·  🇺🇸 {en_deck}")
 
 elif pagina == "📖 Praticar":
-    cronometro_estudo(int((datetime.now() - st.session_state.sessao_inicio).total_seconds()))
     with st.expander("⚙️ Opções de prática"):
         direcao_escolhida = st.radio(
             "Direção da tradução",
@@ -1616,6 +1658,8 @@ elif pagina == "📖 Praticar":
             ["✍️ Traduzir", "🎧 Ouvir e traduzir", "🗣️ Ler e falar"],
             horizontal=True,
             key="modo_exercicio",
+            format_func=lambda m: {"🎧 Ouvir e traduzir": "🎧 Ouvir", "🗣️ Ler e falar": "🗣️ Ler"}.get(m, m),
+            label_visibility="collapsed",
         )
         if st.session_state.frase_atual is None:
             sortear_frase()
@@ -1645,7 +1689,7 @@ elif pagina == "📖 Praticar":
             else:
                 falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase original")
 
-            texto_falado = speech_to_text(
+            texto_falado = None if cards_ativo else speech_to_text(
                 language=IDIOMA_VOZ[destino_cod],
                 start_prompt="🎤 Falar minha tradução",
                 stop_prompt="⏹️ Parar gravação",
@@ -1669,9 +1713,9 @@ elif pagina == "📖 Praticar":
                 f"{origem_label} → {destino_label}", resultado=resultado_traduzir,
             )
 
-            seletor_resposta_cards(st.session_state.frase_atual, origem_cod, destino_cod, "Sua tradução:")
-
-            resposta_usuario = st.text_area("Sua tradução:", key="resposta_usuario")
+            usando_cards = seletor_resposta_cards(st.session_state.frase_atual, origem_cod, destino_cod, "Sua tradução:")
+            with st.container(key="campo-oculto" if usando_cards else "campo-visivel"):
+                resposta_usuario = st.text_area("Sua tradução:", key="resposta_usuario")
 
             with st.container(key="linha-botoes"):
                 col1, col2 = st.columns(2)
@@ -1708,7 +1752,7 @@ elif pagina == "📖 Praticar":
             st.caption(f"{origem_label} → {destino_label} · a frase fica escondida até você verificar")
             falar(st.session_state.frase_atual, IDIOMA_VOZ[origem_cod], "🔊 Ouvir frase (pode repetir)")
 
-            texto_falado_ouvir = speech_to_text(
+            texto_falado_ouvir = None if cards_ativo else speech_to_text(
                 language=IDIOMA_VOZ[destino_cod],
                 start_prompt="🎤 Falar minha tradução",
                 stop_prompt="⏹️ Parar gravação",
@@ -1719,10 +1763,11 @@ elif pagina == "📖 Praticar":
             if texto_falado_ouvir:
                 st.session_state["resposta_ouvir"] = texto_falado_ouvir
 
-            seletor_resposta_cards(
+            usando_cards = seletor_resposta_cards(
                 st.session_state.frase_atual, origem_cod, destino_cod, "Sua tradução (pelo que você ouviu):"
             )
-            resposta_ouvir = st.text_area("Sua tradução (pelo que você ouviu):", key="resposta_ouvir")
+            with st.container(key="campo-oculto" if usando_cards else "campo-visivel"):
+                resposta_ouvir = st.text_area("Sua tradução (pelo que você ouviu):", key="resposta_ouvir")
 
             with st.container(key="linha-botoes"):
                 col1, col2 = st.columns(2)
@@ -1861,7 +1906,6 @@ elif pagina == "📖 Praticar":
                 st.write(f"{emoji} {pct:.0f}% · `{modo_r}` · **{registro['frase_original']}** → {registro['traducao_referencia']}")
 
 elif pagina == "🎧 Só áudio":
-    cronometro_estudo(int((datetime.now() - st.session_state.sessao_inicio).total_seconds()))
     with st.expander("⚙️ Categorias do baralho"):
         categorias_audio = st.multiselect(
             "Categorias do baralho", CATEGORIAS, default=CATEGORIAS, key="cat_audio"
@@ -1876,7 +1920,7 @@ elif pagina == "🎧 Só áudio":
 
         falar(st.session_state.audio_frase, IDIOMA_VOZ["en"], "🔊 Ouvir frase (pode repetir)")
 
-        texto_falado_audio = speech_to_text(
+        texto_falado_audio = None if cards_ativo else speech_to_text(
             language=IDIOMA_VOZ["pt"],
             start_prompt="🎤 Falar minha tradução",
             stop_prompt="⏹️ Parar gravação",
@@ -1887,8 +1931,9 @@ elif pagina == "🎧 Só áudio":
         if texto_falado_audio:
             st.session_state["resposta_audio"] = texto_falado_audio
 
-        seletor_resposta_cards(st.session_state.audio_frase, "en", "pt", "Sua tradução (em português):")
-        resposta_audio = st.text_area("Sua tradução (em português):", key="resposta_audio")
+        usando_cards = seletor_resposta_cards(st.session_state.audio_frase, "en", "pt", "Sua tradução (em português):")
+        with st.container(key="campo-oculto" if usando_cards else "campo-visivel"):
+            resposta_audio = st.text_area("Sua tradução (em português):", key="resposta_audio")
 
         with st.container(key="linha-botoes"):
             col1, col2 = st.columns(2)
@@ -2017,7 +2062,6 @@ elif pagina == "🎧 Só áudio":
                 )
 
 elif pagina == "🗺️ Modo História":
-    cronometro_estudo(int((datetime.now() - st.session_state.sessao_inicio).total_seconds()))
     if st.session_state.historia_indice >= len(SCENAS_HISTORIA):
         st.balloons()
         st.success("🎉 Você completou a jornada de hoje! Volte amanhã para praticar mais um pouco.")
@@ -2067,9 +2111,10 @@ elif pagina == "🗺️ Modo História":
         usando_cards_historia = seletor_resposta_cards(
             st.session_state.historia_frase, origem_cod, destino_cod, "Sua tradução:"
         )
-        resposta_historia = st.text_input(
-            "Sua tradução:", key=f"resposta_historia_{st.session_state.historia_indice}"
-        )
+        with st.container(key="campo-oculto" if usando_cards_historia else "campo-visivel"):
+            resposta_historia = st.text_input(
+                "Sua tradução:", key=f"resposta_historia_{st.session_state.historia_indice}"
+            )
 
         if st.session_state.pop("_focar_traducao_historia", False) and not usando_cards_historia:
             focar_campo_automaticamente("Sua tradução:")
