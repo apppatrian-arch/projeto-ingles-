@@ -235,7 +235,7 @@ def _chamar_com_limite(func, tempo_limite=6):
         return future.result(timeout=tempo_limite)
 
 
-def traduzir(texto, origem, destino):
+def traduzir_sem_parar(texto, origem, destino):
     texto = (texto or "").strip()
     if not texto:
         return ""
@@ -252,11 +252,30 @@ def traduzir(texto, origem, destino):
                 return resultado
         except Exception:
             pass
-    st.error(
-        "⚠️ Não consegui traduzir agora — os serviços de tradução parecem instáveis "
-        "no momento. Tente novamente em alguns segundos."
-    )
-    st.stop()
+    return None
+
+
+def traduzir(texto, origem, destino):
+    resultado = traduzir_sem_parar(texto, origem, destino)
+    if resultado is None:
+        st.error(
+            "⚠️ Não consegui traduzir agora — os serviços de tradução parecem instáveis "
+            "no momento. Tente novamente em alguns segundos."
+        )
+        st.stop()
+    return resultado
+
+
+def traducao_do_baralho(frase, origem, destino):
+    campo_origem, campo_destino = origem, destino
+    for item in st.session_state.baralho:
+        if item.get(campo_origem) == frase and item.get(campo_destino):
+            return item[campo_destino]
+    return None
+
+
+def referencia_para(frase, origem, destino):
+    return traducao_do_baralho(frase, origem, destino) or traduzir(frase, origem, destino)
 
 
 def focar_campo_automaticamente(aria_label, atraso_ms=150):
@@ -404,6 +423,98 @@ def frase_clicavel(frase, origem_cod, destino_cod, cabecalho, resultado=None):
     </script>
     """
     components.html(html, height=altura, scrolling=True)
+
+
+def _limpar_token(token):
+    return token.strip(".,;:!?¿¡\"()[]{}…")
+
+
+def montar_cards_traducao(frase, referencia, destino_cod, quantidade_extras=3):
+    palavras = [t for t in (_limpar_token(x) for x in referencia.split()) if t]
+    if not palavras:
+        return []
+    rng = random.Random(f"{frase}|{referencia}")
+    usadas = {p.lower() for p in palavras}
+    candidatas = []
+    for item in rng.sample(st.session_state.baralho, min(25, len(st.session_state.baralho))):
+        for t in (_limpar_token(x) for x in item[destino_cod].split()):
+            if len(t) > 1 and t.lower() not in usadas and t not in candidatas:
+                candidatas.append(t)
+    extras = candidatas[:quantidade_extras]
+    cards = [{"p": p, "extra": False} for p in palavras] + [{"p": e, "extra": True} for e in extras]
+    rng.shuffle(cards)
+    return [c["p"] for c in cards]
+
+
+def banco_palavras(cards, rotulo_campo):
+    cards_json = json.dumps(cards, ensure_ascii=False)
+    campo_json = json.dumps(rotulo_campo)
+    altura_inicial = 150 + 52 * (len(cards) // 4)
+    html = f"""
+    <div id="zona" style="min-height:58px; display:flex; flex-wrap:wrap; gap:8px; align-items:center;
+        padding:8px 4px; border-top:2px solid rgba(148,163,184,0.18); border-bottom:2px solid rgba(148,163,184,0.18);"></div>
+    <div id="banco" style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:16px;"></div>
+    <style>
+        body {{ margin:0; font-family:'Inter',-apple-system,sans-serif; }}
+        .card {{
+            background: rgba(255,255,255,0.05); color:#F1F5F9; font-size:1.05rem; font-weight:600;
+            border:2px solid rgba(148,163,184,0.38); border-bottom-width:4px; border-radius:14px;
+            padding:0.5rem 0.85rem; cursor:pointer; font-family:inherit;
+        }}
+        .card:active {{ transform: translateY(2px); border-bottom-width:2px; }}
+        .card.usado {{ display:none; }}
+        #zona .card {{ border-color: rgba(99,102,241,0.6); background: rgba(99,102,241,0.14); }}
+        #dica {{ color:#64748B; font-size:0.8rem; padding:0 6px; }}
+    </style>
+    <script>
+        const palavras = {cards_json};
+        const rotuloCampo = {campo_json};
+        let escolhidos = [];
+
+        function campo() {{
+            try {{ return window.parent.document.querySelector('textarea[aria-label=' + JSON.stringify(rotuloCampo) + ']'); }}
+            catch (e) {{ return null; }}
+        }}
+
+        function escreverNoCampo() {{
+            const ta = campo();
+            if (!ta) return;
+            const texto = escolhidos.map(i => palavras[i]).join(' ');
+            const setter = Object.getOwnPropertyDescriptor(window.parent.HTMLTextAreaElement.prototype, 'value').set;
+            setter.call(ta, texto);
+            ta.dispatchEvent(new window.parent.Event('input', {{ bubbles: true }}));
+            ta.dispatchEvent(new window.parent.FocusEvent('focusout', {{ bubbles: true }}));
+        }}
+
+        function ajustarAltura() {{
+            try {{ window.frameElement.style.height = (Math.ceil(document.getElementById('banco').getBoundingClientRect().bottom) + 10) + 'px'; }} catch (e) {{}}
+        }}
+
+        function desenhar() {{
+            const zona = document.getElementById('zona');
+            const banco = document.getElementById('banco');
+            zona.innerHTML = ''; banco.innerHTML = '';
+            if (!escolhidos.length) {{
+                const d = document.createElement('span'); d.id = 'dica';
+                d.textContent = 'Toque nas palavras abaixo para montar a tradução'; zona.appendChild(d);
+            }}
+            escolhidos.forEach(function(i, pos) {{
+                const b = document.createElement('button'); b.className = 'card'; b.textContent = palavras[i];
+                b.onclick = function() {{ escolhidos.splice(pos, 1); desenhar(); escreverNoCampo(); }};
+                zona.appendChild(b);
+            }});
+            palavras.forEach(function(p, i) {{
+                const b = document.createElement('button');
+                b.className = 'card' + (escolhidos.includes(i) ? ' usado' : ''); b.textContent = p;
+                if (!escolhidos.includes(i)) b.onclick = function() {{ escolhidos.push(i); desenhar(); escreverNoCampo(); }};
+                banco.appendChild(b);
+            }});
+            ajustarAltura();
+        }}
+        desenhar();
+    </script>
+    """
+    components.html(html, height=altura_inicial, scrolling=False)
 
 
 def normalizar(texto):
@@ -636,7 +747,7 @@ if "_forcar_pagina" in st.session_state:
     st.session_state["pagina"] = st.session_state.pop("_forcar_pagina")
 for _chave_opcao in (
     "dir_praticar", "fonte_praticar", "modo_exercicio", "cat_praticar",
-    "cat_audio", "ordem_biblioteca", "repetir_2x_audio", "bloco_biblioteca",
+    "cat_audio", "ordem_biblioteca", "repetir_2x_audio", "bloco_biblioteca", "metodo_resposta",
 ):
     if _chave_opcao in st.session_state:
         st.session_state[_chave_opcao] = st.session_state[_chave_opcao]
@@ -1536,6 +1647,26 @@ elif pagina == "📖 Praticar":
                 f"{origem_label} → {destino_label}", resultado=resultado_traduzir,
             )
 
+            metodo_resposta = st.radio(
+                "Como responder", ["⌨️ Digitar", "🧩 Montar com cards"], horizontal=True, key="metodo_resposta"
+            )
+            if metodo_resposta == "🧩 Montar com cards":
+                chave_cards = (st.session_state.frase_atual, origem_cod, destino_cod)
+                if st.session_state.get("_ref_cards", (None, None))[0] != chave_cards:
+                    st.session_state["_ref_cards"] = (
+                        chave_cards,
+                        traducao_do_baralho(st.session_state.frase_atual, origem_cod, destino_cod)
+                        or traduzir_sem_parar(st.session_state.frase_atual, origem_cod, destino_cod),
+                    )
+                referencia_cards = st.session_state["_ref_cards"][1]
+                if referencia_cards:
+                    banco_palavras(
+                        montar_cards_traducao(st.session_state.frase_atual, referencia_cards, destino_cod),
+                        "Sua tradução:",
+                    )
+                else:
+                    st.caption("⚠️ Não consegui montar os cards agora. Digite a tradução ou tente a próxima frase.")
+
             resposta_usuario = st.text_area("Sua tradução:", key="resposta_usuario")
 
             with st.container(key="linha-botoes"):
@@ -1547,7 +1678,7 @@ elif pagina == "📖 Praticar":
 
             if verificar and st.session_state.frase_atual:
                 origem, destino = st.session_state.direcao_atual.split("->")
-                st.session_state.traducao_referencia = traduzir(st.session_state.frase_atual, origem, destino)
+                st.session_state.traducao_referencia = referencia_para(st.session_state.frase_atual, origem, destino)
                 st.session_state.revelado = True
                 if not st.session_state.registrado:
                     st.session_state.pontuacao = calcular_similaridade(resposta_usuario, st.session_state.traducao_referencia)
@@ -1595,7 +1726,7 @@ elif pagina == "📖 Praticar":
 
             if verificar and st.session_state.frase_atual:
                 origem, destino = st.session_state.direcao_atual.split("->")
-                st.session_state.traducao_referencia = traduzir(st.session_state.frase_atual, origem, destino)
+                st.session_state.traducao_referencia = referencia_para(st.session_state.frase_atual, origem, destino)
                 st.session_state.revelado = True
                 if not st.session_state.registrado:
                     st.session_state.pontuacao = calcular_similaridade(resposta_ouvir, st.session_state.traducao_referencia)
@@ -1774,7 +1905,7 @@ elif pagina == "🎧 Só áudio":
             st.progress(min(int(pontuacao), 100))
 
     if verificar_audio and st.session_state.audio_frase:
-        referencia = traduzir(st.session_state.audio_frase, "en", "pt")
+        referencia = referencia_para(st.session_state.audio_frase, "en", "pt")
         st.session_state.audio_referencia = referencia
         st.session_state.audio_revelado = True
         if not st.session_state.audio_registrado:
@@ -1934,7 +2065,7 @@ elif pagina == "🗺️ Modo História":
 
         if not st.session_state.historia_revelado:
             if st.button("Verificar", type="primary", use_container_width=True):
-                referencia = traduzir(st.session_state.historia_frase, origem_cod, destino_cod)
+                referencia = referencia_para(st.session_state.historia_frase, origem_cod, destino_cod)
                 pontuacao = calcular_similaridade(resposta_historia, referencia)
                 st.session_state.historia_referencia = referencia
                 st.session_state.historia_pontuacao = pontuacao
