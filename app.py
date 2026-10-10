@@ -353,7 +353,9 @@ def frase_clicavel(frase, origem_cod, destino_cod, cabecalho, resultado=None):
         if re.fullmatch(r"\w+(?:'\w+)?", token, flags=re.UNICODE):
             chave = token.lower()
             if chave not in cache_local:
-                cache_local[chave] = traduzir_palavra_cache(chave, origem_cod, destino_cod) or "?"
+                # Sem rede aqui: o que nao esta no dicionario local o navegador busca em segundo plano
+                dicionario = DICIONARIO_RAPIDO_EN_PT if origem_cod == "en" else DICIONARIO_RAPIDO_PT_EN
+                cache_local[chave] = dicionario.get(chave, "")
             partes_html.append(
                 f'<span class="palavra-clicavel" data-palavra="{_escapar_html(token)}" '
                 f'data-trad="{_escapar_html(cache_local[chave])}">{_escapar_html(token)}</span>'
@@ -427,11 +429,49 @@ def frase_clicavel(frase, origem_cod, destino_cod, cabecalho, resultado=None):
         document.addEventListener('mousedown', capturarFoco, true);
         document.addEventListener('touchstart', capturarFoco, true);
 
+        var ORIGEM = "{origem_cod}", DESTINO = "{destino_cod}";
+        var memoria = {{}};
+        try {{ window.parent.__duoTrad = window.parent.__duoTrad || {{}}; memoria = window.parent.__duoTrad; }} catch (e) {{}}
+
+        function buscarTraducao(palavra) {{
+            var chave = ORIGEM + '|' + DESTINO + '|' + palavra.toLowerCase();
+            if (memoria[chave]) {{ return memoria[chave]; }}
+            var urlGoogle = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=' + ORIGEM +
+                '&tl=' + DESTINO + '&dt=t&q=' + encodeURIComponent(palavra);
+            var urlMyMemory = 'https://api.mymemory.translated.net/get?q=' + encodeURIComponent(palavra) +
+                '&langpair=' + (ORIGEM === 'en' ? 'en-US' : 'pt-BR') + '|' + (DESTINO === 'en' ? 'en-US' : 'pt-BR');
+            var promessa = fetch(urlGoogle)
+                .then(function(r) {{ return r.json(); }})
+                .then(function(j) {{ return j[0].map(function(x) {{ return x[0]; }}).join(''); }})
+                .catch(function() {{
+                    return fetch(urlMyMemory)
+                        .then(function(r) {{ return r.json(); }})
+                        .then(function(j) {{ return j.responseData.translatedText; }});
+                }})
+                .then(function(t) {{ if (!t) {{ throw new Error('vazio'); }} return t; }})
+                .catch(function() {{ delete memoria[chave]; return '?'; }});
+            memoria[chave] = promessa;
+            return promessa;
+        }}
+
+        // Busca em segundo plano as palavras que nao estao no dicionario local
+        document.querySelectorAll('.palavra-clicavel').forEach(function(el) {{
+            if (!el.dataset.trad) {{ buscarTraducao(el.dataset.palavra); }}
+        }});
+
         document.querySelectorAll('.palavra-clicavel').forEach(function(el) {{
             el.addEventListener('click', function() {{
                 var popup = document.getElementById('popup-traducao');
-                popup.textContent = el.dataset.palavra + ' → ' + el.dataset.trad;
                 popup.style.display = 'block';
+                var palavra = el.dataset.palavra;
+                if (el.dataset.trad) {{
+                    popup.textContent = palavra + ' → ' + el.dataset.trad;
+                }} else {{
+                    popup.textContent = palavra + ' → ...';
+                    Promise.resolve(buscarTraducao(palavra)).then(function(t) {{
+                        popup.textContent = palavra + ' → ' + t;
+                    }});
+                }}
                 if (campoAnterior) {{
                     try {{ campoAnterior.focus({{ preventScroll: true }}); }} catch (e) {{}}
                 }}
