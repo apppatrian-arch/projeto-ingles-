@@ -630,8 +630,16 @@ if "audio_referencia" not in st.session_state:
     st.session_state.audio_referencia = ""
 if "sessao_inicio" not in st.session_state:
     st.session_state.sessao_inicio = datetime.now()
+if "pagina" not in st.session_state:
+    st.session_state["pagina"] = "🏠 Início"
 if "_forcar_pagina" in st.session_state:
     st.session_state["pagina"] = st.session_state.pop("_forcar_pagina")
+for _chave_opcao in (
+    "dir_praticar", "fonte_praticar", "modo_exercicio", "cat_praticar",
+    "cat_audio", "ordem_biblioteca", "repetir_2x_audio", "bloco_biblioteca",
+):
+    if _chave_opcao in st.session_state:
+        st.session_state[_chave_opcao] = st.session_state[_chave_opcao]
 if st.session_state.pop("_limpar_resposta", False):
     st.session_state["resposta_usuario"] = ""
     st.session_state["resposta_ouvir"] = ""
@@ -948,49 +956,38 @@ st.markdown(
         border-left: 3px solid #6366F1;
     }
 
-    /* ===== NAVEGACAO PRINCIPAL ESTILO APP DE IDIOMAS ===== */
-    .st-key-nav-principal [data-testid="stRadioGroup"] {
-        gap: 10px !important;
+    /* ===== TELA INICIAL: CARDS DE MODULOS ===== */
+    .st-key-home-grid div[data-testid="stHorizontalBlock"],
+    .st-key-home-metricas div[data-testid="stHorizontalBlock"] {
+        flex-wrap: nowrap !important;
+        gap: 0.6rem !important;
     }
 
-    .st-key-nav-principal label[data-testid="stRadioOption"] {
-        display: flex !important;
-        align-items: center !important;
-        gap: 10px !important;
-        padding: 0.7rem 0.9rem !important;
-        border-radius: 14px !important;
-        border: 2px solid transparent !important;
-        background: rgba(255,255,255,0.03) !important;
-        cursor: pointer;
-        transition: all 0.2s ease !important;
+    .st-key-home-grid div[data-testid="stColumn"],
+    .st-key-home-metricas div[data-testid="stColumn"] {
+        min-width: 0 !important;
+        width: 100% !important;
+        flex: 1 1 0 !important;
     }
 
-    .st-key-nav-principal label[data-testid="stRadioOption"] > div > div > div:first-child {
-        display: none !important;
+    .st-key-home-grid [data-testid="stBaseButton-secondary"] {
+        height: auto !important;
+        min-height: 120px !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+        white-space: normal !important;
+        padding: 0.9rem 0.9rem !important;
+        border-radius: 18px !important;
+        border-width: 1.5px !important;
     }
 
-    .st-key-nav-principal label[data-testid="stRadioOption"] [data-testid="stMarkdownContainer"] p {
-        font-weight: 800 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 0.04em !important;
-        font-size: 0.8rem !important;
-        color: #94A3B8 !important;
+    .st-key-home-grid [data-testid="stBaseButton-secondary"] > div,
+    .st-key-home-grid [data-testid="stBaseButton-secondary"] p {
+        text-align: left !important;
+        justify-content: flex-start !important;
         margin: 0 !important;
-    }
-
-    .st-key-nav-principal label[data-testid="stRadioOption"]:hover {
-        background: rgba(99,102,241,0.08) !important;
-        border-color: rgba(99,102,241,0.25) !important;
-    }
-
-    .st-key-nav-principal label[data-testid="stRadioOption"][data-selected="true"] {
-        background: rgba(99,102,241,0.14) !important;
-        border-color: #6366F1 !important;
-        box-shadow: 0 0 0 1px rgba(99,102,241,0.15), 0 4px 14px rgba(99,102,241,0.2) !important;
-    }
-
-    .st-key-nav-principal label[data-testid="stRadioOption"][data-selected="true"] [data-testid="stMarkdownContainer"] p {
-        color: #F1F5F9 !important;
+        line-height: 1.35 !important;
     }
 
     /* ===== RADIO BUTTONS HORIZONTAIS ===== */
@@ -1308,122 +1305,22 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-with st.sidebar:
-    with st.container(key="nav-principal"):
-        pagina = st.radio(
-            "Página",
-            ["📖 Praticar", "🎧 Só áudio", "🗺️ Modo História", "📊 Revisão de erros", "🗓️ Meu tempo de uso"],
-            key="pagina",
-            label_visibility="collapsed",
-        )
+pagina = st.session_state["pagina"]
 
-    st.divider()
-    st.header("Configurações")
-    if pagina == "📖 Praticar":
-        direcao_escolhida = st.radio(
-            "Direção da tradução",
-            ["Português → Inglês", "Inglês → Português", "Aleatório"],
-            index=2,
-        )
-        fonte = st.radio("Fonte da frase", ["Baralho embutido", "Digitar minha frase"])
-        if fonte == "Baralho embutido":
-            modo_exercicio = st.radio(
-                "Modo de exercício",
-                ["✍️ Traduzir", "🎧 Ouvir e traduzir", "🗣️ Ler e falar"],
-                key="modo_exercicio",
-            )
-        categorias_selecionadas = st.multiselect("Categorias do baralho", CATEGORIAS, default=CATEGORIAS)
-        if st.session_state.foco_frases:
-            st.caption(f"🎯 Modo foco: {len(st.session_state.foco_frases)} frase(s) selecionada(s)")
-            if st.button("Sair do modo foco"):
-                st.session_state.foco_frases = set()
-                st.session_state.frase_atual = None
-                st.rerun()
-    elif pagina == "🎧 Só áudio":
-        categorias_audio = st.multiselect(
-            "Categorias do baralho", CATEGORIAS, default=CATEGORIAS, key="cat_audio"
-        )
-        ordem_biblioteca = st.radio(
-            "Ordem da biblioteca de áudio", ["Sequencial", "Aleatório"], horizontal=True, key="ordem_biblioteca"
-        )
-        repetir_2x_audio = st.checkbox(
-            "🔁 2x — repetir o inglês devagar antes do normal", key="repetir_2x_audio"
-        )
-        TAMANHO_BLOCO_AUDIO = 100
-        total_pool_audio = len(pool_biblioteca(categorias_audio))
-        num_blocos_audio = max(1, -(-total_pool_audio // TAMANHO_BLOCO_AUDIO))
-        opcoes_bloco_audio = ["Tudo"] + [
-            f"{(i * TAMANHO_BLOCO_AUDIO) + 1}–{min((i + 1) * TAMANHO_BLOCO_AUDIO, total_pool_audio)}"
-            for i in range(num_blocos_audio)
-        ]
-        bloco_biblioteca = st.selectbox(
-            "Bloco de estudo (biblioteca de áudio)",
-            opcoes_bloco_audio,
-            index=1 if len(opcoes_bloco_audio) > 1 else 0,
-            key="bloco_biblioteca",
-        )
 
-    st.divider()
-    st.subheader("Progresso")
-    total = len(st.session_state.progresso)
-    if total:
-        media = sum(r.get("similaridade", 0) for r in st.session_state.progresso) / total
-        st.metric("Frases praticadas", total)
-        st.metric("Similaridade média", f"{media:.0f}%")
-    else:
-        st.caption("Nenhuma frase praticada ainda.")
+def ir_para(destino):
+    st.session_state["pagina"] = destino
 
-    st.divider()
-    with st.container(key="card-traduzir"):
-        st.subheader("🔊 Traduzir e ouvir")
-        st.caption("Ferramenta livre: escreva ou fale uma palavra/frase e ouça nos dois idiomas. Não salva nada.")
-        idioma_trad = st.radio("Vou escrever em:", ["Português", "Inglês"], horizontal=True, key="idioma_trad")
-        idioma_cod_trad = "pt" if idioma_trad == "Português" else "en"
-        idioma_alvo_trad = "en" if idioma_cod_trad == "pt" else "pt"
 
-        texto_falado_trad = speech_to_text(
-            language=IDIOMA_VOZ[idioma_cod_trad],
-            start_prompt="🎤 Falar palavra/frase",
-            stop_prompt="⏹️ Parar gravação",
-            just_once=True,
-            use_container_width=True,
-            key="stt_trad",
-        )
-        if texto_falado_trad:
-            st.session_state["texto_trad"] = texto_falado_trad
-
-        texto_trad = st.text_input("Sua palavra ou frase", key="texto_trad")
-        st.button("Traduzir", key="btn_traduzir_trad", use_container_width=True, type="primary")
-
-        if texto_trad.strip():
-            traducao_trad = traduzir(texto_trad.strip(), idioma_cod_trad, idioma_alvo_trad)
-            st.caption(f"Tradução: {traducao_trad}")
-            colo1, colo2 = st.columns(2)
-            with colo1:
-                falar(texto_trad.strip(), IDIOMA_VOZ[idioma_cod_trad], "🔊 Original")
-            with colo2:
-                falar(traducao_trad, IDIOMA_VOZ[idioma_alvo_trad], "🔊 Tradução")
-
-    st.divider()
-    with st.container(key="card-adicionar"):
-        st.subheader("📥 Adicionar frase ao baralho")
-        st.caption("Cadastra a frase de vez no baralho, pra ela entrar no sorteio das próximas práticas.")
-        idioma_deck = st.radio("Vou escrever em:", ["Português", "Inglês"], horizontal=True, key="idioma_deck")
-        idioma_cod_deck = "pt" if idioma_deck == "Português" else "en"
-        idioma_alvo_deck = "en" if idioma_cod_deck == "pt" else "pt"
-        frase_deck = st.text_input("Sua palavra ou frase", key="frase_deck")
-        categoria_deck = st.selectbox("Categoria", CATEGORIAS, key="categoria_deck")
-
-        if st.button("Adicionar", type="primary", use_container_width=True):
-            if frase_deck.strip():
-                traducao_deck = traduzir(frase_deck.strip(), idioma_cod_deck, idioma_alvo_deck)
-                if idioma_cod_deck == "pt":
-                    pt_deck, en_deck = frase_deck.strip(), traducao_deck
-                else:
-                    en_deck, pt_deck = frase_deck.strip(), traducao_deck
-                st.session_state.baralho.append({"pt": pt_deck, "en": en_deck, "categoria": categoria_deck})
-                salvar_baralho(st.session_state.baralho)
-                st.success(f"Adicionada em {categoria_deck}! 🇧🇷 {pt_deck}  ·  🇺🇸 {en_deck}")
+CARDS_HOME = [
+    ("📖 Praticar", "📖", "Praticar", "Traduza frases escrevendo, ouvindo ou falando", "#6366F1"),
+    ("🎧 Só áudio", "🎧", "Só áudio", "Ouça e traduza, ou escute a biblioteca em blocos de 100", "#F59E0B"),
+    ("🗺️ Modo História", "🗺️", "Modo História", "Cenas de viagem, trabalho e dia a dia", "#10B981"),
+    ("📊 Revisão de erros", "📊", "Revisão de erros", "Reveja as frases em que você mais errou", "#F43F5E"),
+    ("🗓️ Meu tempo de uso", "🗓️", "Meu tempo de uso", "Dias, minutos e sequência de estudo", "#0EA5E9"),
+    ("🔊 Traduzir e ouvir", "🔊", "Traduzir e ouvir", "Digite ou fale uma palavra e ouça nos dois idiomas", "#8B5CF6"),
+    ("📥 Adicionar frase", "📥", "Adicionar frase", "Cadastre suas próprias frases no baralho", "#14B8A6"),
+]
 
 
 def sortear_frase(limpar_resposta=False):
@@ -1471,9 +1368,122 @@ def sortear_frase_audio(limpar_resposta=False):
         st.session_state["_limpar_audio"] = True
 
 
-if pagina == "📖 Praticar":
+if pagina != "🏠 Início":
+    st.button("← Início", key="voltar_inicio", type="tertiary", on_click=ir_para, args=("🏠 Início",))
+
+if pagina == "🏠 Início":
+    _total_praticadas = len(st.session_state.progresso)
+    _media = (
+        sum(r.get("similaridade", 0) for r in st.session_state.progresso) / _total_praticadas
+        if _total_praticadas else 0
+    )
+    with st.container(key="home-metricas"):
+        mcol1, mcol2 = st.columns(2)
+        mcol1.metric("Frases praticadas", _total_praticadas)
+        mcol2.metric("Similaridade média", f"{_media:.0f}%" if _total_praticadas else "—")
+
+    st.markdown("##### O que você quer estudar hoje?")
+    estilos_cards = "".join(
+        f".st-key-home_{i} [data-testid='stBaseButton-secondary'] "
+        f"{{ border-color: {cor}55 !important; background: {cor}14 !important; "
+        f"border-left: 5px solid {cor} !important; }}"
+        for i, (_, _, _, _, cor) in enumerate(CARDS_HOME)
+    )
+    st.markdown(f"<style>{estilos_cards}</style>", unsafe_allow_html=True)
+    with st.container(key="home-grid"):
+        for inicio in range(0, len(CARDS_HOME), 2):
+            colunas = st.columns(2)
+            for coluna, indice in zip(colunas, range(inicio, inicio + 2)):
+                if indice >= len(CARDS_HOME):
+                    continue
+                destino, emoji, titulo, descricao, _ = CARDS_HOME[indice]
+                with coluna:
+                    st.button(
+                        f"**{emoji} {titulo}**\n\n:gray[:small[{descricao}]]",
+                        key=f"home_{indice}",
+                        on_click=ir_para,
+                        args=(destino,),
+                        use_container_width=True,
+                    )
+
+elif pagina == "🔊 Traduzir e ouvir":
+    with st.container(key="card-traduzir"):
+        st.subheader("🔊 Traduzir e ouvir")
+        st.caption("Ferramenta livre: escreva ou fale uma palavra/frase e ouça nos dois idiomas. Não salva nada.")
+        idioma_trad = st.radio("Vou escrever em:", ["Português", "Inglês"], horizontal=True, key="idioma_trad")
+        idioma_cod_trad = "pt" if idioma_trad == "Português" else "en"
+        idioma_alvo_trad = "en" if idioma_cod_trad == "pt" else "pt"
+
+        texto_falado_trad = speech_to_text(
+            language=IDIOMA_VOZ[idioma_cod_trad],
+            start_prompt="🎤 Falar palavra/frase",
+            stop_prompt="⏹️ Parar gravação",
+            just_once=True,
+            use_container_width=True,
+            key="stt_trad",
+        )
+        if texto_falado_trad:
+            st.session_state["texto_trad"] = texto_falado_trad
+
+        texto_trad = st.text_input("Sua palavra ou frase", key="texto_trad")
+        st.button("Traduzir", key="btn_traduzir_trad", use_container_width=True, type="primary")
+
+        if texto_trad.strip():
+            traducao_trad = traduzir(texto_trad.strip(), idioma_cod_trad, idioma_alvo_trad)
+            st.caption(f"Tradução: {traducao_trad}")
+            colo1, colo2 = st.columns(2)
+            with colo1:
+                falar(texto_trad.strip(), IDIOMA_VOZ[idioma_cod_trad], "🔊 Original")
+            with colo2:
+                falar(traducao_trad, IDIOMA_VOZ[idioma_alvo_trad], "🔊 Tradução")
+
+elif pagina == "📥 Adicionar frase":
+    with st.container(key="card-adicionar"):
+        st.subheader("📥 Adicionar frase ao baralho")
+        st.caption("Cadastra a frase de vez no baralho, pra ela entrar no sorteio das próximas práticas.")
+        idioma_deck = st.radio("Vou escrever em:", ["Português", "Inglês"], horizontal=True, key="idioma_deck")
+        idioma_cod_deck = "pt" if idioma_deck == "Português" else "en"
+        idioma_alvo_deck = "en" if idioma_cod_deck == "pt" else "pt"
+        frase_deck = st.text_input("Sua palavra ou frase", key="frase_deck")
+        categoria_deck = st.selectbox("Categoria", CATEGORIAS, key="categoria_deck")
+
+        if st.button("Adicionar", type="primary", use_container_width=True):
+            if frase_deck.strip():
+                traducao_deck = traduzir(frase_deck.strip(), idioma_cod_deck, idioma_alvo_deck)
+                if idioma_cod_deck == "pt":
+                    pt_deck, en_deck = frase_deck.strip(), traducao_deck
+                else:
+                    en_deck, pt_deck = frase_deck.strip(), traducao_deck
+                st.session_state.baralho.append({"pt": pt_deck, "en": en_deck, "categoria": categoria_deck})
+                salvar_baralho(st.session_state.baralho)
+                st.success(f"Adicionada em {categoria_deck}! 🇧🇷 {pt_deck}  ·  🇺🇸 {en_deck}")
+
+elif pagina == "📖 Praticar":
     cronometro_estudo(int((datetime.now() - st.session_state.sessao_inicio).total_seconds()))
+    with st.expander("⚙️ Opções de prática"):
+        direcao_escolhida = st.radio(
+            "Direção da tradução",
+            ["Português → Inglês", "Inglês → Português", "Aleatório"],
+            index=2,
+            key="dir_praticar",
+        )
+        fonte = st.radio("Fonte da frase", ["Baralho embutido", "Digitar minha frase"], key="fonte_praticar")
+        categorias_selecionadas = st.multiselect(
+            "Categorias do baralho", CATEGORIAS, default=CATEGORIAS, key="cat_praticar"
+        )
+        if st.session_state.foco_frases:
+            st.caption(f"🎯 Modo foco: {len(st.session_state.foco_frases)} frase(s) selecionada(s)")
+            if st.button("Sair do modo foco"):
+                st.session_state.foco_frases = set()
+                st.session_state.frase_atual = None
+                st.rerun()
     if fonte == "Baralho embutido":
+        modo_exercicio = st.radio(
+            "Modo de exercício",
+            ["✍️ Traduzir", "🎧 Ouvir e traduzir", "🗣️ Ler e falar"],
+            horizontal=True,
+            key="modo_exercicio",
+        )
         if st.session_state.frase_atual is None:
             sortear_frase()
 
@@ -1714,6 +1724,10 @@ if pagina == "📖 Praticar":
 
 elif pagina == "🎧 Só áudio":
     cronometro_estudo(int((datetime.now() - st.session_state.sessao_inicio).total_seconds()))
+    with st.expander("⚙️ Categorias do baralho"):
+        categorias_audio = st.multiselect(
+            "Categorias do baralho", CATEGORIAS, default=CATEGORIAS, key="cat_audio"
+        )
 
     with st.container(key="card-quiz-audio"):
         st.subheader("🎧 Ouvir e traduzir")
@@ -1784,6 +1798,27 @@ elif pagina == "🎧 Só áudio":
 
     st.divider()
     with st.container(key="card-biblioteca-audio"):
+        TAMANHO_BLOCO_AUDIO = 100
+        total_pool_audio = len(pool_biblioteca(categorias_audio))
+        num_blocos_audio = max(1, -(-total_pool_audio // TAMANHO_BLOCO_AUDIO))
+        opcoes_bloco_audio = ["Tudo"] + [
+            f"{(i * TAMANHO_BLOCO_AUDIO) + 1}–{min((i + 1) * TAMANHO_BLOCO_AUDIO, total_pool_audio)}"
+            for i in range(num_blocos_audio)
+        ]
+        if st.session_state.get("bloco_biblioteca") not in opcoes_bloco_audio:
+            st.session_state.pop("bloco_biblioteca", None)
+        bloco_biblioteca = st.selectbox(
+            "Bloco de estudo (biblioteca de áudio)",
+            opcoes_bloco_audio,
+            index=1 if len(opcoes_bloco_audio) > 1 else 0,
+            key="bloco_biblioteca",
+        )
+        ordem_biblioteca = st.radio(
+            "Ordem da biblioteca de áudio", ["Sequencial", "Aleatório"], horizontal=True, key="ordem_biblioteca"
+        )
+        repetir_2x_audio = st.checkbox(
+            "🔁 2x — repetir o inglês devagar antes do normal", key="repetir_2x_audio"
+        )
         if bloco_biblioteca == "Tudo":
             st.subheader("🎼 Ouvir toda a biblioteca")
             bloco_num_audio = None
@@ -1793,7 +1828,7 @@ elif pagina == "🎧 Só áudio":
         st.caption(
             "Escuta passiva: cada frase toca primeiro em inglês, depois em português, "
             "avançando sozinha para a próxima — sem precisar acertar nada. "
-            "Escolha um bloco na barra lateral pra estudar por camadas, sem se perder na biblioteca inteira."
+            "Escolha um bloco acima pra estudar por camadas, sem se perder na biblioteca inteira."
         )
         if repetir_2x_audio:
             st.caption("🔁 2x ativado: o inglês toca devagar e depois no ritmo normal, antes do português.")
@@ -1804,7 +1839,7 @@ elif pagina == "🎧 Só áudio":
 
         st.markdown("**🎬 Baixar este bloco em vídeo (MP4)**")
         if bloco_num_audio is None:
-            st.caption("Escolha um bloco (ex.: 1–100) na barra lateral para gerar o vídeo.")
+            st.caption("Escolha um bloco (ex.: 1–100) acima para gerar o vídeo.")
         else:
             st.caption(
                 "Gera um MP4 com as frases do bloco (inglês, depois português), na ordem e com o 2x que "
