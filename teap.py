@@ -618,7 +618,7 @@ def _secao_desempenho(progresso):
 def renderizar_teap(registrar, falar):
     """Página principal do curso. `registrar(entrada)` salva no histórico; `falar` toca o áudio."""
     st.markdown(ESTILO, unsafe_allow_html=True)
-    st.subheader("🎓 Preparatório TEAP")
+    st.subheader("🎓 Preparatório TEAP Laura Patrian")
     st.caption("Leitura de textos acadêmicos em inglês para mestrado e doutorado.")
     secao = st.pills("Seção", SECOES, selection_mode="single", default=SECOES[0], key="teap_secao",
                      label_visibility="collapsed") or SECOES[0]
