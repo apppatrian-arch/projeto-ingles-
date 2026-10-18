@@ -14,7 +14,16 @@ import streamlit.components.v1 as components
 from deep_translator import GoogleTranslator, MyMemoryTranslator
 from streamlit_mic_recorder import speech_to_text
 
-from teap import renderizar_teap
+import importlib
+
+import teap as _teap
+
+# O servidor mantém módulos importados em memória: recarrega quando o arquivo muda
+_teap_mtime = Path(_teap.__file__).stat().st_mtime
+if getattr(_teap, "_mtime_carregado", None) != _teap_mtime:
+    _teap = importlib.reload(_teap)
+    _teap._mtime_carregado = _teap_mtime
+renderizar_teap = _teap.renderizar_teap
 
 BASE_DIR = Path(__file__).parent
 BARALHO_PATH = BASE_DIR / "baralho.json"
