@@ -1,0 +1,149 @@
+{
+  "id": "agr_1",
+  "area": "Agrárias/Veterinárias",
+  "titulo": "Soil as Living Capital: Rethinking Sustainable Crop Production",
+  "paragrafos": [
+    "Soil is often treated as a mere substrate for crops, yet it is a living system whose condition largely determines the long-term productivity of farms. Intensive cultivation, however, has frequently degraded this resource. Repeated tillage, the removal of crop residues and a heavy reliance on synthetic inputs can reduce soil organic matter, weaken its structure and diminish the diversity of the organisms that inhabit it. Such degradation is often gradual and therefore easy to overlook, since yields may be sustained for years by external inputs.",
+    "Organic matter plays a central role in these processes. It binds mineral particles into aggregates, which improve water infiltration and make the soil less vulnerable to erosion. Moreover, it acts as a reservoir of nutrients that are released gradually as microorganisms decompose it. When it declines, farmers tend to compensate with larger quantities of fertilizer, a response that addresses the symptom rather than the cause.",
+    "Several practices have been proposed to reverse this trend. No-till systems leave the surface undisturbed, thereby preserving aggregates and protecting the soil from the impact of heavy rainfall. Cover crops, planted between commercial seasons, keep roots active in the ground, suppress weeds and supply fresh residues. Crop rotation, in turn, interrupts the life cycles of pests and pathogens that thrive under monoculture. Although each of these measures yields benefits individually, their effects are usually greater when they are combined.",
+    "Nevertheless, adoption is far from straightforward. Transition periods may involve lower yields, additional equipment and a steep learning curve, which discourages many producers, particularly smallholders with limited access to credit. Furthermore, the benefits accumulate slowly, whereas the costs are immediate. Critics also note that no-till can increase dependence on herbicides, which partly offsets its environmental advantages.",
+    "Beyond productivity, healthy soils contribute to broader environmental goals. Because they store carbon, they may help mitigate climate change, and by filtering water they reduce the contamination of rivers and aquifers. Such services, however, are rarely rewarded by markets. Thus, some policy analysts argue that payment schemes recognizing these services could make sustainable management economically attractive.",
+    "In sum, sustaining agricultural output over decades requires viewing soil as capital to be maintained rather than a resource to be exhausted. This shift demands not only technical innovation but also institutional support that lowers the barriers faced by those who farm. Without such a change, short-term gains may continue to conceal a steady erosion of the productive base."
+  ],
+  "glossario": {
+    "substrate": "substrato",
+    "tillage": "preparo do solo (aração/gradagem)",
+    "residues": "resíduos (restos culturais)",
+    "aggregates": "agregados (do solo)",
+    "infiltration": "infiltração",
+    "cover crops": "plantas de cobertura",
+    "pathogens": "patógenos",
+    "thrive": "prosperar, desenvolver-se bem",
+    "monoculture": "monocultura",
+    "smallholders": "pequenos produtores",
+    "offsets": "compensa, neutraliza",
+    "aquifers": "aquíferos"
+  },
+  "questoes": [
+    {
+      "tipo": "localizacao",
+      "enunciado": "No parágrafo 3, qual prática é descrita como a que mantém as raízes ativas no solo entre as safras comerciais?",
+      "alternativas": [
+        "O plantio direto sem revolvimento do solo",
+        "A rotação de culturas com espécies distintas",
+        "As plantas de cobertura",
+        "A aplicação de herbicidas seletivos"
+      ],
+      "correta": 2,
+      "explicacao": "O parágrafo 3 afirma que 'Cover crops, planted between commercial seasons, keep roots active in the ground'. As demais práticas têm outras funções descritas no texto."
+    },
+    {
+      "tipo": "localizacao",
+      "enunciado": "De acordo com o parágrafo 4, quais produtores são particularmente desencorajados a adotar as novas práticas?",
+      "alternativas": [
+        "Pequenos produtores com acesso limitado a crédito",
+        "Grandes exportadores com equipamentos modernos",
+        "Produtores que já utilizam plantas de cobertura",
+        "Pesquisadores ligados a programas de políticas públicas"
+      ],
+      "correta": 0,
+      "explicacao": "O parágrafo 4 cita 'particularly smallholders with limited access to credit' como os mais desencorajados pelo período de transição."
+    },
+    {
+      "tipo": "referencia",
+      "enunciado": "No parágrafo 3, em 'their effects are usually greater when they are combined', a que se refere 'they'?",
+      "alternativas": [
+        "Aos agricultores que adotam novas técnicas de cultivo",
+        "Às práticas de manejo listadas",
+        "Às pragas e aos patógenos típicos da monocultura",
+        "Aos resíduos frescos deixados sobre o solo"
+      ],
+      "correta": 1,
+      "explicacao": "'Each of these measures' refere-se às práticas listadas; é a combinação delas que gera efeitos maiores."
+    },
+    {
+      "tipo": "referencia",
+      "enunciado": "No parágrafo 4, em 'no-till can increase dependence on herbicides, which partly offsets its environmental advantages', a que se refere 'which'?",
+      "alternativas": [
+        "Ao período de transição entre dois sistemas de cultivo",
+        "Ao acesso limitado a crédito para pequenos produtores",
+        "Aos críticos que questionam o plantio direto",
+        "Ao aumento do uso de herbicidas"
+      ],
+      "correta": 3,
+      "explicacao": "'Which' retoma toda a oração anterior: é o aumento da dependência de herbicidas que compensa parcialmente as vantagens ambientais."
+    },
+    {
+      "tipo": "vocabulario",
+      "enunciado": "No parágrafo 3, a expressão 'pests and pathogens that thrive under monoculture' indica que esses organismos...",
+      "alternativas": [
+        "se desenvolvem bem em condições de monocultura",
+        "são eliminados pelo cultivo contínuo da mesma espécie",
+        "permanecem inativos durante o plantio direto",
+        "sofrem com a falta de alimento nesses sistemas"
+      ],
+      "correta": 0,
+      "explicacao": "'Thrive' significa prosperar; a rotação é útil justamente porque interrompe o ciclo de organismos que se beneficiam da monocultura."
+    },
+    {
+      "tipo": "sentenca",
+      "enunciado": "No parágrafo 2, a sentença 'When it declines, farmers tend to compensate with larger quantities of fertilizer, a response that addresses the symptom rather than the cause' significa que...",
+      "alternativas": [
+        "o excesso de fertilizante é a principal causa da perda de matéria orgânica",
+        "os agricultores deixam de usar fertilizantes quando a matéria orgânica diminui",
+        "o fertilizante trata o efeito, não a perda de matéria orgânica",
+        "o fertilizante restaura rapidamente a estrutura do solo e resolve o problema por completo"
+      ],
+      "correta": 2,
+      "explicacao": "A expressão 'symptom rather than the cause' indica que o fertilizante apenas compensa a baixa fertilidade, sem resolver o declínio da matéria orgânica."
+    },
+    {
+      "tipo": "sentenca",
+      "enunciado": "No parágrafo 4, a sentença 'the benefits accumulate slowly, whereas the costs are immediate' quer dizer que...",
+      "alternativas": [
+        "os custos diminuem com o tempo e os benefícios surgem imediatamente",
+        "tanto custos quanto benefícios aparecem apenas no longo prazo",
+        "os benefícios superam os custos desde o primeiro ano de adoção",
+        "os custos surgem logo no início, enquanto os ganhos aparecem aos poucos"
+      ],
+      "correta": 3,
+      "explicacao": "'Whereas' contrasta os dois elementos: benefícios graduais versus custos imediatos, o que desestimula a adoção."
+    },
+    {
+      "tipo": "paragrafo",
+      "enunciado": "Qual é a ideia principal do parágrafo 3?",
+      "alternativas": [
+        "O plantio direto é a única prática capaz de recuperar solos degradados",
+        "Várias práticas recuperam o solo, sobretudo se combinadas",
+        "A rotação de culturas é pouco eficiente contra pragas e patógenos da monocultura",
+        "As plantas de cobertura aumentam a necessidade de preparo do solo"
+      ],
+      "correta": 1,
+      "explicacao": "O parágrafo apresenta plantio direto, plantas de cobertura e rotação, e conclui que 'their effects are usually greater when they are combined'."
+    },
+    {
+      "tipo": "paragrafo",
+      "enunciado": "O que o parágrafo 5 sustenta de modo geral?",
+      "alternativas": [
+        "Solos saudáveis prestam serviços ambientais pouco remunerados pelo mercado, o que motiva propostas de pagamento por esses serviços",
+        "O armazenamento de carbono no solo é inviável e não contribui para o clima",
+        "A contaminação de rios e aquíferos deve-se exclusivamente ao uso de herbicidas",
+        "Os mercados já recompensam adequadamente os agricultores que conservam o solo"
+      ],
+      "correta": 0,
+      "explicacao": "O parágrafo mostra que os solos armazenam carbono e filtram água, mas esses serviços 'are rarely rewarded by markets', daí a sugestão de esquemas de pagamento."
+    },
+    {
+      "tipo": "ideia_central",
+      "enunciado": "Qual é a ideia central do texto?",
+      "alternativas": [
+        "A agricultura moderna deve abandonar totalmente o uso de insumos sintéticos nas lavouras",
+        "O plantio direto resolve todos os problemas de produtividade agrícola de longo prazo",
+        "Manter a produtividade exige tratar o solo como capital, com inovação e apoio institucional",
+        "Os mercados são os únicos responsáveis pela degradação ambiental no meio rural"
+      ],
+      "correta": 2,
+      "explicacao": "O último parágrafo sintetiza o texto: o solo deve ser visto como 'capital to be maintained', o que exige inovação técnica e apoio institucional."
+    }
+  ]
+}

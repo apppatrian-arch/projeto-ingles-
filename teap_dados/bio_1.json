@@ -1,0 +1,149 @@
+{
+  "id": "bio_1",
+  "area": "Biológicas/Saúde",
+  "titulo": "Sleep as a Determinant of Health",
+  "paragrafos": [
+    "Sleep has long been regarded as a passive state in which the body simply rests. However, research accumulated over recent decades indicates that it is an active process, during which essential regulatory mechanisms take place. Although individual needs vary, most adults require between seven and nine hours of sleep per night. Many people, nonetheless, consistently sleep less than this, a pattern that is often described as chronic sleep restriction.",
+    "One of the most consistent findings concerns metabolism. When sleep is curtailed, the hormones that regulate appetite are altered: levels of ghrelin, which stimulates hunger, tend to rise, whereas leptin, which signals satiety, tends to fall. Such changes may help explain why sleep-deprived individuals often report stronger cravings for energy-dense foods. Moreover, insufficient sleep appears to reduce the sensitivity of tissues to insulin, thereby increasing the risk of type 2 diabetes over time.",
+    "Sleep also plays a crucial role in the immune system. During the night, the body produces signalling molecules called cytokines, some of which promote sleep and help fight infection. Consequently, people who sleep poorly may respond less effectively to vaccination and may be more susceptible to common respiratory infections. These effects are thought to be mediated, at least in part, by the disruption of immune cell activity, which normally follows a daily rhythm.",
+    "The brain, too, depends on adequate rest. Sleep is associated with the consolidation of memory, a process whereby newly acquired information is stabilised and integrated into existing knowledge. In addition, it has been proposed that sleep facilitates the clearance of metabolic waste products that accumulate in the brain during wakefulness. Should this clearance be impaired, it might contribute to long-term cognitive decline, although this hypothesis requires further investigation.",
+    "Despite the strength of these associations, establishing causality remains challenging. People with chronic illnesses frequently sleep badly, so poor sleep may be a consequence rather than a cause of disease. Furthermore, self-reported sleep duration is notoriously unreliable, and devices that estimate sleep at home are not always accurate. Researchers therefore combine observational studies with controlled laboratory experiments, in which sleep is deliberately manipulated.",
+    "Taken together, the evidence supports the view that sleep is a pillar of health comparable to nutrition and physical activity. Public health strategies that focus exclusively on diet and exercise may thus overlook a modifiable factor. Measures such as regular schedules, reduced evening exposure to screens, and later school start times have been suggested as ways of improving sleep at the population level."
+  ],
+  "glossario": {
+    "curtailed": "reduzido, encurtado",
+    "ghrelin": "grelina (hormônio que estimula a fome)",
+    "leptin": "leptina (hormônio que sinaliza saciedade)",
+    "satiety": "saciedade",
+    "energy-dense": "de alta densidade calórica",
+    "insulin": "insulina",
+    "cytokines": "citocinas (moléculas sinalizadoras do sistema imune)",
+    "susceptible": "suscetível, vulnerável",
+    "consolidation": "consolidação",
+    "clearance": "remoção, depuração",
+    "wakefulness": "vigília",
+    "causality": "causalidade"
+  },
+  "questoes": [
+    {
+      "tipo": "localizacao",
+      "enunciado": "No parágrafo 1, quantas horas de sono por noite a maioria dos adultos precisa, segundo o texto?",
+      "alternativas": [
+        "Entre cinco e seis horas.",
+        "Entre sete e nove horas.",
+        "Entre nove e onze horas.",
+        "Entre quatro e cinco horas."
+      ],
+      "correta": 1,
+      "explicacao": "O parágrafo 1 afirma que \"most adults require between seven and nine hours of sleep per night\"."
+    },
+    {
+      "tipo": "localizacao",
+      "enunciado": "Segundo o parágrafo 2, qual hormônio tende a aumentar quando o sono é reduzido?",
+      "alternativas": [
+        "Leptina.",
+        "Insulina.",
+        "Grelina.",
+        "Cortisol."
+      ],
+      "correta": 2,
+      "explicacao": "O texto diz que \"levels of ghrelin, which stimulates hunger, tend to rise\", enquanto a leptina tende a cair."
+    },
+    {
+      "tipo": "referencia",
+      "enunciado": "No parágrafo 3, em \"some of which promote sleep and help fight infection\", a expressão \"which\" refere-se a:",
+      "alternativas": [
+        "As células do sistema imune em geral.",
+        "As infecções respiratórias comuns.",
+        "As noites de sono insuficiente.",
+        "As citocinas, moléculas sinalizadoras."
+      ],
+      "correta": 3,
+      "explicacao": "A oração anterior menciona \"signalling molecules called cytokines\"; \"some of which\" significa \"algumas delas\", isto é, algumas citocinas."
+    },
+    {
+      "tipo": "referencia",
+      "enunciado": "No parágrafo 4, em \"although this hypothesis requires further investigation\", \"this hypothesis\" refere-se à ideia de que:",
+      "alternativas": [
+        "a falha na remoção de resíduos do cérebro pode favorecer o declínio cognitivo.",
+        "o sono é fundamental para a consolidação de novas memórias e aprendizados.",
+        "os adultos precisam dormir entre sete e nove horas por noite para ficarem saudáveis.",
+        "o sono é um estado passivo no qual o corpo apenas descansa."
+      ],
+      "correta": 0,
+      "explicacao": "A frase anterior diz que, se a remoção (\"clearance\") de resíduos fosse prejudicada, isso poderia contribuir para o declínio cognitivo; é essa a hipótese."
+    },
+    {
+      "tipo": "vocabulario",
+      "enunciado": "No parágrafo 2, em \"When sleep is curtailed\", a palavra \"curtailed\" tem sentido mais próximo de:",
+      "alternativas": [
+        "prolongado além do normal.",
+        "reduzido ou encurtado.",
+        "fragmentado por ruídos.",
+        "melhorado por hábitos saudáveis."
+      ],
+      "correta": 1,
+      "explicacao": "O contexto trata de privação de sono (\"sleep-deprived individuals\"), logo \"curtailed\" significa reduzido, cortado."
+    },
+    {
+      "tipo": "sentenca",
+      "enunciado": "Qual alternativa expressa melhor o sentido da frase do parágrafo 2: \"Such changes may help explain why sleep-deprived individuals often report stronger cravings for energy-dense foods\"?",
+      "alternativas": [
+        "Comer alimentos calóricos é a principal causa de privação de sono em adultos.",
+        "Pessoas privadas de sono sempre ganham peso, independentemente da dieta.",
+        "As alterações hormonais podem explicar o maior desejo por alimentos calóricos em quem dorme pouco.",
+        "Quem dorme pouco deixa de sentir fome ao longo de todo o dia e passa a comer menos."
+      ],
+      "correta": 2,
+      "explicacao": "\"Such changes\" retoma as alterações em grelina e leptina, e \"may help explain\" indica uma explicação possível para o desejo por alimentos calóricos."
+    },
+    {
+      "tipo": "sentenca",
+      "enunciado": "No parágrafo 5, a frase \"People with chronic illnesses frequently sleep badly, so poor sleep may be a consequence rather than a cause of disease\" significa que:",
+      "alternativas": [
+        "as doenças crônicas são sempre causadas pela falta de sono prolongada.",
+        "as pessoas doentes dormem melhor do que as pessoas saudáveis.",
+        "o sono ruim nunca tem qualquer relação com as doenças crônicas.",
+        "o sono ruim pode ser resultado da doença, não sua causa."
+      ],
+      "correta": 3,
+      "explicacao": "A expressão \"a consequence rather than a cause\" indica que a relação pode estar invertida, o que dificulta estabelecer causalidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "enunciado": "Qual é a ideia principal do parágrafo 3?",
+      "alternativas": [
+        "O sono contribui para o funcionamento do sistema imune, e sua falta pode reduzir as defesas.",
+        "As vacinas devem ser aplicadas preferencialmente à noite para terem maior eficácia nos adultos.",
+        "As citocinas são produzidas apenas durante o dia e não têm qualquer relação com o sono.",
+        "As infecções respiratórias são causadas exclusivamente pela falta de sono prolongada."
+      ],
+      "correta": 0,
+      "explicacao": "O parágrafo relaciona o sono à produção de citocinas, à resposta à vacinação e à suscetibilidade a infecções; as demais opções extrapolam o texto."
+    },
+    {
+      "tipo": "paragrafo",
+      "enunciado": "O parágrafo 4 trata principalmente de:",
+      "alternativas": [
+        "como a memória diminui inevitavelmente com a idade, independentemente do sono.",
+        "como o sono se relaciona às funções cerebrais, como memória e remoção de resíduos.",
+        "como a vigília prolongada melhora a capacidade de aprendizagem das pessoas.",
+        "como os resíduos metabólicos são eliminados durante a prática de exercícios."
+      ],
+      "correta": 1,
+      "explicacao": "O parágrafo discute a consolidação da memória e a hipótese de que o sono facilita a remoção de resíduos no cérebro."
+    },
+    {
+      "tipo": "ideia_central",
+      "enunciado": "Qual é a ideia central do texto?",
+      "alternativas": [
+        "O sono é um estado passivo, e sua duração tem pouca influência sobre a saúde das pessoas.",
+        "A dieta e o exercício físico são muito mais importantes para a saúde do que o sono.",
+        "O sono é essencial e ativo, afeta metabolismo, imunidade e cérebro, mas a causalidade é difícil de provar.",
+        "A privação de sono é a causa comprovada do diabetes e do declínio cognitivo em adultos."
+      ],
+      "correta": 2,
+      "explicacao": "O texto mostra o papel do sono em vários sistemas (parágrafos 2 a 4) e ressalva as limitações quanto à causalidade (parágrafo 5), concluindo que o sono é um pilar da saúde."
+    }
+  ]
+}

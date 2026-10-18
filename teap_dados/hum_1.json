@@ -1,0 +1,149 @@
+{
+  "id": "hum_1",
+  "area": "Humanas/Sociais",
+  "titulo": "Educational Technology and the Persistence of Inequality",
+  "paragrafos": [
+    "The rapid expansion of digital technologies in education has often been presented as a democratizing force. Proponents argue that online platforms, open educational resources and mobile devices can extend learning opportunities to students who were previously excluded by distance, cost or social circumstance. Yet this optimistic narrative has been increasingly questioned by researchers, who point out that technology does not operate in a social vacuum.",
+    "One of the most frequently discussed obstacles is the so-called digital divide. Initially, this term referred simply to unequal access to hardware and internet connections. However, scholars have since shown that the problem is considerably more complex. Even when a household owns a device, the quality of the connection, the availability of a quiet place to study and the presence of adults able to offer guidance may differ substantially. These factors, which are rarely visible in official statistics, shape how effectively a student can benefit from digital resources.",
+    "A second layer of inequality concerns skills rather than equipment. Learners from privileged backgrounds tend to use the internet for activities that enhance their educational prospects, such as searching for scholarly information, whereas their less advantaged peers are more likely to use it mainly for entertainment. Such differences in use suggest that simply providing devices is insufficient. Teachers also play a decisive role: without adequate training, they may be unable to integrate technology meaningfully into their pedagogy, and the equipment ends up underused.",
+    "The experience of remote teaching during recent public health emergencies made these tensions especially evident. Schools that had previously invested in digital infrastructure and teacher preparation adapted relatively quickly, while others struggled to maintain even minimal contact with students. Consequently, existing gaps in achievement widened in many contexts, and those most affected were the students already at risk of dropping out.",
+    "Nevertheless, it would be misleading to conclude that technology is inherently harmful to equity. Several studies indicate that carefully designed interventions, particularly those that combine access with training, community support and locally relevant content, can improve outcomes for disadvantaged groups. The key lesson is that technology amplifies existing conditions: where institutions are well resourced and coherent, it tends to enhance learning, whereas where they are fragile, it may deepen disparities.",
+    "In light of this evidence, policymakers are increasingly urged to treat digital inclusion as part of a broader strategy that also addresses poverty, teacher development and curriculum design. Technology, in other words, is best understood not as a solution in itself but as a tool whose impact depends on the social arrangements surrounding it."
+  ],
+  "glossario": {
+    "digital divide": "exclusão digital (desigualdade de acesso às tecnologias digitais)",
+    "democratizing": "democratizador",
+    "hardware": "equipamentos físicos (computadores, dispositivos)",
+    "privileged": "privilegiado",
+    "pedagogy": "pedagogia; prática de ensino",
+    "underused": "subutilizado",
+    "achievement": "desempenho escolar",
+    "equity": "equidade",
+    "interventions": "intervenções",
+    "amplifies": "amplifica; intensifica",
+    "disparities": "disparidades",
+    "policymakers": "formuladores de políticas públicas"
+  },
+  "questoes": [
+    {
+      "tipo": "localizacao",
+      "enunciado": "No parágrafo 2, quais fatores são citados como diferentes mesmo quando uma família possui um dispositivo?",
+      "alternativas": [
+        "O preço do aparelho, a marca e o tempo de uso diário",
+        "Qualidade da conexão, local para estudar e apoio de adultos",
+        "A formação digital dos professores e o conteúdo do currículo",
+        "O número de horas de aula e o custo do transporte escolar"
+      ],
+      "correta": 1,
+      "explicacao": "O parágrafo 2 diz que, mesmo com um dispositivo, \"the quality of the connection, the availability of a quiet place to study and the presence of adults able to offer guidance may differ substantially\"."
+    },
+    {
+      "tipo": "localizacao",
+      "enunciado": "Segundo o parágrafo 4, que tipo de escola se adaptou com mais rapidez ao ensino remoto?",
+      "alternativas": [
+        "As que ofereciam apenas cursos presenciais e materiais impressos tradicionais",
+        "As localizadas em regiões com poucos alunos",
+        "As que já mantinham contato frequente com as famílias",
+        "As que já tinham investido em infraestrutura digital e em docentes"
+      ],
+      "correta": 3,
+      "explicacao": "O texto afirma que as escolas que \"had previously invested in digital infrastructure and teacher preparation adapted relatively quickly\"."
+    },
+    {
+      "tipo": "referencia",
+      "enunciado": "No parágrafo 2, em \"These factors, which are rarely visible in official statistics\", a expressão \"These factors\" refere-se a:",
+      "alternativas": [
+        "qualidade da conexão, local de estudo e adultos para orientar",
+        "às estatísticas oficiais sobre o acesso à internet nas escolas",
+        "aos dispositivos e às conexões de internet",
+        "aos estudiosos que reviram o conceito de exclusão digital"
+      ],
+      "correta": 0,
+      "explicacao": "\"These factors\" retoma os três elementos listados na frase imediatamente anterior: a qualidade da conexão, o local tranquilo para estudar e a presença de adultos que orientam."
+    },
+    {
+      "tipo": "referencia",
+      "enunciado": "No parágrafo 3, em \"without adequate training, they may be unable to integrate technology meaningfully into their pedagogy\", o pronome \"they\" refere-se a:",
+      "alternativas": [
+        "aos alunos de origem privilegiada",
+        "aos colegas menos favorecidos",
+        "aos professores",
+        "aos equipamentos"
+      ],
+      "correta": 2,
+      "explicacao": "A frase anterior começa com \"Teachers also play a decisive role\"; \"they\" retoma \"Teachers\", que são os que precisam de treinamento para integrar a tecnologia à pedagogia."
+    },
+    {
+      "tipo": "vocabulario",
+      "enunciado": "No parágrafo 5, em \"technology amplifies existing conditions\", a palavra \"amplifies\" tem sentido mais próximo de:",
+      "alternativas": [
+        "elimina",
+        "esconde",
+        "questiona",
+        "intensifica"
+      ],
+      "correta": 3,
+      "explicacao": "O trecho seguinte explica que a tecnologia melhora o aprendizado onde as instituições são fortes e \"deepen disparities\" onde são frágeis, ou seja, intensifica o que já existe."
+    },
+    {
+      "tipo": "sentenca",
+      "enunciado": "No parágrafo 3, a frase \"Such differences in use suggest that simply providing devices is insufficient\" significa que:",
+      "alternativas": [
+        "fornecer aparelhos não basta, pois o modo de usá-los também afeta as oportunidades",
+        "os aparelhos distribuídos geralmente são de baixa qualidade e pouco duráveis",
+        "os alunos menos favorecidos não devem receber dispositivos até aprenderem a usá-los",
+        "o uso de dispositivos é prejudicial e deveria ser reduzido nas escolas"
+      ],
+      "correta": 0,
+      "explicacao": "\"Such differences in use\" refere-se à diferença entre uso educativo e uso para entretenimento; por isso, apenas dar dispositivos (\"simply providing devices\") não resolve a desigualdade."
+    },
+    {
+      "tipo": "sentenca",
+      "enunciado": "No parágrafo 1, a expressão \"technology does not operate in a social vacuum\" quer dizer que:",
+      "alternativas": [
+        "a tecnologia funciona de modo independente e igual para todos os grupos",
+        "a tecnologia só é eficaz em ambientes isolados da sociedade",
+        "os efeitos da tecnologia dependem do contexto social de uso",
+        "a tecnologia ainda não chegou a todos os grupos sociais"
+      ],
+      "correta": 2,
+      "explicacao": "Dizer que a tecnologia não opera \"in a social vacuum\" significa que ela atua dentro de condições sociais que influenciam seus resultados, ideia desenvolvida no restante do texto."
+    },
+    {
+      "tipo": "paragrafo",
+      "enunciado": "O parágrafo 3 trata principalmente de:",
+      "alternativas": [
+        "diferenças de acesso à internet entre as regiões do país e as cidades",
+        "desigualdades de habilidades e de uso, e o papel dos professores",
+        "vantagens de usar a internet para entretenimento",
+        "necessidade de substituir professores por tecnologia"
+      ],
+      "correta": 1,
+      "explicacao": "O parágrafo contrasta usos educativos e recreativos da internet conforme a origem social e destaca que professores sem treinamento deixam o equipamento \"underused\"."
+    },
+    {
+      "tipo": "paragrafo",
+      "enunciado": "Qual é a mensagem central do parágrafo 4?",
+      "alternativas": [
+        "O ensino remoto expôs e ampliou desigualdades entre alunos vulneráveis",
+        "O ensino remoto reduziu a evasão escolar nos contextos desfavorecidos do país",
+        "As escolas pouco preparadas superaram rapidamente as demais",
+        "O contato com os alunos foi mantido igualmente em todas as escolas"
+      ],
+      "correta": 0,
+      "explicacao": "O parágrafo diz que as tensões ficaram evidentes, que algumas escolas mal mantiveram contato e que \"existing gaps in achievement widened\", afetando mais os alunos em risco."
+    },
+    {
+      "tipo": "ideia_central",
+      "enunciado": "Qual das opções expressa melhor a ideia central do texto?",
+      "alternativas": [
+        "A tecnologia digital é, por si só, a solução para as desigualdades educacionais",
+        "O acesso a dispositivos é o único fator que explica as desigualdades digitais",
+        "O impacto da tecnologia na educação depende do contexto social em que ela é inserida",
+        "Os professores são os principais responsáveis pelo fracasso da tecnologia na educação"
+      ],
+      "correta": 2,
+      "explicacao": "O texto defende, especialmente nos parágrafos 5 e 6, que a tecnologia não é solução em si, mas uma ferramenta cujo impacto \"depends on the social arrangements surrounding it\"."
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "id": "exa_2",
+  "area": "Exatas/Tecnológicas",
+  "titulo": "Data Quality and the Limits of Machine Learning",
+  "paragrafos": [
+    "Machine learning systems have become central to modern data analysis, performing tasks that range from medical image classification to the prediction of equipment failures. Unlike conventional software, which executes explicit instructions written by programmers, these systems infer patterns from examples. Their performance, therefore, depends heavily on the data used to train them. This dependence is frequently underestimated, as public attention tends to focus on algorithms rather than on the datasets that shape them.",
+    "A model is only as reliable as the sample from which it learns. If the training data over-represent certain groups or conditions, the resulting model may perform well on those cases and poorly on others. Such bias does not arise from malicious intent, but from the way data are collected, which often reflects existing social or technical conditions. For instance, a system trained mainly on images captured in controlled laboratory settings may fail when deployed in the field, where lighting and noise differ markedly.",
+    "A related problem is overfitting, which occurs when a model memorises the particular details of its training examples instead of learning general relationships. An overfitted model achieves impressive accuracy on familiar data but deteriorates when confronted with new inputs. To detect this, practitioners reserve part of the data for validation, a procedure that estimates how the model will behave in practice. Although this safeguard is simple, it works only if the validation set is truly independent of the training set; otherwise, the estimate will be misleadingly optimistic.",
+    "Data quality also involves errors and inconsistencies. Labels assigned by human annotators may contain mistakes or reflect subjective judgements, and sensors may drift or fail silently. Because large datasets are rarely inspected record by record, such flaws can remain undetected and propagate into the predictions of the model. Consequently, much of the effort in applied projects is devoted to cleaning, documenting and monitoring data rather than to designing new algorithms.",
+    "Another consideration is that the world changes. A model trained on historical data assumes that future conditions will resemble past ones, an assumption that often proves fragile. When customer behaviour, climate patterns or industrial processes shift, a phenomenon known as data drift, predictions gradually lose accuracy. Regular retraining and continuous monitoring are therefore necessary, which implies that deploying a model is the beginning of a long-term responsibility rather than a one-off task.",
+    "Taken together, these points suggest that progress in artificial intelligence depends as much on careful data practices as on mathematical innovation. Greater transparency about how datasets are built and maintained would allow users to judge more accurately when a model can be trusted and when it should be treated with caution. Without such openness, impressive results obtained under favourable conditions may be mistaken for dependable performance in the real world."
+  ],
+  "glossario": {
+    "over-represent": "representar em excesso, sobrerrepresentar",
+    "bias": "viés",
+    "overfitting": "sobreajuste (modelo que decora os dados de treino)",
+    "memorises": "memoriza, decora",
+    "safeguard": "salvaguarda, proteção",
+    "annotators": "anotadores (pessoas que rotulam dados)",
+    "inconsistencies": "inconsistências",
+    "propagate": "propagar, espalhar-se",
+    "drift": "deriva, desvio gradual",
+    "fragile": "frágil",
+    "retraining": "retreinamento"
+  },
+  "questoes": [
+    {
+      "tipo": "localizacao",
+      "enunciado": "De acordo com o parágrafo 3, o que os profissionais fazem para detectar o overfitting?",
+      "alternativas": [
+        "Aumentam o número de camadas do modelo.",
+        "Eliminam do conjunto os dados mais antigos.",
+        "Reservam parte dos dados para validação.",
+        "Pedem que anotadores revisem todos os rótulos."
+      ],
+      "correta": 2,
+      "explicacao": "O parágrafo 3 diz que 'practitioners reserve part of the data for validation', procedimento que estima o comportamento do modelo na prática."
+    },
+    {
+      "tipo": "localizacao",
+      "enunciado": "Segundo o parágrafo 4, por que falhas nos dados podem permanecer sem detecção?",
+      "alternativas": [
+        "Porque grandes conjuntos raramente são inspecionados registro a registro.",
+        "Porque os sensores só apresentam falhas em condições de laboratório controlado.",
+        "Porque os anotadores humanos nunca cometem erros de rotulagem nos conjuntos.",
+        "Porque os algoritmos corrigem automaticamente rótulos incorretos durante o treino."
+      ],
+      "correta": 0,
+      "explicacao": "A pista está em 'Because large datasets are rarely inspected record by record, such flaws can remain undetected'."
+    },
+    {
+      "tipo": "referencia",
+      "enunciado": "No parágrafo 1, em 'This dependence is frequently underestimated', a expressão 'This dependence' refere-se à dependência:",
+      "alternativas": [
+        "do público em relação aos algoritmos mais populares da área.",
+        "dos programadores em relação a instruções explícitas de código.",
+        "dos softwares convencionais em relação ao hardware disponível.",
+        "do desempenho dos sistemas em relação aos dados de treinamento."
+      ],
+      "correta": 3,
+      "explicacao": "A frase anterior diz que o desempenho dos sistemas 'depends heavily on the data used to train them'; 'This dependence' retoma essa ideia."
+    },
+    {
+      "tipo": "referencia",
+      "enunciado": "No parágrafo 2, em 'but from the way data are collected, which often reflects existing social or technical conditions', o pronome 'which' refere-se a:",
+      "alternativas": [
+        "ao viés presente nos resultados do modelo.",
+        "à forma como os dados são coletados.",
+        "à intenção maliciosa dos desenvolvedores.",
+        "ao desempenho ruim do modelo em certos casos."
+      ],
+      "correta": 1,
+      "explicacao": "O pronome relativo retoma 'the way data are collected', que antecede imediatamente a vírgula; o texto diz que essa coleta reflete condições sociais ou técnicas existentes."
+    },
+    {
+      "tipo": "vocabulario",
+      "enunciado": "No parágrafo 4, em 'such flaws can remain undetected and propagate into the predictions of the model', o verbo 'propagate' significa mais proximamente:",
+      "alternativas": [
+        "desaparecer.",
+        "ser corrigido.",
+        "ficar restrito.",
+        "espalhar-se."
+      ],
+      "correta": 3,
+      "explicacao": "Falhas não detectadas acabam 'propagate into' as previsões, isto é, passam adiante e se espalham, afetando os resultados do modelo."
+    },
+    {
+      "tipo": "sentenca",
+      "enunciado": "No parágrafo 3, a sentença 'Although this safeguard is simple, it works only if the validation set is truly independent of the training set; otherwise, the estimate will be misleadingly optimistic' significa que:",
+      "alternativas": [
+        "a validação é um processo complexo e, por isso, quase nunca produz estimativas realmente úteis na prática.",
+        "o conjunto de validação deve ser sempre maior do que o conjunto de treinamento para que o teste seja válido.",
+        "a validação só é confiável com dados independentes dos de treino; senão, o desempenho parece melhor do que é.",
+        "a validação elimina o overfitting desde que o modelo utilizado seja suficientemente simples e bem ajustado."
+      ],
+      "correta": 2,
+      "explicacao": "'Only if ... independent' indica a condição, e 'otherwise, the estimate will be misleadingly optimistic' mostra que, sem ela, o resultado parece melhor que a realidade."
+    },
+    {
+      "tipo": "sentenca",
+      "enunciado": "No parágrafo 6, a sentença 'Greater transparency about how datasets are built and maintained would allow users to judge more accurately when a model can be trusted and when it should be treated with caution' indica que:",
+      "alternativas": [
+        "mais transparência sobre a construção dos dados ajudaria os usuários a avaliar quando confiar em um modelo.",
+        "os usuários devem desconfiar de todos os modelos, independentemente da origem dos dados e de sua documentação.",
+        "a transparência dos dados dificulta a avaliação do desempenho dos modelos pelos usuários em geral.",
+        "os desenvolvedores precisam divulgar os algoritmos utilizados, e não os conjuntos de dados que os alimentam."
+      ],
+      "correta": 0,
+      "explicacao": "A sentença afirma que a transparência 'would allow users to judge more accurately' quando um modelo é confiável e quando exige cautela."
+    },
+    {
+      "tipo": "paragrafo",
+      "enunciado": "Qual alternativa expressa melhor a ideia do parágrafo 2?",
+      "alternativas": [
+        "O viés dos modelos resulta principalmente da intenção dos programadores de favorecer certos grupos de pessoas.",
+        "Amostras pouco representativas, vindas do modo de coleta, fazem o modelo falhar em casos diferentes dos aprendidos.",
+        "Modelos treinados em laboratório sempre superam os treinados com dados reais coletados diretamente em campo.",
+        "A confiabilidade de um modelo independe da amostra usada em seu treinamento, desde que o algoritmo seja bom."
+      ],
+      "correta": 1,
+      "explicacao": "O parágrafo afirma que um modelo é tão confiável quanto sua amostra e ilustra com o exemplo do sistema treinado em laboratório que falha no campo."
+    },
+    {
+      "tipo": "paragrafo",
+      "enunciado": "Qual é a ideia principal do parágrafo 5?",
+      "alternativas": [
+        "Como o mundo muda, modelos treinados com dados históricos perdem precisão e pedem monitoramento contínuo.",
+        "Modelos treinados com dados históricos mantêm a mesma precisão por tempo indeterminado, sem necessidade de ajustes.",
+        "O retreinamento deve ser evitado porque aumenta o risco de overfitting nos modelos já implantados em produção.",
+        "A implantação de um modelo é uma tarefa única que termina quando ele entra em operação em ambiente real."
+      ],
+      "correta": 0,
+      "explicacao": "O parágrafo explica o 'data drift' e conclui que a implantação é 'the beginning of a long-term responsibility', com retreinamento e monitoramento regulares."
+    },
+    {
+      "tipo": "ideia_central",
+      "enunciado": "Qual é a ideia central do texto?",
+      "alternativas": [
+        "Os algoritmos de aprendizado de máquina são tão sofisticados que dispensam cuidados específicos com os dados.",
+        "A confiabilidade da IA depende da qualidade, da representatividade e da manutenção dos dados dos modelos.",
+        "O overfitting é o único problema relevante que limita o desempenho dos modelos atualmente utilizados.",
+        "A inteligência artificial deve ser abandonada nas aplicações práticas até que a qualidade dos dados melhore."
+      ],
+      "correta": 1,
+      "explicacao": "Todos os parágrafos tratam de aspectos dos dados (viés, overfitting, erros, deriva) e o último conclui que o progresso depende 'as much on careful data practices as on mathematical innovation'."
+    }
+  ]
+}

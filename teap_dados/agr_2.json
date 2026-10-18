@@ -1,0 +1,149 @@
+{
+  "id": "agr_2",
+  "area": "Agrárias/Veterinárias",
+  "titulo": "Biological Control of Agricultural Pests: Promise and Limits",
+  "paragrafos": [
+    "Agricultural pests, including insects, mites and weeds, are estimated to cause substantial crop losses every year. For several decades, the dominant response was the application of synthetic pesticides. Although effective in the short term, this strategy has revealed serious limitations, notably the evolution of resistance in target populations and the unintended harm to beneficial organisms such as pollinators.",
+    "Biological control emerged as an alternative that exploits natural relationships among organisms. In its simplest form, it consists of using predators, parasitoids or pathogens to keep pest populations below the level at which they cause economic damage. Parasitoids, for instance, are insects that lay their eggs in or on a host, which is eventually killed by the developing larvae. Such interactions occurred in nature long before humans learned to manage them deliberately.",
+    "Three main approaches are usually distinguished. Classical biological control involves introducing a natural enemy from the region of origin of an invasive pest, with the expectation that it will establish itself permanently. Augmentative control, by contrast, relies on periodic releases of mass-reared agents, whereas conservation control seeks to enhance the survival of native enemies by providing hedgerows, flowering strips or refuges. The latter is often cheaper, yet its outcomes depend heavily on the surrounding landscape.",
+    "Biological control is not free of risks. Historical cases demonstrate that an agent introduced to suppress one pest may also attack non-target species, occasionally with serious consequences for native biodiversity. For this reason, modern programmes require rigorous host-specificity testing before any release is authorized. Moreover, biological agents are living organisms; their performance varies with temperature, humidity and the availability of alternative prey, which makes results less predictable than those of chemicals.",
+    "Because of this variability, many specialists advocate integrated pest management, in which biological tools are combined with monitoring, resistant cultivars and the selective use of pesticides only when thresholds are exceeded. Such a framework does not reject chemicals altogether; rather, it uses them as a last resort in ways that minimize disruption to natural enemies. Evidence suggests that farms adopting this approach can reduce their reliance on insecticides without compromising yields, although success requires technical training.",
+    "Ultimately, the expansion of biological control depends on factors that extend beyond ecology. Regulatory systems, commercial production of agents and extension services all shape whether growers can access these tools in practice. Where such conditions are present, biological control offers a durable component of more resilient food production."
+  ],
+  "glossario": {
+    "pollinators": "polinizadores",
+    "parasitoids": "parasitoides",
+    "host": "hospedeiro",
+    "larvae": "larvas",
+    "invasive": "invasora (exótica)",
+    "mass-reared": "criados em massa",
+    "hedgerows": "cercas-vivas, sebes",
+    "prey": "presa",
+    "cultivars": "cultivares",
+    "thresholds": "limiares, níveis de ação",
+    "extension services": "serviços de extensão rural",
+    "resilient": "resiliente"
+  },
+  "questoes": [
+    {
+      "tipo": "localizacao",
+      "enunciado": "De acordo com o parágrafo 2, o que acontece com o hospedeiro de um parasitoide?",
+      "alternativas": [
+        "Ele se torna resistente aos pesticidas aplicados na lavoura",
+        "Ele passa a atuar como predador natural da própria praga",
+        "Ele é transferido para outra região de cultivo agrícola",
+        "Ele morre pela ação das larvas"
+      ],
+      "correta": 3,
+      "explicacao": "O parágrafo 2 afirma que o hospedeiro 'is eventually killed by the developing larvae'."
+    },
+    {
+      "tipo": "localizacao",
+      "enunciado": "No parágrafo 4, o que os programas modernos exigem antes de autorizar a liberação de um agente biológico?",
+      "alternativas": [
+        "Uma redução prévia da população de presas alternativas",
+        "Testes rigorosos de especificidade de hospedeiro",
+        "A aplicação simultânea de inseticidas sintéticos",
+        "A criação do agente em massa durante vários anos"
+      ],
+      "correta": 1,
+      "explicacao": "O trecho 'modern programmes require rigorous host-specificity testing before any release is authorized' indica essa exigência."
+    },
+    {
+      "tipo": "referencia",
+      "enunciado": "No parágrafo 3, em 'The latter is often cheaper, yet its outcomes depend heavily on the surrounding landscape', a que se refere 'The latter'?",
+      "alternativas": [
+        "Ao controle de conservação",
+        "Ao controle clássico",
+        "Ao controle aumentativo",
+        "À paisagem ao redor da lavoura"
+      ],
+      "correta": 0,
+      "explicacao": "'The latter' retoma o último item citado antes, o controle de conservação (hedgerows, faixas floridas e refúgios)."
+    },
+    {
+      "tipo": "referencia",
+      "enunciado": "No parágrafo 5, em 'it uses them as a last resort', a que se refere 'them'?",
+      "alternativas": [
+        "Às cultivares resistentes",
+        "Aos inimigos naturais",
+        "Aos produtos químicos (pesticidas)",
+        "Aos especialistas em manejo integrado"
+      ],
+      "correta": 2,
+      "explicacao": "A frase anterior diz que o manejo integrado 'does not reject chemicals altogether'; 'them' retoma 'chemicals', usados apenas como último recurso."
+    },
+    {
+      "tipo": "vocabulario",
+      "enunciado": "No parágrafo 5, em 'pesticides only when thresholds are exceeded', a palavra 'thresholds' tem o sentido mais próximo de...",
+      "alternativas": [
+        "períodos de aplicação definidos por lei para cada cultura",
+        "níveis de ação que justificam intervir",
+        "custos totais de produção da lavoura",
+        "quantidades mínimas de produto vendidas aos produtores"
+      ],
+      "correta": 1,
+      "explicacao": "No manejo integrado, o pesticida só entra quando a população da praga ultrapassa um nível de ação; 'thresholds' são esses limiares."
+    },
+    {
+      "tipo": "sentenca",
+      "enunciado": "No parágrafo 1, a sentença 'Although effective in the short term, this strategy has revealed serious limitations, notably the evolution of resistance in target populations and the unintended harm to beneficial organisms' significa que...",
+      "alternativas": [
+        "os pesticidas sintéticos nunca foram eficazes contra as pragas-alvo",
+        "a resistência das pragas é causada pela ação dos polinizadores nas lavouras tratadas",
+        "os pesticidas foram abandonados porque se tornaram caros demais para os produtores",
+        "os pesticidas rendem a curto prazo, mas geram resistência e danos colaterais"
+      ],
+      "correta": 3,
+      "explicacao": "'Although' marca a concessão (eficaz no curto prazo) e, em seguida, o texto lista as limitações: resistência e dano a organismos benéficos."
+    },
+    {
+      "tipo": "sentenca",
+      "enunciado": "No parágrafo 4, a sentença 'their performance varies with temperature, humidity and the availability of alternative prey, which makes results less predictable than those of chemicals' quer dizer que...",
+      "alternativas": [
+        "o desempenho varia com o ambiente, logo os resultados são menos previsíveis que os dos químicos",
+        "os agentes biológicos são mais previsíveis do que os produtos químicos em qualquer clima",
+        "a umidade e a temperatura não afetam o desempenho dos agentes vivos",
+        "os produtos químicos variam mais do que os agentes biológicos"
+      ],
+      "correta": 0,
+      "explicacao": "A oração com 'which' indica a consequência da variação ambiental: resultados 'less predictable than those of chemicals'."
+    },
+    {
+      "tipo": "paragrafo",
+      "enunciado": "Qual é a ideia principal do parágrafo 3?",
+      "alternativas": [
+        "O controle biológico só funciona com a introdução de espécies exóticas de outras regiões",
+        "O controle de conservação é sempre superior aos demais métodos de controle",
+        "Há três abordagens, que diferem na introdução, liberação ou preservação dos inimigos naturais",
+        "A liberação periódica de agentes substituiu por completo o controle clássico"
+      ],
+      "correta": 2,
+      "explicacao": "O parágrafo apresenta os controles clássico, aumentativo e de conservação, explicando como cada um atua."
+    },
+    {
+      "tipo": "paragrafo",
+      "enunciado": "O que o parágrafo 5 defende?",
+      "alternativas": [
+        "A substituição completa dos pesticidas por agentes biológicos",
+        "O manejo integrado, que combina ferramentas biológicas com monitoramento e uso seletivo de pesticidas",
+        "O abandono do monitoramento por causa da variabilidade dos agentes",
+        "O uso regular de inseticidas para proteger os inimigos naturais"
+      ],
+      "correta": 1,
+      "explicacao": "O parágrafo apresenta o manejo integrado como uma estrutura que combina métodos e usa químicos apenas como último recurso."
+    },
+    {
+      "tipo": "ideia_central",
+      "enunciado": "Qual é a ideia central do texto?",
+      "alternativas": [
+        "O controle biológico deve ser evitado porque ameaça a biodiversidade nativa de qualquer região",
+        "Os pesticidas sintéticos continuam sendo a solução mais segura e eficaz contra as pragas",
+        "O parasitismo é o único mecanismo de controle biológico realmente eficaz na agricultura",
+        "É uma alternativa promissora aos pesticidas, porém com riscos e dependente de manejo integrado e apoio institucional"
+      ],
+      "correta": 3,
+      "explicacao": "O texto discute vantagens, tipos, riscos e limites do controle biológico e conclui que sua expansão depende de fatores que vão além da ecologia."
+    }
+  ]
+}

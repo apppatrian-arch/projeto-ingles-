@@ -1,0 +1,148 @@
+{
+  "id": "exa_1",
+  "area": "Exatas/Tecnológicas",
+  "titulo": "Storing Sunshine and Wind: The Challenge of Renewable Variability",
+  "paragrafos": [
+    "The expansion of renewable energy has transformed electricity systems around the world. Solar and wind installations have become increasingly competitive with fossil fuels, and many countries have set ambitious targets for decarbonising their grids. However, the output of these sources depends on weather conditions, which fluctuate throughout the day and across the seasons. This variability, often described as intermittency, poses a significant challenge for system operators, who must balance supply and demand at every moment.",
+    "Traditionally, grid stability relied on dispatchable plants, such as coal, gas and hydroelectric stations, whose generation could be adjusted on demand. Whereas such plants follow consumption, renewable generators follow the weather. Consequently, periods of abundant sunshine or strong wind may produce a surplus that exceeds demand, forcing operators to curtail output, that is, to deliberately reduce generation. This practice wastes clean energy and undermines the economic case for further investment in new capacity.",
+    "Energy storage is widely regarded as one of the most promising solutions. Batteries, particularly those based on lithium-ion chemistry, can absorb surplus electricity and release it when demand rises. Their response time is extremely short, which makes them well suited to correcting sudden deviations in the frequency of the grid. Nevertheless, their capacity to supply power for many hours or days remains limited, and the extraction of the raw materials they require raises environmental and geopolitical concerns.",
+    "Alternative technologies have therefore attracted growing attention. Pumped hydro storage, which moves water between reservoirs at different elevations, is the most mature option and accounts for a large proportion of existing storage capacity. Yet it depends on suitable topography and entails considerable construction costs. Other approaches, including compressed air, thermal storage and hydrogen produced by electrolysis, are being explored, although most of them remain at an early stage of commercial deployment.",
+    "Storage is not the only instrument available. Improved transmission networks can carry electricity from regions of surplus to regions of scarcity, thereby smoothing local fluctuations. Likewise, demand response programmes encourage consumers to shift their consumption to periods of abundant generation, which reduces peak loads without any new infrastructure. Such measures are generally cheaper than storage, but they require coordination among regulators, utilities and users, and this is rarely straightforward.",
+    "In conclusion, no single technology can resolve the variability of renewables. Researchers increasingly argue that a reliable low-carbon grid will emerge from a combination of storage, flexible demand and expanded interconnection, supported by regulatory frameworks that reward flexibility rather than mere capacity. Until such an integrated approach becomes standard practice, the growth of wind and solar power will continue to expose the limits of systems designed for a different era."
+  ],
+  "glossario": {
+    "intermittency": "intermitência",
+    "dispatchable": "despachável (que pode ser ligado/ajustado sob demanda)",
+    "surplus": "excedente",
+    "curtail": "reduzir, restringir",
+    "decarbonising": "descarbonizando (reduzindo emissões de carbono)",
+    "pumped hydro": "usina hidrelétrica reversível",
+    "elevations": "altitudes, níveis de elevação",
+    "topography": "topografia, relevo",
+    "entails": "implica, acarreta",
+    "electrolysis": "eletrólise",
+    "interconnection": "interconexão"
+  },
+  "questoes": [
+    {
+      "tipo": "localizacao",
+      "enunciado": "De acordo com o parágrafo 1, por que a intermitência representa um desafio para os operadores do sistema elétrico?",
+      "alternativas": [
+        "Porque os preços dos combustíveis fósseis variam bastante ao longo do ano e dificultam o planejamento.",
+        "Porque a geração depende do clima e a oferta deve acompanhar a demanda sempre.",
+        "Porque as metas de descarbonização dos países mudam a cada estação do ano, segundo os governos.",
+        "Porque as instalações solares e eólicas deixaram de ser competitivas frente aos combustíveis fósseis."
+      ],
+      "correta": 1,
+      "explicacao": "O parágrafo 1 afirma que a produção das fontes renováveis depende das condições climáticas e que os operadores 'must balance supply and demand at every moment'."
+    },
+    {
+      "tipo": "localizacao",
+      "enunciado": "Segundo o parágrafo 4, qual tecnologia de armazenamento é a mais madura e responde por grande parte da capacidade existente?",
+      "alternativas": [
+        "Ar comprimido.",
+        "Hidrogênio produzido por eletrólise.",
+        "Armazenamento térmico.",
+        "Usinas hidrelétricas reversíveis."
+      ],
+      "correta": 3,
+      "explicacao": "O texto diz que 'Pumped hydro storage ... is the most mature option and accounts for a large proportion of existing storage capacity'."
+    },
+    {
+      "tipo": "referencia",
+      "enunciado": "No parágrafo 2, em 'This practice wastes clean energy and undermines the economic case...', a expressão 'This practice' refere-se a:",
+      "alternativas": [
+        "reduzir deliberadamente a geração de eletricidade.",
+        "investir em novas usinas de energia renovável.",
+        "produzir excedente nos dias de muito sol ou vento.",
+        "ajustar a geração das usinas despacháveis conforme a demanda."
+      ],
+      "correta": 0,
+      "explicacao": "A expressão retoma 'curtail output, that is, to deliberately reduce generation', que aparece imediatamente antes na mesma frase."
+    },
+    {
+      "tipo": "referencia",
+      "enunciado": "No parágrafo 5, em 'Such measures are generally cheaper than storage', 'Such measures' refere-se a:",
+      "alternativas": [
+        "baterias de íon-lítio e produção de hidrogênio por eletrólise.",
+        "regras que premiam a capacidade instalada das usinas existentes.",
+        "redes de transmissão melhoradas e resposta da demanda.",
+        "usinas a carvão e a gás que podem ser despachadas sob demanda."
+      ],
+      "correta": 2,
+      "explicacao": "As medidas citadas antes são 'Improved transmission networks' e 'demand response programmes', ambas alternativas ao armazenamento."
+    },
+    {
+      "tipo": "vocabulario",
+      "enunciado": "No parágrafo 2, o verbo 'curtail', em 'forcing operators to curtail output', significa mais proximamente:",
+      "alternativas": [
+        "ampliar.",
+        "armazenar.",
+        "reduzir.",
+        "adiar."
+      ],
+      "correta": 2,
+      "explicacao": "A própria frase esclarece o termo: 'that is, to deliberately reduce generation', ou seja, restringir ou reduzir a produção."
+    },
+    {
+      "tipo": "sentenca",
+      "enunciado": "No parágrafo 3, a sentença 'Nevertheless, their capacity to supply power for many hours or days remains limited, and the extraction of the raw materials they require raises environmental and geopolitical concerns' indica que:",
+      "alternativas": [
+        "as baterias fornecem energia por muitos dias, mas são caras de fabricar e difíceis de instalar em larga escala.",
+        "as baterias têm limites para fornecer energia por longos períodos, e seus materiais geram preocupações ambientais e geopolíticas.",
+        "a extração de matérias-primas é irrelevante diante da capacidade quase ilimitada que as baterias oferecem à rede.",
+        "as baterias respondem lentamente às variações da rede, e isso reduz bastante o seu uso em sistemas elétricos."
+      ],
+      "correta": 1,
+      "explicacao": "'Nevertheless' contrasta com a vantagem anterior (resposta rápida): a duração é limitada ('remains limited') e a extração dos materiais 'raises environmental and geopolitical concerns'."
+    },
+    {
+      "tipo": "sentenca",
+      "enunciado": "No parágrafo 6, a sentença 'Researchers increasingly argue that a reliable low-carbon grid will emerge from a combination of storage, flexible demand and expanded interconnection, supported by regulatory frameworks that reward flexibility rather than mere capacity' significa que:",
+      "alternativas": [
+        "os pesquisadores acreditam que apenas a ampliação da capacidade instalada é suficiente para garantir uma rede confiável.",
+        "a flexibilidade da demanda só funciona se for integralmente substituída por novas baterias de grande porte nas redes.",
+        "as normas regulatórias devem ser eliminadas para que a interconexão avance mais rápido e a custos menores.",
+        "uma rede confiável e de baixo carbono depende de soluções combinadas e de regras que valorizem a flexibilidade."
+      ],
+      "correta": 3,
+      "explicacao": "A sentença lista uma combinação de soluções e destaca marcos regulatórios que premiam 'flexibility rather than mere capacity'."
+    },
+    {
+      "tipo": "paragrafo",
+      "enunciado": "Qual alternativa resume melhor o parágrafo 2?",
+      "alternativas": [
+        "Usinas tradicionais acompanham o consumo e as renováveis seguem o clima, o que gera excedentes e desperdício.",
+        "As usinas tradicionais são mais baratas e, por isso, devem continuar dominando a matriz elétrica nas próximas décadas.",
+        "O desperdício de energia limpa estimula novos investimentos em capacidade renovável, tornando-os mais lucrativos.",
+        "As baterias corrigem rapidamente os desvios de frequência da rede, o que elimina a necessidade de usinas despacháveis."
+      ],
+      "correta": 0,
+      "explicacao": "O parágrafo contrasta usinas despacháveis com geradores renováveis e explica que o excedente pode ser descartado ('curtail'), desperdiçando energia limpa."
+    },
+    {
+      "tipo": "paragrafo",
+      "enunciado": "Qual é a ideia principal do parágrafo 5?",
+      "alternativas": [
+        "O armazenamento em baterias é sempre mais econômico do que qualquer outra alternativa disponível para a rede.",
+        "Os consumidores raramente aceitam mudar seus hábitos de consumo de eletricidade, mesmo com incentivos claros.",
+        "Há alternativas ao armazenamento, como transmissão e resposta da demanda, mais baratas, mas que exigem coordenação.",
+        "A construção de novas redes de transmissão é inviável por causa dos elevados custos regulatórios envolvidos."
+      ],
+      "correta": 2,
+      "explicacao": "O parágrafo começa com 'Storage is not the only instrument available' e apresenta transmissão e resposta da demanda, mais baratas, porém dependentes de coordenação."
+    },
+    {
+      "tipo": "ideia_central",
+      "enunciado": "Qual é a ideia central do texto?",
+      "alternativas": [
+        "As baterias de íon-lítio são a solução definitiva para a variabilidade das fontes renováveis em qualquer rede elétrica.",
+        "Integrar renováveis com confiabilidade exige combinar armazenamento, demanda flexível e interconexão, sem solução única.",
+        "A hidrelétrica reversível deve substituir todas as demais formas de armazenamento de energia em todos os países.",
+        "A intermitência torna a energia solar e eólica inviáveis para as redes elétricas modernas em qualquer cenário."
+      ],
+      "correta": 1,
+      "explicacao": "O texto discute várias soluções parciais e conclui no parágrafo 6 que 'no single technology can resolve the variability of renewables'."
+    }
+  ]
+}

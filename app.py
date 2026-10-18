@@ -14,6 +14,8 @@ import streamlit.components.v1 as components
 from deep_translator import GoogleTranslator, MyMemoryTranslator
 from streamlit_mic_recorder import speech_to_text
 
+from teap import renderizar_teap
+
 BASE_DIR = Path(__file__).parent
 BARALHO_PATH = BASE_DIR / "baralho.json"
 PROGRESSO_PATH = BASE_DIR / "progresso.json"
@@ -877,6 +879,7 @@ if "_forcar_pagina" in st.session_state:
 for _chave_opcao in (
     "dir_praticar", "fonte_praticar", "modo_exercicio", "cat_praticar",
     "cat_audio", "ordem_biblioteca", "repetir_2x_audio", "bloco_biblioteca", "metodo_resposta",
+    "teap_secao", "teap_area", "teap_texto", "teap_tipo_simulado", "teap_voc_modo", "teap_voc_area",
 ):
     if _chave_opcao in st.session_state:
         st.session_state[_chave_opcao] = st.session_state[_chave_opcao]
@@ -1610,6 +1613,7 @@ CARDS_HOME = [
     ("🗓️ Meu tempo de uso", "🗓️", "Meu tempo de uso", "Dias, minutos e sequência de estudo", "#0EA5E9"),
     ("🔊 Traduzir e ouvir", "🔊", "Traduzir e ouvir", "Digite ou fale uma palavra e ouça nos dois idiomas", "#8B5CF6"),
     ("📥 Adicionar frase", "📥", "Adicionar frase", "Cadastre suas próprias frases no baralho", "#14B8A6"),
+    ("🎓 TEAP", "🎓", "Preparatório TEAP", "Leitura acadêmica para mestrado e doutorado", "#EC4899"),
 ]
 
 
@@ -1658,7 +1662,7 @@ def sortear_frase_audio(limpar_resposta=False):
         st.session_state["_limpar_audio"] = True
 
 
-PAGINAS_COM_TIMER = ("📖 Praticar", "🎧 Só áudio", "🗺️ Modo História")
+PAGINAS_COM_TIMER = ("📖 Praticar", "🎧 Só áudio", "🗺️ Modo História", "🎓 TEAP")
 if pagina in ("📖 Praticar", "🎧 Só áudio", "🔊 Traduzir e ouvir"):
     injetar_estilo_microfone()
 cards_ativo = st.session_state.get("metodo_resposta") == "🧩 Montar com cards"
@@ -2272,6 +2276,13 @@ elif pagina == "🗺️ Modo História":
                 st.session_state.historia_revelado = False
                 st.session_state["_focar_traducao_historia"] = True
                 st.rerun()
+
+elif pagina == "🎓 TEAP":
+    def _registrar_teap(entrada):
+        st.session_state.progresso.append(entrada)
+        salvar_progresso(st.session_state.progresso)
+
+    renderizar_teap(_registrar_teap, falar)
 
 elif pagina == "📊 Revisão de erros":
     if not st.session_state.progresso:

@@ -1,0 +1,148 @@
+{
+  "id": "hum_2",
+  "area": "Humanas/Sociais",
+  "titulo": "Reflexivity and Rigor in Qualitative Research",
+  "paragrafos": [
+    "Qualitative research aims to understand how people interpret and give meaning to their experiences, rather than to measure variables or test hypotheses statistically. Its methods, which include interviews, focus groups, participant observation and document analysis, are widely used in education, sociology, anthropology and related fields. Because they prioritize depth over breadth, these approaches usually involve small samples that are selected purposively rather than randomly.",
+    "This feature has long been a source of criticism. Skeptics argue that findings drawn from a limited number of participants cannot be generalized, and that the researcher's subjective judgment inevitably contaminates the analysis. Qualitative scholars, however, have responded that generalization in the statistical sense is not their primary goal. Instead, they aim for transferability: a rich description of context that enables readers to judge whether the insights are applicable to other settings.",
+    "The question of subjectivity is addressed through the concept of reflexivity. Reflexivity requires researchers to examine critically how their own background, assumptions and relationship with participants may influence the questions they ask and the interpretations they offer. Rather than pretending to be a neutral observer, the researcher acknowledges his or her position and documents it, often in a research journal. This practice does not eliminate bias, but it makes it visible and therefore open to scrutiny.",
+    "Rigor is further pursued through several strategies. Triangulation, for instance, involves comparing data from different sources, methods or investigators in order to check whether they converge on similar conclusions, whereas member checking invites participants to review preliminary interpretations and to confirm or challenge them. Detailed records of analytical decisions, commonly called an audit trail, allow other researchers to follow how the conclusions were reached. Together, these procedures strengthen the credibility of a study.",
+    "Ethical considerations are equally prominent. Because qualitative studies frequently address sensitive topics and involve close contact with participants, researchers must obtain informed consent, protect confidentiality and remain attentive to power imbalances. Even seemingly minor details in a transcript may reveal identity in small communities, which is why anonymization requires careful judgment rather than mechanical deletion of names.",
+    "Despite ongoing debates, qualitative and quantitative approaches are increasingly regarded as complementary rather than opposed. Mixed-methods designs combine them, using, for example, interviews to explain patterns that surveys detect but cannot interpret. Such integration suggests that the value of a method depends less on its label than on its fit with the research question."
+  ],
+  "glossario": {
+    "purposively": "de forma intencional (por critério, não aleatória)",
+    "contaminates": "contamina; compromete",
+    "transferability": "transferibilidade (aplicabilidade a outros contextos)",
+    "reflexivity": "reflexividade",
+    "scrutiny": "escrutínio; exame minucioso",
+    "triangulation": "triangulação",
+    "converge": "convergem",
+    "member checking": "validação pelos participantes",
+    "audit trail": "trilha de auditoria (registro das decisões de análise)",
+    "confidentiality": "confidencialidade",
+    "anonymization": "anonimização"
+  },
+  "questoes": [
+    {
+      "tipo": "localizacao",
+      "enunciado": "No parágrafo 1, em quais áreas os métodos qualitativos são citados como amplamente usados?",
+      "alternativas": [
+        "Física, química e engenharia",
+        "Economia, estatística e demografia",
+        "Educação, sociologia e antropologia",
+        "Medicina, direito e administração"
+      ],
+      "correta": 2,
+      "explicacao": "O parágrafo 1 afirma que os métodos \"are widely used in education, sociology, anthropology and related fields\"."
+    },
+    {
+      "tipo": "localizacao",
+      "enunciado": "Segundo o parágrafo 4, o que é uma \"audit trail\"?",
+      "alternativas": [
+        "Um registro das decisões de análise, que permite seguir as conclusões",
+        "Uma revisão das interpretações preliminares feita pelos próprios participantes do estudo",
+        "Uma comparação de dados de fontes e métodos diferentes",
+        "Uma auditoria financeira dos recursos usados na pesquisa"
+      ],
+      "correta": 0,
+      "explicacao": "O texto define: \"Detailed records of analytical decisions, commonly called an audit trail, allow other researchers to follow how the conclusions were reached\"."
+    },
+    {
+      "tipo": "referencia",
+      "enunciado": "No início do parágrafo 2, em \"This feature has long been a source of criticism\", a expressão \"This feature\" refere-se, conforme o final do parágrafo 1, a:",
+      "alternativas": [
+        "ao uso de entrevistas, grupos focais e observação participante",
+        "à análise de documentos como principal fonte de dados",
+        "à prioridade dada à medição de variáveis e ao teste de hipóteses",
+        "ao uso de amostras pequenas selecionadas de forma intencional"
+      ],
+      "correta": 3,
+      "explicacao": "A crítica seguinte (\"findings drawn from a limited number of participants cannot be generalized\") mostra que \"This feature\" retoma as amostras pequenas e intencionais citadas no fim do parágrafo 1."
+    },
+    {
+      "tipo": "referencia",
+      "enunciado": "No parágrafo 3, em \"This practice does not eliminate bias, but it makes it visible\", o segundo \"it\" (em \"makes it visible\") refere-se a:",
+      "alternativas": [
+        "ao diário de pesquisa",
+        "ao viés",
+        "à neutralidade do pesquisador",
+        "ao relacionamento com os participantes"
+      ],
+      "correta": 1,
+      "explicacao": "A frase diz que a prática não elimina o viés (\"bias\"), mas o torna visível; logo, o objeto de \"makes it visible\" é \"bias\"."
+    },
+    {
+      "tipo": "vocabulario",
+      "enunciado": "No parágrafo 3, em \"open to scrutiny\", a palavra \"scrutiny\" significa mais proximamente:",
+      "alternativas": [
+        "elogio público",
+        "esquecimento gradual",
+        "exame crítico detalhado",
+        "autorização formal"
+      ],
+      "correta": 2,
+      "explicacao": "Ao tornar o viés visível, ele fica sujeito a ser examinado e avaliado criticamente por outros, que é o sentido de \"scrutiny\"."
+    },
+    {
+      "tipo": "sentenca",
+      "enunciado": "No parágrafo 2, a frase \"they aim for transferability: a rich description of context that enables readers to judge whether the insights are applicable to other settings\" significa que:",
+      "alternativas": [
+        "os pesquisadores generalizam os resultados automaticamente para todos os outros contextos",
+        "a descrição detalhada permite ao leitor avaliar se os achados servem a outros contextos",
+        "os pesquisadores decidem sozinhos quais contextos podem receber as conclusões do estudo",
+        "a descrição do contexto é dispensável, pois os resultados são estatísticos"
+      ],
+      "correta": 1,
+      "explicacao": "A transferibilidade depende de uma descrição rica do contexto que \"enables readers to judge\" a aplicabilidade, ou seja, a avaliação fica a cargo do leitor."
+    },
+    {
+      "tipo": "sentenca",
+      "enunciado": "No parágrafo 6, a frase \"the value of a method depends less on its label than on its fit with the research question\" significa que:",
+      "alternativas": [
+        "o valor de um método está mais em sua adequação à pergunta do que no rótulo",
+        "os métodos qualitativos são sempre superiores aos quantitativos em qualquer estudo",
+        "o nome de um método define a qualidade dos resultados obtidos",
+        "a pergunta de pesquisa deve ser adaptada ao método preferido do pesquisador"
+      ],
+      "correta": 0,
+      "explicacao": "\"Depends less on its label than on its fit\" indica que o que importa é a adequação do método à pergunta, e não se ele é chamado de qualitativo ou quantitativo."
+    },
+    {
+      "tipo": "paragrafo",
+      "enunciado": "A ideia principal do parágrafo 3 é que:",
+      "alternativas": [
+        "a reflexividade elimina totalmente o viés do pesquisador",
+        "o pesquisador deve manter-se neutro e distante dos participantes",
+        "o diário de pesquisa substitui a análise dos dados",
+        "a reflexividade torna explícita a influência do pesquisador"
+      ],
+      "correta": 3,
+      "explicacao": "O parágrafo explica que o pesquisador reconhece e documenta sua posição; isso \"does not eliminate bias\", mas o torna visível e passível de escrutínio."
+    },
+    {
+      "tipo": "paragrafo",
+      "enunciado": "Qual alternativa resume melhor o parágrafo 5?",
+      "alternativas": [
+        "A anonimização consiste simplesmente em apagar os nomes dos participantes das transcrições e dos relatórios",
+        "Estudos qualitativos exigem cuidados éticos, e anonimizar exige julgamento, não só apagar nomes",
+        "Os dilemas éticos só surgem em pesquisas feitas em comunidades grandes",
+        "O consentimento informado é dispensável quando há confidencialidade"
+      ],
+      "correta": 1,
+      "explicacao": "O parágrafo destaca consentimento, confidencialidade e poder, e ressalta que anonimizar requer \"careful judgment rather than mechanical deletion of names\"."
+    },
+    {
+      "tipo": "ideia_central",
+      "enunciado": "Qual das opções expressa melhor a ideia central do texto?",
+      "alternativas": [
+        "A pesquisa qualitativa responde às críticas com estratégias de rigor e complementa a quantitativa",
+        "A pesquisa qualitativa é inferior à quantitativa porque não permite generalização estatística de nenhum tipo",
+        "A pesquisa qualitativa deve abandonar o uso de amostras pequenas",
+        "A subjetividade do pesquisador pode ser totalmente eliminada com técnicas adequadas"
+      ],
+      "correta": 0,
+      "explicacao": "O texto apresenta as críticas à pesquisa qualitativa e as respostas (transferibilidade, reflexividade, triangulação, ética) e conclui que os métodos qualitativos e quantitativos são complementares."
+    }
+  ]
+}

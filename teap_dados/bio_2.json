@@ -1,0 +1,149 @@
+{
+  "id": "bio_2",
+  "area": "Biológicas/Saúde",
+  "titulo": "The Silent Spread of Antimicrobial Resistance",
+  "paragrafos": [
+    "Since the introduction of penicillin, antibiotics have transformed modern medicine, making routine surgery, cancer chemotherapy and organ transplantation considerably safer. Nevertheless, their effectiveness is steadily being eroded by antimicrobial resistance, a phenomenon in which microorganisms survive exposure to drugs that once inhibited or killed them. International health agencies regard it as one of the most serious threats to global health.",
+    "Resistance is, in essence, a consequence of natural selection. Within any large bacterial population, a few cells may carry genetic variants that confer tolerance to a given drug. When an antibiotic is administered, susceptible cells are eliminated, whereas resistant ones survive and multiply, eventually dominating the population. Bacteria can also acquire resistance genes from other cells through horizontal gene transfer, which allows such traits to spread rapidly, even between different species.",
+    "Human behaviour accelerates this process. Antibiotics are frequently prescribed for viral infections, against which they are entirely ineffective, and patients often discontinue treatment prematurely, leaving partially treated infections in which resistant bacteria can flourish. In addition, the widespread use of antibiotics in livestock, often to promote growth rather than to treat disease, exposes vast numbers of animals to low doses. These practices create precisely the conditions that favour resistant strains, which may then reach humans through food, water or direct contact.",
+    "The consequences are far-reaching. Infections caused by resistant organisms tend to require longer hospital stays and more toxic or expensive drugs, and they carry a higher risk of death. Moreover, vulnerable groups, such as newborns, older adults and immunocompromised patients, bear a disproportionate burden. In settings with limited sanitation, the problem is aggravated because infections spread more easily, thereby increasing the demand for antibiotics.",
+    "Addressing resistance is further complicated by an economic paradox. Developing a new antibiotic is costly, yet because such drugs are typically taken for short periods and are often held in reserve for severe cases, their commercial returns are modest compared with those of medicines for chronic conditions. As a result, many pharmaceutical companies have reduced their investment in this area, and the pipeline of novel compounds has dwindled.",
+    "Consequently, experts advocate a multifaceted response. Stewardship programmes aim to ensure that antibiotics are prescribed only when necessary, in the correct dose and for the appropriate duration. Improved hygiene, vaccination and rapid diagnostic tests can reduce infections and guide treatment, while alternative approaches, such as bacteriophage therapy, are being explored. None of these measures alone is sufficient; however, together they may slow the advance of resistance."
+  ],
+  "glossario": {
+    "antimicrobial": "antimicrobiano",
+    "eroded": "corroída, desgastada",
+    "natural selection": "seleção natural",
+    "confer": "conferir, proporcionar",
+    "susceptible": "suscetível, sensível (ao medicamento)",
+    "horizontal gene transfer": "transferência horizontal de genes",
+    "livestock": "gado, animais de criação",
+    "flourish": "prosperar, proliferar",
+    "immunocompromised": "imunocomprometido",
+    "dwindled": "diminuiu gradualmente",
+    "stewardship": "uso criterioso e gestão responsável",
+    "bacteriophage": "bacteriófago (vírus que infecta bactérias)"
+  },
+  "questoes": [
+    {
+      "tipo": "localizacao",
+      "enunciado": "Segundo o parágrafo 2, como as bactérias podem adquirir genes de resistência de outras células?",
+      "alternativas": [
+        "Por mutações induzidas diretamente pelo antibiótico.",
+        "Pela ingestão de alimentos contaminados.",
+        "Por transferência horizontal de genes.",
+        "Pela formação de esporos resistentes."
+      ],
+      "correta": 2,
+      "explicacao": "O parágrafo 2 afirma que as bactérias adquirem genes \"through horizontal gene transfer\", o que permite a disseminação até entre espécies diferentes."
+    },
+    {
+      "tipo": "localizacao",
+      "enunciado": "Qual prática relacionada à pecuária é mencionada no parágrafo 3 como fator que favorece a resistência?",
+      "alternativas": [
+        "O uso de antibióticos para promover o crescimento dos animais.",
+        "A vacinação em massa dos rebanhos.",
+        "O isolamento de animais doentes em áreas separadas.",
+        "A administração de antibióticos somente em doses muito elevadas."
+      ],
+      "correta": 0,
+      "explicacao": "O texto cita o uso de antibióticos em animais \"often to promote growth rather than to treat disease\", expondo-os a doses baixas."
+    },
+    {
+      "tipo": "referencia",
+      "enunciado": "No parágrafo 3, em \"Antibiotics are frequently prescribed for viral infections, against which they are entirely ineffective\", a expressão \"which\" refere-se a:",
+      "alternativas": [
+        "Aos antibióticos.",
+        "Às infecções virais.",
+        "Aos pacientes.",
+        "Às cepas resistentes."
+      ],
+      "correta": 1,
+      "explicacao": "\"Against which\" retoma \"viral infections\": os antibióticos são ineficazes contra infecções virais."
+    },
+    {
+      "tipo": "referencia",
+      "enunciado": "No parágrafo 3, em \"These practices create precisely the conditions that favour resistant strains\", \"These practices\" refere-se a:",
+      "alternativas": [
+        "ao uso de vacinas e à melhoria da higiene em ambientes hospitalares.",
+        "aos programas de controle do uso racional dos antibióticos prescritos.",
+        "à pesquisa e ao desenvolvimento de novos antibióticos pela indústria.",
+        "à prescrição indevida, ao abandono do tratamento e ao uso em animais."
+      ],
+      "correta": 3,
+      "explicacao": "O parágrafo descreve prescrições para infecções virais, interrupção prematura do tratamento e uso em animais; são essas as práticas que favorecem cepas resistentes."
+    },
+    {
+      "tipo": "vocabulario",
+      "enunciado": "No parágrafo 5, em \"the pipeline of novel compounds has dwindled\", o verbo \"dwindled\" significa que o número de novos compostos:",
+      "alternativas": [
+        "aumentou rapidamente.",
+        "foi interrompido de forma definitiva por lei.",
+        "diminuiu gradualmente.",
+        "tornou-se mais caro de produzir."
+      ],
+      "correta": 2,
+      "explicacao": "O trecho anterior diz que muitas empresas reduziram seu investimento, o que leva a menos compostos novos; \"dwindled\" indica redução gradual."
+    },
+    {
+      "tipo": "sentenca",
+      "enunciado": "Qual alternativa expressa melhor a frase do parágrafo 2: \"When an antibiotic is administered, susceptible cells are eliminated, whereas resistant ones survive and multiply, eventually dominating the population\"?",
+      "alternativas": [
+        "O antibiótico elimina as células sensíveis, e as resistentes se multiplicam até predominar.",
+        "O antibiótico transforma as células sensíveis em células resistentes ao longo do tratamento.",
+        "As células resistentes são as primeiras a ser eliminadas pelo antibiótico administrado.",
+        "A composição da população bacteriana permanece totalmente inalterada após o tratamento."
+      ],
+      "correta": 0,
+      "explicacao": "\"Whereas\" contrasta o destino das células sensíveis (eliminadas) com o das resistentes (sobrevivem, multiplicam-se e dominam)."
+    },
+    {
+      "tipo": "sentenca",
+      "enunciado": "Sobre a frase do parágrafo 5 \"Developing a new antibiotic is costly, yet because such drugs are typically taken for short periods [...], their commercial returns are modest\", é correto afirmar que:",
+      "alternativas": [
+        "novos antibióticos são baratos de desenvolver, mas costumam ser pouco eficazes na prática.",
+        "apesar do alto custo, o retorno comercial é baixo porque são usados por pouco tempo.",
+        "os medicamentos para doenças crônicas custam menos para serem desenvolvidos e testados.",
+        "as empresas lucram mais com antibióticos do que com qualquer outro tipo de medicamento."
+      ],
+      "correta": 1,
+      "explicacao": "\"Costly, yet [...] modest\" opõe custo alto e retorno baixo; o motivo apontado é o uso por curtos períodos e a reserva para casos graves."
+    },
+    {
+      "tipo": "paragrafo",
+      "enunciado": "Qual é a ideia principal do parágrafo 4?",
+      "alternativas": [
+        "A higiene hospitalar é a única solução possível para o problema da resistência bacteriana.",
+        "A resistência afeta apenas países desenvolvidos que possuem sistemas de saúde complexos.",
+        "As bactérias resistentes são menos perigosas para grupos vulneráveis do que para os demais.",
+        "A resistência torna os tratamentos mais longos e caros, e atinge mais os grupos vulneráveis."
+      ],
+      "correta": 3,
+      "explicacao": "O parágrafo lista internações mais longas, drogas mais caras ou tóxicas, maior risco de morte e carga desproporcional sobre grupos vulneráveis."
+    },
+    {
+      "tipo": "paragrafo",
+      "enunciado": "O que o parágrafo 6 defende?",
+      "alternativas": [
+        "Uma combinação de medidas, como uso criterioso, higiene, vacinação e diagnóstico, pois nenhuma basta sozinha.",
+        "A substituição imediata de todos os antibióticos em uso pela terapia com bacteriófagos.",
+        "A proibição total do uso de antibióticos em seres humanos em todos os países do mundo.",
+        "A suspensão da pesquisa de novos medicamentos até que a resistência diminua em todo o mundo."
+      ],
+      "correta": 0,
+      "explicacao": "O parágrafo apresenta várias medidas e conclui que \"none of these measures alone is sufficient; however, together they may slow the advance of resistance\"."
+    },
+    {
+      "tipo": "ideia_central",
+      "enunciado": "Qual é a ideia central do texto?",
+      "alternativas": [
+        "Os antibióticos continuam plenamente eficazes, e a resistência é um problema de importância menor para a saúde.",
+        "A resistência antimicrobiana é causada exclusivamente pelo uso de antibióticos na pecuária e na agricultura.",
+        "A resistência, favorecida pela seleção natural e pelo mau uso de antibióticos, é uma ameaça global que exige respostas múltiplas.",
+        "A indústria farmacêutica já resolveu completamente o problema da escassez de novos antibióticos no mercado."
+      ],
+      "correta": 2,
+      "explicacao": "O texto explica a origem da resistência (parágrafos 2 e 3), suas consequências (4), os obstáculos econômicos (5) e propõe uma resposta multifacetada (6)."
+    }
+  ]
+}

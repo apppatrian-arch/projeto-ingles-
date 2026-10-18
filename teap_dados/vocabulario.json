@@ -1,0 +1,1602 @@
+[
+ {
+  "en": "analyze",
+  "pt": "analisar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "The researchers used regression models to analyze the relationship between income and educational attainment.",
+  "exemplo_pt": "Os pesquisadores usaram modelos de regressão para analisar a relação entre renda e nível de escolaridade."
+ },
+ {
+  "en": "assume",
+  "pt": "presumir; supor",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "Most models assume that observations are independent, which may not hold for repeated measurements over time.",
+  "exemplo_pt": "A maioria dos modelos pressupõe que as observações são independentes, o que pode não valer para medidas repetidas ao longo do tempo."
+ },
+ {
+  "en": "approach",
+  "pt": "abordagem",
+  "classe": "substantivo",
+  "area": "Geral",
+  "exemplo_en": "This study adopts a qualitative approach to explore how teachers interpret national curriculum guidelines.",
+  "exemplo_pt": "Este estudo adota uma abordagem qualitativa para explorar como os professores interpretam as diretrizes curriculares nacionais."
+ },
+ {
+  "en": "indicate",
+  "pt": "indicar; apontar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "The results indicate that the intervention reduced anxiety scores, although the effect was modest.",
+  "exemplo_pt": "Os resultados indicam que a intervenção reduziu os escores de ansiedade, embora o efeito tenha sido modesto."
+ },
+ {
+  "en": "assess",
+  "pt": "avaliar; mensurar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "We used a validated questionnaire to assess participants' knowledge before and after the training program.",
+  "exemplo_pt": "Usamos um questionário validado para avaliar o conhecimento dos participantes antes e depois do programa de treinamento."
+ },
+ {
+  "en": "derive",
+  "pt": "derivar; obter (a partir de)",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "The equation was derived from experimental data collected under controlled laboratory conditions.",
+  "exemplo_pt": "A equação foi derivada de dados experimentais coletados sob condições controladas de laboratório."
+ },
+ {
+  "en": "whereas",
+  "pt": "ao passo que; enquanto",
+  "classe": "conectivo",
+  "area": "Geral",
+  "exemplo_en": "Urban participants preferred online services, whereas rural participants relied mostly on face-to-face assistance.",
+  "exemplo_pt": "Os participantes urbanos preferiram serviços online, ao passo que os rurais dependeram principalmente de atendimento presencial."
+ },
+ {
+  "en": "nevertheless",
+  "pt": "no entanto; contudo",
+  "classe": "conectivo",
+  "area": "Geral",
+  "exemplo_en": "The sample was small; nevertheless, the findings are consistent with previous research in the field.",
+  "exemplo_pt": "A amostra era pequena; no entanto, os achados são consistentes com pesquisas anteriores na área."
+ },
+ {
+  "en": "hence",
+  "pt": "portanto; daí",
+  "classe": "conectivo",
+  "area": "Geral",
+  "exemplo_en": "The reaction is slow at low temperatures; hence, the experiment was conducted at a higher temperature.",
+  "exemplo_pt": "A reação é lenta em baixas temperaturas; portanto, o experimento foi conduzido em uma temperatura mais alta."
+ },
+ {
+  "en": "thereby",
+  "pt": "com isso; desse modo",
+  "classe": "advérbio",
+  "area": "Geral",
+  "exemplo_en": "The new method reduces processing time, thereby lowering overall costs for laboratories.",
+  "exemplo_pt": "O novo método reduz o tempo de processamento, diminuindo com isso os custos totais dos laboratórios."
+ },
+ {
+  "en": "albeit",
+  "pt": "embora; ainda que",
+  "classe": "conectivo",
+  "area": "Geral",
+  "exemplo_en": "The treatment produced a measurable improvement, albeit a small one, in most patients.",
+  "exemplo_pt": "O tratamento produziu uma melhora mensurável, ainda que pequena, na maioria dos pacientes."
+ },
+ {
+  "en": "notwithstanding",
+  "pt": "apesar de; não obstante",
+  "classe": "conectivo",
+  "area": "Geral",
+  "exemplo_en": "Notwithstanding these limitations, the study offers useful evidence for future clinical trials.",
+  "exemplo_pt": "Apesar dessas limitações, o estudo oferece evidências úteis para futuros ensaios clínicos."
+ },
+ {
+  "en": "underlying",
+  "pt": "subjacente",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "Further research is needed to clarify the underlying mechanisms of this association.",
+  "exemplo_pt": "Mais pesquisas são necessárias para esclarecer os mecanismos subjacentes a essa associação."
+ },
+ {
+  "en": "sufficient",
+  "pt": "suficiente",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "The authors argue that the available data are not sufficient to support a causal conclusion.",
+  "exemplo_pt": "Os autores argumentam que os dados disponíveis não são suficientes para sustentar uma conclusão causal."
+ },
+ {
+  "en": "subsequent",
+  "pt": "subsequente; posterior",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "Subsequent analyses confirmed that the pattern remained after adjusting for age and sex.",
+  "exemplo_pt": "Análises posteriores confirmaram que o padrão se manteve após o ajuste por idade e sexo."
+ },
+ {
+  "en": "enhance",
+  "pt": "aprimorar; potencializar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "Clear feedback can enhance student motivation and improve performance on complex writing tasks.",
+  "exemplo_pt": "Um retorno claro pode aprimorar a motivação dos estudantes e melhorar o desempenho em tarefas complexas de escrita."
+ },
+ {
+  "en": "undertake",
+  "pt": "empreender; realizar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "Few studies have undertaken a systematic comparison of these two teaching strategies.",
+  "exemplo_pt": "Poucos estudos realizaram uma comparação sistemática dessas duas estratégias de ensino."
+ },
+ {
+  "en": "yield",
+  "pt": "produzir; render; gerar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "Both methods yielded similar estimates, which suggests that the results are reasonably robust.",
+  "exemplo_pt": "Ambos os métodos geraram estimativas semelhantes, o que sugere que os resultados são razoavelmente robustos."
+ },
+ {
+  "en": "imply",
+  "pt": "implicar; sugerir",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "These findings imply that earlier screening could be beneficial, although more evidence is required.",
+  "exemplo_pt": "Esses achados sugerem que uma triagem mais precoce poderia ser benéfica, embora sejam necessárias mais evidências."
+ },
+ {
+  "en": "highlight",
+  "pt": "destacar; evidenciar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "The authors highlight the need for standardized protocols across different research centers.",
+  "exemplo_pt": "Os autores destacam a necessidade de protocolos padronizados entre diferentes centros de pesquisa."
+ },
+ {
+  "en": "address",
+  "pt": "abordar; tratar de (um problema)",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "This article addresses a gap in the literature on informal labor in large cities.",
+  "exemplo_pt": "Este artigo aborda uma lacuna na literatura sobre trabalho informal em grandes cidades."
+ },
+ {
+  "en": "conduct",
+  "pt": "conduzir; realizar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "We conducted semi-structured interviews with twenty community leaders between March and June.",
+  "exemplo_pt": "Realizamos entrevistas semiestruturadas com vinte lideranças comunitárias entre março e junho."
+ },
+ {
+  "en": "constitute",
+  "pt": "constituir; representar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "These results constitute preliminary evidence and should be interpreted with caution.",
+  "exemplo_pt": "Esses resultados constituem evidência preliminar e devem ser interpretados com cautela."
+ },
+ {
+  "en": "emerge",
+  "pt": "surgir; emergir",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "Three main themes emerged from the interviews after repeated reading of the transcripts.",
+  "exemplo_pt": "Três temas principais emergiram das entrevistas após leituras repetidas das transcrições."
+ },
+ {
+  "en": "exceed",
+  "pt": "exceder; superar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "In several samples, the measured concentrations exceeded the limits established in the protocol.",
+  "exemplo_pt": "Em várias amostras, as concentrações medidas excederam os limites estabelecidos no protocolo."
+ },
+ {
+  "en": "curb",
+  "pt": "conter; refrear",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "Stricter regulation may help curb illegal deforestation, but enforcement remains a major challenge.",
+  "exemplo_pt": "Uma regulação mais rigorosa pode ajudar a conter o desmatamento ilegal, mas a fiscalização continua sendo um grande desafio."
+ },
+ {
+  "en": "hinder",
+  "pt": "dificultar; impedir",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "Limited access to reliable data hinders comparisons between countries, especially in low-income regions.",
+  "exemplo_pt": "O acesso limitado a dados confiáveis dificulta comparações entre países, especialmente em regiões de baixa renda."
+ },
+ {
+  "en": "gauge",
+  "pt": "medir; avaliar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "The scale was designed to gauge attitudes toward technology among older adults.",
+  "exemplo_pt": "A escala foi desenvolvida para medir atitudes em relação à tecnologia entre idosos."
+ },
+ {
+  "en": "overlook",
+  "pt": "negligenciar; deixar passar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "Earlier studies often overlooked the influence of socioeconomic status on the outcome.",
+  "exemplo_pt": "Estudos anteriores frequentemente negligenciaram a influência do status socioeconômico sobre o desfecho."
+ },
+ {
+  "en": "rule out",
+  "pt": "descartar; excluir (hipótese)",
+  "classe": "expressão",
+  "area": "Geral",
+  "exemplo_en": "These data cannot rule out the possibility that unmeasured variables explain the association.",
+  "exemplo_pt": "Esses dados não podem descartar a possibilidade de que variáveis não medidas expliquem a associação."
+ },
+ {
+  "en": "mitigate",
+  "pt": "mitigar; atenuar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "Several strategies have been proposed to mitigate the effects of missing data on the analysis.",
+  "exemplo_pt": "Várias estratégias foram propostas para mitigar os efeitos de dados ausentes sobre a análise."
+ },
+ {
+  "en": "outline",
+  "pt": "esboçar; delinear",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "The first section outlines the theoretical background, and the second describes the methods used.",
+  "exemplo_pt": "A primeira seção delineia o referencial teórico, e a segunda descreve os métodos utilizados."
+ },
+ {
+  "en": "overcome",
+  "pt": "superar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "A larger sample would help overcome the statistical limitations of the present investigation.",
+  "exemplo_pt": "Uma amostra maior ajudaria a superar as limitações estatísticas da presente investigação."
+ },
+ {
+  "en": "perceive",
+  "pt": "perceber; considerar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "Participants who perceive the task as meaningful tend to report greater engagement.",
+  "exemplo_pt": "Participantes que percebem a tarefa como significativa tendem a relatar maior engajamento."
+ },
+ {
+  "en": "pursue",
+  "pt": "buscar; perseguir",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "Future studies should pursue longitudinal designs to examine how these effects change over time.",
+  "exemplo_pt": "Estudos futuros devem buscar delineamentos longitudinais para examinar como esses efeitos mudam ao longo do tempo."
+ },
+ {
+  "en": "bolster",
+  "pt": "reforçar; fortalecer",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "Additional data from two countries bolster the argument that the effect is not context specific.",
+  "exemplo_pt": "Dados adicionais de dois países reforçam o argumento de que o efeito não é específico de um contexto."
+ },
+ {
+  "en": "disentangle",
+  "pt": "desembaraçar; separar (efeitos)",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "It is difficult to disentangle the effect of diet from that of physical activity.",
+  "exemplo_pt": "É difícil separar o efeito da dieta do efeito da atividade física."
+ },
+ {
+  "en": "shed light on",
+  "pt": "esclarecer; lançar luz sobre",
+  "classe": "expressão",
+  "area": "Geral",
+  "exemplo_en": "Qualitative data can shed light on why some participants abandoned the program early.",
+  "exemplo_pt": "Dados qualitativos podem esclarecer por que alguns participantes abandonaram o programa precocemente."
+ },
+ {
+  "en": "stem from",
+  "pt": "originar-se de; decorrer de",
+  "classe": "expressão",
+  "area": "Geral",
+  "exemplo_en": "Many of the observed differences may stem from variations in sampling procedures.",
+  "exemplo_pt": "Muitas das diferenças observadas podem decorrer de variações nos procedimentos de amostragem."
+ },
+ {
+  "en": "undermine",
+  "pt": "minar; enfraquecer",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "Inconsistent measurement tools can undermine the validity of comparisons between studies.",
+  "exemplo_pt": "Instrumentos de medida inconsistentes podem minar a validade das comparações entre estudos."
+ },
+ {
+  "en": "underscore",
+  "pt": "ressaltar; sublinhar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "These results underscore the importance of considering cultural context when designing interventions.",
+  "exemplo_pt": "Esses resultados ressaltam a importância de considerar o contexto cultural ao desenhar intervenções."
+ },
+ {
+  "en": "warrant",
+  "pt": "justificar; merecer",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "The unexpected pattern warrants further investigation using a different methodological approach.",
+  "exemplo_pt": "O padrão inesperado merece investigação adicional com uma abordagem metodológica diferente."
+ },
+ {
+  "en": "foster",
+  "pt": "fomentar; promover",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "Collaborative activities may foster critical thinking and the exchange of ideas among students.",
+  "exemplo_pt": "Atividades colaborativas podem fomentar o pensamento crítico e a troca de ideias entre os estudantes."
+ },
+ {
+  "en": "elicit",
+  "pt": "obter; suscitar (resposta, informação)",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "Open-ended questions were used to elicit detailed accounts of participants' experiences.",
+  "exemplo_pt": "Perguntas abertas foram usadas para obter relatos detalhados das experiências dos participantes."
+ },
+ {
+  "en": "entail",
+  "pt": "implicar; acarretar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "Longitudinal designs entail higher costs and a greater risk of participant attrition.",
+  "exemplo_pt": "Delineamentos longitudinais acarretam custos mais altos e maior risco de perda de participantes."
+ },
+ {
+  "en": "encompass",
+  "pt": "abranger; englobar",
+  "classe": "verbo",
+  "area": "Geral",
+  "exemplo_en": "The review encompasses studies published in English, Portuguese and Spanish between 2000 and 2020.",
+  "exemplo_pt": "A revisão abrange estudos publicados em inglês, português e espanhol entre 2000 e 2020."
+ },
+ {
+  "en": "adhere to",
+  "pt": "aderir a; seguir (normas)",
+  "classe": "expressão",
+  "area": "Geral",
+  "exemplo_en": "All procedures adhered to the ethical guidelines approved by the institutional review board.",
+  "exemplo_pt": "Todos os procedimentos seguiram as diretrizes éticas aprovadas pelo comitê de ética institucional."
+ },
+ {
+  "en": "account for",
+  "pt": "explicar; responder por",
+  "classe": "expressão",
+  "area": "Geral",
+  "exemplo_en": "Age and education together accounted for a large share of the variance in test scores.",
+  "exemplo_pt": "Idade e escolaridade juntas explicaram uma grande parte da variância nos escores do teste."
+ },
+ {
+  "en": "rely on",
+  "pt": "depender de; basear-se em",
+  "classe": "expressão",
+  "area": "Geral",
+  "exemplo_en": "Many estimates rely on self-reported data, which can be affected by memory and social desirability.",
+  "exemplo_pt": "Muitas estimativas se baseiam em dados autorrelatados, que podem ser afetados pela memória e pela desejabilidade social."
+ },
+ {
+  "en": "give rise to",
+  "pt": "dar origem a; ocasionar",
+  "classe": "expressão",
+  "area": "Geral",
+  "exemplo_en": "Small differences in initial conditions can give rise to very different outcomes in complex systems.",
+  "exemplo_pt": "Pequenas diferenças nas condições iniciais podem dar origem a desfechos muito diferentes em sistemas complexos."
+ },
+ {
+  "en": "bear in mind",
+  "pt": "ter em mente; levar em conta",
+  "classe": "expressão",
+  "area": "Geral",
+  "exemplo_en": "It is important to bear in mind that correlation does not necessarily imply causation.",
+  "exemplo_pt": "É importante ter em mente que correlação não implica necessariamente causalidade."
+ },
+ {
+  "en": "in light of",
+  "pt": "à luz de; tendo em vista",
+  "classe": "expressão",
+  "area": "Geral",
+  "exemplo_en": "In light of these results, the authors recommend revising the current screening guidelines.",
+  "exemplo_pt": "Tendo em vista esses resultados, os autores recomendam revisar as diretrizes atuais de triagem."
+ },
+ {
+  "en": "as opposed to",
+  "pt": "em oposição a; ao invés de",
+  "classe": "expressão",
+  "area": "Geral",
+  "exemplo_en": "The study focuses on long-term outcomes as opposed to short-term changes in behavior.",
+  "exemplo_pt": "O estudo foca em desfechos de longo prazo, em oposição a mudanças de curto prazo no comportamento."
+ },
+ {
+  "en": "moreover",
+  "pt": "além disso; ademais",
+  "classe": "conectivo",
+  "area": "Geral",
+  "exemplo_en": "The method is inexpensive; moreover, it requires little training and can be applied in remote areas.",
+  "exemplo_pt": "O método é barato; além disso, requer pouco treinamento e pode ser aplicado em áreas remotas."
+ },
+ {
+  "en": "furthermore",
+  "pt": "ademais; além do mais",
+  "classe": "conectivo",
+  "area": "Geral",
+  "exemplo_en": "The model fits the data well; furthermore, it provides a clear theoretical interpretation of the results.",
+  "exemplo_pt": "O modelo se ajusta bem aos dados; ademais, oferece uma interpretação teórica clara dos resultados."
+ },
+ {
+  "en": "whereby",
+  "pt": "pelo qual; mediante o qual",
+  "classe": "conectivo",
+  "area": "Geral",
+  "exemplo_en": "The authors propose a mechanism whereby small changes in temperature alter the behavior of the protein.",
+  "exemplo_pt": "Os autores propõem um mecanismo pelo qual pequenas mudanças de temperatura alteram o comportamento da proteína."
+ },
+ {
+  "en": "insofar as",
+  "pt": "na medida em que",
+  "classe": "conectivo",
+  "area": "Geral",
+  "exemplo_en": "The theory is useful insofar as it generates predictions that can be tested empirically.",
+  "exemplo_pt": "A teoria é útil na medida em que gera previsões que podem ser testadas empiricamente."
+ },
+ {
+  "en": "namely",
+  "pt": "a saber; ou seja",
+  "classe": "conectivo",
+  "area": "Geral",
+  "exemplo_en": "Two variables were controlled in the analysis, namely age and level of education.",
+  "exemplo_pt": "Duas variáveis foram controladas na análise, a saber, idade e nível de escolaridade."
+ },
+ {
+  "en": "by and large",
+  "pt": "de modo geral; em linhas gerais",
+  "classe": "expressão",
+  "area": "Geral",
+  "exemplo_en": "By and large, the participants reported positive experiences with the new teaching platform.",
+  "exemplo_pt": "De modo geral, os participantes relataram experiências positivas com a nova plataforma de ensino."
+ },
+ {
+  "en": "merely",
+  "pt": "meramente; apenas",
+  "classe": "advérbio",
+  "area": "Geral",
+  "exemplo_en": "These figures merely describe the sample and should not be generalized to the whole population.",
+  "exemplo_pt": "Esses números apenas descrevem a amostra e não devem ser generalizados para toda a população."
+ },
+ {
+  "en": "solely",
+  "pt": "unicamente; exclusivamente",
+  "classe": "advérbio",
+  "area": "Geral",
+  "exemplo_en": "The conclusions are based solely on data from a single hospital and may not be generalizable.",
+  "exemplo_pt": "As conclusões baseiam-se exclusivamente em dados de um único hospital e podem não ser generalizáveis."
+ },
+ {
+  "en": "presumably",
+  "pt": "presumivelmente; provavelmente",
+  "classe": "advérbio",
+  "area": "Geral",
+  "exemplo_en": "The difference between the groups is presumably due to unmeasured variations in baseline health.",
+  "exemplo_pt": "A diferença entre os grupos se deve, presumivelmente, a variações não medidas na saúde basal."
+ },
+ {
+  "en": "roughly",
+  "pt": "aproximadamente; grosso modo",
+  "classe": "advérbio",
+  "area": "Geral",
+  "exemplo_en": "Roughly half of the respondents reported that they had no access to the internet at home.",
+  "exemplo_pt": "Aproximadamente metade dos respondentes relatou não ter acesso à internet em casa."
+ },
+ {
+  "en": "scarcely",
+  "pt": "mal; quase não",
+  "classe": "advérbio",
+  "area": "Geral",
+  "exemplo_en": "This question has scarcely been investigated in developing countries, where data are often limited.",
+  "exemplo_pt": "Essa questão mal foi investigada em países em desenvolvimento, onde os dados costumam ser limitados."
+ },
+ {
+  "en": "hardly",
+  "pt": "dificilmente; quase não",
+  "classe": "advérbio",
+  "area": "Geral",
+  "exemplo_en": "The two estimates hardly differ, so the choice of method has little practical importance.",
+  "exemplo_pt": "As duas estimativas quase não diferem, de modo que a escolha do método tem pouca importância prática."
+ },
+ {
+  "en": "accordingly",
+  "pt": "consequentemente; de acordo com isso",
+  "classe": "advérbio",
+  "area": "Geral",
+  "exemplo_en": "The questionnaire was revised after the pilot study, and the procedure was adjusted accordingly.",
+  "exemplo_pt": "O questionário foi revisado após o estudo piloto, e o procedimento foi ajustado de acordo."
+ },
+ {
+  "en": "conversely",
+  "pt": "inversamente; por outro lado",
+  "classe": "advérbio",
+  "area": "Geral",
+  "exemplo_en": "Higher temperatures accelerate the reaction; conversely, lower temperatures slow it down.",
+  "exemplo_pt": "Temperaturas mais altas aceleram a reação; inversamente, temperaturas mais baixas a retardam."
+ },
+ {
+  "en": "likewise",
+  "pt": "igualmente; da mesma forma",
+  "classe": "advérbio",
+  "area": "Geral",
+  "exemplo_en": "The first group was assessed at baseline, and the second group was likewise assessed before the intervention.",
+  "exemplo_pt": "O primeiro grupo foi avaliado no início, e o segundo grupo também foi avaliado antes da intervenção."
+ },
+ {
+  "en": "otherwise",
+  "pt": "caso contrário; de outro modo",
+  "classe": "advérbio",
+  "area": "Geral",
+  "exemplo_en": "Participants were eligible if they were over eighteen and otherwise healthy.",
+  "exemplo_pt": "Os participantes eram elegíveis se tivessem mais de dezoito anos e fossem saudáveis em outros aspectos."
+ },
+ {
+  "en": "thereafter",
+  "pt": "depois disso; a partir de então",
+  "classe": "advérbio",
+  "area": "Geral",
+  "exemplo_en": "Samples were collected at baseline and monthly thereafter until the end of the study.",
+  "exemplo_pt": "As amostras foram coletadas no início e mensalmente depois disso, até o fim do estudo."
+ },
+ {
+  "en": "robust",
+  "pt": "robusto; sólido",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "The association remained robust after controlling for several potential confounding variables.",
+  "exemplo_pt": "A associação permaneceu sólida após o controle de diversas possíveis variáveis de confusão."
+ },
+ {
+  "en": "substantial",
+  "pt": "substancial; expressivo",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "There is substantial variation in how different countries define and measure this phenomenon.",
+  "exemplo_pt": "Há variação substancial na forma como diferentes países definem e medem esse fenômeno."
+ },
+ {
+  "en": "marked",
+  "pt": "acentuado; nítido",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "The two groups showed a marked difference in response time after the first week.",
+  "exemplo_pt": "Os dois grupos apresentaram uma diferença acentuada no tempo de resposta após a primeira semana."
+ },
+ {
+  "en": "mere",
+  "pt": "mero; simples",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "The mere presence of a control group does not guarantee that the comparison is fair.",
+  "exemplo_pt": "A mera presença de um grupo controle não garante que a comparação seja justa."
+ },
+ {
+  "en": "feasible",
+  "pt": "viável; factível",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "A randomized trial was not feasible because of ethical and logistical constraints.",
+  "exemplo_pt": "Um ensaio randomizado não foi viável por causa de restrições éticas e logísticas."
+ },
+ {
+  "en": "inherent",
+  "pt": "inerente",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "Some degree of uncertainty is inherent in any attempt to predict long-term trends.",
+  "exemplo_pt": "Algum grau de incerteza é inerente a qualquer tentativa de prever tendências de longo prazo."
+ },
+ {
+  "en": "prior",
+  "pt": "anterior; prévio",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "Prior studies have examined this question, but most used small and non-representative samples.",
+  "exemplo_pt": "Estudos anteriores examinaram essa questão, mas a maioria usou amostras pequenas e não representativas."
+ },
+ {
+  "en": "comprehensive",
+  "pt": "abrangente; completo",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "The authors provide a comprehensive review of the literature published over the past two decades.",
+  "exemplo_pt": "Os autores fornecem uma revisão abrangente da literatura publicada nas últimas duas décadas."
+ },
+ {
+  "en": "overall",
+  "pt": "geral; global",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "The overall response rate was lower than expected, which limits the generalizability of the findings.",
+  "exemplo_pt": "A taxa de resposta global foi menor que o esperado, o que limita a generalização dos achados."
+ },
+ {
+  "en": "thorough",
+  "pt": "minucioso; detalhado",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "A thorough analysis of the records was carried out by two independent reviewers.",
+  "exemplo_pt": "Uma análise minuciosa dos registros foi realizada por dois revisores independentes."
+ },
+ {
+  "en": "tentative",
+  "pt": "provisório; preliminar",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "The authors offer a tentative explanation for the pattern, which requires confirmation in future work.",
+  "exemplo_pt": "Os autores oferecem uma explicação provisória para o padrão, que requer confirmação em trabalhos futuros."
+ },
+ {
+  "en": "striking",
+  "pt": "marcante; impressionante",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "A striking feature of the data is the large variation observed between neighboring regions.",
+  "exemplo_pt": "Uma característica marcante dos dados é a grande variação observada entre regiões vizinhas."
+ },
+ {
+  "en": "widespread",
+  "pt": "generalizado; difundido",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "Smartphones are now widespread, which creates new opportunities for collecting data in the field.",
+  "exemplo_pt": "Os smartphones estão agora amplamente difundidos, o que cria novas oportunidades para coletar dados em campo."
+ },
+ {
+  "en": "ongoing",
+  "pt": "em andamento; contínuo",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "The results come from an ongoing project, so the final conclusions may differ from those presented here.",
+  "exemplo_pt": "Os resultados vêm de um projeto em andamento, de modo que as conclusões finais podem diferir das apresentadas aqui."
+ },
+ {
+  "en": "scarce",
+  "pt": "escasso; raro",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "Reliable data on this topic are scarce, particularly for low-income regions.",
+  "exemplo_pt": "Dados confiáveis sobre esse tema são escassos, particularmente para regiões de baixa renda."
+ },
+ {
+  "en": "noteworthy",
+  "pt": "digno de nota; notável",
+  "classe": "adjetivo",
+  "area": "Geral",
+  "exemplo_en": "It is noteworthy that the effect was observed in both male and female participants.",
+  "exemplo_pt": "É digno de nota que o efeito tenha sido observado tanto em participantes do sexo masculino quanto do feminino."
+ },
+ {
+  "en": "drawback",
+  "pt": "desvantagem; inconveniente",
+  "classe": "substantivo",
+  "area": "Geral",
+  "exemplo_en": "A major drawback of this technique is that it requires expensive equipment and specialized training.",
+  "exemplo_pt": "Uma grande desvantagem dessa técnica é que ela exige equipamento caro e treinamento especializado."
+ },
+ {
+  "en": "outcome",
+  "pt": "desfecho; resultado",
+  "classe": "substantivo",
+  "area": "Geral",
+  "exemplo_en": "The primary outcome was the change in test scores between the beginning and the end of the course.",
+  "exemplo_pt": "O desfecho primário foi a mudança nos escores do teste entre o início e o fim do curso."
+ },
+ {
+  "en": "setting",
+  "pt": "contexto; cenário; ambiente",
+  "classe": "substantivo",
+  "area": "Geral",
+  "exemplo_en": "The intervention was tested in a school setting, so the results may not apply to other environments.",
+  "exemplo_pt": "A intervenção foi testada em ambiente escolar, de modo que os resultados podem não se aplicar a outros ambientes."
+ },
+ {
+  "en": "shortcoming",
+  "pt": "limitação; deficiência",
+  "classe": "substantivo",
+  "area": "Geral",
+  "exemplo_en": "One shortcoming of the study is the absence of a long-term follow-up of the participants.",
+  "exemplo_pt": "Uma limitação do estudo é a ausência de acompanhamento de longo prazo dos participantes."
+ },
+ {
+  "en": "benchmark",
+  "pt": "referência; parâmetro de comparação",
+  "classe": "substantivo",
+  "area": "Geral",
+  "exemplo_en": "The results were compared with a benchmark established by earlier studies in comparable populations.",
+  "exemplo_pt": "Os resultados foram comparados com uma referência estabelecida por estudos anteriores em populações comparáveis."
+ },
+ {
+  "en": "insight",
+  "pt": "percepção; compreensão aprofundada",
+  "classe": "substantivo",
+  "area": "Geral",
+  "exemplo_en": "Interviews provided valuable insight into how workers perceive changes in their daily routines.",
+  "exemplo_pt": "As entrevistas forneceram uma compreensão valiosa de como os trabalhadores percebem mudanças em suas rotinas diárias."
+ },
+ {
+  "en": "likelihood",
+  "pt": "probabilidade; chance",
+  "classe": "substantivo",
+  "area": "Geral",
+  "exemplo_en": "Participants were informed that the likelihood of being assigned to the placebo group was fifty percent.",
+  "exemplo_pt": "Os participantes foram informados de que a probabilidade de serem designados ao grupo placebo era de cinquenta por cento."
+ },
+ {
+  "en": "lack",
+  "pt": "falta; carência",
+  "classe": "substantivo",
+  "area": "Geral",
+  "exemplo_en": "The lack of a control group makes it difficult to attribute the changes to the intervention.",
+  "exemplo_pt": "A falta de um grupo controle dificulta atribuir as mudanças à intervenção."
+ },
+ {
+  "en": "threshold",
+  "pt": "limiar; ponto de corte",
+  "classe": "substantivo",
+  "area": "Geral",
+  "exemplo_en": "Results were considered statistically significant when the p-value fell below the predefined threshold.",
+  "exemplo_pt": "Os resultados foram considerados estatisticamente significativos quando o valor de p ficou abaixo do limiar predefinido."
+ },
+ {
+  "en": "caveat",
+  "pt": "ressalva; ponto de cautela",
+  "classe": "substantivo",
+  "area": "Geral",
+  "exemplo_en": "An important caveat is that all data were self-reported and could not be independently verified.",
+  "exemplo_pt": "Uma ressalva importante é que todos os dados foram autorrelatados e não puderam ser verificados de forma independente."
+ },
+ {
+  "en": "finding",
+  "pt": "achado; resultado",
+  "classe": "substantivo",
+  "area": "Geral",
+  "exemplo_en": "The main finding was a modest but consistent association between sleep duration and academic performance.",
+  "exemplo_pt": "O principal achado foi uma associação modesta, porém consistente, entre duração do sono e desempenho acadêmico."
+ },
+ {
+  "en": "framework",
+  "pt": "arcabouço; estrutura teórica",
+  "classe": "substantivo",
+  "area": "Geral",
+  "exemplo_en": "The analysis is guided by a theoretical framework that links social support to well-being.",
+  "exemplo_pt": "A análise é guiada por um arcabouço teórico que relaciona apoio social e bem-estar."
+ },
+ {
+  "en": "scope",
+  "pt": "escopo; alcance",
+  "classe": "substantivo",
+  "area": "Geral",
+  "exemplo_en": "The scope of this review is limited to studies conducted with adult populations.",
+  "exemplo_pt": "O escopo desta revisão limita-se a estudos conduzidos com populações adultas."
+ },
+ {
+  "en": "pitfall",
+  "pt": "armadilha; risco oculto",
+  "classe": "substantivo",
+  "area": "Geral",
+  "exemplo_en": "A common pitfall in survey research is the use of ambiguous or leading questions.",
+  "exemplo_pt": "Uma armadilha comum em pesquisas de levantamento é o uso de perguntas ambíguas ou indutivas."
+ },
+ {
+  "en": "onset",
+  "pt": "início (de doença ou sintomas)",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Researchers recorded the date of symptom onset for each patient enrolled in the study.",
+  "exemplo_pt": "Os pesquisadores registraram a data de início dos sintomas de cada paciente incluído no estudo."
+ },
+ {
+  "en": "relapse",
+  "pt": "recaída; recidiva",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Patients were monitored for twelve months to detect any relapse after the end of treatment.",
+  "exemplo_pt": "Os pacientes foram monitorados por doze meses para detectar qualquer recaída após o fim do tratamento."
+ },
+ {
+  "en": "cohort",
+  "pt": "coorte",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "The cohort included adults who were followed for ten years after their first hospital admission.",
+  "exemplo_pt": "A coorte incluiu adultos que foram acompanhados por dez anos após a primeira internação hospitalar."
+ },
+ {
+  "en": "outpatient",
+  "pt": "paciente ambulatorial",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Outpatient clinics collected the questionnaires, whereas inpatient data came from hospital records.",
+  "exemplo_pt": "Os ambulatórios coletaram os questionários, ao passo que os dados de internados vieram dos prontuários hospitalares."
+ },
+ {
+  "en": "wound",
+  "pt": "ferida",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Wound closure was assessed weekly by two independent examiners who were unaware of group allocation.",
+  "exemplo_pt": "O fechamento da ferida foi avaliado semanalmente por dois examinadores independentes que desconheciam a alocação dos grupos."
+ },
+ {
+  "en": "swelling",
+  "pt": "inchaço; edema",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Swelling of the joint was measured with a caliper at baseline and after four weeks.",
+  "exemplo_pt": "O inchaço da articulação foi medido com um paquímetro no início e após quatro semanas."
+ },
+ {
+  "en": "dosage",
+  "pt": "posologia; dosagem",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "The dosage was adjusted according to body weight and renal function.",
+  "exemplo_pt": "A posologia foi ajustada de acordo com o peso corporal e a função renal."
+ },
+ {
+  "en": "withdrawal",
+  "pt": "retirada; desistência; abstinência",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Reasons for withdrawal from the trial were recorded and compared between the two groups.",
+  "exemplo_pt": "Os motivos de desistência do ensaio foram registrados e comparados entre os dois grupos."
+ },
+ {
+  "en": "uptake",
+  "pt": "captação; absorção",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Cellular uptake of the compound was measured after one, two and four hours of incubation.",
+  "exemplo_pt": "A captação celular do composto foi medida após uma, duas e quatro horas de incubação."
+ },
+ {
+  "en": "impairment",
+  "pt": "comprometimento; deficiência",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Participants with cognitive impairment were excluded because they could not complete the interview.",
+  "exemplo_pt": "Participantes com comprometimento cognitivo foram excluídos porque não conseguiam concluir a entrevista."
+ },
+ {
+  "en": "bloodstream",
+  "pt": "corrente sanguínea",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Once in the bloodstream, the drug is distributed to different tissues throughout the body.",
+  "exemplo_pt": "Uma vez na corrente sanguínea, o fármaco é distribuído para diferentes tecidos do corpo."
+ },
+ {
+  "en": "gut",
+  "pt": "intestino; trato digestivo",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "The composition of the gut microbiota was analyzed using samples collected at three time points.",
+  "exemplo_pt": "A composição da microbiota intestinal foi analisada com amostras coletadas em três momentos."
+ },
+ {
+  "en": "lifespan",
+  "pt": "tempo de vida; longevidade",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Dietary restriction was tested as a way to extend the lifespan of laboratory mice.",
+  "exemplo_pt": "A restrição alimentar foi testada como forma de prolongar o tempo de vida de camundongos de laboratório."
+ },
+ {
+  "en": "offspring",
+  "pt": "prole; descendentes",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "The weight of the offspring was recorded at birth and again at weaning.",
+  "exemplo_pt": "O peso da prole foi registrado ao nascimento e novamente no desmame."
+ },
+ {
+  "en": "trait",
+  "pt": "traço; característica",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Height is a complex trait influenced by many genes and by environmental factors.",
+  "exemplo_pt": "A altura é uma característica complexa, influenciada por muitos genes e por fatores ambientais."
+ },
+ {
+  "en": "strain",
+  "pt": "cepa; linhagem",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Each bacterial strain was cultured in the same medium at a constant temperature.",
+  "exemplo_pt": "Cada cepa bacteriana foi cultivada no mesmo meio e em temperatura constante."
+ },
+ {
+  "en": "follow-up",
+  "pt": "seguimento; acompanhamento",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "The follow-up period lasted six months, with clinical visits scheduled every four weeks.",
+  "exemplo_pt": "O período de seguimento durou seis meses, com consultas clínicas agendadas a cada quatro semanas."
+ },
+ {
+  "en": "dropout",
+  "pt": "abandono (de participantes)",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Dropout rates were compared between the groups to check for possible selection bias.",
+  "exemplo_pt": "As taxas de abandono foram comparadas entre os grupos para verificar possível viés de seleção."
+ },
+ {
+  "en": "clearance",
+  "pt": "depuração; eliminação",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Renal clearance of the drug is reduced in patients with severely impaired kidney function.",
+  "exemplo_pt": "A depuração renal do fármaco é reduzida em pacientes com função renal gravemente comprometida."
+ },
+ {
+  "en": "wean",
+  "pt": "desmamar; retirar gradualmente",
+  "classe": "verbo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "The protocol describes how patients were gradually weaned off the medication over four weeks.",
+  "exemplo_pt": "O protocolo descreve como os pacientes foram gradualmente desmamados do medicamento ao longo de quatro semanas."
+ },
+ {
+  "en": "healing",
+  "pt": "cicatrização; cura",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Adequate nutrition is important for tissue healing after surgery, particularly in older patients.",
+  "exemplo_pt": "Uma nutrição adequada é importante para a cicatrização dos tecidos após a cirurgia, particularmente em pacientes idosos."
+ },
+ {
+  "en": "frailty",
+  "pt": "fragilidade",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Frailty was assessed with a standardized scale in all participants aged sixty-five or older.",
+  "exemplo_pt": "A fragilidade foi avaliada com uma escala padronizada em todos os participantes com sessenta e cinco anos ou mais."
+ },
+ {
+  "en": "adherence",
+  "pt": "adesão (ao tratamento)",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Poor adherence to medication is a common reason why treatments fail in clinical practice.",
+  "exemplo_pt": "A baixa adesão à medicação é uma razão comum pela qual tratamentos falham na prática clínica."
+ },
+ {
+  "en": "intake",
+  "pt": "ingestão; consumo",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Dietary intake was estimated through a food frequency questionnaire applied by trained interviewers.",
+  "exemplo_pt": "A ingestão alimentar foi estimada por meio de um questionário de frequência alimentar aplicado por entrevistadores treinados."
+ },
+ {
+  "en": "fasting",
+  "pt": "jejum",
+  "classe": "substantivo",
+  "area": "Biológicas/Saúde",
+  "exemplo_en": "Fasting blood glucose was measured in the morning after at least eight hours without food.",
+  "exemplo_pt": "A glicemia de jejum foi medida pela manhã, após pelo menos oito horas sem alimentação."
+ },
+ {
+  "en": "bandwidth",
+  "pt": "largura de banda",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "Limited bandwidth restricts the amount of data that can be transmitted between the sensors and the server.",
+  "exemplo_pt": "A largura de banda limitada restringe a quantidade de dados que pode ser transmitida entre os sensores e o servidor."
+ },
+ {
+  "en": "throughput",
+  "pt": "vazão; taxa de processamento",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "The proposed algorithm aims to increase system throughput without requiring additional hardware.",
+  "exemplo_pt": "O algoritmo proposto visa aumentar a vazão do sistema sem exigir hardware adicional."
+ },
+ {
+  "en": "overhead",
+  "pt": "sobrecarga (custo computacional)",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "Encryption adds computational overhead, which must be weighed against the security benefits.",
+  "exemplo_pt": "A criptografia adiciona sobrecarga computacional, que deve ser ponderada em relação aos benefícios de segurança."
+ },
+ {
+  "en": "bottleneck",
+  "pt": "gargalo",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "Memory access is often the main bottleneck in applications that process large datasets.",
+  "exemplo_pt": "O acesso à memória costuma ser o principal gargalo em aplicações que processam grandes conjuntos de dados."
+ },
+ {
+  "en": "trade-off",
+  "pt": "relação de compromisso; troca",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "There is a trade-off between the accuracy of the model and its computational cost.",
+  "exemplo_pt": "Há uma relação de compromisso entre a acurácia do modelo e o seu custo computacional."
+ },
+ {
+  "en": "creep",
+  "pt": "fluência (deformação lenta)",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "Creep is the slow deformation of a material under constant stress over a long period.",
+  "exemplo_pt": "A fluência é a deformação lenta de um material sob tensão constante durante um longo período."
+ },
+ {
+  "en": "tensile",
+  "pt": "de tração; tênsil",
+  "classe": "adjetivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "Tensile tests were performed to determine the strength of the material before failure.",
+  "exemplo_pt": "Ensaios de tração foram realizados para determinar a resistência do material antes da falha."
+ },
+ {
+  "en": "shear",
+  "pt": "cisalhamento",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "Shear stress arises when forces act parallel to the surface of a material.",
+  "exemplo_pt": "A tensão de cisalhamento surge quando forças atuam paralelamente à superfície de um material."
+ },
+ {
+  "en": "buckling",
+  "pt": "flambagem",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "Slender columns under compressive loads are susceptible to buckling if they are not properly braced.",
+  "exemplo_pt": "Colunas esbeltas submetidas a cargas de compressão são suscetíveis à flambagem se não forem devidamente travadas."
+ },
+ {
+  "en": "weld",
+  "pt": "soldar",
+  "classe": "verbo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "The two steel plates were welded together and then tested under cyclic loading.",
+  "exemplo_pt": "As duas chapas de aço foram soldadas e depois testadas sob carregamento cíclico."
+ },
+ {
+  "en": "alloy",
+  "pt": "liga (metálica)",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "An alloy combines a metal with other elements to improve properties such as strength.",
+  "exemplo_pt": "Uma liga combina um metal com outros elementos para melhorar propriedades como a resistência."
+ },
+ {
+  "en": "wear",
+  "pt": "desgaste",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "Wear of the surface was quantified by measuring mass loss after one thousand cycles.",
+  "exemplo_pt": "O desgaste da superfície foi quantificado medindo-se a perda de massa após mil ciclos."
+ },
+ {
+  "en": "mesh",
+  "pt": "malha",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "A finer mesh improves accuracy but increases the time needed to run the simulation.",
+  "exemplo_pt": "Uma malha mais refinada melhora a precisão, mas aumenta o tempo necessário para executar a simulação."
+ },
+ {
+  "en": "damping",
+  "pt": "amortecimento",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "Damping reduces the amplitude of oscillations in a mechanical system over time.",
+  "exemplo_pt": "O amortecimento reduz a amplitude das oscilações em um sistema mecânico ao longo do tempo."
+ },
+ {
+  "en": "drift",
+  "pt": "deriva; desvio gradual",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "Sensor drift can introduce systematic errors if the device is not recalibrated regularly.",
+  "exemplo_pt": "A deriva do sensor pode introduzir erros sistemáticos se o dispositivo não for recalibrado regularmente."
+ },
+ {
+  "en": "outlier",
+  "pt": "valor atípico",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "Outliers were identified and removed before fitting the regression model to the data.",
+  "exemplo_pt": "Os valores atípicos foram identificados e removidos antes de ajustar o modelo de regressão aos dados."
+ },
+ {
+  "en": "slope",
+  "pt": "inclinação; coeficiente angular",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "The slope of the line represents the rate of change of the variable over time.",
+  "exemplo_pt": "A inclinação da reta representa a taxa de variação da variável ao longo do tempo."
+ },
+ {
+  "en": "workaround",
+  "pt": "solução alternativa; contorno",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "As a workaround, the authors restarted the process whenever the software reported an error.",
+  "exemplo_pt": "Como solução alternativa, os autores reiniciavam o processo sempre que o software relatava um erro."
+ },
+ {
+  "en": "downtime",
+  "pt": "tempo de inatividade",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "The system was designed to minimize downtime during maintenance and software updates.",
+  "exemplo_pt": "O sistema foi projetado para minimizar o tempo de inatividade durante manutenção e atualizações de software."
+ },
+ {
+  "en": "fault",
+  "pt": "falha; defeito",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "The algorithm is designed to detect a fault in the circuit before it causes a system failure.",
+  "exemplo_pt": "O algoritmo foi projetado para detectar uma falha no circuito antes que ela cause uma pane no sistema."
+ },
+ {
+  "en": "embedded",
+  "pt": "embarcado; embutido",
+  "classe": "adjetivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "Embedded systems are computers built into devices to perform specific control functions.",
+  "exemplo_pt": "Sistemas embarcados são computadores integrados a dispositivos para executar funções específicas de controle."
+ },
+ {
+  "en": "sparse",
+  "pt": "esparso; escasso",
+  "classe": "adjetivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "Sparse matrices contain mostly zeros, so they can be stored more efficiently.",
+  "exemplo_pt": "Matrizes esparsas contêm majoritariamente zeros, de modo que podem ser armazenadas com mais eficiência."
+ },
+ {
+  "en": "heat sink",
+  "pt": "dissipador de calor",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "A heat sink was attached to the processor to prevent overheating during long tests.",
+  "exemplo_pt": "Um dissipador de calor foi fixado ao processador para evitar superaquecimento durante testes longos."
+ },
+ {
+  "en": "leakage",
+  "pt": "vazamento; fuga",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "Current leakage in small transistors increases power consumption even when the device is idle.",
+  "exemplo_pt": "A corrente de fuga em transistores pequenos aumenta o consumo de energia mesmo quando o dispositivo está ocioso."
+ },
+ {
+  "en": "lattice",
+  "pt": "rede cristalina; reticulado",
+  "classe": "substantivo",
+  "area": "Exatas/Tecnológicas",
+  "exemplo_en": "Atoms in a crystalline solid are arranged in a regular lattice.",
+  "exemplo_pt": "Os átomos em um sólido cristalino estão dispostos em uma rede regular."
+ },
+ {
+  "en": "stakeholder",
+  "pt": "parte interessada; ator envolvido",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Policy proposals were discussed with stakeholders from schools, local government and community organizations.",
+  "exemplo_pt": "As propostas de política foram discutidas com partes interessadas de escolas, do governo local e de organizações comunitárias."
+ },
+ {
+  "en": "grassroots",
+  "pt": "de base; popular",
+  "classe": "adjetivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Grassroots movements can emerge when residents feel that official institutions do not represent them.",
+  "exemplo_pt": "Movimentos de base podem surgir quando moradores sentem que as instituições oficiais não os representam."
+ },
+ {
+  "en": "fieldwork",
+  "pt": "trabalho de campo",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Fieldwork was carried out in three neighborhoods over a period of eight months.",
+  "exemplo_pt": "O trabalho de campo foi realizado em três bairros ao longo de oito meses."
+ },
+ {
+  "en": "turnout",
+  "pt": "comparecimento; participação (eleitoral)",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Voter turnout varies across countries depending on institutional and cultural factors.",
+  "exemplo_pt": "O comparecimento eleitoral varia entre países dependendo de fatores institucionais e culturais."
+ },
+ {
+  "en": "enrollment",
+  "pt": "matrícula",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Enrollment data were obtained from the national education census and from municipal school records.",
+  "exemplo_pt": "Os dados de matrícula foram obtidos do censo nacional da educação e de registros escolares municipais."
+ },
+ {
+  "en": "attainment",
+  "pt": "nível de escolaridade; obtenção",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Educational attainment was measured by the highest level of schooling completed by each respondent.",
+  "exemplo_pt": "O nível de escolaridade foi medido pelo mais alto grau de ensino concluído por cada respondente."
+ },
+ {
+  "en": "workforce",
+  "pt": "força de trabalho",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "The study examines how automation affects different segments of the workforce.",
+  "exemplo_pt": "O estudo examina como a automação afeta diferentes segmentos da força de trabalho."
+ },
+ {
+  "en": "livelihood",
+  "pt": "meio de subsistência",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Many rural households depend on small-scale farming as their main livelihood.",
+  "exemplo_pt": "Muitas famílias rurais dependem da agricultura em pequena escala como principal meio de subsistência."
+ },
+ {
+  "en": "deprived",
+  "pt": "desfavorecido; carente",
+  "classe": "adjetivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Children from deprived neighborhoods were oversampled to ensure adequate representation in the analysis.",
+  "exemplo_pt": "Crianças de bairros carentes foram sobreamostradas para garantir representação adequada na análise."
+ },
+ {
+  "en": "hinge on",
+  "pt": "depender de; girar em torno de",
+  "classe": "expressão",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "The success of the program hinges on the commitment of local institutions.",
+  "exemplo_pt": "O sucesso do programa depende do comprometimento das instituições locais."
+ },
+ {
+  "en": "sway",
+  "pt": "influenciar; influência",
+  "classe": "verbo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Media coverage can sway public opinion, especially when other sources of information are limited.",
+  "exemplo_pt": "A cobertura da mídia pode influenciar a opinião pública, especialmente quando outras fontes de informação são limitadas."
+ },
+ {
+  "en": "tenure",
+  "pt": "estabilidade; posse; tempo de serviço",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Job tenure was included as a control variable in all the models.",
+  "exemplo_pt": "O tempo de serviço foi incluído como variável de controle em todos os modelos."
+ },
+ {
+  "en": "caregiver",
+  "pt": "cuidador",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Informal caregivers described the emotional and financial challenges of looking after relatives at home.",
+  "exemplo_pt": "Cuidadores informais descreveram os desafios emocionais e financeiros de cuidar de parentes em casa."
+ },
+ {
+  "en": "literacy",
+  "pt": "letramento; alfabetização",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Digital literacy is increasingly regarded as an essential skill for full participation in society.",
+  "exemplo_pt": "O letramento digital é cada vez mais considerado uma habilidade essencial para a plena participação na sociedade."
+ },
+ {
+  "en": "peer",
+  "pt": "par; colega",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Peer influence was examined as a factor associated with adolescents' decisions about schooling.",
+  "exemplo_pt": "A influência dos pares foi examinada como um fator associado às decisões dos adolescentes sobre a escolarização."
+ },
+ {
+  "en": "scaffolding",
+  "pt": "andaimagem (apoio pedagógico gradual)",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Teacher scaffolding supports learners by gradually reducing guidance as their skills develop.",
+  "exemplo_pt": "A andaimagem docente apoia os aprendizes ao reduzir gradualmente a orientação à medida que suas habilidades se desenvolvem."
+ },
+ {
+  "en": "rote",
+  "pt": "mecânico; decorado (sem compreensão)",
+  "classe": "adjetivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Critics argue that rote learning limits students' ability to apply knowledge to new situations.",
+  "exemplo_pt": "Críticos argumentam que a aprendizagem mecânica limita a capacidade dos estudantes de aplicar conhecimento a novas situações."
+ },
+ {
+  "en": "stance",
+  "pt": "posicionamento; postura",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "The author takes a critical stance toward policies that prioritize short-term economic gains.",
+  "exemplo_pt": "O autor assume um posicionamento crítico em relação a políticas que priorizam ganhos econômicos de curto prazo."
+ },
+ {
+  "en": "agency",
+  "pt": "agência; capacidade de ação",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "The concept of agency refers to individuals' capacity to act independently and make their own choices.",
+  "exemplo_pt": "O conceito de agência refere-se à capacidade dos indivíduos de agir de forma independente e fazer suas próprias escolhas."
+ },
+ {
+  "en": "welfare",
+  "pt": "bem-estar social; assistência social",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Welfare policies were compared across five countries using data from the past two decades.",
+  "exemplo_pt": "As políticas de bem-estar social foram comparadas entre cinco países usando dados das últimas duas décadas."
+ },
+ {
+  "en": "tenet",
+  "pt": "princípio; dogma",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "A central tenet of this theory is that social norms shape individual behavior.",
+  "exemplo_pt": "Um princípio central dessa teoria é que normas sociais moldam o comportamento individual."
+ },
+ {
+  "en": "disenfranchised",
+  "pt": "privado de direitos; marginalizado",
+  "classe": "adjetivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Disenfranchised groups may have limited access to political participation and public services.",
+  "exemplo_pt": "Grupos privados de direitos podem ter acesso limitado à participação política e aos serviços públicos."
+ },
+ {
+  "en": "bargaining",
+  "pt": "negociação (coletiva)",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "Collective bargaining shapes wages and working conditions in many industries.",
+  "exemplo_pt": "A negociação coletiva influencia salários e condições de trabalho em muitos setores."
+ },
+ {
+  "en": "gatekeeper",
+  "pt": "intermediário de acesso; guardião",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "A community gatekeeper helped the researchers gain access to participants in the neighborhood.",
+  "exemplo_pt": "Um intermediário da comunidade ajudou os pesquisadores a obter acesso aos participantes no bairro."
+ },
+ {
+  "en": "outreach",
+  "pt": "extensão; ação de alcance comunitário",
+  "classe": "substantivo",
+  "area": "Humanas/Sociais",
+  "exemplo_en": "University outreach programs aim to connect research with the needs of local communities.",
+  "exemplo_pt": "Programas universitários de extensão buscam conectar a pesquisa às necessidades das comunidades locais."
+ },
+ {
+  "en": "livestock",
+  "pt": "rebanho; gado; pecuária",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Livestock production requires large areas of land and substantial quantities of water and feed.",
+  "exemplo_pt": "A produção pecuária requer grandes áreas de terra e quantidades substanciais de água e ração."
+ },
+ {
+  "en": "forage",
+  "pt": "forragem",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Forage quality changes with plant maturity and affects the performance of grazing animals.",
+  "exemplo_pt": "A qualidade da forragem muda com a maturidade da planta e afeta o desempenho dos animais em pastejo."
+ },
+ {
+  "en": "pasture",
+  "pt": "pastagem",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Degraded pasture can be recovered through soil correction and better grazing management.",
+  "exemplo_pt": "Pastagens degradadas podem ser recuperadas por meio de correção do solo e melhor manejo do pastejo."
+ },
+ {
+  "en": "grazing",
+  "pt": "pastejo",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Rotational grazing was compared with continuous grazing in a three-year field experiment.",
+  "exemplo_pt": "O pastejo rotacionado foi comparado ao pastejo contínuo em um experimento de campo de três anos."
+ },
+ {
+  "en": "fallow",
+  "pt": "em pousio",
+  "classe": "adjetivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Fields were left fallow for one season to allow the soil to recover.",
+  "exemplo_pt": "Os campos foram deixados em pousio por uma safra para permitir a recuperação do solo."
+ },
+ {
+  "en": "tillage",
+  "pt": "preparo do solo; lavoura",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "No-till systems reduce soil disturbance when compared with conventional tillage in annual crops.",
+  "exemplo_pt": "Sistemas de plantio direto reduzem a perturbação do solo quando comparados ao preparo convencional em culturas anuais."
+ },
+ {
+  "en": "seedling",
+  "pt": "muda; plântula",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Seedlings were transplanted to pots after fifteen days and watered daily.",
+  "exemplo_pt": "As mudas foram transplantadas para vasos após quinze dias e irrigadas diariamente."
+ },
+ {
+  "en": "weed",
+  "pt": "erva daninha; planta invasora",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Weed control is essential because weeds compete with crops for light, water and nutrients.",
+  "exemplo_pt": "O controle de plantas daninhas é essencial porque elas competem com as culturas por luz, água e nutrientes."
+ },
+ {
+  "en": "blight",
+  "pt": "requeima; crestamento (doença de plantas)",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Late blight, caused by an oomycete, can devastate potato crops under humid conditions.",
+  "exemplo_pt": "A requeima, causada por um oomiceto, pode devastar lavouras de batata em condições úmidas."
+ },
+ {
+  "en": "manure",
+  "pt": "esterco",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Manure applied to the soil supplies nutrients but may also release greenhouse gases.",
+  "exemplo_pt": "O esterco aplicado ao solo fornece nutrientes, mas também pode liberar gases de efeito estufa."
+ },
+ {
+  "en": "poultry",
+  "pt": "aves domésticas; avicultura",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Poultry diets were formulated to meet the nutritional requirements of each growth phase.",
+  "exemplo_pt": "As dietas das aves foram formuladas para atender às exigências nutricionais de cada fase de crescimento."
+ },
+ {
+  "en": "herd",
+  "pt": "rebanho (de gado)",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Herd size and milk production were recorded monthly on each of the farms.",
+  "exemplo_pt": "O tamanho do rebanho e a produção de leite foram registrados mensalmente em cada uma das fazendas."
+ },
+ {
+  "en": "feedlot",
+  "pt": "confinamento (de gado)",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Cattle in the feedlot received a high-energy diet for ninety days before slaughter.",
+  "exemplo_pt": "Os bovinos no confinamento receberam uma dieta de alta energia por noventa dias antes do abate."
+ },
+ {
+  "en": "broiler",
+  "pt": "frango de corte",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Broilers were weighed weekly to evaluate the effect of the diets on growth.",
+  "exemplo_pt": "Os frangos de corte foram pesados semanalmente para avaliar o efeito das dietas sobre o crescimento."
+ },
+ {
+  "en": "udder",
+  "pt": "úbere",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Udder health was evaluated by counting somatic cells in milk samples from each cow.",
+  "exemplo_pt": "A saúde do úbere foi avaliada pela contagem de células somáticas em amostras de leite de cada vaca."
+ },
+ {
+  "en": "hoof",
+  "pt": "casco",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Hoof trimming was performed twice a year and lameness was scored by trained observers.",
+  "exemplo_pt": "O casqueamento foi realizado duas vezes ao ano e a claudicação foi pontuada por observadores treinados."
+ },
+ {
+  "en": "runoff",
+  "pt": "escoamento superficial",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Runoff from agricultural fields can carry fertilizers and sediments to nearby rivers.",
+  "exemplo_pt": "O escoamento superficial de áreas agrícolas pode carregar fertilizantes e sedimentos para rios próximos."
+ },
+ {
+  "en": "leaching",
+  "pt": "lixiviação",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Nitrate leaching was measured in soil water collected at a depth of sixty centimeters.",
+  "exemplo_pt": "A lixiviação de nitrato foi medida na água do solo coletada a sessenta centímetros de profundidade."
+ },
+ {
+  "en": "topsoil",
+  "pt": "camada superficial do solo",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Erosion removes fertile topsoil and reduces the productive capacity of agricultural land.",
+  "exemplo_pt": "A erosão remove a camada superficial fértil do solo e reduz a capacidade produtiva das terras agrícolas."
+ },
+ {
+  "en": "smallholder",
+  "pt": "pequeno produtor",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Smallholder farmers have limited access to credit, technical assistance and markets in many regions.",
+  "exemplo_pt": "Pequenos produtores têm acesso limitado a crédito, assistência técnica e mercados em muitas regiões."
+ },
+ {
+  "en": "tick",
+  "pt": "carrapato",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Tick infestation can reduce weight gain in cattle and transmit disease-causing agents.",
+  "exemplo_pt": "A infestação por carrapatos pode reduzir o ganho de peso em bovinos e transmitir agentes causadores de doenças."
+ },
+ {
+  "en": "carcass",
+  "pt": "carcaça",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Carcass weight and fat thickness were measured after slaughter in all animals.",
+  "exemplo_pt": "O peso da carcaça e a espessura de gordura foram medidos após o abate em todos os animais."
+ },
+ {
+  "en": "slaughter",
+  "pt": "abate",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Animals were sent to slaughter at a commercial plant after a rest period.",
+  "exemplo_pt": "Os animais foram enviados ao abate em um frigorífico comercial após um período de descanso."
+ },
+ {
+  "en": "stocking rate",
+  "pt": "taxa de lotação",
+  "classe": "expressão",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "A high stocking rate may cause overgrazing and reduce the long-term productivity of the pasture.",
+  "exemplo_pt": "Uma taxa de lotação alta pode causar sobrepastejo e reduzir a produtividade da pastagem a longo prazo."
+ },
+ {
+  "en": "husbandry",
+  "pt": "criação; manejo animal (zootecnia)",
+  "classe": "substantivo",
+  "area": "Agrárias/Veterinárias",
+  "exemplo_en": "Good animal husbandry practices help to maintain health and welfare in production systems.",
+  "exemplo_pt": "Boas práticas de manejo animal ajudam a manter a saúde e o bem-estar nos sistemas de produção."
+ }
+]
